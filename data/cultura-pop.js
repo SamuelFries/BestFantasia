@@ -1935,4 +1935,51 @@ registrarFantasias([
       'Abra toda conversa com "companheiros e companheiras" e improvise um discurso de 10 minutos sobre o bar.',
     ],
   },
+  {
+    id: 205, nome: 'Dilma', emoji: '🌽', categoria: 'Cultura Pop',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Blazer vermelho, faixa presidencial e uma mandioca nas mãos para saudar. Seu plano para a festa é ambicioso: estocar vento.',
+    imagem: 'https://source.unsplash.com/600x400/?red,blazer,cassava',
+    pesos: {
+      genero: { fem: 9 }, altura: { medio: 5 }, biotipo: { forte: 5, magro: 2 }, cabelo: { curto: 8 }, barba: { sem: 5 },
+      filme: { sobrevive: 6 }, festa: { bebida: 2, filmes: 3 }, arma: { sarcasmo: 6, magia: 3 },
+      estilo: { pop: 8, comedia: 5 }, idade: { classico: 9, adulto: 3 }, vibe: { divertir: 8, conforto: 4 },
+    },
+    itens: [
+      { nome: 'Blazer vermelho', emoji: '🟥', busca: 'blazer vermelho feminino' },
+      { nome: 'Faixa presidencial', emoji: '🎗️', busca: 'faixa presidencial fantasia' },
+      { nome: 'Peruca castanha curta (se precisar)', emoji: '💇‍♀️', busca: 'peruca castanha curta' },
+      { nome: 'Colar de pérolas', emoji: '📿', busca: 'colar pérolas' },
+      { nome: 'Mandioca (da feira — grátis ou quase)', emoji: '🥔', busca: null },
+    ],
+    passos: [
+      'Blazer vermelho sobre blusa escura, calça social e a faixa presidencial atravessada.',
+      'Cabelo curto e volumoso penteado para trás, colar de pérolas e batom discreto.',
+      'Carregue a mandioca a noite toda, faça uma saudação a ela e explique seu plano de estocar vento.',
+    ],
+  },
+  {
+    id: 206, nome: 'Temer Vampirão', emoji: '🧛‍♂️', categoria: 'Cultura Pop',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'A fantasia que virou lenda no Carnaval de 2018: faixa presidencial, capa de vampiro e mesóclises afiadas. Morder-te-ei? Talvez.',
+    imagem: 'https://source.unsplash.com/600x400/?vampire,suit,cape',
+    pesos: {
+      genero: { masc: 8 }, altura: { medio: 5, alto: 3 }, biotipo: { magro: 7 }, cabelo: { curto: 7 }, barba: { sem: 7 },
+      filme: { assassino: 6, sobrevive: 4 }, festa: { rituais: 6, bebida: 3 }, arma: { sarcasmo: 6, magia: 5 },
+      estilo: { pop: 8, terror: 5, comedia: 4 }, idade: { classico: 9, adulto: 3 }, vibe: { divertir: 7, assustar: 4, impressionar: 4 },
+    },
+    itens: [
+      { nome: 'Capa de vampiro com gola alta', emoji: '🦇', busca: 'capa vampiro gola alta' },
+      { nome: 'Faixa presidencial', emoji: '🎗️', busca: 'faixa presidencial fantasia' },
+      { nome: 'Terno escuro (o seu)', emoji: '🕴️', busca: null },
+      { nome: 'Dentes de vampiro', emoji: '🦷', busca: 'dentes de vampiro' },
+      { nome: 'Peruca grisalha penteada para trás (opcional)', emoji: '🧑‍🦳', busca: 'peruca grisalha masculina' },
+      { nome: 'Base pálida e sangue falso', emoji: '🩸', busca: 'sangue falso maquiagem' },
+    ],
+    passos: [
+      'Terno escuro bem cortado, faixa presidencial e a capa de vampiro com a gola levantada.',
+      'Cabelo grisalho penteado para trás com gel, pele pálida e os dentes de vampiro.',
+      'Fale só com mesóclises a noite inteira: "servir-lhe-ei uma bebida", "dançar-se-á".',
+    ],
+  },
 ]);

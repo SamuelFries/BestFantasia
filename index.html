@@ -16,12 +16,11 @@
 
   <!-- ============================================================
        GOOGLE ADSENSE — client ca-pub-2662281603112502
-       1) Os blocos de anúncio entram nas divs .adsense-slot (Tela 5)
-          e #native-ad-slot (Tela 4) — já estilizadas e responsivas.
-          Depois da aprovação, troque cada slot pelo <ins class="adsbygoogle">
-          que o AdSense fornecer; o main.js já ativa cada um (ativarAnuncios())
-          assim que a tela correspondente fica visível.
-       2) Afiliados Amazon: configure AMAZON_AFFILIATE_TAG no main.js.
+       As posições de anúncio são as divs com data-anuncio. Elas ficam
+       vazias e ocultas até receberem o número do bloco em
+       BLOCOS_ADSENSE, no main.js, que cria o <ins> na hora certa.
+       Não cole <ins class="adsbygoogle"> direto no HTML.
+       Afiliados Amazon: configure AMAZON_AFFILIATE_TAG no main.js.
        ============================================================ -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662281603112502"
      crossorigin="anonymous"></script>
@@ -49,6 +48,13 @@
     <span style="bottom:6%;left:12%;animation-delay:1.8s">🕸️</span>
   </div>
 
+  <!-- Anúncios laterais fixos: só aparecem no PC (≥1280×720), fora da
+       coluna do conteúdo. Ocultos enquanto vazios. -->
+  <div id="anuncios-laterais">
+    <div class="adsense-slot ad-lateral ad-lateral--esquerda" data-anuncio="lateralEsquerda"></div>
+    <div class="adsense-slot ad-lateral ad-lateral--direita" data-anuncio="lateralDireita"></div>
+  </div>
+
   <main id="app">
 
     <!-- ========================= TELA 1 · HOME ========================= -->
@@ -61,7 +67,7 @@
         <em>Se tiver coragem.</em> 👀
       </p>
       <button id="btn-start" class="btn-primary btn-pulse" type="button">👻 Descobrir Minha Fantasia</button>
-      <p class="nota">⏱️ 2 minutinhos &nbsp;•&nbsp; 🧛 <span id="total-fantasias">204</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
+      <p class="nota">⏱️ 2 minutinhos &nbsp;•&nbsp; 🧛 <span id="total-fantasias">206</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
     </section>
 
     <!-- ================== TELA 2 · FÍSICO ================== -->
@@ -93,16 +99,9 @@
       <button id="btn-personalidade-continuar" class="btn-primary" type="button" disabled>Consultar os Espíritos 🔮</button>
     </section>
 
-    <!-- ============== TELA 4 · CARREGAMENTO + AD NATIVO ============== -->
+    <!-- ===================== TELA 4 · CARREGAMENTO ===================== -->
+    <!-- Sem anúncio: o AdSense proíbe anúncios em telas sem conteúdo. -->
     <section id="screen-loading" class="screen">
-      <!-- MONETIZAÇÃO · Slot NATIVO de baixa fricção, visível ACIMA do
-           ícone de loading durante os 4s de "consulta aos espíritos".
-           O disparo do anúncio em vídeo/interstitial fica em
-           main.js > iniciarConsulta() — veja o comentário por lá.
-           (Manter a div abaixo em uma linha só: o rótulo "Publicidade"
-           do CSS usa :empty e some quando o anúncio real entrar.) -->
-      <div id="native-ad-slot" class="ad-slot"><!-- Cole aqui o bloco do anúncio nativo (in-feed/low friction) --></div>
-
       <div class="loading-orb" role="status" aria-label="Carregando">🔮</div>
       <h2 class="titulo-tela font-creepy">Consultando os espíritos…</h2>
       <p id="frase-loading" class="subtitulo-tela" aria-live="polite">Mexendo o caldeirão… 🫕</p>
@@ -110,9 +109,6 @@
 
     <!-- ============ TELA 5 · RESULTADO + GUIA DE MONTAGEM ============ -->
     <section id="screen-resultado" class="screen" aria-labelledby="resultado-nome">
-      <!-- MONETIZAÇÃO · Banner responsivo AdSense (TOPO do resultado) -->
-      <div class="adsense-slot"><!-- Cole aqui o <ins class="adsbygoogle"> responsivo --></div>
-
       <p class="badge">🔮 Guia da sua fantasia</p>
 
       <!-- Cartão da vencedora -->
@@ -135,6 +131,10 @@
         </div>
       </article>
 
+      <!-- Anúncio 1: depois da revelação, antes do guia. Mantenha as divs de
+           anúncio sem espaços internos: o CSS as esconde enquanto :empty. -->
+      <div class="adsense-slot" data-anuncio="resultadoAposCartao"></div>
+
       <!-- Guia de compras (estilo "costume guide" com afiliados) -->
       <article class="guia" aria-label="Itens para montar a fantasia">
         <h3 class="guia-titulo">🧵 Itens para montar</h3>
@@ -150,6 +150,10 @@
         <p id="resultado-dica-pele" class="dica-pele hidden"></p>
       </article>
 
+      <!-- Anúncio 2: depois do passo a passo. Longe dos botões "Ver na Amazon"
+           de propósito, para não ser confundido com eles. -->
+      <div class="adsense-slot" data-anuncio="resultadoAposPassos"></div>
+
       <!-- Pódio alternativo: clicável, abre o guia da vice -->
       <div class="alternativas-wrap">
         <p class="motivos-titulo">Quase viraram você 👀 (toque para ver o guia)</p>
@@ -164,8 +168,8 @@
       <button id="btn-share-copy" class="btn-share btn-share--copy" type="button">🔗 Copiar link do teste</button>
       <button id="btn-restart" class="btn-voltar" type="button" style="align-self:center">🔁 Fazer o teste de novo</button>
 
-      <!-- MONETIZAÇÃO · Banner responsivo AdSense (BASE do resultado) -->
-      <div class="adsense-slot"><!-- Cole aqui o <ins class="adsbygoogle"> responsivo --></div>
+      <!-- Anúncio 3: base do resultado (320×100 fixo no celular) -->
+      <div class="adsense-slot" data-anuncio="resultadoBase"></div>
     </section>
 
   </main>

@@ -26,6 +26,34 @@ const AMAZON_AFFILIATE_TAG = 'SEUTAG-20';
 const urlAmazon = (termoBusca) =>
   `https://www.amazon.com.br/s?k=${encodeURIComponent(termoBusca)}&tag=${AMAZON_AFFILIATE_TAG}`;
 
+/* ==============================================================
+   MONETIZAÇÃO · BLOCOS DO GOOGLE ADSENSE
+   Depois da aprovação, crie um bloco de display para cada posição em
+   Anúncios → Por bloco de anúncios e cole o número do bloco
+   (data-ad-slot) em `slot`. Posição sem número fica oculta no site.
+   Âncora e vinheta não entram aqui: são ligadas no painel, em
+   Anúncios automáticos (deixe "anúncios na página" desligado).
+   ============================================================== */
+const ADSENSE_CLIENT = 'ca-pub-2662281603112502';
+
+const BLOCOS_ADSENSE = {
+  // Tela de resultado (celular e PC)
+  resultadoAposCartao: { slot: '', formato: 'responsivo' },
+  resultadoAposPassos: { slot: '', formato: 'responsivo' },
+  resultadoBase:       { slot: '', formato: 'banner' },
+  // Laterais fixas, só em telas a partir de 1280×720 (ver style.css)
+  lateralEsquerda:     { slot: '', formato: 'vertical' },
+  lateralDireita:      { slot: '', formato: 'vertical' },
+};
+
+// O banner da base é fixo e pequeno para a página de resultado não
+// passar de ~30% de anúncios (limite do Better Ads). A coluna de
+// conteúdo tem a mesma largura no celular e no PC.
+const ESTILO_POR_FORMATO = {
+  vertical: 'display:inline-block;width:160px;height:600px',
+  banner: 'display:inline-block;width:320px;height:100px',
+};
+
 // Frases que giram abaixo do título durante o loading.
 const FRASES_LOADING = [
   'Mexendo o caldeirão… 🫕',
@@ -206,12 +234,39 @@ function mostrarTela(idNova) {
 }
 
 /**
- * O AdSense não preenche blocos dentro de telas com display:none
- * (erro "availableWidth=0"), então cada <ins class="adsbygoogle"> só é
- * ativado quando a tela dele fica visível — e uma única vez.
+ * Cria e ativa os blocos de anúncio dentro de `container`, uma única vez.
+ *
+ * O <ins> só é criado quando a posição já está visível: o AdSense não
+ * preenche bloco com largura zero, e adsbygoogle.push({}) sempre preenche
+ * o PRIMEIRO <ins> pendente da página — se existisse um <ins> pendente em
+ * outra tela escondida, ele seria escolhido no lugar deste.
  */
-function ativarAnuncios(tela) {
-  tela.querySelectorAll('ins.adsbygoogle:not([data-adsbygoogle-status])').forEach(() => {
+function ativarAnuncios(container) {
+  container.querySelectorAll('[data-anuncio]:not([data-ativo])').forEach((posicao) => {
+    const bloco = BLOCOS_ADSENSE[posicao.dataset.anuncio];
+    if (!bloco?.slot) return;
+
+    const ins = document.createElement('ins');
+    ins.className = 'adsbygoogle';
+    ins.dataset.adClient = ADSENSE_CLIENT;
+    ins.dataset.adSlot = bloco.slot;
+    const estiloFixo = ESTILO_POR_FORMATO[bloco.formato];
+    if (estiloFixo) {
+      ins.style.cssText = estiloFixo;
+    } else {
+      ins.style.display = 'block';
+      ins.dataset.adFormat = 'auto';
+      ins.dataset.fullWidthResponsive = 'true';
+    }
+    posicao.appendChild(ins);
+
+    // Posição escondida (ex.: lateral no celular): desfaz e tenta de novo depois.
+    if (ins.offsetWidth === 0) {
+      ins.remove();
+      return;
+    }
+
+    posicao.dataset.ativo = 'true';
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (erro) {
@@ -221,7 +276,7 @@ function ativarAnuncios(tela) {
 }
 
 /* ================================================================
-   TELA 4 — LOADING (4s) + GANCHO DE MONETIZAÇÃO
+   TELA 4 — LOADING (4s)
    ================================================================ */
 
 function iniciarConsulta() {
@@ -234,19 +289,11 @@ function iniciarConsulta() {
     $('#frase-loading').textContent = FRASES_LOADING[indiceFrase];
   }, 1100);
 
-  // O cálculo é instantâneo; os 4s são encenação (e monetização).
+  // O cálculo é instantâneo; os 4s são encenação.
+  // Sem anúncio nesta tela: as políticas do AdSense proíbem anúncios em
+  // telas sem conteúdo do site (carregamento, transição, alerta).
   state.ranking = recomendarFantasia(state.escolhas);
 
-  /* ==============================================================
-     MONETIZAÇÃO · ANÚNCIO EM VÍDEO / INTERSTITIAL DE BAIXA FRICÇÃO
-     Dispare AQUI o script do anúncio (ex.: interstitial do AdSense
-     ou SDK parceiro), ANTES de liberar a Tela 5. Padrão sugerido:
-       1. exiba o anúncio assim que esta tela abrir;
-       2. troque o setTimeout abaixo por "aguarde o timer de 4s E o
-          callback de fechamento do anúncio" (ex.: Promise.all) para
-          o resultado nunca aparecer por baixo do anúncio aberto.
-     O slot nativo estático fica em #native-ad-slot, no index.html.
-     ============================================================== */
   state.timers.loading = window.setTimeout(
     () => exibirResultado(state.ranking[0]),
     DURACAO_LOADING_MS
@@ -465,6 +512,12 @@ function init() {
   // Pódio clicável e compartilhamento.
   $('#resultado-alternativas').addEventListener('click', aoClicarAlternativa);
   $('#btn-share-copy').addEventListener('click', copiarLink);
+
+  // Laterais fixas (só aparecem em telas largas): ativa já na entrada e,
+  // se a janela começar estreita, quando ela for alargada.
+  const laterais = $('#anuncios-laterais');
+  ativarAnuncios(laterais);
+  window.addEventListener('resize', () => ativarAnuncios(laterais), { passive: true });
 
   console.log('%c🎃 BestFantasia', 'color:#ff7a18;font-size:16px;font-weight:bold');
 }

@@ -23,7 +23,7 @@ python3 -m http.server 8000
 | `index.html`          | Estrutura das 5 telas da SPA e slots de anúncio                         |
 | `style.css`           | Tema Halloween (tokens CSS), componentes e animações                    |
 | `data.js`             | Configuração do quiz (etapas, perguntas, rótulos) e registro de fantasias |
-| `data/*.js`           | 204 fantasias, um arquivo por categoria (ver abaixo)                    |
+| `data/*.js`           | 206 fantasias, um arquivo por categoria (ver abaixo)                    |
 | `logic.js`            | Algoritmo de recomendação (puro, testável no console)                   |
 | `main.js`             | Estado da UI, navegação com fade, renderização e compartilhamento       |
 
@@ -36,7 +36,7 @@ python3 -m http.server 8000
 | `acao.js`         | Ação & Aventura    |   26 |
 | `magia.js`        | Fantasia & Magia   |   22 |
 | `divertidas.js`   | Divertidas         |   22 |
-| `cultura-pop.js`  | Cultura Pop        |   84 |
+| `cultura-pop.js`  | Cultura Pop        |   86 |
 
 Cada fantasia tem `pesos` (por atributo do quiz), `itens` (lista de compras com
 termo de busca para o link de afiliado), `passos` (montagem em 3 passos),
@@ -69,11 +69,23 @@ Três camadas somadas por fantasia (ver `logic.js`):
 O ranking usa `sort` com desempate determinístico; o % de match é normalizado
 pelo máximo teórico de cada fantasia e remapeado para 35–99%.
 
-## Monetização (placeholders)
+## Monetização
 
-- **AdSense:** comentário no `<head>` do `index.html`; banners responsivos nas
-  divs `.adsense-slot` (Tela 5) e anúncio nativo em `#native-ad-slot` (Tela 4,
-  que dura 4s). Gancho de interstitial comentado em `main.js > iniciarConsulta()`.
+- **AdSense** (`ca-pub-2662281603112502`, script no `<head>` e `ads.txt` na raiz).
+  As posições são as divs com `data-anuncio`, ocultas enquanto vazias. Depois da
+  aprovação, crie um bloco de display por posição no painel e cole o número
+  dele em `BLOCOS_ADSENSE`, no `main.js`:
+
+  | Posição | Onde | Formato |
+  |---|---|---|
+  | `resultadoAposCartao` | logo depois do cartão do resultado | responsivo |
+  | `resultadoAposPassos` | depois de "Como montar" | responsivo |
+  | `resultadoBase` | base do resultado | 320×100 fixo |
+  | `lateralEsquerda` / `lateralDireita` | laterais fixas, só em telas ≥1280×720 | 160×600 |
+
+  No painel, em Anúncios automáticos: ligue a **âncora**, deixe **anúncios na
+  página** desligado. Sem anúncios na home, nas perguntas (cliques acidentais)
+  e na tela de carregamento (política do AdSense).
 - **Afiliados Amazon:** configure `AMAZON_AFFILIATE_TAG` no `main.js`. Cada item
   do guia vira link de busca com `rel="sponsored"`.
 - **Imagens:** os placeholders do Unsplash em `data/*.js` devem ser trocados por
