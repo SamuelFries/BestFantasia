@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   MinhaFantasia — data/classicas.js
+   BestFantasia — data/classicas.js
    Categoria: Clássicas (13 fantasias). Ver dicionário em data.js.
    ============================================================ */
 
@@ -302,6 +302,146 @@ registrarFantasias([
       'Tie-dye, boca de sino e colares empilhados; sandália ou pés descalços (na festa certa).',
       'Faixa na testa, cabelo solto e óculos coloridos; flores de tecido no cabelo dão o toque final.',
       'Faça o sinal da paz em todas as fotos e chame todo mundo de "irmão" — inclusive os inimigos.',
+    ],
+  },
+  {
+    id: 196, nome: 'Policial Retrô', emoji: '👮', categoria: 'Clássicas',
+    dificuldade: 'Fácil', custo: 2,
+    descricao: 'Bigode, óculos aviador e algemas de brinquedo. Você multa quem dança mal e prende quem fura a fila do bar.',
+    imagem: 'https://source.unsplash.com/600x400/?police,retro,aviator',
+    pesos: {
+      genero: { masc: 5, fem: 4 }, altura: { medio: 5 }, biotipo: { atletico: 6, forte: 4 }, cabelo: { curto: 6 }, barba: { bigode: 7, sem: 3 }, oculos: { sim: 3 },
+      filme: { sobrevive: 7, assassino: 3 }, festa: { bebida: 6 }, arma: { machado: 5, sarcasmo: 5 },
+      estilo: { acao: 5, comedia: 4 }, idade: { adulto: 6, classico: 4 }, vibe: { impressionar: 4, divertir: 5 },
+    },
+    itens: [
+      { nome: 'Camisa azul-marinho de uniforme', emoji: '🟦', busca: 'camisa policial fantasia' },
+      { nome: 'Quepe', emoji: '🧢', busca: 'quepe policial' },
+      { nome: 'Óculos aviador', emoji: '🕶️', busca: 'óculos aviador' },
+      { nome: 'Distintivo', emoji: '⭐', busca: 'distintivo policial brinquedo' },
+      { nome: 'Algemas de brinquedo', emoji: '🔗', busca: 'algema brinquedo' },
+      { nome: 'Bigode postiço', emoji: '🥸', busca: 'bigode postiço castanho' },
+    ],
+    passos: [
+      'Camisa de uniforme com distintivo, calça escura, cinto preto e bota.',
+      'Quepe, óculos aviador e o bigode — o bigode é 70% da fantasia.',
+      'Algemas no cinto e abordagens aleatórias: "documento da fantasia, por favor".',
+    ],
+  },
+  {
+    id: 197, nome: 'Caveira de Smoking', emoji: '💀', categoria: 'Clássicas',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'Esqueleto por fora, gala por dentro. Você morreu elegante e pretende continuar assim na pista.',
+    imagem: 'https://source.unsplash.com/600x400/?skull,tuxedo,elegant',
+    pesos: {
+      genero: { masc: 5, neutro: 5 }, altura: { alto: 6, medio: 3 }, biotipo: { magro: 8 }, cabelo: { careca: 4, curto: 3 }, barba: { sem: 5 },
+      filme: { assassino: 4, sobrevive: 4 }, festa: { bebida: 7, rituais: 4 }, arma: { sarcasmo: 7, magia: 4 },
+      estilo: { terror: 3, fantasia: 3 }, idade: { classico: 5, adulto: 5 }, vibe: { impressionar: 8 },
+    },
+    itens: [
+      { nome: 'Smoking ou terno preto (o seu)', emoji: '🕴️', busca: null },
+      { nome: 'Gravata-borboleta', emoji: '🎀', busca: 'gravata borboleta preta' },
+      { nome: 'Tinta facial de caveira (ou meia máscara)', emoji: '💀', busca: 'máscara caveira meia face' },
+      { nome: 'Luvas brancas', emoji: '🧤', busca: 'luvas brancas' },
+      { nome: 'Cartola e bengala', emoji: '🎩', busca: 'cartola preta' },
+    ],
+    passos: [
+      'Smoking impecável com gravata-borboleta, luvas brancas e sapato engraxado.',
+      'Caveira pintada com sombreado nas bochechas e dentes desenhados nos lábios.',
+      'Cartola, bengala e uma dança lenta com quem aceitar o convite do além.',
+    ],
+  },
+  {
+    id: 198, nome: 'Marinheiro', emoji: '⚓', categoria: 'Clássicas',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Listras, gorro branco e uma âncora tatuada à caneta. Você navega entre o bar e a pista com a elegância de quem já enjoou muito.',
+    imagem: 'https://source.unsplash.com/600x400/?sailor,stripes,anchor',
+    pesos: {
+      genero: { masc: 5, fem: 4 }, altura: { medio: 5 }, biotipo: { atletico: 6 }, cabelo: { curto: 6 }, barba: { sem: 6 },
+      filme: { sobrevive: 6, vitima: 3 }, festa: { bebida: 8 }, arma: { machado: 4, sarcasmo: 6 },
+      estilo: { acao: 3, comedia: 4 }, idade: { jovem: 5, adulto: 5 }, vibe: { divertir: 6, conforto: 6 },
+    },
+    itens: [
+      { nome: 'Camisa listrada azul e branca', emoji: '🔵', busca: 'camisa listrada marinheiro' },
+      { nome: 'Gorro de marinheiro', emoji: '🧢', busca: 'chapéu marinheiro' },
+      { nome: 'Calça branca', emoji: '🤍', busca: 'calça branca' },
+      { nome: 'Lenço vermelho', emoji: '🟥', busca: 'lenço vermelho pescoço' },
+      { nome: 'Caneta para a "tatuagem" de âncora (grátis)', emoji: '⚓', busca: null },
+    ],
+    passos: [
+      'Camisa listrada, calça branca e sapato branco ou tênis.',
+      'Gorro de marinheiro, lenço no pescoço e âncora desenhada no braço.',
+      'Chame todo mundo de "capitão" e peça licença para "atracar" perto do bar.',
+    ],
+  },
+  {
+    id: 199, nome: 'Melindrosa Anos 20', emoji: '🪶', categoria: 'Clássicas',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'Franjas, pérolas e pena na cabeça. Você dança Charleston, bebe em copo de chá e nunca conta onde fica a festa clandestina.',
+    imagem: 'https://source.unsplash.com/600x400/?flapper,1920s,pearls',
+    pesos: {
+      genero: { fem: 9 }, altura: { medio: 4, baixo: 3 }, biotipo: { magro: 6 }, cabelo: { curto: 8 }, barba: { sem: 4 },
+      filme: { sobrevive: 5 }, festa: { bebida: 9 }, arma: { sarcasmo: 6, magia: 3 },
+      estilo: { comedia: 3, acao: 2 }, idade: { adulto: 5, classico: 5, jovem: 3 }, vibe: { impressionar: 8, divertir: 4 },
+    },
+    itens: [
+      { nome: 'Vestido de franjas', emoji: '✨', busca: 'vestido franjas anos 20' },
+      { nome: 'Faixa de cabeça com pena', emoji: '🪶', busca: 'tiara pena anos 20' },
+      { nome: 'Colar de pérolas longo', emoji: '📿', busca: 'colar pérolas longo' },
+      { nome: 'Luvas pretas longas', emoji: '🧤', busca: 'luvas longas pretas' },
+      { nome: 'Piteira decorativa', emoji: '🚬', busca: 'piteira decorativa' },
+    ],
+    passos: [
+      'Vestido de franjas, luvas longas e sapato de salto baixo com tira.',
+      'Cabelo chanel com ondas marcadas, faixa com pena e batom vermelho escuro.',
+      'Pérolas até a cintura, piteira na mão e um Charleston improvisado quando a banda subir o ritmo.',
+    ],
+  },
+  {
+    id: 200, nome: 'Gângster Anos 30', emoji: '🎩', categoria: 'Clássicas',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Risca de giz, fedora e uma proposta que ninguém recusa: "passa o salgadinho". A Lei Seca é só uma sugestão.',
+    imagem: 'https://source.unsplash.com/600x400/?gangster,1930s,fedora',
+    pesos: {
+      genero: { masc: 8 }, altura: { medio: 5, alto: 3 }, biotipo: { forte: 5, atletico: 4 }, cabelo: { curto: 5 }, barba: { bigode: 4, sem: 4 },
+      filme: { assassino: 7, sobrevive: 4 }, festa: { bebida: 8 }, arma: { machado: 5, sarcasmo: 7 },
+      estilo: { acao: 5, pop: 3 }, idade: { adulto: 5, classico: 5 }, vibe: { impressionar: 7 },
+    },
+    itens: [
+      { nome: 'Terno risca de giz', emoji: '🕴️', busca: 'terno risca de giz' },
+      { nome: 'Chapéu fedora', emoji: '🎩', busca: 'chapéu fedora preto' },
+      { nome: 'Suspensório', emoji: '🎽', busca: 'suspensório' },
+      { nome: 'Metralhadora de brinquedo (ou maleta)', emoji: '💼', busca: 'maleta executiva' },
+      { nome: 'Charuto decorativo', emoji: '🚬', busca: 'charuto decorativo' },
+      { nome: 'Sapato bicolor', emoji: '👞', busca: 'sapato bicolor masculino' },
+    ],
+    passos: [
+      'Terno risca de giz com suspensório, gravata larga e sapato bicolor.',
+      'Fedora inclinado, cabelo com gel e charuto no canto da boca.',
+      'Fale baixo, chame os amigos de "capo" e faça ofertas que ninguém pode recusar.',
+    ],
+  },
+  {
+    id: 201, nome: 'Realeza Medieval', emoji: '👑', categoria: 'Clássicas',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'Manto de veludo, coroa e um cetro para apontar o que não te agrada. Cortem-lhe a cabeça — ou pelo menos o volume da música.',
+    imagem: 'https://source.unsplash.com/600x400/?king,queen,crown,velvet',
+    pesos: {
+      genero: { masc: 4, fem: 4 }, altura: { alto: 5, medio: 3 }, biotipo: { forte: 4, atletico: 3 }, cabelo: { longo: 5, curto: 3 }, barba: { cheia: 4, sem: 3 },
+      filme: { sobrevive: 5, assassino: 3 }, festa: { bebida: 6, rituais: 3 }, arma: { magia: 5, sarcasmo: 5, machado: 3 },
+      estilo: { fantasia: 5 }, idade: { classico: 6, adulto: 4 }, vibe: { impressionar: 7, conforto: 4 },
+    },
+    itens: [
+      { nome: 'Manto de veludo vermelho com pele sintética', emoji: '🟥', busca: 'manto rei veludo' },
+      { nome: 'Coroa dourada', emoji: '👑', busca: 'coroa rei dourada' },
+      { nome: 'Cetro', emoji: '🪄', busca: 'cetro fantasia' },
+      { nome: 'Túnica ou vestido longo', emoji: '👗', busca: 'túnica medieval' },
+      { nome: 'Anéis grandes', emoji: '💍', busca: 'anel grande dourado' },
+    ],
+    passos: [
+      'Túnica ou vestido longo com cinto dourado e o manto de veludo por cima.',
+      'Coroa bem firme, anéis em vários dedos e postura ereta de quem nunca lavou louça.',
+      'Cetro na mão e decretos reais em voz alta: "decreto que o bar fica aberto".',
     ],
   },
 ]);

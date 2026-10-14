@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   MinhaFantasia — logic.js
+   BestFantasia — logic.js
    Algoritmo de recomendação em 3 camadas:
 
    1. PESOS DIRETOS — soma dos pontos de cada escolha do usuário

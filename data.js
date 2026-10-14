@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   MinhaFantasia — data.js
+   BestFantasia — data.js
    Configuração do quiz (etapas, perguntas, rótulos) e o
    registro central de fantasias. As fantasias em si ficam em
    data/*.js (uma categoria por arquivo) e se registram aqui via
@@ -284,7 +284,7 @@ const FANTASIAS = [];
 function registrarFantasias(lista) {
   lista.forEach((fantasia) => {
     if (FANTASIAS.some((f) => f.id === fantasia.id)) {
-      console.warn(`[MinhaFantasia] id duplicado ignorado: ${fantasia.id} (${fantasia.nome})`);
+      console.warn(`[BestFantasia] id duplicado ignorado: ${fantasia.id} (${fantasia.nome})`);
       return;
     }
     FANTASIAS.push(fantasia);

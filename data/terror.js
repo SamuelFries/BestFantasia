@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   MinhaFantasia — data/terror.js
+   BestFantasia — data/terror.js
    Categoria: Terror (19 fantasias). Ver dicionário em data.js.
    ============================================================ */
 
@@ -436,6 +436,283 @@ registrarFantasias([
       'Rosto branco com olheiras esverdeadas e musgo (sombra verde) perto das têmporas.',
       'Terno listrado, peruca arrepiada e os dentes — sorria MUITO.',
       'Apresente-se como "bio-exorcista" e ofereça cartões de visita imaginários.',
+    ],
+  },
+  {
+    id: 156, nome: 'Pennywise', emoji: '🎈', categoria: 'Terror',
+    dificuldade: 'Caprichada', custo: 3,
+    descricao: 'Balão vermelho, sorriso de dentes demais e um bueiro como endereço. Você também vai flutuar — pelo menos até o fim da festa.',
+    imagem: 'https://source.unsplash.com/600x400/?clown,red,balloon,sewer',
+    pesos: {
+      genero: { masc: 4, neutro: 5 }, altura: { alto: 6 }, biotipo: { magro: 5 }, cabelo: { careca: 3, colorido: 4 }, barba: { sem: 5 },
+      filme: { assassino: 10 }, festa: { rituais: 5, filmes: 5 }, arma: { sarcasmo: 5, magia: 5 },
+      estilo: { terror: 9, pop: 5 }, idade: { jovem: 5, adulto: 4 }, vibe: { assustar: 10 },
+    },
+    itens: [
+      { nome: 'Fantasia do Pennywise', emoji: '🤡', busca: 'fantasia pennywise adulto' },
+      { nome: 'Peruca ruiva', emoji: '🟠', busca: 'peruca ruiva pennywise' },
+      { nome: 'Kit maquiagem de palhaço branco e vermelho', emoji: '🎨', busca: 'kit maquiagem palhaço terror' },
+      { nome: 'Balão vermelho', emoji: '🎈', busca: 'balão vermelho festa' },
+      { nome: 'Dentes afiados de fantasia', emoji: '🦷', busca: 'dentes afiados fantasia' },
+    ],
+    passos: [
+      'Base branca com as duas linhas vermelhas subindo dos cantos da boca até as sobrancelhas.',
+      'Fantasia com os babados, peruca ruiva alta e os dentes afiados.',
+      'Segure o balão, incline a cabeça e sussurre "você vai flutuar" para quem passar.',
+    ],
+  },
+  {
+    id: 157, nome: 'Jason Voorhees', emoji: '🏒', categoria: 'Terror',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Máscara de hóquei, facão e um acampamento inteiro de histórias. Você não fala, não corre e nunca, jamais, morre de verdade.',
+    imagem: 'https://source.unsplash.com/600x400/?hockey,mask,horror',
+    pesos: {
+      genero: { masc: 7 }, altura: { alto: 6, medio: 3 }, biotipo: { forte: 8, atletico: 4 }, cabelo: { careca: 3, curto: 3 }, barba: { sem: 2 },
+      filme: { assassino: 10 }, festa: { filmes: 6 }, arma: { machado: 10 },
+      estilo: { terror: 9, pop: 4 }, idade: { adulto: 5, jovem: 4 }, vibe: { assustar: 8 },
+    },
+    itens: [
+      { nome: 'Máscara de hóquei', emoji: '🏒', busca: 'máscara hockey jason' },
+      { nome: 'Jaqueta verde-oliva velha', emoji: '🧥', busca: 'jaqueta verde militar' },
+      { nome: 'Facão de brinquedo', emoji: '🔪', busca: 'facão brinquedo' },
+      { nome: 'Sangue falso', emoji: '🩸', busca: 'sangue falso maquiagem' },
+      { nome: 'Calça escura e bota (as suas)', emoji: '🥾', busca: null },
+    ],
+    passos: [
+      'Jaqueta surrada com rasgos, calça escura, bota e luvas.',
+      'Máscara de hóquei com manchas de sujeira e sangue falso no facão.',
+      'Ande devagar, pare atrás das pessoas e espere. Só espere.',
+    ],
+  },
+  {
+    id: 158, nome: 'Espantalho Sinistro', emoji: '🌾', categoria: 'Terror',
+    dificuldade: 'Média', custo: 1,
+    descricao: 'Palha saindo das mangas, saco na cabeça e um milharal inteiro de corvos que fugiram de você. A plantação está segura; os convidados, nem tanto.',
+    imagem: 'https://source.unsplash.com/600x400/?scarecrow,field,creepy',
+    pesos: {
+      genero: { masc: 4, neutro: 5 }, altura: { alto: 5, medio: 3 }, biotipo: { magro: 6 }, cabelo: { careca: 3, longo: 3 }, barba: { cheia: 3 },
+      filme: { assassino: 5, sobrevive: 4 }, festa: { rituais: 7 }, arma: { machado: 6, magia: 3 },
+      estilo: { terror: 7 }, idade: { adulto: 4, classico: 4 }, vibe: { assustar: 7 },
+    },
+    itens: [
+      { nome: 'Chapéu de palha velho', emoji: '👒', busca: 'chapéu de palha' },
+      { nome: 'Camisa xadrez rasgada (velha)', emoji: '🟫', busca: null },
+      { nome: 'Ráfia natural (palha)', emoji: '🌾', busca: 'ráfia natural' },
+      { nome: 'Saco de juta para a máscara', emoji: '🎭', busca: 'saco de juta' },
+      { nome: 'Corda rústica', emoji: '🪢', busca: 'corda sisal' },
+    ],
+    passos: [
+      'Prenda tufos de ráfia nos punhos, no colarinho e na barra da calça com cola quente.',
+      'Corte olhos e boca costurada no saco de juta e vista por cima da cabeça, com o chapéu.',
+      'Amarre corda nos pulsos e no pescoço; fique parado em pé até alguém chegar perto. Aí vire.',
+    ],
+  },
+  {
+    id: 159, nome: 'Cirurgião Sangrento', emoji: '🩺', categoria: 'Terror',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Jaleco, máscara e um histórico de pacientes que não voltaram. "Vai doer só um pouquinho" nunca foi tão mentira.',
+    imagem: 'https://source.unsplash.com/600x400/?surgeon,scrubs,blood',
+    pesos: {
+      genero: { neutro: 4, masc: 3, fem: 3 }, altura: { medio: 5 }, biotipo: { magro: 3, forte: 3 }, cabelo: { curto: 4 }, barba: { sem: 4 },
+      filme: { assassino: 8 }, festa: { rituais: 5 }, arma: { machado: 5, sarcasmo: 5 },
+      estilo: { terror: 7 }, idade: { adulto: 6 }, vibe: { assustar: 7 },
+    },
+    itens: [
+      { nome: 'Pijama cirúrgico', emoji: '🩺', busca: 'pijama cirúrgico' },
+      { nome: 'Touca e máscara cirúrgica', emoji: '😷', busca: 'touca cirúrgica' },
+      { nome: 'Luvas de látex', emoji: '🧤', busca: 'luvas látex' },
+      { nome: 'Sangue falso (muito)', emoji: '🩸', busca: 'sangue falso 500ml' },
+      { nome: 'Kit médico de brinquedo', emoji: '🔪', busca: 'kit médico brinquedo' },
+    ],
+    passos: [
+      'Pijama cirúrgico com avental por cima; touca, máscara e luvas.',
+      'Respingue sangue falso nas luvas, no avental e na máscara — nunca de forma simétrica.',
+      'Carregue a serra de brinquedo e avalie os convidados: "esse braço aí… interessante".',
+    ],
+  },
+  {
+    id: 160, nome: 'Enfermeira do Hospício', emoji: '💉', categoria: 'Terror',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'Uniforme branco manchado, seringa gigante e um andar com espasmos. Ela só quer ajudar. Ela só quer ajudar. Ela só quer…',
+    imagem: 'https://source.unsplash.com/600x400/?nurse,vintage,dark',
+    pesos: {
+      genero: { fem: 7 }, altura: { medio: 4 }, biotipo: { magro: 5 }, cabelo: { curto: 4, longo: 3 }, barba: { sem: 4 },
+      filme: { assassino: 7, vitima: 3 }, festa: { rituais: 6, filmes: 4 }, arma: { magia: 4, sarcasmo: 5 },
+      estilo: { terror: 8, pop: 3 }, idade: { jovem: 5, adulto: 4 }, vibe: { assustar: 8 },
+    },
+    itens: [
+      { nome: 'Vestido de enfermeira branco', emoji: '🤍', busca: 'fantasia enfermeira branca' },
+      { nome: 'Touca de enfermeira', emoji: '🧢', busca: 'touca enfermeira fantasia' },
+      { nome: 'Maquiagem cinza e olheiras', emoji: '🎨', busca: 'paleta sombra cinza preta' },
+      { nome: 'Seringa gigante de brinquedo', emoji: '💉', busca: 'seringa gigante brinquedo' },
+      { nome: 'Sangue falso', emoji: '🩸', busca: 'sangue falso maquiagem' },
+    ],
+    passos: [
+      'Uniforme branco manchado de chá e sangue falso, touca torta e meias rasgadas.',
+      'Pele acinzentada, olheiras fundas e, se quiser, o rosto "sem traços" coberto por gaze.',
+      'Ande com espasmos e a cabeça caída de lado, seringa em punho. Pare quando alguém olhar.',
+    ],
+  },
+  {
+    id: 161, nome: 'Padre Exorcista', emoji: '✝️', categoria: 'Terror',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Batina, crucifixo e água benta em frasco de spray. "O poder de Cristo te obriga" a sair da fila do banheiro.',
+    imagem: 'https://source.unsplash.com/600x400/?priest,crucifix,dark',
+    pesos: {
+      genero: { masc: 7 }, altura: { alto: 4, medio: 4 }, biotipo: { magro: 5 }, cabelo: { curto: 4, careca: 3 }, barba: { sem: 5 },
+      filme: { sobrevive: 7 }, festa: { rituais: 9 }, arma: { magia: 8 },
+      estilo: { terror: 8 }, idade: { classico: 6, adulto: 4 }, vibe: { assustar: 5, impressionar: 4 },
+    },
+    itens: [
+      { nome: 'Batina preta', emoji: '🖤', busca: 'batina padre fantasia' },
+      { nome: 'Colarinho clerical', emoji: '⬜', busca: 'colarinho clerical' },
+      { nome: 'Crucifixo grande', emoji: '✝️', busca: 'colar crucifixo grande' },
+      { nome: 'Livro preto de capa dura', emoji: '📖', busca: 'caderno capa dura preto' },
+      { nome: 'Frasco de "água benta" (borrifador — grátis)', emoji: '💧', busca: null },
+    ],
+    passos: [
+      'Batina fechada até o pescoço com o colarinho branco aparecendo.',
+      'Crucifixo grande no pescoço, livro debaixo do braço e borrifador no bolso.',
+      'Borrife "água benta" nas fantasias de demônio e declame em latim inventado.',
+    ],
+  },
+  {
+    id: 162, nome: 'Menina Possuída', emoji: '🛏️', categoria: 'Terror',
+    dificuldade: 'Caprichada', custo: 2,
+    descricao: 'Camisola, pele rachada e uma voz que não é a sua. Você não gira a cabeça 360° — mas quem vai duvidar?',
+    imagem: 'https://source.unsplash.com/600x400/?exorcist,possessed,dark',
+    pesos: {
+      genero: { fem: 7, neutro: 3 }, altura: { baixo: 5, medio: 3 }, biotipo: { magro: 6 }, cabelo: { longo: 6 }, barba: { sem: 3 },
+      filme: { assassino: 6, vitima: 4 }, festa: { rituais: 10 }, arma: { magia: 8 },
+      estilo: { terror: 10 }, idade: { teen: 5, jovem: 5 }, vibe: { assustar: 10 },
+    },
+    itens: [
+      { nome: 'Camisola azul clara', emoji: '🩵', busca: 'camisola azul claro' },
+      { nome: 'Kit maquiagem de cortes (látex)', emoji: '🩹', busca: 'kit maquiagem cicatriz látex' },
+      { nome: 'Lentes de contato brancas (opcional)', emoji: '👁️', busca: 'lente contato halloween' },
+      { nome: 'Base esverdeada/acinzentada', emoji: '🎨', busca: 'tinta facial verde' },
+      { nome: '"Sopa de ervilha" para a manga (grátis)', emoji: '🥣', busca: null },
+    ],
+    passos: [
+      'Camisola suja e amassada, cabelo embaraçado e pés descalços (ou meias sujas).',
+      'Pele esverdeada com cortes de látex no rosto e lábios rachados com lápis.',
+      'Fale com a voz mais grave que conseguir e estale o pescoço de lado ao olhar para alguém.',
+    ],
+  },
+  {
+    id: 163, nome: 'Lenhador Assassino', emoji: '🪓', categoria: 'Terror',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Flanela, barba e um machado que já cortou muito mais do que árvores. A cabana no bosque tem Wi-Fi? Ninguém voltou para contar.',
+    imagem: 'https://source.unsplash.com/600x400/?lumberjack,axe,flannel',
+    pesos: {
+      genero: { masc: 8 }, altura: { alto: 5, medio: 4 }, biotipo: { forte: 8, atletico: 4 }, cabelo: { curto: 4 }, barba: { cheia: 9, bigode: 3 },
+      filme: { assassino: 8 }, festa: { bebida: 6 }, arma: { machado: 10 },
+      estilo: { terror: 6, acao: 4 }, idade: { adulto: 6, classico: 3 }, vibe: { assustar: 6, conforto: 4 },
+    },
+    itens: [
+      { nome: 'Camisa flanela xadrez vermelha', emoji: '🟥', busca: 'camisa flanela xadrez vermelha' },
+      { nome: 'Suspensório', emoji: '🎽', busca: 'suspensório' },
+      { nome: 'Gorro de lã', emoji: '🧢', busca: 'gorro lã' },
+      { nome: 'Machado de brinquedo', emoji: '🪓', busca: 'machado brinquedo halloween' },
+      { nome: 'Sangue falso', emoji: '🩸', busca: 'sangue falso maquiagem' },
+    ],
+    passos: [
+      'Flanela com as mangas dobradas, suspensório, jeans e bota pesada.',
+      'Barba cheia, gorro e sangue falso respingado na camisa e no machado.',
+      'Ofereça "lenha" para a fogueira olhando fixamente para os convidados mais altos.',
+    ],
+  },
+  {
+    id: 164, nome: 'Coveiro Vitoriano', emoji: '🪦', categoria: 'Terror',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Cartola, pá e a calma de quem já viu todo mundo ir embora. Você mede as pessoas com os olhos — para saber o tamanho da cova.',
+    imagem: 'https://source.unsplash.com/600x400/?gravedigger,cemetery,fog',
+    pesos: {
+      genero: { masc: 5, neutro: 4 }, altura: { alto: 6, medio: 3 }, biotipo: { magro: 7 }, cabelo: { careca: 3, longo: 3 }, barba: { cheia: 4, sem: 3 },
+      filme: { assassino: 4, sobrevive: 4 }, festa: { rituais: 8 }, arma: { magia: 4, sarcasmo: 6 },
+      estilo: { terror: 7 }, idade: { classico: 7, adulto: 4 }, vibe: { assustar: 6, conforto: 3 },
+    },
+    itens: [
+      { nome: 'Cartola preta', emoji: '🎩', busca: 'cartola preta' },
+      { nome: 'Sobretudo preto', emoji: '🧥', busca: 'sobretudo preto' },
+      { nome: 'Pá de jardim', emoji: '⛏️', busca: 'pá jardim cabo curto' },
+      { nome: 'Lampião decorativo', emoji: '🏮', busca: 'lanterna lampião decorativa' },
+      { nome: 'Base pálida', emoji: '🎨', busca: 'tinta facial branca halloween' },
+    ],
+    passos: [
+      'Sobretudo preto sobre colete e camisa branca, cartola e luvas.',
+      'Rosto pálido com olheiras, cabelo oleoso penteado para trás.',
+      'Pá no ombro, lampião na mão e medidas em voz alta: "um e oitenta… vai caber".',
+    ],
+  },
+  {
+    id: 165, nome: 'Vampira Gótica', emoji: '🦇', categoria: 'Terror',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'Vestido preto, batom vinho e séculos de bons motivos para não ir ao sol. Você escolhe as vítimas pelo perfume — e pelo tipo sanguíneo.',
+    imagem: 'https://source.unsplash.com/600x400/?vampire,woman,gothic',
+    pesos: {
+      genero: { fem: 9 }, altura: { alto: 5, medio: 4 }, biotipo: { magro: 6 }, cabelo: { longo: 8 }, barba: { sem: 4 },
+      filme: { assassino: 7, sobrevive: 3 }, festa: { rituais: 6, bebida: 4 }, arma: { magia: 6, sarcasmo: 5 },
+      estilo: { terror: 7, fantasia: 3 }, idade: { jovem: 5, adulto: 5 }, vibe: { impressionar: 8, assustar: 4 },
+    },
+    itens: [
+      { nome: 'Vestido gótico preto', emoji: '🖤', busca: 'vestido gótico preto' },
+      { nome: 'Capa preta com forro vermelho', emoji: '🧥', busca: 'capa vampiro forro vermelho' },
+      { nome: 'Dentes de vampira', emoji: '🦷', busca: 'dentes de vampiro' },
+      { nome: 'Batom vermelho escuro', emoji: '💄', busca: 'batom vinho' },
+      { nome: 'Choker de veludo', emoji: '📿', busca: 'choker veludo preto' },
+      { nome: 'Sangue falso', emoji: '🩸', busca: 'sangue falso maquiagem' },
+    ],
+    passos: [
+      'Vestido longo com a capa por cima e o choker de veludo no pescoço.',
+      'Pele pálida, olho esfumado escuro, batom vinho e um filete de sangue no canto da boca.',
+      'Cheire o pescoço das pessoas antes de cumprimentar. Elogie o "tipo sanguíneo".',
+    ],
+  },
+  {
+    id: 166, nome: 'Boneco de Ventríloquo', emoji: '🎭', categoria: 'Terror',
+    dificuldade: 'Média', custo: 1,
+    descricao: 'Smoking, bochechas pintadas e um queixo que se mexe sozinho. Ninguém sabe quem controla quem — nem você.',
+    imagem: 'https://source.unsplash.com/600x400/?puppet,dummy,creepy',
+    pesos: {
+      genero: { masc: 5, neutro: 4 }, altura: { baixo: 7 }, biotipo: { magro: 6 }, cabelo: { curto: 5 }, barba: { sem: 6 },
+      filme: { assassino: 6, vitima: 3 }, festa: { filmes: 5, rituais: 4 }, arma: { sarcasmo: 9 },
+      estilo: { terror: 8 }, idade: { jovem: 4, adulto: 4 }, vibe: { assustar: 8 },
+    },
+    itens: [
+      { nome: 'Terno ou smoking (o seu)', emoji: '🕴️', busca: null },
+      { nome: 'Gravata-borboleta vermelha', emoji: '🎀', busca: 'gravata borboleta vermelha' },
+      { nome: 'Base clara e blush redondo', emoji: '🎨', busca: 'base clara maquiagem' },
+      { nome: 'Lápis preto para as linhas da boca', emoji: '✏️', busca: 'lápis olho preto' },
+      { nome: 'Gel para o cabelo repartido', emoji: '🧴', busca: 'gel cabelo' },
+    ],
+    passos: [
+      'Terno alinhado com gravata-borboleta e cabelo repartido com muito gel.',
+      'Pele de madeira: base clara, círculos de blush e duas linhas do queixo até a boca.',
+      'Mova só o queixo ao falar e vire a cabeça em estalos. Fique parado quando ninguém olha.',
+    ],
+  },
+  {
+    id: 167, nome: 'Monstro do Pântano', emoji: '🌿', categoria: 'Terror',
+    dificuldade: 'Caprichada', custo: 1,
+    descricao: 'Musgo, folhas e lama até o pescoço: a criatura que o brejo esqueceu. Você deixa pegadas úmidas em todas as fotos.',
+    imagem: 'https://source.unsplash.com/600x400/?swamp,moss,creature',
+    pesos: {
+      genero: { masc: 5, neutro: 5 }, altura: { alto: 6 }, biotipo: { forte: 7, atletico: 3 }, cabelo: { longo: 4, careca: 3 }, barba: { cheia: 4 },
+      filme: { assassino: 5, sobrevive: 4 }, festa: { rituais: 6 }, arma: { machado: 5, magia: 4 },
+      estilo: { terror: 7, fantasia: 3 }, idade: { adulto: 4, jovem: 4, classico: 3 }, vibe: { assustar: 7 },
+    },
+    itens: [
+      { nome: 'Roupa verde ou marrom velha (vai ser colada)', emoji: '🟫', busca: null },
+      { nome: 'Musgo artificial', emoji: '🌿', busca: 'musgo artificial' },
+      { nome: 'Folhagem artificial', emoji: '🍃', busca: 'planta artificial folhagem' },
+      { nome: 'Tinta facial verde', emoji: '🟢', busca: 'tinta facial verde' },
+      { nome: 'Pistola de cola quente', emoji: '🔫', busca: 'pistola cola quente' },
+    ],
+    passos: [
+      'Cole musgo e folhas na roupa velha em camadas, mais densas nos ombros e no peito.',
+      'Rosto e mãos verdes com manchas marrons; folhas presas no cabelo com grampos.',
+      'Ande curvado, arrastando os pés, e deixe "pegadas" com um borrifador de água.',
     ],
   },
 ]);

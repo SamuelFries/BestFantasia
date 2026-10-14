@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   MinhaFantasia — main.js
+   BestFantasia — main.js
    Estado da UI, navegação entre telas (SPA) e eventos.
    Depende de data.js (conteúdo) e logic.js (algoritmo),
    carregados antes deste arquivo no index.html.
@@ -348,7 +348,7 @@ function aoClicarAlternativa(evento) {
 
 function textoDeCompartilhamento() {
   const f = state.exibida;
-  return `🎃 O MinhaFantasia revelou: minha fantasia ideal de Halloween é ${f.emoji} ${f.nome} (${f.compatibilidade}% de match)! Descubra a sua + o guia de montagem:`;
+  return `🎃 O BestFantasia revelou: minha fantasia ideal de Halloween é ${f.emoji} ${f.nome} (${f.compatibilidade}% de match)! Descubra a sua + o guia de montagem:`;
 }
 
 function atualizarLinksDeCompartilhamento() {
@@ -450,7 +450,7 @@ function init() {
   $('#resultado-alternativas').addEventListener('click', aoClicarAlternativa);
   $('#btn-share-copy').addEventListener('click', copiarLink);
 
-  console.log('%c🎃 MinhaFantasia', 'color:#ff7a18;font-size:16px;font-weight:bold');
+  console.log('%c🎃 BestFantasia', 'color:#ff7a18;font-size:16px;font-weight:bold');
 }
 
 document.addEventListener('DOMContentLoaded', init);

@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   MinhaFantasia — data/acao.js
+   BestFantasia — data/acao.js
    Categoria: Ação & Aventura (16 fantasias). Ver dicionário em data.js.
    ============================================================ */
 
@@ -377,6 +377,238 @@ registrarFantasias([
       'Preto total: calça, blusa de manga longa e luvas; faixa cobrindo o rosto até os olhos.',
       'Katana nas costas (prenda com um cinto cruzado) e shurikens no bolso.',
       'Ande pelas bordas da festa, apareça atrás das pessoas e saia antes que percebam.',
+    ],
+  },
+  {
+    id: 168, nome: 'Gladiador', emoji: '🏛️', categoria: 'Ação & Aventura',
+    dificuldade: 'Caprichada', custo: 3,
+    descricao: 'Elmo, espada curta e a aprovação do Coliseu. Não se divertem?! Não é para isso que vocês vieram?!',
+    imagem: 'https://source.unsplash.com/600x400/?gladiator,colosseum,helmet',
+    pesos: {
+      genero: { masc: 7 }, altura: { alto: 5, medio: 4 }, biotipo: { forte: 7, atletico: 8 }, cabelo: { curto: 5 }, barba: { cheia: 3, cavanhaque: 3, sem: 3 },
+      filme: { sobrevive: 8 }, festa: { bebida: 5 }, arma: { machado: 9 },
+      estilo: { acao: 8, fantasia: 3 }, idade: { adulto: 5, jovem: 4 }, vibe: { impressionar: 7 },
+    },
+    itens: [
+      { nome: 'Fantasia de gladiador', emoji: '🏛️', busca: 'fantasia gladiador adulto' },
+      { nome: 'Elmo romano', emoji: '⛑️', busca: 'elmo romano fantasia' },
+      { nome: 'Espada curta de brinquedo', emoji: '⚔️', busca: 'espada romana brinquedo' },
+      { nome: 'Escudo', emoji: '🛡️', busca: 'escudo gladiador brinquedo' },
+      { nome: 'Sandália gladiadora', emoji: '👡', busca: 'sandália gladiadora masculina' },
+    ],
+    passos: [
+      'Saiote de tiras de couro, peitoral e ombreira em um braço só; sandálias amarradas até a canela.',
+      'Elmo com crista, braceletes e um pouco de "poeira de arena" (sombra marrom) no corpo.',
+      'Levante a espada para a multidão e pergunte se não estão se divertindo.',
+    ],
+  },
+  {
+    id: 169, nome: 'Samurai', emoji: '⚔️', categoria: 'Ação & Aventura',
+    dificuldade: 'Caprichada', custo: 3,
+    descricao: 'Honra, katana e um coque impecável. Você não precisa de palavras — só de silêncio e uma reverência bem dada.',
+    imagem: 'https://source.unsplash.com/600x400/?samurai,armor,katana',
+    pesos: {
+      genero: { masc: 6, neutro: 3 }, altura: { medio: 5 }, biotipo: { atletico: 7, forte: 4 }, cabelo: { longo: 5, curto: 3 }, barba: { cavanhaque: 4, cheia: 3 },
+      filme: { sobrevive: 7, assassino: 4 }, festa: { rituais: 5, filmes: 4 }, arma: { machado: 9 },
+      estilo: { acao: 8, fantasia: 3 }, idade: { adulto: 5, classico: 4 }, vibe: { impressionar: 7 },
+    },
+    itens: [
+      { nome: 'Armadura samurai de fantasia', emoji: '🛡️', busca: 'fantasia samurai adulto' },
+      { nome: 'Katana de brinquedo', emoji: '⚔️', busca: 'katana brinquedo' },
+      { nome: 'Hakama (calça larga) preta', emoji: '🖤', busca: 'hakama' },
+      { nome: 'Capacete kabuto', emoji: '⛑️', busca: 'capacete samurai fantasia' },
+      { nome: 'Sandálias', emoji: '🩴', busca: null },
+    ],
+    passos: [
+      'Kimono por baixo, hakama, armadura por cima e a katana presa à esquerda na faixa.',
+      'Cabelo preso em coque alto (ou peruca) e o kabuto para as fotos.',
+      'Reverência profunda ao cumprimentar; desembainhe a katana só para cortar o bolo.',
+    ],
+  },
+  {
+    id: 170, nome: 'Exterminador do Futuro', emoji: '🦾', categoria: 'Ação & Aventura',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Jaqueta de couro, óculos escuros e metade do rosto em metal. Você voltará. Provavelmente para o bar.',
+    imagem: 'https://source.unsplash.com/600x400/?terminator,leather,sunglasses',
+    pesos: {
+      genero: { masc: 8 }, altura: { alto: 7 }, biotipo: { forte: 7, atletico: 8 }, cabelo: { curto: 6 }, barba: { sem: 6 }, oculos: { sim: 4 },
+      filme: { assassino: 8, sobrevive: 5 }, festa: { bebida: 3, filmes: 5 }, arma: { machado: 8 },
+      estilo: { acao: 9, pop: 6 }, idade: { adulto: 5, classico: 5 }, vibe: { assustar: 5, impressionar: 6 },
+    },
+    itens: [
+      { nome: 'Jaqueta de couro preta', emoji: '🧥', busca: 'jaqueta couro preta' },
+      { nome: 'Óculos escuros', emoji: '🕶️', busca: 'óculos escuros clássico' },
+      { nome: 'Tinta facial prata (endoesqueleto)', emoji: '🥈', busca: 'tinta facial prata' },
+      { nome: 'Luvas pretas', emoji: '🧤', busca: 'luvas pretas' },
+      { nome: 'Arma de brinquedo grande', emoji: '🔫', busca: 'arma brinquedo espuma' },
+    ],
+    passos: [
+      'Preto da cabeça aos pés: jaqueta, calça, bota e luvas.',
+      'Pinte metade do rosto de prata com "circuitos" em vermelho e preto; óculos escuros por cima.',
+      'Fale em frases curtas sem emoção. Ao sair de qualquer sala: "I\'ll be back."',
+    ],
+  },
+  {
+    id: 171, nome: 'Jon Snow', emoji: '❄️', categoria: 'Ação & Aventura',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'Capa de pele, cachos e um lobo gigante imaginário. Você não sabe de nada — mas o inverno está chegando, e você avisou.',
+    imagem: 'https://source.unsplash.com/600x400/?fur,cloak,snow,sword',
+    pesos: {
+      genero: { masc: 7 }, altura: { medio: 5 }, biotipo: { atletico: 6, magro: 3 }, cabelo: { longo: 7 }, barba: { cheia: 8, cavanhaque: 3 },
+      filme: { sobrevive: 8 }, festa: { bebida: 4, rituais: 3 }, arma: { machado: 8 },
+      estilo: { acao: 7, fantasia: 6, pop: 6 }, idade: { adulto: 5, jovem: 4 }, vibe: { impressionar: 6, conforto: 3 },
+    },
+    itens: [
+      { nome: 'Capa de pele sintética preta', emoji: '🧥', busca: 'capa pele sintética preta' },
+      { nome: 'Roupa preta de couro', emoji: '🖤', busca: 'jaqueta couro preta' },
+      { nome: 'Espada de brinquedo', emoji: '⚔️', busca: 'espada medieval brinquedo' },
+      { nome: 'Lobo de pelúcia branco', emoji: '🐺', busca: 'lobo pelúcia branco' },
+      { nome: 'Peruca cacheada preta (se precisar)', emoji: '🧑‍🦱', busca: 'peruca cacheada preta masculina' },
+    ],
+    passos: [
+      'Roupa preta em camadas com a capa de pele nos ombros e luvas.',
+      'Cachos presos atrás, barba cheia e uma expressão de quem carrega o peso do Norte.',
+      'Lobo de pelúcia ao lado e um aviso para cada novo convidado: "o inverno está chegando".',
+    ],
+  },
+  {
+    id: 172, nome: 'Amazona Guerreira', emoji: '🛡️', categoria: 'Ação & Aventura',
+    dificuldade: 'Caprichada', custo: 3,
+    descricao: 'Armadura, lança e uma ilha inteira que te respeita. Você venceu batalhas antes de a festa começar — e vai vencer a do karaokê.',
+    imagem: 'https://source.unsplash.com/600x400/?warrior,woman,armor',
+    pesos: {
+      genero: { fem: 9 }, altura: { alto: 6, medio: 3 }, biotipo: { atletico: 9, forte: 5 }, cabelo: { longo: 7 }, barba: { sem: 4 },
+      filme: { sobrevive: 7, assassino: 4 }, festa: { bebida: 4 }, arma: { machado: 9 },
+      estilo: { acao: 8, fantasia: 5 }, idade: { jovem: 5, adulto: 5 }, vibe: { impressionar: 8 },
+    },
+    itens: [
+      { nome: 'Armadura de couro feminina', emoji: '🛡️', busca: 'fantasia guerreira amazona' },
+      { nome: 'Braceletes', emoji: '💫', busca: 'bracelete couro' },
+      { nome: 'Saia de tiras', emoji: '🩳', busca: 'saia gladiadora' },
+      { nome: 'Lança ou espada de brinquedo', emoji: '🗡️', busca: 'lança brinquedo fantasia' },
+      { nome: 'Botas altas', emoji: '👢', busca: 'bota cano alto marrom' },
+    ],
+    passos: [
+      'Peitoral de couro, saia de tiras, braceletes e botas acima do joelho.',
+      'Trança de guerra bem apertada e uma listra de "pintura de batalha" nas maçãs do rosto.',
+      'Lança firme no chão e olhar de comando: a festa agora obedece a você.',
+    ],
+  },
+  {
+    id: 173, nome: 'Soldado Espartano', emoji: '🔱', categoria: 'Ação & Aventura',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'Capa vermelha, escudo e trezentos motivos para gritar. Isto é… a festa! (Mas você vai dizer Esparta mesmo.)',
+    imagem: 'https://source.unsplash.com/600x400/?spartan,shield,red,cape',
+    pesos: {
+      genero: { masc: 8 }, altura: { alto: 5, medio: 4 }, biotipo: { forte: 8, atletico: 9 }, cabelo: { curto: 4 }, barba: { cheia: 7 },
+      filme: { sobrevive: 6, assassino: 4 }, festa: { bebida: 6 }, arma: { machado: 10 },
+      estilo: { acao: 9 }, idade: { adulto: 5, jovem: 4 }, vibe: { impressionar: 7 },
+    },
+    itens: [
+      { nome: 'Capa vermelha', emoji: '🟥', busca: 'capa vermelha fantasia' },
+      { nome: 'Elmo espartano', emoji: '⛑️', busca: 'elmo espartano' },
+      { nome: 'Escudo redondo', emoji: '🛡️', busca: 'escudo espartano brinquedo' },
+      { nome: 'Lança de brinquedo', emoji: '🔱', busca: 'lança brinquedo fantasia' },
+      { nome: 'Saiote de couro e sandálias', emoji: '🩳', busca: 'saia gladiadora masculina' },
+    ],
+    passos: [
+      'Saiote de couro, capa vermelha presa nos ombros e sandálias amarradas.',
+      'Elmo com crista, barba cheia e abdômen de fantasia (ou de academia).',
+      'Bata a lança no escudo três vezes antes de gritar "isto é Esparta!" — e só então chute algo leve.',
+    ],
+  },
+  {
+    id: 174, nome: 'Robin Hood', emoji: '🏹', categoria: 'Ação & Aventura',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Gorro com pena, arco e um código moral muito específico. Você rouba os salgadinhos dos ricos e distribui para os pobres (você).',
+    imagem: 'https://source.unsplash.com/600x400/?archer,forest,green',
+    pesos: {
+      genero: { masc: 5, neutro: 4 }, altura: { medio: 5 }, biotipo: { atletico: 7, magro: 5 }, cabelo: { curto: 4, longo: 3 }, barba: { cavanhaque: 5, sem: 3 },
+      filme: { sobrevive: 8 }, festa: { bebida: 5 }, arma: { machado: 5, magia: 3 },
+      estilo: { acao: 8, fantasia: 4 }, idade: { adulto: 4, jovem: 4, teen: 3 }, vibe: { divertir: 4, impressionar: 4 },
+    },
+    itens: [
+      { nome: 'Túnica verde', emoji: '🟢', busca: 'túnica verde medieval' },
+      { nome: 'Gorro verde com pena', emoji: '🪶', busca: 'chapéu robin hood' },
+      { nome: 'Arco e flecha de brinquedo', emoji: '🏹', busca: 'arco e flecha brinquedo' },
+      { nome: 'Cinto de couro', emoji: '🟤', busca: 'cinto couro largo' },
+      { nome: 'Calça marrom e bolsa de moedas (grátis)', emoji: '👝', busca: null },
+    ],
+    passos: [
+      'Túnica verde com cinto de couro, calça marrom e botas.',
+      'Gorro com a pena para o lado e cavanhaque fino.',
+      'Arco nas costas e a mão sempre na bolsa de moedas: redistribua os petiscos com justiça.',
+    ],
+  },
+  {
+    id: 175, nome: 'Zorro', emoji: '🗡️', categoria: 'Ação & Aventura',
+    dificuldade: 'Fácil', custo: 2,
+    descricao: 'Máscara, capa e um Z marcado em qualquer superfície. Você chega pela janela e sai antes do agradecimento.',
+    imagem: 'https://source.unsplash.com/600x400/?zorro,mask,black,hat',
+    pesos: {
+      genero: { masc: 8 }, altura: { alto: 4, medio: 5 }, biotipo: { atletico: 7, magro: 4 }, cabelo: { curto: 4 }, barba: { bigode: 8 },
+      filme: { sobrevive: 7, assassino: 3 }, festa: { bebida: 4, filmes: 4 }, arma: { machado: 6, sarcasmo: 5 },
+      estilo: { acao: 8, pop: 4 }, idade: { adulto: 5, classico: 5 }, vibe: { impressionar: 7 },
+    },
+    itens: [
+      { nome: 'Roupa toda preta (a sua)', emoji: '🖤', busca: null },
+      { nome: 'Capa preta', emoji: '🧥', busca: 'capa preta curta' },
+      { nome: 'Chapéu preto de aba larga', emoji: '🎩', busca: 'chapéu zorro' },
+      { nome: 'Máscara preta de olhos', emoji: '🎭', busca: 'máscara zorro' },
+      { nome: 'Florete de brinquedo', emoji: '🗡️', busca: 'espada florete brinquedo' },
+      { nome: 'Bigode postiço fino', emoji: '🥸', busca: 'bigode postiço preto' },
+    ],
+    passos: [
+      'Preto total com faixa na cintura, capa e botas.',
+      'Chapéu de aba larga, máscara de olhos e bigode fino.',
+      'Marque um Z no ar com o florete ao se despedir de cada grupo.',
+    ],
+  },
+  {
+    id: 176, nome: 'Caçador de Vampiros', emoji: '🧄', categoria: 'Ação & Aventura',
+    dificuldade: 'Fácil', custo: 2,
+    descricao: 'Sobretudo de couro, estacas no cinto e um alho de emergência. Os vampiros da festa já perceberam que você chegou.',
+    imagem: 'https://source.unsplash.com/600x400/?hunter,leather,coat,night',
+    pesos: {
+      genero: { masc: 5, fem: 4 }, altura: { alto: 4, medio: 4 }, biotipo: { atletico: 8 }, cabelo: { curto: 5, careca: 3 }, barba: { sem: 4, cavanhaque: 3 }, oculos: { sim: 4 },
+      filme: { sobrevive: 8, assassino: 5 }, festa: { rituais: 5, filmes: 5 }, arma: { machado: 7, magia: 4 },
+      estilo: { acao: 8, terror: 5 }, idade: { adulto: 5, jovem: 5 }, vibe: { impressionar: 6, assustar: 3 },
+    },
+    itens: [
+      { nome: 'Sobretudo de couro preto', emoji: '🧥', busca: 'sobretudo couro preto' },
+      { nome: 'Óculos escuros', emoji: '🕶️', busca: 'óculos escuros' },
+      { nome: 'Estacas de madeira', emoji: '🪵', busca: 'estaca madeira decorativa' },
+      { nome: 'Crucifixo', emoji: '✝️', busca: 'colar crucifixo' },
+      { nome: 'Colete tático', emoji: '🦺', busca: 'colete tático fantasia' },
+      { nome: 'Cabeça de alho (grátis)', emoji: '🧄', busca: null },
+    ],
+    passos: [
+      'Roupa preta, colete tático com as estacas presas e o sobretudo por cima.',
+      'Óculos escuros, crucifixo à mostra e alho no bolso (de verdade, por segurança).',
+      'Avalie os vampiros da festa de longe e anote num caderninho. Nunca beba nada oferecido por eles.',
+    ],
+  },
+  {
+    id: 177, nome: 'Piloto de Corrida', emoji: '🏎️', categoria: 'Ação & Aventura',
+    dificuldade: 'Fácil', custo: 2,
+    descricao: 'Macacão de patrocínios, capacete e champanhe para borrifar. Você comemora qualquer coisa como se fosse pódio.',
+    imagem: 'https://source.unsplash.com/600x400/?racing,driver,helmet',
+    pesos: {
+      genero: { masc: 5, neutro: 3 }, altura: { medio: 5 }, biotipo: { atletico: 6, magro: 4 }, cabelo: { curto: 5 }, barba: { sem: 6 },
+      filme: { sobrevive: 7 }, festa: { bebida: 7 }, arma: { machado: 4, sarcasmo: 5 },
+      estilo: { acao: 7, pop: 3 }, idade: { jovem: 5, adulto: 5 }, vibe: { conforto: 6, impressionar: 5 },
+    },
+    itens: [
+      { nome: 'Macacão de piloto', emoji: '🏎️', busca: 'macacão piloto corrida' },
+      { nome: 'Capacete (ou boné de equipe)', emoji: '⛑️', busca: 'boné fórmula 1' },
+      { nome: 'Luvas de piloto', emoji: '🧤', busca: 'luvas piloto' },
+      { nome: 'Bandeira quadriculada', emoji: '🏁', busca: 'bandeira quadriculada' },
+      { nome: 'Garrafa de champanhe (grátis)', emoji: '🍾', busca: null },
+    ],
+    passos: [
+      'Macacão fechado até o peito, luvas e tênis.',
+      'Capacete debaixo do braço (ou boné) e bandeira quadriculada na mão.',
+      'Suba em qualquer "pódio" (degrau) e finja borrifar champanhe. Finja.',
     ],
   },
 ]);

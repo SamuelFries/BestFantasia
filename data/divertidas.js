@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   MinhaFantasia — data/divertidas.js
+   BestFantasia — data/divertidas.js
    Categoria: Divertidas (14 fantasias). Ver dicionário em data.js.
    ============================================================ */
 
@@ -323,6 +323,188 @@ registrarFantasias([
       'Camiseta amarela por baixo do macacão jeans, gorro amarelo e luvas pretas.',
       'Óculos de Minion (ou óculos de proteção com fita preta em volta).',
       'Fale só "banana", "bello" e "papoy". Ninguém vai entender e todo mundo vai concordar.',
+    ],
+  },
+  {
+    id: 188, nome: 'Abacate Millennial', emoji: '🥑', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 2,
+    descricao: 'Verde por fora, caroço por dentro e um preço que impede a geração inteira de comprar casa. Você é a torrada da festa.',
+    imagem: 'https://source.unsplash.com/600x400/?avocado,green,costume',
+    pesos: {
+      genero: { neutro: 6 }, altura: { medio: 4, baixo: 3 }, biotipo: { forte: 5, magro: 3 }, cabelo: { careca: 4 },
+      filme: { vitima: 5, sobrevive: 4 }, festa: { bebida: 5, filmes: 4 }, arma: { sarcasmo: 7, magia: 3 },
+      estilo: { comedia: 9 }, idade: { jovem: 6, teen: 4, adulto: 4 }, vibe: { divertir: 8, conforto: 5 },
+    },
+    itens: [
+      { nome: 'Fantasia de abacate', emoji: '🥑', busca: 'fantasia abacate adulto' },
+      { nome: 'Roupa verde por baixo (a sua)', emoji: '💚', busca: null },
+      { nome: 'Touca marrom (o caroço)', emoji: '🟤', busca: 'gorro marrom' },
+      { nome: 'Tênis', emoji: '👟', busca: null },
+    ],
+    passos: [
+      'Vista a fantasia de abacate por cima de roupa verde e calce um tênis confortável.',
+      'Touca marrom na cabeça para virar o caroço.',
+      'Reclame do preço do aluguel e ofereça "toast" para quem passar.',
+    ],
+  },
+  {
+    id: 189, nome: 'Cachorro-Quente Ambulante', emoji: '🌭', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 2,
+    descricao: 'Pão, salsicha e mostarda em formato humano. Você é o lanche das 3 da manhã que todo mundo quer — e ninguém admite.',
+    imagem: 'https://source.unsplash.com/600x400/?hotdog,costume,fun',
+    pesos: {
+      genero: { neutro: 5, masc: 4 }, altura: { alto: 5, medio: 3 }, biotipo: { magro: 6 },
+      filme: { vitima: 6 }, festa: { bebida: 7 }, arma: { sarcasmo: 8 },
+      estilo: { comedia: 9 }, idade: { jovem: 5, teen: 4, adulto: 4 }, vibe: { divertir: 8, conforto: 4 },
+    },
+    itens: [
+      { nome: 'Fantasia de cachorro-quente', emoji: '🌭', busca: 'fantasia cachorro quente adulto' },
+      { nome: 'Roupa vermelha por baixo (a sua)', emoji: '🟥', busca: null },
+      { nome: 'Frasco de mostarda vazio (grátis)', emoji: '🟡', busca: null },
+      { nome: 'Tênis', emoji: '👟', busca: null },
+    ],
+    passos: [
+      'Vista a fantasia por cima da roupa vermelha e ajuste as alças para o pão ficar reto.',
+      'Carregue o frasco de mostarda como acessório e ofereça "molho" para as pessoas.',
+      'Fique perto da churrasqueira. É o seu habitat natural.',
+    ],
+  },
+  {
+    id: 190, nome: 'Nuvem de Chuva', emoji: '☁️', categoria: 'Divertidas',
+    dificuldade: 'Média', custo: 1,
+    descricao: 'Fofinha, cinza e sempre em cima de alguém. Você é o dia ruim em pessoa — e, surpreendentemente, a fantasia mais abraçável da festa.',
+    imagem: 'https://source.unsplash.com/600x400/?cloud,rain,cotton',
+    pesos: {
+      genero: { neutro: 6 }, altura: { medio: 4, baixo: 3 }, biotipo: { forte: 3, magro: 3 },
+      filme: { vitima: 7 }, festa: { filmes: 5, bebida: 4 }, arma: { sarcasmo: 7, magia: 4 },
+      estilo: { comedia: 8 }, idade: { jovem: 5, adulto: 4, teen: 4 }, vibe: { divertir: 7, conforto: 6 },
+    },
+    itens: [
+      { nome: 'Roupa toda branca ou cinza (a sua)', emoji: '🩶', busca: null },
+      { nome: 'Fibra siliconada (enchimento)', emoji: '☁️', busca: 'fibra siliconada' },
+      { nome: 'Boné ou chapéu para a base da nuvem', emoji: '🧢', busca: 'boné branco liso' },
+      { nome: 'Luzes LED a pilha (relâmpagos)', emoji: '⚡', busca: 'fita led pilha' },
+      { nome: 'Gotas de papel azul (grátis)', emoji: '💧', busca: null },
+    ],
+    passos: [
+      'Cole tufos de fibra no boné e nos ombros da roupa formando a nuvem; LEDs por dentro.',
+      'Pendure gotas de papel azul em fios saindo da aba do boné.',
+      'Siga a pessoa mais animada da festa e fique parado em cima dela. É o seu trabalho.',
+    ],
+  },
+  {
+    id: 191, nome: 'Balde de Pipoca', emoji: '🍿', categoria: 'Divertidas',
+    dificuldade: 'Média', custo: 1,
+    descricao: 'Listras vermelhas, pipocas de isopor e o cheiro de maratona de filmes. Todo mundo quer pegar um punhado de você.',
+    imagem: 'https://source.unsplash.com/600x400/?popcorn,bucket,cinema',
+    pesos: {
+      genero: { neutro: 6 }, altura: { baixo: 4, medio: 4 }, biotipo: { forte: 5, magro: 3 }, cabelo: { colorido: 3, careca: 2 },
+      filme: { vitima: 5, sobrevive: 4 }, festa: { filmes: 9, bebida: 3 }, arma: { sarcasmo: 6, magia: 3 },
+      estilo: { comedia: 8 }, idade: { teen: 5, jovem: 5, adulto: 3 }, vibe: { divertir: 8, conforto: 5 },
+    },
+    itens: [
+      { nome: 'Caixa de papelão (o balde — grátis)', emoji: '📦', busca: null },
+      { nome: 'Tinta spray vermelha e branca', emoji: '🟥', busca: 'tinta spray vermelha' },
+      { nome: 'Bolas de isopor ou algodão (as pipocas)', emoji: '⚪', busca: 'bola isopor pequena' },
+      { nome: 'Roupa branca por baixo (a sua)', emoji: '🤍', busca: null },
+      { nome: 'Gorro para colar pipocas', emoji: '🧢', busca: 'gorro branco' },
+    ],
+    passos: [
+      'Pinte a caixa com listras vermelhas e brancas e abra buracos para cabeça e braços.',
+      'Cole as "pipocas" na borda da caixa e no gorro, bem amontoadas.',
+      'Ofereça pipoca (de verdade, no bolso) e sente ao lado de quem estiver vendo filme.',
+    ],
+  },
+  {
+    id: 192, nome: 'Dançarino Disco Anos 70', emoji: '🪩', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 2,
+    descricao: 'Gola enorme, calça brilhante e o dedo apontado para o céu. A febre de sábado à noite nunca passou — nem o cabelo.',
+    imagem: 'https://source.unsplash.com/600x400/?disco,70s,dance',
+    pesos: {
+      genero: { masc: 5, neutro: 4 }, altura: { medio: 5 }, biotipo: { magro: 4, atletico: 5 }, cabelo: { longo: 5, colorido: 3 }, barba: { bigode: 6, cheia: 2 },
+      filme: { sobrevive: 5 }, festa: { bebida: 9 }, arma: { sarcasmo: 5, magia: 3 },
+      estilo: { comedia: 7 }, idade: { classico: 6, adulto: 5 }, vibe: { divertir: 8, impressionar: 4 },
+    },
+    itens: [
+      { nome: 'Camisa de gola grande anos 70', emoji: '👔', busca: 'camisa gola anos 70' },
+      { nome: 'Calça boca de sino brilhante', emoji: '✨', busca: 'calça boca de sino brilhante' },
+      { nome: 'Corrente dourada', emoji: '📿', busca: 'corrente dourada masculina' },
+      { nome: 'Peruca volumosa anos 70', emoji: '🪩', busca: 'peruca anos 70 volumosa' },
+      { nome: 'Sapato plataforma', emoji: '👞', busca: 'sapato plataforma masculino' },
+    ],
+    passos: [
+      'Camisa aberta até o peito com a corrente aparecendo, calça brilhante e plataforma.',
+      'Peruca volumosa, bigode e óculos coloridos.',
+      'Dedo para cima, dedo para baixo. Repita até a música acabar (ela nunca acaba).',
+    ],
+  },
+  {
+    id: 193, nome: 'Roqueiro Glam', emoji: '🎸', categoria: 'Divertidas',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'Rosto pintado de preto e branco, couro com tachas e uma língua que vai mais longe que o solo de guitarra. Você quer rock and roll a noite toda.',
+    imagem: 'https://source.unsplash.com/600x400/?rock,glam,makeup,guitar',
+    pesos: {
+      genero: { masc: 5, neutro: 5 }, altura: { alto: 4, medio: 4 }, biotipo: { magro: 5, atletico: 3 }, cabelo: { longo: 7, colorido: 4 }, barba: { sem: 4 },
+      filme: { assassino: 4, sobrevive: 4 }, festa: { bebida: 8 }, arma: { sarcasmo: 6, machado: 4 },
+      estilo: { comedia: 5, pop: 6 }, idade: { classico: 6, adulto: 5 }, vibe: { impressionar: 7, divertir: 5 },
+    },
+    itens: [
+      { nome: 'Tinta facial preta e branca', emoji: '🎨', busca: 'tinta facial preto branco' },
+      { nome: 'Jaqueta com tachas', emoji: '🧥', busca: 'jaqueta tachas' },
+      { nome: 'Peruca preta longa', emoji: '🖤', busca: 'peruca preta longa' },
+      { nome: 'Bota plataforma', emoji: '🥾', busca: 'bota plataforma preta' },
+      { nome: 'Guitarra inflável', emoji: '🎸', busca: 'guitarra inflável' },
+    ],
+    passos: [
+      'Roupa preta de couro com tachas, bota plataforma e luvas sem dedos.',
+      'Rosto branco com desenhos pretos (estrela, raio ou garras) ao redor dos olhos.',
+      'Língua para fora em todas as fotos e solo de guitarra inflável no refrão.',
+    ],
+  },
+  {
+    id: 194, nome: 'Sushi Humano', emoji: '🍣', categoria: 'Divertidas',
+    dificuldade: 'Média', custo: 1,
+    descricao: 'Arroz, nori e uma fatia de salmão na cabeça. Você é o rodízio que anda — e pede desculpas por não ter wasabi.',
+    imagem: 'https://source.unsplash.com/600x400/?sushi,salmon,rice',
+    pesos: {
+      genero: { neutro: 6 }, altura: { baixo: 5, medio: 3 }, biotipo: { forte: 4, magro: 4 },
+      filme: { vitima: 5, sobrevive: 4 }, festa: { bebida: 5, filmes: 4 }, arma: { sarcasmo: 7, magia: 3 },
+      estilo: { comedia: 9 }, idade: { jovem: 6, teen: 4 }, vibe: { divertir: 8, conforto: 5 },
+    },
+    itens: [
+      { nome: 'Roupa toda branca (o arroz — a sua)', emoji: '🤍', busca: null },
+      { nome: 'Folha de EVA preta (o nori)', emoji: '⬛', busca: 'folha EVA preta grande' },
+      { nome: 'Tecido ou almofada laranja (o salmão)', emoji: '🟧', busca: 'tecido laranja' },
+      { nome: 'Touca branca', emoji: '🧢', busca: 'gorro branco' },
+      { nome: 'Hashi gigante (cabos de vassoura — grátis)', emoji: '🥢', busca: null },
+    ],
+    passos: [
+      'Roupa branca com uma faixa larga de EVA preto enrolada no tronco.',
+      'Prenda a "fatia de salmão" laranja na touca branca com cola quente.',
+      'Carregue os hashis gigantes e deite na mesa de petiscos para a foto do rodízio.',
+    ],
+  },
+  {
+    id: 195, nome: 'Influencer em Surto', emoji: '📱', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Ring light, copo gigante e uma parceria com qualquer marca que passar. Você não vai à festa: você faz conteúdo na festa. #publi',
+    imagem: 'https://source.unsplash.com/600x400/?ring,light,phone,selfie',
+    pesos: {
+      genero: { fem: 5, neutro: 4 }, altura: { medio: 4 }, biotipo: { magro: 4, atletico: 4 }, cabelo: { longo: 5, colorido: 4 }, barba: { sem: 4 },
+      filme: { vitima: 4, sobrevive: 5 }, festa: { bebida: 7, filmes: 3 }, arma: { sarcasmo: 10 },
+      estilo: { comedia: 8, pop: 6 }, idade: { jovem: 8, teen: 5 }, vibe: { divertir: 8, impressionar: 5 },
+    },
+    itens: [
+      { nome: 'Ring light portátil', emoji: '💡', busca: 'ring light celular' },
+      { nome: 'Celular com suporte (o seu)', emoji: '📱', busca: null },
+      { nome: 'Óculos escuros grandes', emoji: '🕶️', busca: 'óculos escuros grande' },
+      { nome: 'Look athleisure (o seu)', emoji: '🧘', busca: null },
+      { nome: 'Copo de café gigante e etiqueta "#publi" (grátis)', emoji: '☕', busca: null },
+    ],
+    passos: [
+      'Legging, top, tênis branco e óculos escuros mesmo à noite.',
+      'Ring light pendurada no pescoço ou presa ao celular, sempre ligada.',
+      'Filme tudo, narre tudo e chame os convidados de "gente". Encerre com "link na bio".',
     ],
   },
 ]);

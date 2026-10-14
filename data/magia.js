@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   MinhaFantasia — data/magia.js
+   BestFantasia — data/magia.js
    Categoria: Fantasia & Magia (12 fantasias). Ver dicionário em data.js.
    ============================================================ */
 
@@ -281,6 +281,236 @@ registrarFantasias([
       'Vestido preto, casaco de pele por cima e luvas vermelhas até o cotovelo.',
       'Peruca bicolor, batom vermelho intenso e sobrancelhas marcadas.',
       'Piteira na mão, dálmata debaixo do braço e um olhar de quem avalia o casaco de todo mundo.',
+    ],
+  },
+  {
+    id: 178, nome: 'Medusa', emoji: '🐍', categoria: 'Fantasia & Magia',
+    dificuldade: 'Caprichada', custo: 2,
+    descricao: 'Cobras no cabelo e um olhar que transforma qualquer um em estátua. Quem te encarou na festa está parado até agora.',
+    imagem: 'https://source.unsplash.com/600x400/?medusa,snake,statue',
+    pesos: {
+      genero: { fem: 8 }, altura: { medio: 4, alto: 4 }, biotipo: { magro: 5, atletico: 3 }, cabelo: { longo: 7, colorido: 4 }, barba: { sem: 4 },
+      filme: { assassino: 7, sobrevive: 3 }, festa: { rituais: 7 }, arma: { magia: 9 },
+      estilo: { fantasia: 8, terror: 4 }, idade: { jovem: 5, adulto: 5 }, vibe: { impressionar: 8, assustar: 5 },
+    },
+    itens: [
+      { nome: 'Cobras de borracha para o cabelo', emoji: '🐍', busca: 'cobra borracha brinquedo' },
+      { nome: 'Tiara ou bandana para prender as cobras', emoji: '🎀', busca: 'tiara larga lisa' },
+      { nome: 'Vestido ou toga verde', emoji: '💚', busca: 'vestido verde longo' },
+      { nome: 'Sombra verde e rede para escamas', emoji: '🎨', busca: 'sombra verde metálica' },
+      { nome: 'Lentes amarelas (opcional)', emoji: '👁️', busca: 'lente contato halloween' },
+    ],
+    passos: [
+      'Prenda as cobras na tiara com arame e cola quente, entrelaçando com o cabelo.',
+      'Escamas verdes nas têmporas e no colo (meia arrastão como molde) e olho esfumado dourado.',
+      'Encare as pessoas por três segundos e diga que elas podem se mover agora.',
+    ],
+  },
+  {
+    id: 179, nome: 'Princesa de Conto de Fadas', emoji: '👑', categoria: 'Fantasia & Magia',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'Vestido rodado, tiara e um sapatinho que pode ou não ficar para trás. Você chega à meia-noite e sai antes da carruagem virar abóbora.',
+    imagem: 'https://source.unsplash.com/600x400/?princess,gown,tiara',
+    pesos: {
+      genero: { fem: 9 }, altura: { medio: 4, baixo: 3 }, biotipo: { magro: 4, atletico: 3 }, cabelo: { longo: 8 }, barba: { sem: 4 },
+      filme: { sobrevive: 5, vitima: 3 }, festa: { filmes: 5, bebida: 3 }, arma: { magia: 7 },
+      estilo: { fantasia: 9 }, idade: { teen: 6, jovem: 5 }, vibe: { impressionar: 7, conforto: 3 },
+    },
+    itens: [
+      { nome: 'Vestido de princesa', emoji: '👗', busca: 'vestido princesa adulto' },
+      { nome: 'Tiara', emoji: '👑', busca: 'tiara princesa' },
+      { nome: 'Luvas longas', emoji: '🧤', busca: 'luvas longas brancas' },
+      { nome: 'Sapatilha ou salto', emoji: '👠', busca: null },
+      { nome: 'Varinha ou leque', emoji: '🪄', busca: 'leque renda branco' },
+    ],
+    passos: [
+      'Vestido rodado com anágua para dar volume, luvas longas e sapatilha.',
+      'Tiara firme, penteado meio preso e maquiagem leve com glitter.',
+      'Acene de forma régia, "perca" um sapato na pista e vá embora à meia-noite em ponto.',
+    ],
+  },
+  {
+    id: 180, nome: 'Capitão Gancho', emoji: '🪝', categoria: 'Fantasia & Magia',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'Casaco vermelho, bigode fino e pavor de relógios. Um menino voador arruinou sua vida — e você vai contar essa história a todos.',
+    imagem: 'https://source.unsplash.com/600x400/?pirate,red,coat,hook',
+    pesos: {
+      genero: { masc: 7 }, altura: { alto: 5, medio: 4 }, biotipo: { magro: 5, forte: 3 }, cabelo: { longo: 6 }, barba: { bigode: 8, cavanhaque: 3 },
+      filme: { assassino: 7 }, festa: { bebida: 6 }, arma: { machado: 7, sarcasmo: 5 },
+      estilo: { fantasia: 7, acao: 4, pop: 3 }, idade: { adulto: 4, classico: 5 }, vibe: { impressionar: 6, divertir: 4 },
+    },
+    itens: [
+      { nome: 'Casaco vermelho de pirata', emoji: '🟥', busca: 'casaco pirata vermelho' },
+      { nome: 'Chapéu com pena', emoji: '🎩', busca: 'chapéu pirata pena' },
+      { nome: 'Gancho', emoji: '🪝', busca: 'gancho capitão gancho fantasia' },
+      { nome: 'Peruca de cachos pretos', emoji: '🧑‍🦱', busca: 'peruca cachos pretos longos' },
+      { nome: 'Bigode fino postiço', emoji: '🥸', busca: 'bigode postiço preto' },
+    ],
+    passos: [
+      'Casaco vermelho com punhos de renda, colete, calça escura e botas de cano alto.',
+      'Peruca cacheada, chapéu com pena e o bigode fino bem torcido nas pontas.',
+      'Gancho sempre levantado e pânico sempre que ouvir um tique-taque (ou o cronômetro de alguém).',
+    ],
+  },
+  {
+    id: 181, nome: 'Chapeuzinho Vermelho', emoji: '🧺', categoria: 'Fantasia & Magia',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Capa vermelha, cesta de doces e desconfiança profissional de lobos. "Que olhos grandes você tem" é como você começa qualquer flerte.',
+    imagem: 'https://source.unsplash.com/600x400/?red,riding,hood,basket',
+    pesos: {
+      genero: { fem: 8 }, altura: { baixo: 6, medio: 3 }, biotipo: { magro: 4 }, cabelo: { longo: 6 }, barba: { sem: 4 },
+      filme: { vitima: 6, sobrevive: 4 }, festa: { filmes: 4, rituais: 4 }, arma: { magia: 4, sarcasmo: 4 },
+      estilo: { fantasia: 8 }, idade: { teen: 5, jovem: 5 }, vibe: { conforto: 6, divertir: 4 },
+    },
+    itens: [
+      { nome: 'Capa vermelha com capuz', emoji: '🟥', busca: 'capa vermelha capuz' },
+      { nome: 'Vestido ou saia com avental', emoji: '👗', busca: 'avental branco' },
+      { nome: 'Cesta de vime', emoji: '🧺', busca: 'cesta vime' },
+      { nome: 'Meias 3/4', emoji: '🧦', busca: 'meia 3/4 branca' },
+      { nome: 'Doces para a vovó (grátis)', emoji: '🍪', busca: null },
+    ],
+    passos: [
+      'Vestido simples com avental, meias 3/4 e a capa vermelha com o capuz levantado.',
+      'Tranças ou cabelo solto e um blush rosado.',
+      'Cesta no braço e olhar desconfiado para qualquer lobisomem da festa.',
+    ],
+  },
+  {
+    id: 182, nome: 'Gênio da Lâmpada', emoji: '🧞', categoria: 'Fantasia & Magia',
+    dificuldade: 'Média', custo: 2,
+    descricao: 'Azul, carismático e preso a uma lâmpada com cláusulas. Três desejos por pessoa — e você sempre acha um jeito de dar errado.',
+    imagem: 'https://source.unsplash.com/600x400/?genie,lamp,blue',
+    pesos: {
+      genero: { masc: 5, neutro: 5 }, altura: { alto: 5 }, biotipo: { forte: 6, atletico: 4 }, cabelo: { careca: 7 }, barba: { cavanhaque: 5 },
+      filme: { sobrevive: 5 }, festa: { bebida: 6 }, arma: { magia: 9, sarcasmo: 6 },
+      estilo: { fantasia: 8, comedia: 5, pop: 4 }, idade: { jovem: 4, adulto: 5 }, vibe: { divertir: 8, impressionar: 5 },
+    },
+    itens: [
+      { nome: 'Tinta corporal azul', emoji: '🔵', busca: 'tinta corporal azul' },
+      { nome: 'Calça bufante (harém)', emoji: '👖', busca: 'calça harém' },
+      { nome: 'Colete dourado', emoji: '🟨', busca: 'colete dourado' },
+      { nome: 'Braceletes dourados', emoji: '💫', busca: 'bracelete dourado' },
+      { nome: 'Rabo de cavalo postiço preto', emoji: '🎀', busca: 'aplique rabo de cavalo' },
+      { nome: 'Lâmpada mágica', emoji: '🪔', busca: 'lâmpada mágica decorativa' },
+    ],
+    passos: [
+      'Pinte tronco, braços e rosto de azul (fixe com pó) e vista a calça bufante com o colete.',
+      'Rabo de cavalo no alto da cabeça careca, braceletes e cavanhaque desenhado.',
+      'Saia "da lâmpada" ao entrar e conceda desejos com interpretações criativas.',
+    ],
+  },
+  {
+    id: 183, nome: 'Dragão Aconchegante', emoji: '🐲', categoria: 'Fantasia & Magia',
+    dificuldade: 'Fácil', custo: 2,
+    descricao: 'Escamas de pelúcia, asas pequenas e um tesouro de salgadinhos guardado na caverna (o sofá). Você cospe fogo só de brincadeira.',
+    imagem: 'https://source.unsplash.com/600x400/?dragon,plush,costume',
+    pesos: {
+      genero: { neutro: 6 }, altura: { baixo: 4, medio: 3 }, biotipo: { forte: 5, magro: 3 },
+      filme: { sobrevive: 4, assassino: 4 }, festa: { bebida: 4, filmes: 5 }, arma: { magia: 6, machado: 4 },
+      estilo: { fantasia: 7, comedia: 4 }, idade: { teen: 6, jovem: 4 }, vibe: { conforto: 9, divertir: 6 },
+    },
+    itens: [
+      { nome: 'Kigurumi de dragão', emoji: '🐲', busca: 'pijama kigurumi dragão' },
+      { nome: 'Asas pequenas (opcional)', emoji: '🦇', busca: 'asas dragão fantasia' },
+      { nome: 'Tênis', emoji: '👟', busca: null },
+    ],
+    passos: [
+      'Vista o kigurumi com o capuz de dragão levantado e as asas presas nas costas.',
+      'Guarde um "tesouro" (saco de salgadinhos) e defenda-o com rugidos.',
+      'Ande devagar, reclame de cavaleiros e durma no sofá no fim da festa — é canônico.',
+    ],
+  },
+  {
+    id: 184, nome: 'Druida da Floresta', emoji: '🌿', categoria: 'Fantasia & Magia',
+    dificuldade: 'Média', custo: 1,
+    descricao: 'Túnica, galhos no cabelo e ervas misteriosas no bolso. Você fala com as plantas da festa — e elas respondem (segundo você).',
+    imagem: 'https://source.unsplash.com/600x400/?druid,forest,staff',
+    pesos: {
+      genero: { neutro: 5, masc: 4 }, altura: { medio: 4, alto: 3 }, biotipo: { magro: 5 }, cabelo: { longo: 7 }, barba: { cheia: 7 },
+      filme: { sobrevive: 6 }, festa: { rituais: 9 }, arma: { magia: 9 },
+      estilo: { fantasia: 9 }, idade: { classico: 5, adulto: 4 }, vibe: { conforto: 5, impressionar: 4 },
+    },
+    itens: [
+      { nome: 'Túnica verde ou marrom', emoji: '🥻', busca: 'túnica medieval verde' },
+      { nome: 'Coroa de folhas e galhos', emoji: '🍃', busca: 'tiara galhos coroa' },
+      { nome: 'Cajado de madeira', emoji: '🪵', busca: 'cajado madeira decorativo' },
+      { nome: 'Colar de pedras', emoji: '📿', busca: 'colar pedra natural' },
+      { nome: 'Bolsa de couro com "ervas" (grátis)', emoji: '👝', busca: null },
+    ],
+    passos: [
+      'Túnica com cordão na cintura, capa curta e sandálias ou botas de couro.',
+      'Coroa de galhos, cabelo solto e um pouco de "terra" (sombra marrom) nas mãos.',
+      'Abençoe as plantas da casa e ofereça chás de ervas suspeitas aos convidados.',
+    ],
+  },
+  {
+    id: 185, nome: 'Rainha do Gelo', emoji: '❄️', categoria: 'Fantasia & Magia',
+    dificuldade: 'Caprichada', custo: 3,
+    descricao: 'Vestido azul-gelo, trança platinada e um reino congelado ao seu dispor. Você solta tudo — menos o controle da playlist.',
+    imagem: 'https://source.unsplash.com/600x400/?ice,queen,blue,dress',
+    pesos: {
+      genero: { fem: 9 }, altura: { alto: 5, medio: 4 }, biotipo: { magro: 5 }, cabelo: { longo: 7, colorido: 4 }, barba: { sem: 4 },
+      filme: { sobrevive: 5 }, festa: { rituais: 4, filmes: 4 }, arma: { magia: 10 },
+      estilo: { fantasia: 9, pop: 5 }, idade: { teen: 5, jovem: 5, adulto: 3 }, vibe: { impressionar: 9 },
+    },
+    itens: [
+      { nome: 'Vestido azul-gelo com capa de tule', emoji: '🩵', busca: 'vestido rainha do gelo adulto' },
+      { nome: 'Peruca platinada trançada', emoji: '👱‍♀️', busca: 'peruca loira platinada trança' },
+      { nome: 'Glitter prata e azul', emoji: '✨', busca: 'glitter maquiagem prata' },
+      { nome: 'Tiara de cristal', emoji: '👑', busca: 'tiara cristal' },
+      { nome: 'Sapatilha prata', emoji: '🩰', busca: 'sapatilha prata' },
+    ],
+    passos: [
+      'Vestido com a capa de tule arrastando e sapatilha prata.',
+      'Trança lateral grossa, glitter nas têmporas e sombra azul-gelo.',
+      'Estenda a mão para "congelar" as bebidas e cante o refrão que todo mundo conhece.',
+    ],
+  },
+  {
+    id: 186, nome: 'Bruxa Clássica de Verruga', emoji: '🧹', categoria: 'Fantasia & Magia',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Nariz comprido, verruga e a risada que ecoa pelo quarteirão. Você tem um caldeirão, uma vassoura e opiniões sobre crianças.',
+    imagem: 'https://source.unsplash.com/600x400/?witch,hat,broom,green',
+    pesos: {
+      genero: { fem: 6, neutro: 3 }, altura: { baixo: 4, medio: 4 }, biotipo: { magro: 5, forte: 3 }, cabelo: { longo: 5, colorido: 3 }, barba: { sem: 3 },
+      filme: { assassino: 6 }, festa: { rituais: 9 }, arma: { magia: 9 },
+      estilo: { fantasia: 7, terror: 5 }, idade: { classico: 7, adulto: 3 }, vibe: { assustar: 6, divertir: 4 },
+    },
+    itens: [
+      { nome: 'Chapéu de bruxa', emoji: '🎩', busca: 'chapéu bruxa' },
+      { nome: 'Vestido preto velho (brechó)', emoji: '🖤', busca: null },
+      { nome: 'Nariz de bruxa com verruga', emoji: '👃', busca: 'nariz bruxa látex' },
+      { nome: 'Tinta facial verde (opcional)', emoji: '🟢', busca: 'tinta facial verde' },
+      { nome: 'Vassoura', emoji: '🧹', busca: 'vassoura palha decorativa' },
+      { nome: 'Peruca grisalha despenteada', emoji: '🧓', busca: 'peruca grisalha longa' },
+    ],
+    passos: [
+      'Vestido preto rasgado na barra, xale e botas; chapéu bem torto.',
+      'Nariz de látex, pele verde (opcional) e peruca grisalha arrepiada.',
+      'Risada alta e aguda a cada cinco minutos e ameaças de transformar as pessoas em sapo.',
+    ],
+  },
+  {
+    id: 187, nome: 'Cupido', emoji: '💘', categoria: 'Fantasia & Magia',
+    dificuldade: 'Fácil', custo: 1,
+    descricao: 'Asas, arco e pontaria duvidosa. Você flecha casais na festa e assume zero responsabilidade pelo resultado.',
+    imagem: 'https://source.unsplash.com/600x400/?cupid,arrow,heart',
+    pesos: {
+      genero: { neutro: 5 }, altura: { baixo: 6 }, biotipo: { forte: 4, atletico: 4 }, cabelo: { curto: 4, colorido: 3 }, barba: { sem: 5 },
+      filme: { vitima: 5, sobrevive: 3 }, festa: { bebida: 7 }, arma: { magia: 7, sarcasmo: 4 },
+      estilo: { fantasia: 5, comedia: 7 }, idade: { jovem: 6, teen: 4 }, vibe: { divertir: 8 },
+    },
+    itens: [
+      { nome: 'Asas brancas pequenas', emoji: '🪽', busca: 'asas anjo pequenas' },
+      { nome: 'Arco e flecha com coração', emoji: '🏹', busca: 'arco flecha cupido' },
+      { nome: 'Túnica branca ou roupa rosa', emoji: '🩷', busca: 'camiseta rosa lisa' },
+      { nome: 'Coroa de louros', emoji: '🌿', busca: 'tiara louros dourada' },
+      { nome: 'Corações adesivos', emoji: '💖', busca: 'adesivo coração' },
+    ],
+    passos: [
+      'Túnica branca (lençol) ou look rosa com corações colados; sandálias.',
+      'Asas nas costas, coroa de louros e bochechas bem rosadas.',
+      '"Flecha" duplas aleatórias na pista e anuncie o casamento em voz alta.',
     ],
   },
 ]);

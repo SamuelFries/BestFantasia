@@ -1,4 +1,4 @@
-# 🎃 MinhaFantasia
+# 🎃 BestFantasia
 
 Quiz gamificado de Halloween, estilo criação de avatar do Nintendo Wii: o visitante
 monta um "boneco" (físico), responde 7 perguntas de personalidade e recebe a
@@ -23,7 +23,7 @@ python3 -m http.server 8000
 | `index.html`          | Estrutura das 5 telas da SPA e slots de anúncio                         |
 | `style.css`           | Tema Halloween (tokens CSS), componentes e animações                    |
 | `data.js`             | Configuração do quiz (etapas, perguntas, rótulos) e registro de fantasias |
-| `data/*.js`           | 120 fantasias, um arquivo por categoria (ver abaixo)                    |
+| `data/*.js`           | 204 fantasias, um arquivo por categoria (ver abaixo)                    |
 | `logic.js`            | Algoritmo de recomendação (puro, testável no console)                   |
 | `main.js`             | Estado da UI, navegação com fade, renderização e compartilhamento       |
 
@@ -31,12 +31,12 @@ python3 -m http.server 8000
 
 | Arquivo           | Categoria          | Qtd. |
 |-------------------|--------------------|-----:|
-| `terror.js`       | Terror             |   19 |
-| `classicas.js`    | Clássicas          |   13 |
-| `acao.js`         | Ação & Aventura    |   16 |
-| `magia.js`        | Fantasia & Magia   |   12 |
-| `divertidas.js`   | Divertidas         |   14 |
-| `cultura-pop.js`  | Cultura Pop        |   46 |
+| `terror.js`       | Terror             |   31 |
+| `classicas.js`    | Clássicas          |   19 |
+| `acao.js`         | Ação & Aventura    |   26 |
+| `magia.js`        | Fantasia & Magia   |   22 |
+| `divertidas.js`   | Divertidas         |   22 |
+| `cultura-pop.js`  | Cultura Pop        |   84 |
 
 Cada fantasia tem `pesos` (por atributo do quiz), `itens` (lista de compras com
 termo de busca para o link de afiliado), `passos` (montagem em 3 passos),
