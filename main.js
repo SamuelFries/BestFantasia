@@ -201,7 +201,23 @@ function mostrarTela(idNova) {
     state.trocandoTela = false;
     window.scrollTo(0, 0);
     $('#progress-bar').style.width = PROGRESSO_POR_TELA[idNova] ?? '0%';
+    ativarAnuncios(telaNova);
   }, DURACAO_FADE_MS);
+}
+
+/**
+ * O AdSense não preenche blocos dentro de telas com display:none
+ * (erro "availableWidth=0"), então cada <ins class="adsbygoogle"> só é
+ * ativado quando a tela dele fica visível — e uma única vez.
+ */
+function ativarAnuncios(tela) {
+  tela.querySelectorAll('ins.adsbygoogle:not([data-adsbygoogle-status])').forEach(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (erro) {
+      console.warn('[BestFantasia] anúncio não carregou:', erro);
+    }
+  });
 }
 
 /* ================================================================

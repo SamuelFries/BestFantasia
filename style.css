@@ -99,6 +99,62 @@ button {
   opacity: 0.75;
 }
 
+.rodape-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.rodape a {
+  color: var(--texto-suave);
+  font-weight: 700;
+}
+
+.rodape a:hover {
+  color: var(--laranja-claro);
+}
+
+/* Páginas institucionais (sobre, privacidade, contato) */
+.pagina-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  line-height: 1.65;
+}
+
+.pagina-texto h1 {
+  margin: 0;
+  font-size: clamp(2rem, 9vw, 2.6rem);
+  line-height: 1.05;
+}
+
+.pagina-texto h2 {
+  margin: 0.6rem 0 0;
+  font-size: 1.05rem;
+  color: var(--laranja-claro);
+}
+
+.pagina-texto p,
+.pagina-texto ul {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+.pagina-texto ul {
+  padding-left: 1.2rem;
+}
+
+.pagina-texto a {
+  color: var(--slime);
+}
+
+.pagina-texto strong {
+  color: var(--texto);
+}
+
 /* Barra de progresso do quiz (largura via main.js) */
 #progress-track {
   position: fixed;
