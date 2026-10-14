@@ -31,6 +31,7 @@ const MAPA_ESTILO_CATEGORIA = {
   comedia: 'Divertidas',
   acao: 'Ação & Aventura',
   fantasia: 'Fantasia & Magia',
+  pop: 'Cultura Pop',
 };
 
 // Esforço do usuário × dificuldade da fantasia → ajuste de pontos.

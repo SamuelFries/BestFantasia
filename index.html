@@ -56,7 +56,7 @@
         <em>Se tiver coragem.</em> 👀
       </p>
       <button id="btn-start" class="btn-primary btn-pulse" type="button">👻 Descobrir Minha Fantasia</button>
-      <p class="nota">⏱️ 2 minutinhos &nbsp;•&nbsp; 🧛 <span id="total-fantasias">38</span> fantasias possíveis &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
+      <p class="nota">⏱️ 2 minutinhos &nbsp;•&nbsp; 🧛 <span id="total-fantasias">120</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
     </section>
 
     <!-- ================== TELA 2 · FÍSICO (estilo Mii) ================== -->
@@ -64,6 +64,7 @@
       <button class="btn-voltar" type="button" data-voltar="screen-home">← voltar</button>
       <p class="badge">Etapa 1 de 2 · Físico</p>
       <h2 id="titulo-fisico" class="titulo-tela font-creepy">Monte seu boneco</h2>
+      <p class="subtitulo-tela">Estilo Mii: toque nas opções. O tom de pele só personaliza o boneco e as dicas de maquiagem — fantasia não tem cor.</p>
 
       <!-- Prévia do boneco: preenchida pelo main.js conforme as escolhas -->
       <div id="avatar-preview" class="avatar-preview" aria-live="polite"></div>
@@ -140,6 +141,8 @@
       <article class="guia" aria-label="Como montar a fantasia">
         <h3 class="guia-titulo">🪄 Como montar</h3>
         <ol id="resultado-passos" class="passos-lista"></ol>
+        <!-- Dica de contraste de maquiagem por tom de pele (main.js) -->
+        <p id="resultado-dica-pele" class="dica-pele hidden"></p>
       </article>
 
       <!-- Pódio alternativo: clicável, abre o guia da vice -->
@@ -171,8 +174,14 @@
     <p style="text-align:center;color:#f5edff;padding:1rem">Este feitiço precisa de JavaScript ativado. 🔮</p>
   </noscript>
 
-  <!-- A ordem importa: dados → algoritmo → UI -->
+  <!-- A ordem importa: config → fantasias por categoria → algoritmo → UI -->
   <script src="data.js"></script>
+  <script src="data/terror.js"></script>
+  <script src="data/classicas.js"></script>
+  <script src="data/acao.js"></script>
+  <script src="data/magia.js"></script>
+  <script src="data/divertidas.js"></script>
+  <script src="data/cultura-pop.js"></script>
   <script src="logic.js"></script>
   <script src="main.js"></script>
 </body>

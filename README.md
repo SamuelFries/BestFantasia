@@ -18,13 +18,41 @@ python3 -m http.server 8000
 
 ## Arquitetura
 
-| Arquivo      | Responsabilidade                                                            |
-|--------------|-----------------------------------------------------------------------------|
-| `index.html` | Estrutura das 5 telas da SPA e slots de anúncio                             |
-| `style.css`  | Tema Halloween (tokens CSS), componentes e animações                        |
-| `data.js`    | 38 fantasias (pesos, itens de compra, passos de montagem) + perguntas do quiz |
-| `logic.js`   | Algoritmo de recomendação (puro, testável no console)                       |
-| `main.js`    | Estado da UI, navegação com fade, renderização e compartilhamento           |
+| Arquivo               | Responsabilidade                                                        |
+|-----------------------|-------------------------------------------------------------------------|
+| `index.html`          | Estrutura das 5 telas da SPA e slots de anúncio                         |
+| `style.css`           | Tema Halloween (tokens CSS), componentes e animações                    |
+| `data.js`             | Configuração do quiz (etapas, perguntas, rótulos) e registro de fantasias |
+| `data/*.js`           | 120 fantasias, um arquivo por categoria (ver abaixo)                    |
+| `logic.js`            | Algoritmo de recomendação (puro, testável no console)                   |
+| `main.js`             | Estado da UI, navegação com fade, renderização e compartilhamento       |
+
+### Banco de fantasias (`data/`)
+
+| Arquivo           | Categoria          | Qtd. |
+|-------------------|--------------------|-----:|
+| `terror.js`       | Terror             |   19 |
+| `classicas.js`    | Clássicas          |   13 |
+| `acao.js`         | Ação & Aventura    |   16 |
+| `magia.js`        | Fantasia & Magia   |   12 |
+| `divertidas.js`   | Divertidas         |   14 |
+| `cultura-pop.js`  | Cultura Pop        |   46 |
+
+Cada fantasia tem `pesos` (por atributo do quiz), `itens` (lista de compras com
+termo de busca para o link de afiliado), `passos` (montagem em 3 passos),
+`dificuldade` e `custo`. Para adicionar uma fantasia, basta incluir um objeto no
+arquivo da categoria — a UI e o algoritmo se adaptam sozinhos.
+
+## O quiz
+
+- **Físico (estilo Mii):** gênero, tom de pele, altura, biotipo, cabelo, barba e óculos.
+- **Personalidade:** faixa etária, o que mais assiste, papel no filme de terror,
+  festa ideal, arma, missão no Halloween e esforço na montagem.
+
+> **Tom de pele nunca entra na pontuação.** Fantasia não tem cor — qualquer pessoa
+> pode ser qualquer personagem, e o app jamais sugere alterar a cor da pele. A
+> escolha serve só para personalizar a prévia do boneco e para dicas práticas de
+> contraste de tintas e glitters no guia de montagem (`DICAS_PELE` em `data.js`).
 
 ## Algoritmo de recomendação
 
@@ -32,8 +60,8 @@ Três camadas somadas por fantasia (ver `logic.js`):
 
 1. **Pesos diretos** — cada escolha do usuário soma os pontos definidos no mapa
    `pesos` da fantasia (`reduce`).
-2. **Bônus de afinidade** — gênero de filme favorito casando com a categoria da
-   fantasia (ex.: comédia → Divertidas) rende bônus fixo.
+2. **Bônus de afinidade** — o que o usuário mais assiste casando com a categoria
+   da fantasia (ex.: séries & cultura pop → Cultura Pop) rende bônus fixo.
 3. **Ajuste de esforço** — cruza o esforço que o usuário topa com a
    `dificuldade` da fantasia (quem quer mínimo esforço não recebe fantasia
    "Caprichada").
@@ -48,5 +76,5 @@ pelo máximo teórico de cada fantasia e remapeado para 35–99%.
   que dura 4s). Gancho de interstitial comentado em `main.js > iniciarConsulta()`.
 - **Afiliados Amazon:** configure `AMAZON_AFFILIATE_TAG` no `main.js`. Cada item
   do guia vira link de busca com `rel="sponsored"`.
-- **Imagens:** os placeholders do Unsplash em `data.js` devem ser trocados por
+- **Imagens:** os placeholders do Unsplash em `data/*.js` devem ser trocados por
   fotos próprias em produção (a UI tem fallback automático se a URL falhar).

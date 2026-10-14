@@ -92,9 +92,9 @@ function renderizarGrupo(grupo, modoLinha) {
     })
     .join('');
 
-  const classeGrid = modoLinha
-    ? 'opcoes-grid opcoes-grid--lista'
-    : `opcoes-grid${grupo.opcoes.length === 4 ? ' opcoes-grid--2cols' : ''}`;
+  // 2 opções → lado a lado; 4 → 2x2 (vira 1 linha em telas maiores); 3 → 3 colunas.
+  const variante = { 2: ' opcoes-grid--par', 4: ' opcoes-grid--2cols' }[grupo.opcoes.length] ?? '';
+  const classeGrid = modoLinha ? 'opcoes-grid opcoes-grid--lista' : `opcoes-grid${variante}`;
 
   return `
     <div class="grupo">
@@ -310,6 +310,13 @@ function renderizarGuia(fantasia) {
   $('#resultado-passos').innerHTML = fantasia.passos
     .map((passo) => `<li>${passo}</li>`)
     .join('');
+
+  // Dica de maquiagem pelo tom de pele — só contraste de tintas e
+  // glitters; o tom nunca influencia QUAL fantasia sai (ver data.js).
+  const dica = DICAS_PELE[state.escolhas.pele];
+  const elDica = $('#resultado-dica-pele');
+  elDica.textContent = dica ? `💄 Dica para o seu tom de pele: ${dica}` : '';
+  elDica.classList.toggle('hidden', !dica);
 }
 
 /** As outras fantasias do pódio, clicáveis para ver o guia delas. */
