@@ -1,0 +1,896 @@
+/* ============================================================
+   MinhaFantasia — style.css
+   Tema Halloween: fundo escuro, roxo, laranja neon e verde slime.
+   Mobile-first; flexbox + grid; animações com fallback de
+   movimento reduzido. Sem frameworks — CSS puro para carregar
+   rápido (Core Web Vitals ajudam na receita do AdSense).
+   ============================================================ */
+
+/* ---------- 1 · Tokens do tema ----------
+   O site é escuro por natureza (noite de Halloween): tema único,
+   deliberado, com todas as cores explícitas — fica idêntico em
+   qualquer sistema, claro ou escuro. */
+:root {
+  color-scheme: dark;
+
+  --bg: #0b0614;
+  --bg-elevado: #160d26;
+  --card: #1b1130;
+  --borda: #332052;
+
+  --roxo: #8b5cf6;
+  --roxo-profundo: #4c1d95;
+  --laranja: #ff7a18;
+  --laranja-claro: #ffb020;
+  --slime: #9dff3b;
+  --slime-escuro: #16340a;
+
+  --texto: #f5edff;
+  --texto-suave: #b9a6dd;
+
+  --glow-laranja: 0 0 18px rgba(255, 122, 24, 0.45);
+  --glow-slime: 0 0 16px rgba(157, 255, 59, 0.4);
+
+  --raio-card: 1.25rem;
+  --fade-ms: 300ms; /* manter em sincronia com DURACAO_FADE_MS no main.js */
+}
+
+/* ---------- 2 · Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+  /* névoa roxa no alto + brasa laranja no rodapé: clima de noite assombrada */
+  background-image:
+    radial-gradient(60rem 30rem at 50% -10%, rgba(139, 92, 246, 0.18), transparent 60%),
+    radial-gradient(40rem 22rem at 90% 110%, rgba(255, 122, 24, 0.08), transparent 60%);
+  background-attachment: fixed;
+  color: var(--texto);
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.font-creepy {
+  font-family: 'Creepster', 'Nunito', system-ui, cursive;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+button {
+  font: inherit;
+}
+
+:is(button, a):focus-visible {
+  outline: 2px solid var(--slime);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* ---------- 3 · Estrutura geral ---------- */
+#app {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 28rem; /* coluna de celular, centralizada no desktop */
+  margin-inline: auto;
+  padding: 1.25rem 1rem 3rem; /* gutter lateral de 16px garantido */
+}
+
+.rodape {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.75rem;
+  padding: 1rem 1rem 2rem;
+  opacity: 0.75;
+}
+
+/* Barra de progresso do quiz (largura via main.js) */
+#progress-track {
+  position: fixed;
+  top: env(safe-area-inset-top, 0px);
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(139, 92, 246, 0.15);
+  z-index: 50;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--roxo), var(--laranja), var(--slime));
+  box-shadow: var(--glow-laranja);
+  transition: width 0.6s ease;
+}
+
+/* Emojis decorativos flutuando ao fundo */
+.floaters span {
+  position: fixed;
+  z-index: 0;
+  font-size: 1.6rem;
+  opacity: 0.2;
+  pointer-events: none;
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* ---------- 4 · Telas (SPA: esconde/mostra com fade) ---------- */
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  min-height: 72dvh;
+  text-align: center;
+}
+
+.screen.active {
+  display: flex;
+  animation: fadeInUp var(--fade-ms) ease both;
+}
+
+.screen.saindo {
+  animation: fadeOut var(--fade-ms) ease both;
+}
+
+/* ---------- 5 · Tipografia e selos ---------- */
+.titulo-hero {
+  margin: 0;
+  font-size: clamp(3.2rem, 17vw, 4.6rem);
+  line-height: 0.95;
+  text-shadow: 0 0 24px rgba(139, 92, 246, 0.55);
+}
+
+.brilho-laranja {
+  color: var(--laranja);
+  text-shadow: 0 0 20px rgba(255, 122, 24, 0.75);
+  animation: flicker 3.4s infinite;
+}
+
+.titulo-tela {
+  margin: 0;
+  font-size: clamp(1.7rem, 8vw, 2.3rem);
+  text-wrap: balance;
+}
+
+.subtitulo-tela {
+  margin: 0;
+  max-width: 36ch;
+  color: var(--texto-suave);
+  line-height: 1.55;
+}
+
+.subtitulo-tela em {
+  color: var(--slime);
+  font-style: italic;
+}
+
+.subtitulo-tela strong {
+  color: var(--laranja-claro);
+}
+
+.badge {
+  margin: 0;
+  display: inline-block;
+  background: rgba(255, 122, 24, 0.12);
+  border: 1px solid rgba(255, 122, 24, 0.4);
+  color: var(--laranja-claro);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.nota {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+}
+
+/* ---------- 6 · Botões ---------- */
+.btn-primary {
+  width: 100%;
+  max-width: 22rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--laranja), #ff9b3d);
+  color: #1d0a00;
+  font-size: 1.05rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: var(--glow-laranja);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-primary:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary:not(:disabled):active {
+  transform: scale(0.97);
+}
+
+.btn-primary:disabled {
+  opacity: 0.45;
+  filter: grayscale(0.5);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-pulse {
+  animation: pulseGlow 2.2s ease-in-out infinite;
+}
+
+.btn-voltar {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  padding: 0.3rem 0.4rem;
+  color: var(--texto-suave);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-voltar:hover {
+  color: var(--texto);
+}
+
+/* ---------- 7 · Grupos de opções (Telas 2 e 3) ---------- */
+.grupos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.grupo {
+  background: var(--bg-elevado);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-card);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  scroll-margin-block: 5rem; /* respiro no auto-scroll entre perguntas */
+}
+
+.grupo h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--laranja-claro);
+  text-align: left;
+}
+
+.opcoes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.opcoes-grid--2cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.opcoes-grid--lista {
+  grid-template-columns: 1fr;
+}
+
+.opcao-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 84px;
+  padding: 0.8rem 0.4rem;
+  background: var(--card);
+  border: 2px solid var(--borda);
+  border-radius: 1rem;
+  color: var(--texto);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.opcao-btn .emoji {
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.opcao-btn:hover {
+  border-color: var(--roxo);
+}
+
+.opcao-btn.selecionada {
+  border-color: var(--slime);
+  background: linear-gradient(180deg, rgba(157, 255, 59, 0.12), var(--card));
+  box-shadow: var(--glow-slime);
+  animation: pop 0.25s ease;
+}
+
+/* Variante em linha (perguntas de personalidade, com letras A/B/C) */
+.opcao-btn--linha {
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+  min-height: 0;
+  width: 100%;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  font-size: 0.95rem;
+}
+
+.opcao-btn--linha .emoji {
+  font-size: 1.4rem;
+}
+
+.letra {
+  display: grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+  background: rgba(139, 92, 246, 0.25);
+  border: 1px solid var(--roxo);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+/* ---------- 8 · Prévia do boneco (estilo Mii) ---------- */
+.avatar-preview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  background: var(--card);
+  border: 1px dashed var(--roxo);
+  border-radius: var(--raio-card);
+  padding: 0.75rem;
+}
+
+.avatar-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.avatar-slot .emoji {
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+.avatar-slot .cat {
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- 9 · Slots de anúncio (AdSense / nativo) ----------
+   O rótulo "Publicidade" aparece via :empty apenas enquanto o slot
+   está vazio (comentários HTML não contam como conteúdo) e some
+   sozinho quando o bloco real for injetado. Mantenha os slots em
+   UMA linha no HTML, sem espaços internos, para o :empty valer. */
+.ad-slot,
+.adsense-slot {
+  width: 100%;
+  border: 2px dashed var(--borda);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-slot {
+  min-height: 140px; /* formato nativo/in-feed */
+}
+
+.adsense-slot {
+  min-height: 100px; /* banner responsivo */
+}
+
+.ad-slot:empty::before,
+.adsense-slot:empty::before {
+  content: 'Publicidade';
+  color: var(--texto-suave);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* ---------- 10 · Tela de loading ---------- */
+.loading-orb {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  display: grid;
+  place-items: center;
+  font-size: 3.1rem;
+  animation: floaty 2.6s ease-in-out infinite;
+}
+
+.loading-orb::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--laranja);
+  border-right-color: var(--slime);
+  animation: girar 1s linear infinite;
+}
+
+/* ---------- 11 · Tela de resultado ---------- */
+.card-resultado {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  background: linear-gradient(180deg, var(--bg-elevado), var(--card));
+  border: 1px solid var(--borda);
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.16);
+}
+
+.resultado-emoji {
+  font-size: 4.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 18px rgba(255, 122, 24, 0.5));
+  animation: floaty 3s ease-in-out infinite;
+}
+
+.badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.badge-mini {
+  background: rgba(139, 92, 246, 0.14);
+  border: 1px solid var(--borda);
+  color: var(--texto-suave);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.badge-mini--cat {
+  border-color: rgba(255, 122, 24, 0.5);
+  color: var(--laranja-claro);
+  background: rgba(255, 122, 24, 0.1);
+}
+
+.match-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: linear-gradient(90deg, var(--slime), #c6ff7a);
+  color: var(--slime-escuro);
+  font-weight: 900;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  box-shadow: var(--glow-slime);
+}
+
+.resultado-imagem {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 1px solid var(--borda);
+}
+
+.descricao {
+  margin: 0;
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+.motivos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.motivos-titulo {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--laranja-claro);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.chip {
+  background: rgba(139, 92, 246, 0.16);
+  border: 1px solid var(--roxo);
+  color: #dcccff;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.alternativas-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alternativas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Botão: clicar abre o guia da fantasia vice-campeã */
+.alternativa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  width: 100%;
+  background: var(--bg-elevado);
+  border: 1px solid var(--borda);
+  border-radius: 1rem;
+  padding: 0.7rem 0.9rem;
+  color: var(--texto);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.alternativa:hover {
+  border-color: var(--roxo);
+  transform: translateY(-1px);
+}
+
+.alternativa-acao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--texto-suave);
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+
+.alternativa-match {
+  color: var(--slime);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+}
+
+/* ---------- 11.5 · Guia de montagem (itens + passos) ---------- */
+.guia {
+  width: 100%;
+  background: var(--bg-elevado);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-card);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  text-align: left;
+}
+
+.guia-titulo {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--laranja-claro);
+  letter-spacing: 0.02em;
+}
+
+/* Lista de compras numerada, estilo "costume guide" */
+.itens-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item-compra {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 0.9rem;
+  padding: 0.55rem 0.7rem;
+}
+
+.item-num {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.25);
+  border: 1px solid var(--roxo);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.item-nome {
+  flex: 1;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Botão de afiliado (rel="sponsored" no main.js) */
+.btn-amazon {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--laranja), #ff9b3d);
+  color: #1d0a00;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-decoration: none;
+  border-radius: 0.6rem;
+  padding: 0.45rem 0.6rem;
+  white-space: nowrap;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn-amazon:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.tag-gratis {
+  flex-shrink: 0;
+  color: var(--slime);
+  border: 1px solid rgba(157, 255, 59, 0.5);
+  border-radius: 0.6rem;
+  padding: 0.4rem 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.nota-afiliado {
+  margin: 0;
+  font-size: 0.68rem;
+  color: var(--texto-suave);
+  opacity: 0.8;
+}
+
+/* Passo a passo com contador customizado */
+.passos-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: passo;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.passos-lista li {
+  counter-increment: passo;
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+.passos-lista li::before {
+  content: counter(passo);
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 122, 24, 0.16);
+  border: 1px solid var(--laranja);
+  color: var(--laranja-claro);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+/* ---------- 12 · Compartilhamento ---------- */
+.share-row {
+  display: flex;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.btn-share {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.85rem 0.5rem;
+  border: none;
+  border-radius: 0.9rem;
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn-share:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.btn-share--wa {
+  background: #1da851;
+}
+
+.btn-share--tw {
+  background: #15202b;
+  border: 1px solid #38444d;
+}
+
+.btn-share--copy {
+  width: 100%;
+  flex: none;
+  background: var(--roxo-profundo);
+  border: 1px solid var(--roxo);
+}
+
+/* ---------- 13 · Toast (substitui alert()) ---------- */
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  transform: translate(-50%, 0.8rem);
+  z-index: 100;
+  max-width: calc(100vw - 2rem);
+  background: var(--card);
+  border: 1px solid var(--slime);
+  color: var(--texto);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  box-shadow: var(--glow-slime);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#toast.visivel {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---------- 14 · Animações ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.92);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 14px rgba(255, 122, 24, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 122, 24, 0.8), 0 0 52px rgba(157, 255, 59, 0.25);
+  }
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.55;
+  }
+}
+
+/* Acessibilidade: respeita quem desativa animações no sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- 15 · Telas um pouco maiores ---------- */
+@media (min-width: 480px) {
+  .opcoes-grid--2cols {
+    grid-template-columns: repeat(4, 1fr); /* cabelo em 1 linha */
+  }
+
+  .opcao-btn .emoji {
+    font-size: 2.1rem;
+  }
+}

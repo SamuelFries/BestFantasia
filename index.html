@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0614">
+  <title>MinhaFantasia</title>
+  <meta name="description" content="Monte seu boneco estilo Mii, responda o teste e receba o guia completo da sua fantasia ideal: itens, passo a passo e onde comprar.">
+
+  <!-- Open Graph: melhora o preview ao compartilhar (viralização) -->
+  <meta property="og:title" content="MinhaFantasia 🎃 Qual é a sua fantasia ideal?">
+  <meta property="og:description" content="Os espíritos analisam seu boneco e sua personalidade, revelam a fantasia perfeita e entregam o guia de montagem. Duvida?">
+  <meta property="og:type" content="website">
+
+  <!-- ============================================================
+       GOOGLE ADSENSE SCRIPT AQUI
+       1) Cole o loader oficial (adsbygoogle.js) com o seu client:
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+       2) Os blocos de anúncio entram nas divs .adsense-slot (Tela 5)
+          e #native-ad-slot (Tela 4) — já estilizadas e responsivas.
+       3) Afiliados Amazon: configure AMAZON_AFFILIATE_TAG no main.js.
+       ============================================================ -->
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>">
+
+  <!-- Fontes: Creepster (display) + Nunito (leitura) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tema, componentes e animações -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Barra de progresso do quiz (largura controlada pelo main.js) -->
+  <div id="progress-track" aria-hidden="true"><div id="progress-bar"></div></div>
+
+  <!-- Decoração flutuante de fundo -->
+  <div class="floaters" aria-hidden="true">
+    <span style="top:8%;left:6%">🦇</span>
+    <span style="top:15%;right:8%;animation-delay:1.2s">🎃</span>
+    <span style="top:55%;left:4%;animation-delay:2s">👻</span>
+    <span style="bottom:18%;right:6%;animation-delay:.6s">🕷️</span>
+    <span style="bottom:6%;left:12%;animation-delay:1.8s">🕸️</span>
+  </div>
+
+  <main id="app">
+
+    <!-- ========================= TELA 1 · HOME ========================= -->
+    <section id="screen-home" class="screen active">
+      <p class="badge">🎃 Especial de Halloween</p>
+      <h1 class="font-creepy titulo-hero">Minha<span class="brilho-laranja">Fantasia</span></h1>
+      <p class="subtitulo-tela">
+        Os espíritos descobrem a fantasia perfeita para você e entregam o
+        <strong>guia completo de montagem</strong>: itens, passo a passo e onde comprar.
+        <em>Se tiver coragem.</em> 👀
+      </p>
+      <button id="btn-start" class="btn-primary btn-pulse" type="button">👻 Descobrir Minha Fantasia</button>
+      <p class="nota">⏱️ 2 minutinhos &nbsp;•&nbsp; 🧛 <span id="total-fantasias">38</span> fantasias possíveis &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
+    </section>
+
+    <!-- ================== TELA 2 · FÍSICO (estilo Mii) ================== -->
+    <section id="screen-fisico" class="screen" aria-labelledby="titulo-fisico">
+      <button class="btn-voltar" type="button" data-voltar="screen-home">← voltar</button>
+      <p class="badge">Etapa 1 de 2 · Físico</p>
+      <h2 id="titulo-fisico" class="titulo-tela font-creepy">Monte seu boneco</h2>
+
+      <!-- Prévia do boneco: preenchida pelo main.js conforme as escolhas -->
+      <div id="avatar-preview" class="avatar-preview" aria-live="polite"></div>
+
+      <!-- Grupos de opções gerados a partir de data.js -->
+      <div id="grupos-fisico" class="grupos"></div>
+
+      <button id="btn-fisico-continuar" class="btn-primary" type="button" disabled>Continuar ➡️</button>
+    </section>
+
+    <!-- ==================== TELA 3 · PERSONALIDADE ==================== -->
+    <section id="screen-personalidade" class="screen" aria-labelledby="titulo-personalidade">
+      <button class="btn-voltar" type="button" data-voltar="screen-fisico">← voltar</button>
+      <p class="badge">Etapa 2 de 2 · Personalidade</p>
+      <h2 id="titulo-personalidade" class="titulo-tela font-creepy">Hora da verdade</h2>
+      <p class="subtitulo-tela">7 perguntas rápidas. Os espíritos detectam mentiras (e julgam).</p>
+
+      <!-- Perguntas geradas a partir de data.js -->
+      <div id="perguntas-personalidade" class="grupos"></div>
+
+      <button id="btn-personalidade-continuar" class="btn-primary" type="button" disabled>Consultar os Espíritos 🔮</button>
+    </section>
+
+    <!-- ============== TELA 4 · CARREGAMENTO + AD NATIVO ============== -->
+    <section id="screen-loading" class="screen">
+      <!-- MONETIZAÇÃO · Slot NATIVO de baixa fricção, visível ACIMA do
+           ícone de loading durante os 4s de "consulta aos espíritos".
+           O disparo do anúncio em vídeo/interstitial fica em
+           main.js > iniciarConsulta() — veja o comentário por lá.
+           (Manter a div abaixo em uma linha só: o rótulo "Publicidade"
+           do CSS usa :empty e some quando o anúncio real entrar.) -->
+      <div id="native-ad-slot" class="ad-slot"><!-- Cole aqui o bloco do anúncio nativo (in-feed/low friction) --></div>
+
+      <div class="loading-orb" role="status" aria-label="Carregando">🔮</div>
+      <h2 class="titulo-tela font-creepy">Consultando os espíritos…</h2>
+      <p id="frase-loading" class="subtitulo-tela" aria-live="polite">Mexendo o caldeirão… 🫕</p>
+    </section>
+
+    <!-- ============ TELA 5 · RESULTADO + GUIA DE MONTAGEM ============ -->
+    <section id="screen-resultado" class="screen" aria-labelledby="resultado-nome">
+      <!-- MONETIZAÇÃO · Banner responsivo AdSense (TOPO do resultado) -->
+      <div class="adsense-slot"><!-- Cole aqui o <ins class="adsbygoogle"> responsivo --></div>
+
+      <p class="badge">🔮 Guia da sua fantasia</p>
+
+      <!-- Cartão da vencedora -->
+      <article class="card-resultado">
+        <div id="resultado-emoji" class="resultado-emoji" aria-hidden="true">🧛</div>
+        <span id="resultado-match" class="match-badge">⚡ …% de match</span>
+        <h2 id="resultado-nome" class="titulo-tela font-creepy">…</h2>
+        <div id="resultado-meta" class="badges-row"></div>
+
+        <!-- Foto ilustrativa (placeholder Unsplash definido em data.js).
+             Se a URL falhar, o main.js esconde a imagem e o emoji
+             segura o visual. -->
+        <img id="resultado-imagem" class="resultado-imagem hidden" alt="" loading="lazy">
+
+        <p id="resultado-descricao" class="descricao">…</p>
+
+        <div class="motivos">
+          <p class="motivos-titulo">Por que você deu match</p>
+          <div id="resultado-motivos" class="chips"></div>
+        </div>
+      </article>
+
+      <!-- Guia de compras (estilo "costume guide" com afiliados) -->
+      <article class="guia" aria-label="Itens para montar a fantasia">
+        <h3 class="guia-titulo">🧵 Itens para montar</h3>
+        <ol id="resultado-itens" class="itens-lista"></ol>
+        <p class="nota-afiliado">Links de busca na Amazon. Podemos ganhar comissão por compras qualificadas.</p>
+      </article>
+
+      <!-- Passo a passo de montagem -->
+      <article class="guia" aria-label="Como montar a fantasia">
+        <h3 class="guia-titulo">🪄 Como montar</h3>
+        <ol id="resultado-passos" class="passos-lista"></ol>
+      </article>
+
+      <!-- Pódio alternativo: clicável, abre o guia da vice -->
+      <div class="alternativas-wrap">
+        <p class="motivos-titulo">Quase viraram você 👀 (toque para ver o guia)</p>
+        <div id="resultado-alternativas" class="alternativas"></div>
+      </div>
+
+      <!-- Compartilhamento: links reais, preenchidos pelo main.js -->
+      <div class="share-row">
+        <a id="btn-share-wa" class="btn-share btn-share--wa" href="#" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+        <a id="btn-share-tw" class="btn-share btn-share--tw" href="#" target="_blank" rel="noopener noreferrer">🐦 Twitter</a>
+      </div>
+      <button id="btn-share-copy" class="btn-share btn-share--copy" type="button">🔗 Copiar link do teste</button>
+      <button id="btn-restart" class="btn-voltar" type="button" style="align-self:center">🔁 Fazer o teste de novo</button>
+
+      <!-- MONETIZAÇÃO · Banner responsivo AdSense (BASE do resultado) -->
+      <div class="adsense-slot"><!-- Cole aqui o <ins class="adsbygoogle"> responsivo --></div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">Feito com 🧡 e magia negra · Nenhum espírito foi incomodado de verdade.</footer>
+
+  <!-- Toast de feedback (substitui alert()) -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <p style="text-align:center;color:#f5edff;padding:1rem">Este feitiço precisa de JavaScript ativado. 🔮</p>
+  </noscript>
+
+  <!-- A ordem importa: dados → algoritmo → UI -->
+  <script src="data.js"></script>
+  <script src="logic.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
