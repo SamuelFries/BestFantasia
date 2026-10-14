@@ -416,7 +416,7 @@ button {
   font-weight: 900;
 }
 
-/* ---------- 8 · Prévia do boneco (estilo Mii) ---------- */
+/* ---------- 8 · Resumo do perfil físico ---------- */
 .avatar-preview {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

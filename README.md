@@ -1,7 +1,7 @@
 # 🎃 BestFantasia
 
-Quiz gamificado de Halloween, estilo criação de avatar do Nintendo Wii: o visitante
-monta um "boneco" (físico), responde 7 perguntas de personalidade e recebe a
+Quiz gamificado de Halloween: o visitante conta como é
+(físico), responde 7 perguntas de personalidade e recebe a
 **fantasia ideal** com **guia completo de montagem** — itens numerados com links
 de compra, passo a passo e alternativas do pódio.
 
@@ -45,13 +45,13 @@ arquivo da categoria — a UI e o algoritmo se adaptam sozinhos.
 
 ## O quiz
 
-- **Físico (estilo Mii):** gênero, tom de pele, altura, biotipo, cabelo, barba e óculos.
+- **Físico:** gênero, tom de pele, altura, biotipo, cabelo, barba e óculos.
 - **Personalidade:** faixa etária, o que mais assiste, papel no filme de terror,
   festa ideal, arma, missão no Halloween e esforço na montagem.
 
 > **Tom de pele nunca entra na pontuação.** Fantasia não tem cor — qualquer pessoa
 > pode ser qualquer personagem, e o app jamais sugere alterar a cor da pele. A
-> escolha serve só para personalizar a prévia do boneco e para dicas práticas de
+> escolha serve só para o resumo do perfil e para dicas práticas de
 > contraste de tintas e glitters no guia de montagem (`DICAS_PELE` em `data.js`).
 
 ## Algoritmo de recomendação

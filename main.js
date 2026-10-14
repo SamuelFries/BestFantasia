@@ -109,7 +109,7 @@ function renderizarFormularios() {
   atualizarAvatarPreview();
 }
 
-/** Prévia "estilo Mii": mostra o emoji escolhido em cada categoria física. */
+/** Resumo do perfil: mostra o emoji escolhido em cada categoria física. */
 function atualizarAvatarPreview() {
   $('#avatar-preview').innerHTML = ETAPAS_FISICO.map((grupo) => {
     const escolhida = grupo.opcoes.find((o) => o.valor === state.escolhas[grupo.categoria]);

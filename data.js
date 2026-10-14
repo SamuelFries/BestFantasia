@@ -43,11 +43,11 @@
                   tem fallback automático se a URL falhar)
    ============================================================ */
 
-/* ---------- Tela 2 · Físico (estilo Mii) ---------- */
+/* ---------- Tela 2 · Físico ---------- */
 const ETAPAS_FISICO = [
   {
     categoria: 'genero',
-    titulo: 'Gênero do boneco',
+    titulo: 'Gênero',
     rotuloCurto: 'Gênero',
     opcoes: [
       { valor: 'masc',   rotulo: 'Masculino', emoji: '🧔' },
@@ -263,7 +263,7 @@ const ROTULOS_MATCH = {
    REGRA DE OURO: o tom de pele NUNCA entra na pontuação. Fantasia
    não tem cor — qualquer pessoa pode ser qualquer personagem, e
    jamais sugerimos alterar a cor da pele. A escolha serve só para
-   personalizar a prévia do boneco e para estas dicas práticas de
+   o resumo do perfil e para estas dicas práticas de
    contraste de tintas, glitters e efeitos no guia de montagem. */
 const DICAS_PELE = {
   clara:
