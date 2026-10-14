@@ -9,6 +9,7 @@ registrarFantasias([
   {
     id: 1, nome: 'Vampiro Vitoriano', emoji: '🧛', categoria: 'Terror',
     dificuldade: 'Caprichada', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 1, reconhecimento: 3, par: [165, 4, 176] },
     descricao: 'Elegância eterna, drama na medida e uma leve sede de sangue. Você não envelhece — você viraliza há séculos.',
     imagem: 'https://source.unsplash.com/600x400/?vampire,gothic',
     pesos: {
@@ -33,12 +34,13 @@ registrarFantasias([
   {
     id: 3, nome: 'Zumbi Corporativo', emoji: '🧟', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 1, reconhecimento: 2, par: [80] },
     descricao: 'Café na mão, olhar vazio e uma reunião que podia ser e-mail. Tecnicamente vivo, espiritualmente… discutível.',
     imagem: 'https://source.unsplash.com/600x400/?zombie,office',
     pesos: {
-      altura: { medio: 5 }, biotipo: { magro: 4, forte: 3 }, cabelo: { curto: 4, careca: 4 }, oculos: { sim: 3 },
-      filme: { vitima: 10 }, festa: { bebida: 5, filmes: 3 }, arma: { sarcasmo: 7 },
-      estilo: { comedia: 5, terror: 4 }, idade: { adulto: 7 }, vibe: { divertir: 5, conforto: 5 },
+      altura: { medio: 5 }, biotipo: { magro: 4, forte: 3 }, cabelo: { curto: 4, careca: 4 }, oculos: { sim: 6 },
+      filme: { vitima: 10 }, festa: { bebida: 7, filmes: 3 }, arma: { sarcasmo: 8 },
+      estilo: { comedia: 7, terror: 4 }, idade: { adulto: 9 }, vibe: { divertir: 6, conforto: 6 },
     },
     itens: [
       { nome: 'Camisa social velha (vai ser destruída)', emoji: '👔', busca: null },
@@ -57,6 +59,7 @@ registrarFantasias([
   {
     id: 4, nome: 'Lobisomem Fitness', emoji: '🐺', categoria: 'Terror',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 1, reconhecimento: 3, par: [181, 1] },
     descricao: 'Treina na lua cheia, aveia na veia e uivo pós-treino. O personal trainer que ninguém teve coragem de dispensar.',
     imagem: 'https://source.unsplash.com/600x400/?werewolf,wolf',
     pesos: {
@@ -80,6 +83,7 @@ registrarFantasias([
   {
     id: 6, nome: 'Palhaço do Apocalipse', emoji: '🤡', categoria: 'Terror',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 3 },
     descricao: 'Risada no escuro, balão na mão e zero noção de limites. As pessoas riem das suas piadas… por precaução.',
     imagem: 'https://source.unsplash.com/600x400/?clown,scary',
     pesos: {
@@ -103,6 +107,7 @@ registrarFantasias([
   {
     id: 13, nome: 'Ceifador Elegante', emoji: '☠️', categoria: 'Terror',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 3 },
     descricao: 'Pontualidade impecável, manto esvoaçante e uma agenda, digamos, definitiva. Ninguém fura compromisso com você.',
     imagem: 'https://source.unsplash.com/600x400/?grim-reaper,hood',
     pesos: {
@@ -126,6 +131,7 @@ registrarFantasias([
   {
     id: 16, nome: 'Freira Maldita', emoji: '🙏', categoria: 'Terror',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'pintura', calor: 3, volume: 1, formato: ['solo', 'casal'], susto: 1, reconhecimento: 2, par: [161] },
     descricao: 'Voto de silêncio, exceto para sustos. Sua aura diz "paz interior", seu olhar diz "corre".',
     imagem: 'https://source.unsplash.com/600x400/?nun,church',
     pesos: {
@@ -148,6 +154,7 @@ registrarFantasias([
   {
     id: 17, nome: 'Boneca Assombrada', emoji: '🪆', categoria: 'Terror',
     dificuldade: 'Caprichada', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 1, reconhecimento: 2, par: [40] },
     descricao: 'Bochechas rosadas, vestido de renda e um olhar que acompanha as pessoas pela sala. Fofa? Sim. Confiável? Jamais.',
     imagem: 'https://source.unsplash.com/600x400/?doll,creepy',
     pesos: {
@@ -172,6 +179,7 @@ registrarFantasias([
   {
     id: 18, nome: 'Vilão Slasher Anos 80', emoji: '🔪', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'mascara', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 2, reconhecimento: 2, par: [157, 41, 39] },
     descricao: 'Passos lentos, respiração pesada e uma playlist de sintetizador tocando na sua cabeça. Os acampamentos tremem.',
     imagem: 'https://source.unsplash.com/600x400/?horror,mask',
     pesos: {
@@ -195,6 +203,7 @@ registrarFantasias([
   {
     id: 19, nome: 'Demônio de Gala', emoji: '👹', categoria: 'Terror',
     dificuldade: 'Caprichada', custo: 3,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 1, reconhecimento: 2, par: [11] },
     descricao: 'O mal, mas bem vestido. Contratos assinados em open bar e chifres combinando com o look. O inferno aprova o dress code.',
     imagem: 'https://source.unsplash.com/600x400/?devil,dark,red',
     pesos: {
@@ -218,6 +227,7 @@ registrarFantasias([
   {
     id: 39, nome: 'Ghostface (Pânico)', emoji: '📞', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'mascara', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 1, reconhecimento: 3, par: [41, 18] },
     descricao: '"Qual é o seu filme de terror favorito?" Você liga antes de aparecer, respeita as regras do gênero e nunca é quem todo mundo acha.',
     imagem: 'https://source.unsplash.com/600x400/?scream,mask',
     pesos: {
@@ -240,6 +250,7 @@ registrarFantasias([
   {
     id: 40, nome: 'Chucky, o Brinquedo Assassino', emoji: '🧸', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 1, reconhecimento: 3, par: [17] },
     descricao: 'Macacão jeans, cabelo ruivo e uma faca escondida atrás do sorriso de brinquedo. "Oi, eu sou o Chucky. Quer brincar?"',
     imagem: 'https://source.unsplash.com/600x400/?doll,horror',
     pesos: {
@@ -263,6 +274,7 @@ registrarFantasias([
   {
     id: 41, nome: 'Freddy Krueger', emoji: '🧤', categoria: 'Terror',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 2, reconhecimento: 3, par: [157, 39, 18] },
     descricao: 'Suéter listrado, chapéu surrado e a mão mais mal-educada do cinema. Dormir é para os fracos (ou para as vítimas).',
     imagem: 'https://source.unsplash.com/600x400/?nightmare,dark',
     pesos: {
@@ -285,6 +297,7 @@ registrarFantasias([
   {
     id: 42, nome: 'Samara (O Chamado)', emoji: '📺', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo'], susto: 1, reconhecimento: 3 },
     descricao: 'Cabelo na cara, camisola molhada e sete dias de prazo. Você sai de qualquer TV, inclusive a da sala da festa.',
     imagem: 'https://source.unsplash.com/600x400/?ghost,girl,dark',
     pesos: {
@@ -307,6 +320,7 @@ registrarFantasias([
   {
     id: 43, nome: 'Hannibal Lecter', emoji: '🎭', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'mascara', calor: 2, volume: 1, formato: ['solo'], susto: 1, reconhecimento: 3 },
     descricao: 'Educado, culto e com um paladar questionável. Você elogia o vinho e julga o prato principal — que pode ser alguém.',
     imagem: 'https://source.unsplash.com/600x400/?prison,mask',
     pesos: {
@@ -329,6 +343,7 @@ registrarFantasias([
   {
     id: 44, nome: 'Carrie, a Estranha', emoji: '👑', categoria: 'Terror',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo'], susto: 2, reconhecimento: 2 },
     descricao: 'Rainha do baile por três segundos, destruidora de ginásios pelo resto da noite. Você não precisa de mãos para fechar portas.',
     imagem: 'https://source.unsplash.com/600x400/?prom,blood',
     pesos: {
@@ -351,6 +366,7 @@ registrarFantasias([
   {
     id: 45, nome: 'Noiva Cadáver', emoji: '💍', categoria: 'Terror',
     dificuldade: 'Caprichada', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 1, reconhecimento: 2 },
     descricao: 'Vestido de outro século, pele azulada e um buquê que já viu dias melhores. O "sim" foi eterno — literalmente.',
     imagem: 'https://source.unsplash.com/600x400/?bride,gothic',
     pesos: {
@@ -374,6 +390,7 @@ registrarFantasias([
   {
     id: 46, nome: 'Slenderman', emoji: '🕴️', categoria: 'Terror',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'mascara', calor: 3, volume: 1, formato: ['solo'], susto: 1, reconhecimento: 2 },
     descricao: 'Alto, magro, sem rosto e sempre no fundo da foto. Você não persegue ninguém — só está lá. Sempre lá.',
     imagem: 'https://source.unsplash.com/600x400/?forest,dark,fog',
     pesos: {
@@ -396,12 +413,13 @@ registrarFantasias([
   {
     id: 47, nome: 'Homem Invisível', emoji: '🕶️', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'mascara', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, par: [9, 8] },
     descricao: 'Ataduras, óculos escuros e um sobretudo sustentando o nada. Ninguém te viu chegar — e tecnicamente ninguém te vê agora.',
     imagem: 'https://source.unsplash.com/600x400/?bandage,hat,vintage',
     pesos: {
-      genero: { masc: 4, neutro: 4 }, altura: { medio: 4 }, biotipo: { magro: 4 }, cabelo: { careca: 3, curto: 3 }, barba: { sem: 2 }, oculos: { sim: 5 },
-      filme: { sobrevive: 5, assassino: 3 }, festa: { filmes: 5 }, arma: { sarcasmo: 7 },
-      estilo: { terror: 4, comedia: 5 }, idade: { classico: 5, adulto: 4 }, vibe: { divertir: 5, conforto: 4 },
+      genero: { masc: 4, neutro: 4 }, altura: { medio: 4 }, biotipo: { magro: 4 }, cabelo: { careca: 3, curto: 3 }, barba: { sem: 2 }, oculos: { sim: 9 },
+      filme: { sobrevive: 5, assassino: 3 }, festa: { filmes: 5 }, arma: { sarcasmo: 8 },
+      estilo: { comedia: 7, terror: 4 }, idade: { classico: 7, adulto: 4 }, vibe: { divertir: 7, conforto: 4 },
     },
     itens: [
       { nome: 'Rolos de atadura para o rosto', emoji: '🩹', busca: 'atadura gaze rolo' },
@@ -419,6 +437,7 @@ registrarFantasias([
   {
     id: 48, nome: 'Beetlejuice', emoji: '🪲', categoria: 'Terror',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo'], susto: 1, reconhecimento: 2 },
     descricao: 'Terno listrado, dentes duvidosos e um contrato para cada problema. Diga seu nome três vezes — ou não, dá no mesmo.',
     imagem: 'https://source.unsplash.com/600x400/?stripes,black,white',
     pesos: {
@@ -441,6 +460,7 @@ registrarFantasias([
   {
     id: 156, nome: 'Pennywise', emoji: '🎈', categoria: 'Terror',
     dificuldade: 'Caprichada', custo: 3,
+    ficha: { rosto: 'pintura', calor: 3, volume: 2, formato: ['solo'], susto: 2, reconhecimento: 3 },
     descricao: 'Balão vermelho, sorriso de dentes demais e um bueiro como endereço. Você também vai flutuar — pelo menos até o fim da festa.',
     imagem: 'https://source.unsplash.com/600x400/?clown,red,balloon,sewer',
     pesos: {
@@ -464,6 +484,7 @@ registrarFantasias([
   {
     id: 157, nome: 'Jason Voorhees', emoji: '🏒', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'mascara', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 2, reconhecimento: 3, par: [41, 18] },
     descricao: 'Máscara de hóquei, facão e um acampamento inteiro de histórias. Você não fala, não corre e nunca, jamais, morre de verdade.',
     imagem: 'https://source.unsplash.com/600x400/?hockey,mask,horror',
     pesos: {
@@ -487,6 +508,7 @@ registrarFantasias([
   {
     id: 158, nome: 'Espantalho Sinistro', emoji: '🌾', categoria: 'Terror',
     dificuldade: 'Média', custo: 1,
+    ficha: { rosto: 'mascara', calor: 3, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 2 },
     descricao: 'Palha saindo das mangas, saco na cabeça e um milharal inteiro de corvos que fugiram de você. A plantação está segura; os convidados, nem tanto.',
     imagem: 'https://source.unsplash.com/600x400/?scarecrow,field,creepy',
     pesos: {
@@ -510,6 +532,7 @@ registrarFantasias([
   {
     id: 159, nome: 'Cirurgião Sangrento', emoji: '🩺', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'mascara', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 2, reconhecimento: 2, par: [160] },
     descricao: 'Jaleco, máscara e um histórico de pacientes que não voltaram. "Vai doer só um pouquinho" nunca foi tão mentira.',
     imagem: 'https://source.unsplash.com/600x400/?surgeon,scrubs,blood',
     pesos: {
@@ -533,6 +556,7 @@ registrarFantasias([
   {
     id: 160, nome: 'Enfermeira do Hospício', emoji: '💉', categoria: 'Terror',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 2, reconhecimento: 2, par: [159] },
     descricao: 'Uniforme branco manchado, seringa gigante e um andar com espasmos. Ela só quer ajudar. Ela só quer ajudar. Ela só quer…',
     imagem: 'https://source.unsplash.com/600x400/?nurse,vintage,dark',
     pesos: {
@@ -556,6 +580,7 @@ registrarFantasias([
   {
     id: 161, nome: 'Padre Exorcista', emoji: '✝️', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 3, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [162, 16] },
     descricao: 'Batina, crucifixo e água benta em frasco de spray. "O poder de Cristo te obriga" a sair da fila do banheiro.',
     imagem: 'https://source.unsplash.com/600x400/?priest,crucifix,dark',
     pesos: {
@@ -579,6 +604,7 @@ registrarFantasias([
   {
     id: 162, nome: 'Menina Possuída', emoji: '🛏️', categoria: 'Terror',
     dificuldade: 'Caprichada', custo: 2,
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 2, reconhecimento: 3, par: [161] },
     descricao: 'Camisola, pele rachada e uma voz que não é a sua. Você não gira a cabeça 360° — mas quem vai duvidar?',
     imagem: 'https://source.unsplash.com/600x400/?exorcist,possessed,dark',
     pesos: {
@@ -602,6 +628,7 @@ registrarFantasias([
   {
     id: 163, nome: 'Lenhador Assassino', emoji: '🪓', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 2, reconhecimento: 1 },
     descricao: 'Flanela, barba e um machado que já cortou muito mais do que árvores. A cabana no bosque tem Wi-Fi? Ninguém voltou para contar.',
     imagem: 'https://source.unsplash.com/600x400/?lumberjack,axe,flannel',
     pesos: {
@@ -625,6 +652,7 @@ registrarFantasias([
   {
     id: 164, nome: 'Coveiro Vitoriano', emoji: '🪦', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 3, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 1 },
     descricao: 'Cartola, pá e a calma de quem já viu todo mundo ir embora. Você mede as pessoas com os olhos — para saber o tamanho da cova.',
     imagem: 'https://source.unsplash.com/600x400/?gravedigger,cemetery,fog',
     pesos: {
@@ -648,6 +676,7 @@ registrarFantasias([
   {
     id: 165, nome: 'Vampira Gótica', emoji: '🦇', categoria: 'Terror',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 1, reconhecimento: 3, par: [1, 176] },
     descricao: 'Vestido preto, batom vinho e séculos de bons motivos para não ir ao sol. Você escolhe as vítimas pelo perfume — e pelo tipo sanguíneo.',
     imagem: 'https://source.unsplash.com/600x400/?vampire,woman,gothic',
     pesos: {
@@ -672,6 +701,7 @@ registrarFantasias([
   {
     id: 166, nome: 'Boneco de Ventríloquo', emoji: '🎭', categoria: 'Terror',
     dificuldade: 'Média', custo: 1,
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo'], susto: 1, reconhecimento: 1 },
     descricao: 'Smoking, bochechas pintadas e um queixo que se mexe sozinho. Ninguém sabe quem controla quem — nem você.',
     imagem: 'https://source.unsplash.com/600x400/?puppet,dummy,creepy',
     pesos: {
@@ -695,12 +725,13 @@ registrarFantasias([
   {
     id: 167, nome: 'Monstro do Pântano', emoji: '🌿', categoria: 'Terror',
     dificuldade: 'Caprichada', custo: 1,
+    ficha: { rosto: 'pintura', calor: 3, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 1 },
     descricao: 'Musgo, folhas e lama até o pescoço: a criatura que o brejo esqueceu. Você deixa pegadas úmidas em todas as fotos.',
     imagem: 'https://source.unsplash.com/600x400/?swamp,moss,creature',
     pesos: {
-      genero: { masc: 5, neutro: 5 }, altura: { alto: 6 }, biotipo: { forte: 7, atletico: 3 }, cabelo: { longo: 4, careca: 3 }, barba: { cheia: 4 },
-      filme: { assassino: 5, sobrevive: 4 }, festa: { rituais: 6 }, arma: { machado: 5, magia: 4 },
-      estilo: { terror: 7, fantasia: 3 }, idade: { adulto: 4, jovem: 4, classico: 3 }, vibe: { assustar: 7 },
+      genero: { masc: 5, neutro: 5 }, altura: { alto: 8 }, biotipo: { forte: 9, atletico: 3 }, cabelo: { longo: 4, careca: 3 }, barba: { cheia: 4 },
+      filme: { assassino: 5, sobrevive: 4 }, festa: { rituais: 8 }, arma: { machado: 5, magia: 4 },
+      estilo: { terror: 9, fantasia: 3 }, idade: { adulto: 4, jovem: 4, classico: 3 }, vibe: { assustar: 9 },
     },
     itens: [
       { nome: 'Roupa verde ou marrom velha (vai ser colada)', emoji: '🟫', busca: null },
@@ -713,6 +744,150 @@ registrarFantasias([
       'Cole musgo e folhas na roupa velha em camadas, mais densas nos ombros e no peito.',
       'Rosto e mãos verdes com manchas marrons; folhas presas no cabelo com grampos.',
       'Ande curvado, arrastando os pés, e deixe "pegadas" com um borrifador de água.',
+    ],
+  },
+  {
+    id: 227, nome: 'Médico da Peste', emoji: '🐦‍⬛', categoria: 'Terror',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'mascara', calor: 3, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 2 },
+    descricao: 'Máscara de bico, chapéu de aba larga e uma bengala para examinar os convidados à distância. O diagnóstico é sempre ruim.',
+    imagem: 'https://source.unsplash.com/600x400/?plague,doctor,mask',
+    pesos: {
+      genero: { neutro: 9, masc: 3 }, altura: { alto: 8, medio: 3 }, biotipo: { magro: 6 }, cabelo: { careca: 3, curto: 3 },
+      filme: { sobrevive: 5, assassino: 5 }, festa: { rituais: 10 }, arma: { magia: 9 },
+      estilo: { terror: 8, fantasia: 4 }, idade: { adulto: 5, classico: 5 }, vibe: { impressionar: 9, assustar: 7 },
+    },
+    itens: [
+      { nome: 'Máscara de médico da peste', emoji: '🐦‍⬛', busca: 'máscara médico da peste' },
+      { nome: 'Chapéu preto de aba larga', emoji: '🎩', busca: 'chapéu preto aba larga' },
+      { nome: 'Sobretudo ou capa preta longa', emoji: '🧥', busca: 'capa preta longa' },
+      { nome: 'Luvas de couro pretas', emoji: '🧤', busca: 'luvas couro preta' },
+      { nome: 'Bengala de madeira', emoji: '🦯', busca: 'bengala madeira' },
+    ],
+    passos: [
+      'Sobretudo preto até os tornozelos, luvas e botas: nenhuma pele aparecendo.',
+      'Máscara de bico com o chapéu de aba larga por cima.',
+      'Use a bengala para "examinar" os convidados à distância e anote diagnósticos num caderninho.',
+    ],
+  },
+  {
+    id: 228, nome: 'Loira do Banheiro', emoji: '🚽', categoria: 'Terror',
+    dificuldade: 'Média', custo: 1,
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo'], susto: 1, reconhecimento: 3 },
+    descricao: 'A lenda que aterrorizou todo banheiro de escola do Brasil. Algodão no nariz, vestido branco e um nome que ninguém ousa chamar três vezes.',
+    imagem: 'https://source.unsplash.com/600x400/?ghost,woman,white,dress',
+    pesos: {
+      genero: { fem: 9 }, altura: { medio: 4, alto: 3 }, biotipo: { magro: 6 }, cabelo: { longo: 8 }, barba: { sem: 4 },
+      filme: { assassino: 7 }, festa: { rituais: 8, filmes: 4 }, arma: { magia: 7 },
+      estilo: { terror: 9 }, idade: { jovem: 6, adulto: 5 }, vibe: { assustar: 9 },
+    },
+    itens: [
+      { nome: 'Vestido branco longo (brechó)', emoji: '🤍', busca: 'vestido branco longo' },
+      { nome: 'Peruca loira longa (se precisar)', emoji: '👱‍♀️', busca: 'peruca loira longa' },
+      { nome: 'Algodão para o nariz (grátis)', emoji: '☁️', busca: null },
+      { nome: 'Base pálida e olheiras fundas', emoji: '🎨', busca: 'tinta facial branca halloween' },
+      { nome: 'Sangue falso', emoji: '🩸', busca: 'sangue falso maquiagem' },
+    ],
+    passos: [
+      'Vestido branco envelhecido com chá, pés descalços ou sapatilha clara.',
+      'Pele bem pálida, olheiras fundas e os chumaços de algodão no nariz (o detalhe que todo mundo reconhece).',
+      'Fique perto do banheiro da festa. Se alguém disser seu nome três vezes, apareça.',
+    ],
+  },
+  {
+    id: 229, nome: 'Krampus', emoji: '🐐', categoria: 'Terror',
+    dificuldade: 'Caprichada', custo: 3,
+    ficha: { rosto: 'pintura', calor: 3, volume: 3, formato: ['solo'], susto: 1, reconhecimento: 1 },
+    descricao: 'O lado sombrio do Natal: chifres, correntes e um saco para levar quem se comportou mal. Este ano, você faz a lista.',
+    imagem: 'https://source.unsplash.com/600x400/?krampus,horns,fur',
+    pesos: {
+      genero: { masc: 5, neutro: 4 }, altura: { alto: 7 }, biotipo: { forte: 8 }, cabelo: { longo: 5 }, barba: { cheia: 7 },
+      filme: { assassino: 8 }, festa: { rituais: 7, bebida: 4 }, arma: { machado: 6, magia: 5 },
+      estilo: { terror: 8, fantasia: 5 }, idade: { adulto: 5, jovem: 4 }, vibe: { assustar: 9, impressionar: 5 },
+    },
+    itens: [
+      { nome: 'Chifres grandes de bode', emoji: '🐐', busca: 'tiara chifres bode grandes' },
+      { nome: 'Casaco ou manta de pelo sintético', emoji: '🐻', busca: 'casaco pelo sintético marrom' },
+      { nome: 'Correntes de plástico', emoji: '⛓️', busca: 'corrente plástico decorativa' },
+      { nome: 'Sino de metal', emoji: '🔔', busca: 'sino metal grande' },
+      { nome: 'Saco de juta', emoji: '🎒', busca: 'saco de juta' },
+      { nome: 'Língua longa de látex (opcional)', emoji: '👅', busca: 'língua látex fantasia' },
+    ],
+    passos: [
+      'Pelo sintético cobrindo tronco e ombros, calça escura e botas pesadas.',
+      'Chifres grandes, rosto escurecido com sombra e, se topar, a língua de látex.',
+      'Correntes nos ombros, sino na mão e o saco nas costas para "levar" quem se comportou mal.',
+    ],
+  },
+  {
+    id: 230, nome: 'Banshee', emoji: '😱', categoria: 'Terror',
+    dificuldade: 'Média', custo: 1,
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo'], susto: 1, reconhecimento: 1 },
+    descricao: 'O espírito irlandês cujo grito anuncia desgraça. Vestido rasgado, cabelo ao vento e um berro guardado para a hora errada.',
+    imagem: 'https://source.unsplash.com/600x400/?banshee,ghost,scream',
+    pesos: {
+      genero: { fem: 8 }, altura: { alto: 5, medio: 3 }, biotipo: { magro: 7 }, cabelo: { longo: 10, colorido: 3 }, barba: { sem: 4 },
+      filme: { assassino: 5, vitima: 4 }, festa: { rituais: 9 }, arma: { magia: 8 },
+      estilo: { terror: 8, fantasia: 4 }, idade: { jovem: 5, adulto: 4 }, vibe: { assustar: 10 },
+    },
+    itens: [
+      { nome: 'Vestido cinza ou branco esfarrapado', emoji: '🩶', busca: 'vestido fantasma esfarrapado' },
+      { nome: 'Peruca branca ou grisalha longa', emoji: '⚪', busca: 'peruca branca longa' },
+      { nome: 'Base acinzentada e sombra preta', emoji: '🎨', busca: 'paleta sombra cinza preta' },
+      { nome: 'Tecido de gaze cinza (efeito véu)', emoji: '🕸️', busca: 'tecido gaze cinza' },
+    ],
+    passos: [
+      'Vestido rasgado em camadas com tiras de gaze soltas para ondular quando você andar.',
+      'Cabelo branco desgrenhado, pele acinzentada e boca escurecida.',
+      'Fique em silêncio a noite toda e solte um grito agudo na hora mais inesperada (avise o anfitrião).',
+    ],
+  },
+  {
+    id: 231, nome: 'Corpo Seco', emoji: '🌳', categoria: 'Terror',
+    dificuldade: 'Caprichada', custo: 1,
+    ficha: { rosto: 'pintura', calor: 2, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 2 },
+    descricao: 'A lenda do interior brasileiro: tão ruim em vida que nem a terra quis. Pele seca, galhos e um olhar de quem foi expulso do cemitério.',
+    imagem: 'https://source.unsplash.com/600x400/?dry,tree,corpse,creepy',
+    pesos: {
+      genero: { masc: 5, neutro: 5 }, altura: { alto: 7, medio: 3 }, biotipo: { magro: 10 }, cabelo: { careca: 5, longo: 3 }, barba: { cheia: 3 },
+      filme: { assassino: 9 }, festa: { rituais: 10 }, arma: { magia: 8, machado: 4 },
+      estilo: { terror: 10 }, idade: { adulto: 5, classico: 5 }, vibe: { assustar: 10 },
+    },
+    itens: [
+      { nome: 'Roupa velha marrom/cinza (vai ser destruída)', emoji: '🟫', busca: null },
+      { nome: 'Látex líquido para pele rachada', emoji: '🧴', busca: 'látex líquido maquiagem' },
+      { nome: 'Sombra marrom e cinza', emoji: '🎨', busca: 'paleta sombra marrom' },
+      { nome: 'Galhos secos (grátis)', emoji: '🌿', busca: null },
+      { nome: 'Lentes brancas (opcional)', emoji: '👁️', busca: 'lente contato halloween' },
+    ],
+    passos: [
+      'Rasgue e suje a roupa com terra; prenda galhos secos nos ombros e nas costas.',
+      'Pele rachada com látex e sombras marrons, bochechas fundas e lábios escuros.',
+      'Ande rígido, encostado nas árvores do quintal. Conte a lenda para quem perguntar.',
+    ],
+  },
+  {
+    id: 232, nome: 'Nosferatu', emoji: '🦇', categoria: 'Terror',
+    dificuldade: 'Caprichada', custo: 2,
+    ficha: { rosto: 'pintura', calor: 3, volume: 1, formato: ['solo'], susto: 1, reconhecimento: 2 },
+    descricao: 'O vampiro original, sem glamour nenhum: careca, orelhas pontudas e unhas compridas. Sua sombra entra na sala antes de você.',
+    imagem: 'https://source.unsplash.com/600x400/?nosferatu,shadow,stairs',
+    pesos: {
+      genero: { masc: 6, neutro: 4 }, altura: { alto: 8 }, biotipo: { magro: 10 }, cabelo: { careca: 10 }, barba: { sem: 6 },
+      filme: { assassino: 8 }, festa: { rituais: 7, filmes: 4 }, arma: { magia: 6 },
+      estilo: { terror: 9 }, idade: { classico: 6, adulto: 4 }, vibe: { assustar: 10 },
+    },
+    itens: [
+      { nome: 'Touca careca', emoji: '🧑‍🦲', busca: 'touca careca látex' },
+      { nome: 'Orelhas pontudas de látex', emoji: '👂', busca: 'orelhas elfo látex' },
+      { nome: 'Dentes de rato (incisivos)', emoji: '🦷', busca: 'dentes vampiro nosferatu' },
+      { nome: 'Unhas postiças longas', emoji: '💅', busca: 'unhas postiças longas pretas' },
+      { nome: 'Sobretudo preto abotoado', emoji: '🧥', busca: 'sobretudo preto' },
+    ],
+    passos: [
+      'Sobretudo preto abotoado até o pescoço, mangas compridas e mãos à mostra.',
+      'Cabeça careca, orelhas pontudas, olhos fundos e os dois incisivos à frente.',
+      'Unhas longas, postura curvada e mãos levantadas como garras. Suba as escadas devagar.',
     ],
   },
 ]);

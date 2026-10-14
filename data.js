@@ -9,39 +9,83 @@
    data.js → data/*.js → logic.js → main.js
    ============================================================
 
+   COMO A PONTUAÇÃO FUNCIONA (motor em logic.js)
+   Cada resposta soma pontos a cada fantasia por dois caminhos:
+   1. `pesos` da fantasia — gosto e personalidade, escrito à mão por
+      fantasia, só nas perguntas em que ela se destaca.
+   2. `regras` da opção — leem a `ficha` (ou os campos `categoria`,
+      `dificuldade`, `custo`) de TODAS as fantasias de uma vez.
+   Pergunta nova sobre um fato que já está na ficha = só declarar a
+   pergunta com `regras` aqui; nenhuma fantasia precisa ser editada.
+
    Dicionário de categorias (chaves de `pesos` e state.escolhas):
 
-   — Tela 2 · Físico —
+   — Etapa 1 · Físico (pesos) —
    genero:  masc | fem | neutro
+   pele:    clara | media | morena | negra  (PROIBIDO em pesos e
+            regras — ver nota em DICAS_PELE)
    altura:  baixo | medio | alto
    biotipo: magro | atletico | forte
    cabelo:  curto | longo | colorido | careca
-   pele:    clara | media | morena | negra  (NÃO entra em pesos —
-            ver nota em DICAS_PELE)
    barba:   sem | bigode | cavanhaque | cheia
    oculos:  sim | nao
 
-   — Tela 3 · Personalidade —
+   — Etapa 2 · Personalidade (pesos; `estilo` também tem regra) —
    idade:   teen | jovem | adulto | classico
    estilo:  terror | comedia | acao | fantasia | pop
    filme:   sobrevive | vitima | assassino
    festa:   bebida | filmes | rituais
    arma:    machado | magia | sarcasmo
    vibe:    assustar | divertir | impressionar | conforto
-   esforco: capricho | medio | minimo  (não entra em `pesos`:
-            vira ajuste contra `dificuldade` — ver logic.js)
+
+   — Etapa 3 · Na prática (só regras, lendo a ficha) —
+   companhia: sozinho | casal | grupo
+   rosto:     livre | leve | pintura | mascara
+   local:     fechada | balada | rua | trabalho
+   orcamento: zero | medio | alto
+   esforco:   minimo | medio | capricho
 
    Campos de cada fantasia (ver data/*.js):
-   - categoria:   'Terror' | 'Clássicas' | 'Ação & Aventura' |
-                  'Fantasia & Magia' | 'Divertidas' | 'Cultura Pop'
+   - categoria:   uma de CATEGORIAS
    - dificuldade: 'Fácil' | 'Média' | 'Caprichada'
    - custo:       1..3 ($ a $$$)
+   - ficha:       fatos objetivos, TODOS obrigatórios (ver FICHA_VALORES)
+   - pesos:       { categoria: { valor: pontos } }, pontos de 1 a 10
    - itens:       lista de compras; `busca` é o termo do link de
                   afiliado Amazon (null = grátis / já tem em casa)
    - passos:      como montar, em 3 passos curtos
    - imagem:      placeholder Unsplash (trocar em produção; a UI
                   tem fallback automático se a URL falhar)
+
+   Antes de commitar mudanças nas fantasias ou perguntas, rode:
+     node ferramentas/validar.js
    ============================================================ */
+
+const CATEGORIAS = ['Terror', 'Clássicas', 'Ação & Aventura', 'Fantasia & Magia', 'Divertidas', 'Cultura Pop'];
+
+/* ---------- Ficha: fatos objetivos de cada fantasia ----------
+   rosto:          o que vai no rosto — livre (nada), leve (maquiagem
+                   simples, bigode postiço), pintura (pintura completa
+                   ou prótese), mascara (máscara, capacete, lençol)
+   calor:          1 fresca · 2 normal · 3 quente (inflável, pelo,
+                   armadura, kigurumi, sobretudo)
+   volume:         1 roupa comum · 2 acessórios grandes (asas, capa
+                   longa, chapéu enorme) · 3 volumosa (inflável, caixa,
+                   armadura, escudo)
+   formato:        em que situações ela rende: solo, casal, grupo
+   susto:          0 tranquila · 1 assustadora · 2 com sangue ou pesada
+   reconhecimento: 1 só os fãs entendem · 2 a maioria · 3 todo mundo
+   par:            (opcional) ids das fantasias que combinam com ela;
+                   o par deve apontar de volta
+   polemica:       (opcional) true para figuras políticas */
+const FICHA_VALORES = {
+  rosto: ['livre', 'leve', 'pintura', 'mascara'],
+  calor: [1, 2, 3],
+  volume: [1, 2, 3],
+  formato: ['solo', 'casal', 'grupo'],
+  susto: [0, 1, 2],
+  reconhecimento: [1, 2, 3],
+};
 
 /* ---------- Tela 2 · Físico ---------- */
 const ETAPAS_FISICO = [
@@ -134,12 +178,18 @@ const PERGUNTAS_PERSONALIDADE = [
   {
     categoria: 'estilo',
     titulo: 'O que você mais assiste?',
+    // Regra: bônus para as fantasias da categoria que combina com o gosto.
     opcoes: [
-      { valor: 'terror',   rotulo: 'Terror, claro',        emoji: '😱' },
-      { valor: 'comedia',  rotulo: 'Comédia',              emoji: '😂' },
-      { valor: 'acao',     rotulo: 'Ação & aventura',      emoji: '💥' },
-      { valor: 'fantasia', rotulo: 'Fantasia & ficção',    emoji: '🐉' },
-      { valor: 'pop',      rotulo: 'Séries & cultura pop', emoji: '📺' },
+      { valor: 'terror',   rotulo: 'Terror, claro',        emoji: '😱',
+        regras: [{ campo: 'categoria', pontos: { 'Terror': 7 } }] },
+      { valor: 'comedia',  rotulo: 'Comédia',              emoji: '😂',
+        regras: [{ campo: 'categoria', pontos: { 'Divertidas': 7 } }] },
+      { valor: 'acao',     rotulo: 'Ação & aventura',      emoji: '💥',
+        regras: [{ campo: 'categoria', pontos: { 'Ação & Aventura': 7 } }] },
+      { valor: 'fantasia', rotulo: 'Fantasia & ficção',    emoji: '🐉',
+        regras: [{ campo: 'categoria', pontos: { 'Fantasia & Magia': 7 } }] },
+      { valor: 'pop',      rotulo: 'Séries & cultura pop', emoji: '📺',
+        regras: [{ campo: 'categoria', pontos: { 'Cultura Pop': 7 } }] },
     ],
   },
   {
@@ -179,16 +229,109 @@ const PERGUNTAS_PERSONALIDADE = [
       { valor: 'conforto',     rotulo: 'Ficar no estilo sem sofrer',    emoji: '🛋️' },
     ],
   },
+];
+
+/* ---------- Etapa 3 · Na prática ----------
+   Só `regras` (nenhuma fantasia tem pesos aqui). Cada regra lê um
+   campo da ficha — ou `categoria`/`dificuldade`/`custo` — e soma
+   `pontos[valor]`; sem correspondência, soma `senao` (padrão 0).
+   Em campos-lista (formato), vale o maior ponto entre os itens.
+   `motivo` aparece em "Por que você deu match" quando a opção rende
+   3 pontos ou mais para a fantasia exibida. */
+const PERGUNTAS_PRATICAS = [
+  {
+    categoria: 'companhia',
+    titulo: 'Vai fantasiado com quem?',
+    opcoes: [
+      { valor: 'sozinho', rotulo: 'Sozinho, brilhando solo', emoji: '🧍',
+        regras: [{ campo: 'formato', pontos: { solo: 4 }, senao: -6 }],
+        motivo: 'brilha sozinha, sem depender de par' },
+      { valor: 'casal', rotulo: 'Com meu par', emoji: '💑',
+        regras: [{ campo: 'formato', pontos: { casal: 8 } }],
+        motivo: 'rende fantasia de casal' },
+      { valor: 'grupo', rotulo: 'Com a turma toda', emoji: '👯',
+        regras: [{ campo: 'formato', pontos: { grupo: 8 } }],
+        motivo: 'rende fantasia de grupo' },
+    ],
+  },
+  {
+    categoria: 'rosto',
+    titulo: 'E no rosto, o que você topa?',
+    opcoes: [
+      { valor: 'livre', rotulo: 'Nada no rosto', emoji: '🙂',
+        regras: [{ campo: 'rosto', pontos: { livre: 6, leve: 2, pintura: -10, mascara: -3 } }],
+        motivo: 'não precisa de nada no rosto' },
+      { valor: 'leve', rotulo: 'Só uma maquiagem leve', emoji: '💄',
+        regras: [{ campo: 'rosto', pontos: { livre: 2, leve: 6, pintura: -5, mascara: 0 } }],
+        motivo: 'só pede uma maquiagem leve' },
+      { valor: 'pintura', rotulo: 'Pintura completa, pode vir', emoji: '🎨',
+        regras: [{ campo: 'rosto', pontos: { pintura: 7, leve: 4, mascara: 3, livre: 2 } }],
+        motivo: 'tem a pintura de rosto que você topou' },
+      { valor: 'mascara', rotulo: 'Prefiro máscara ou capacete', emoji: '🎭',
+        regras: [{ campo: 'rosto', pontos: { mascara: 8, livre: 1, leve: 0, pintura: -3 } }],
+        motivo: 'esconde o rosto, do jeito que você queria' },
+    ],
+  },
+  {
+    categoria: 'local',
+    titulo: 'Onde você vai usar?',
+    opcoes: [
+      { valor: 'fechada', rotulo: 'Festa fechada ou em casa', emoji: '🏠', regras: [] },
+      { valor: 'balada', rotulo: 'Balada ou show lotado', emoji: '🪩',
+        regras: [
+          { campo: 'volume', pontos: { 1: 3, 2: 0, 3: -7 } },
+          { campo: 'calor', pontos: { 3: -3 } },
+        ],
+        motivo: 'é prática para a pista lotada' },
+      { valor: 'rua', rotulo: 'Bloco de rua, no calor', emoji: '☀️',
+        regras: [
+          { campo: 'calor', pontos: { 1: 6, 2: 0, 3: -9 } },
+          { campo: 'volume', pontos: { 3: -5 } },
+        ],
+        motivo: 'é fresca para aguentar o calor' },
+      { valor: 'trabalho', rotulo: 'Escola ou trabalho', emoji: '💼',
+        regras: [
+          { campo: 'susto', pontos: { 0: 3, 1: 0, 2: -12 } },
+          { campo: 'polemica', pontos: { true: -10 } },
+          { campo: 'volume', pontos: { 3: -3 } },
+        ],
+        motivo: 'é tranquila para escola ou trabalho' },
+    ],
+  },
+  {
+    categoria: 'orcamento',
+    titulo: 'Quanto quer gastar?',
+    opcoes: [
+      { valor: 'zero', rotulo: 'Quase nada, uso o que tenho', emoji: '🪙',
+        regras: [{ campo: 'custo', pontos: { 1: 7, 2: 0, 3: -7 } }],
+        motivo: 'dá para montar gastando quase nada' },
+      { valor: 'medio', rotulo: 'Até uns R$ 100', emoji: '💵',
+        regras: [{ campo: 'custo', pontos: { 1: 3, 2: 5, 3: -3 } }],
+        motivo: 'cabe no seu orçamento' },
+      { valor: 'alto', rotulo: 'O que precisar', emoji: '💳',
+        regras: [{ campo: 'custo', pontos: { 1: 0, 2: 3, 3: 6 } }],
+        motivo: 'vale o investimento que você topou' },
+    ],
+  },
   {
     categoria: 'esforco',
     titulo: 'Quanto esforço você topa na montagem?',
     opcoes: [
-      { valor: 'capricho', rotulo: 'Produção completa, sem limites', emoji: '🎬' },
-      { valor: 'medio',    rotulo: 'Um meio-termo esperto',          emoji: '⚖️' },
-      { valor: 'minimo',   rotulo: 'Mínimo esforço, máximo efeito',  emoji: '🦥' },
+      { valor: 'minimo', rotulo: 'Mínimo esforço, máximo efeito', emoji: '🦥',
+        regras: [{ campo: 'dificuldade', pontos: { 'Fácil': 8, 'Média': 0, 'Caprichada': -8 } }],
+        motivo: 'monta rápido, sem dor de cabeça' },
+      { valor: 'medio', rotulo: 'Um meio-termo esperto', emoji: '⚖️',
+        regras: [{ campo: 'dificuldade', pontos: { 'Fácil': 3, 'Média': 6, 'Caprichada': 1 } }],
+        motivo: 'tem o meio-termo de esforço que você queria' },
+      { valor: 'capricho', rotulo: 'Produção completa, sem limites', emoji: '🎬',
+        regras: [{ campo: 'dificuldade', pontos: { 'Fácil': -2, 'Média': 3, 'Caprichada': 8 } }],
+        motivo: 'é uma produção à altura do seu capricho' },
     ],
   },
 ];
+
+/* Todas as perguntas, na ordem do quiz (usado por logic.js e pelo validador). */
+const TODAS_AS_PERGUNTAS = [...ETAPAS_FISICO, ...PERGUNTAS_PERSONALIDADE, ...PERGUNTAS_PRATICAS];
 
 /* ---------- Rótulos amigáveis dos "motivos do match" ---------- */
 const ROTULOS_MATCH = {

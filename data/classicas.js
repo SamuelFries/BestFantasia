@@ -9,6 +9,7 @@ registrarFantasias([
   {
     id: 7, nome: 'Esqueleto Neon', emoji: '💀', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [197] },
     descricao: 'Zero gordura, zero vergonha e brilho no escuro. Você dança até o osso — literalmente.',
     imagem: 'https://source.unsplash.com/600x400/?skeleton,neon',
     pesos: {
@@ -31,6 +32,7 @@ registrarFantasias([
   {
     id: 8, nome: 'Monstro de Frankenstein', emoji: '⚡', categoria: 'Clássicas',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 1, reconhecimento: 3, par: [15, 9, 47] },
     descricao: 'Grande, incompreendido e cheio de pontos (de costura). No fundo, você só quer um abraço… bem forte.',
     imagem: 'https://source.unsplash.com/600x400/?frankenstein,monster',
     pesos: {
@@ -54,6 +56,7 @@ registrarFantasias([
   {
     id: 9, nome: 'Múmia Enrolada', emoji: '🏺', categoria: 'Clássicas',
     dificuldade: 'Média', custo: 1,
+    ficha: { rosto: 'mascara', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 1, reconhecimento: 3, par: [8, 47, 23] },
     descricao: 'Milênios de soneca e ainda acorda icônica. Você é a prova viva (ou quase) de que skincare funciona.',
     imagem: 'https://source.unsplash.com/600x400/?mummy,egypt',
     pesos: {
@@ -77,6 +80,7 @@ registrarFantasias([
   {
     id: 10, nome: 'Diabinho de Plantão', emoji: '😈', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [11] },
     descricao: 'Pequeno no tamanho, gigante na travessura. Sua especialidade? Ideias péssimas apresentadas com muito carisma.',
     imagem: 'https://source.unsplash.com/600x400/?devil,red',
     pesos: {
@@ -100,12 +104,13 @@ registrarFantasias([
   {
     id: 11, nome: 'Anjo Caído', emoji: '🪽', categoria: 'Clássicas',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [10, 19] },
     descricao: 'Aura celestial, decisões questionáveis. Você caiu do céu, mas caiu com pose de capa de álbum.',
     imagem: 'https://source.unsplash.com/600x400/?angel,wings',
     pesos: {
-      genero: { fem: 6, neutro: 3 }, altura: { alto: 6 }, biotipo: { atletico: 5, magro: 3 }, cabelo: { longo: 8 }, barba: { sem: 4 },
-      filme: { sobrevive: 5 }, festa: { rituais: 4, filmes: 3 }, arma: { magia: 8 },
-      estilo: { fantasia: 5 }, idade: { jovem: 5, adulto: 3 }, vibe: { impressionar: 7 },
+      genero: { fem: 8, neutro: 3 }, altura: { alto: 6 }, biotipo: { atletico: 5, magro: 3 }, cabelo: { longo: 9 }, barba: { sem: 4 },
+      filme: { sobrevive: 5 }, festa: { rituais: 6, filmes: 3 }, arma: { magia: 9 },
+      estilo: { fantasia: 7 }, idade: { jovem: 5, adulto: 3 }, vibe: { impressionar: 9 },
     },
     itens: [
       { nome: 'Asas pretas (ou brancas sujas de cinza)', emoji: '🪽', busca: 'asas anjo preta fantasia' },
@@ -123,6 +128,7 @@ registrarFantasias([
   {
     id: 14, nome: 'Gato Preto Misterioso', emoji: '🐈‍⬛', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [2, 186] },
     descricao: 'Sete vidas, zero paciência e um talento nato para aparecer onde não foi chamado. Azar? Só para os outros.',
     imagem: 'https://source.unsplash.com/600x400/?black-cat,night',
     pesos: {
@@ -146,12 +152,13 @@ registrarFantasias([
   {
     id: 20, nome: 'Catrina Floral', emoji: '🌺', categoria: 'Clássicas',
     dificuldade: 'Caprichada', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [197] },
     descricao: 'A caveira mais elegante das Américas. Flores no cabelo, arte no rosto e uma lição: a morte pode ser um espetáculo.',
     imagem: 'https://source.unsplash.com/600x400/?catrina,day-of-the-dead',
     pesos: {
-      genero: { fem: 8 }, altura: { medio: 3, alto: 3 }, biotipo: { magro: 4 }, cabelo: { longo: 6, colorido: 3 }, barba: { sem: 3 },
-      filme: { sobrevive: 4 }, festa: { rituais: 7 }, arma: { magia: 5 },
-      estilo: { fantasia: 4, terror: 3 }, idade: { adulto: 5, classico: 4 }, vibe: { impressionar: 9 },
+      genero: { fem: 10 }, altura: { medio: 3, alto: 3 }, biotipo: { magro: 4 }, cabelo: { longo: 6, colorido: 3 }, barba: { sem: 3 },
+      filme: { sobrevive: 6 }, festa: { rituais: 9 }, arma: { magia: 5 },
+      estilo: { fantasia: 6, terror: 3 }, idade: { adulto: 7, classico: 4 }, vibe: { impressionar: 10 },
     },
     itens: [
       { nome: 'Kit de maquiagem caveira mexicana', emoji: '💀', busca: 'kit maquiagem caveira mexicana' },
@@ -169,6 +176,7 @@ registrarFantasias([
   {
     id: 49, nome: 'Faraó do Nilo', emoji: '🏺', categoria: 'Clássicas',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [50] },
     descricao: 'Ouro no pescoço, olhar de quem mandou construir pirâmides e paciência zero com rebeliões. A festa é sua colônia.',
     imagem: 'https://source.unsplash.com/600x400/?pharaoh,egypt,gold',
     pesos: {
@@ -192,6 +200,7 @@ registrarFantasias([
   {
     id: 50, nome: 'Cleópatra', emoji: '🐍', categoria: 'Clássicas',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [49] },
     descricao: 'Impérios caíram por um olhar seu. Franja impecável, serpentes no braço e a certeza de que todo mundo na festa deve algo a você.',
     imagem: 'https://source.unsplash.com/600x400/?cleopatra,egypt',
     pesos: {
@@ -215,6 +224,7 @@ registrarFantasias([
   {
     id: 51, nome: 'Deusa Grega', emoji: '🏛️', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Um lençol, uma coroa de louros e pronto: o Olimpo inteiro te deve favores. Elegância divina com orçamento mortal.',
     imagem: 'https://source.unsplash.com/600x400/?greek,goddess,statue',
     pesos: {
@@ -238,6 +248,7 @@ registrarFantasias([
   {
     id: 52, nome: 'Cavaleiro Medieval', emoji: '⚔️', categoria: 'Clássicas',
     dificuldade: 'Caprichada', custo: 3,
+    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [201, 183] },
     descricao: 'Honra, armadura e uma espada que você jura que não é de brinquedo. Dragões (e filas de bar) não têm chance.',
     imagem: 'https://source.unsplash.com/600x400/?knight,armor',
     pesos: {
@@ -261,12 +272,13 @@ registrarFantasias([
   {
     id: 53, nome: 'Bombeiro Herói', emoji: '🧯', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'leve', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Suspensório, capacete e a aura de quem salva gatinhos de árvores. Qualquer "pegou fogo" na pista é problema seu.',
     imagem: 'https://source.unsplash.com/600x400/?firefighter,helmet',
     pesos: {
-      genero: { masc: 5, fem: 3 }, altura: { medio: 4, alto: 4 }, biotipo: { atletico: 7, forte: 6 }, cabelo: { curto: 6 }, barba: { bigode: 5, sem: 3 },
-      filme: { sobrevive: 8 }, festa: { bebida: 6 }, arma: { machado: 8 },
-      estilo: { acao: 6 }, idade: { adulto: 6, jovem: 3 }, vibe: { impressionar: 5, conforto: 4 },
+      genero: { masc: 5, fem: 3 }, altura: { medio: 4, alto: 4 }, biotipo: { atletico: 7, forte: 6 }, cabelo: { curto: 6 }, barba: { bigode: 7, sem: 3 },
+      filme: { sobrevive: 9 }, festa: { bebida: 6 }, arma: { machado: 9 },
+      estilo: { acao: 8 }, idade: { adulto: 8, jovem: 3 }, vibe: { impressionar: 5, conforto: 4 },
     },
     itens: [
       { nome: 'Jaqueta com faixas refletivas', emoji: '🧥', busca: 'jaqueta bombeiro fantasia' },
@@ -284,6 +296,7 @@ registrarFantasias([
   {
     id: 54, nome: 'Hippie Anos 70', emoji: '☮️', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Paz, amor e calça boca de sino. Você não chegou atrasado: o tempo é uma construção, meu bem.',
     imagem: 'https://source.unsplash.com/600x400/?hippie,70s',
     pesos: {
@@ -307,6 +320,7 @@ registrarFantasias([
   {
     id: 196, nome: 'Policial Retrô', emoji: '👮', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [200] },
     descricao: 'Bigode, óculos aviador e algemas de brinquedo. Você multa quem dança mal e prende quem fura a fila do bar.',
     imagem: 'https://source.unsplash.com/600x400/?police,retro,aviator',
     pesos: {
@@ -331,6 +345,7 @@ registrarFantasias([
   {
     id: 197, nome: 'Caveira de Smoking', emoji: '💀', categoria: 'Clássicas',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [20, 7] },
     descricao: 'Esqueleto por fora, gala por dentro. Você morreu elegante e pretende continuar assim na pista.',
     imagem: 'https://source.unsplash.com/600x400/?skull,tuxedo,elegant',
     pesos: {
@@ -354,6 +369,7 @@ registrarFantasias([
   {
     id: 198, nome: 'Marinheiro', emoji: '⚓', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Listras, gorro branco e uma âncora tatuada à caneta. Você navega entre o bar e a pista com a elegância de quem já enjoou muito.',
     imagem: 'https://source.unsplash.com/600x400/?sailor,stripes,anchor',
     pesos: {
@@ -377,6 +393,7 @@ registrarFantasias([
   {
     id: 199, nome: 'Melindrosa Anos 20', emoji: '🪶', categoria: 'Clássicas',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [200] },
     descricao: 'Franjas, pérolas e pena na cabeça. Você dança Charleston, bebe em copo de chá e nunca conta onde fica a festa clandestina.',
     imagem: 'https://source.unsplash.com/600x400/?flapper,1920s,pearls',
     pesos: {
@@ -400,6 +417,7 @@ registrarFantasias([
   {
     id: 200, nome: 'Gângster Anos 30', emoji: '🎩', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [196, 199] },
     descricao: 'Risca de giz, fedora e uma proposta que ninguém recusa: "passa o salgadinho". A Lei Seca é só uma sugestão.',
     imagem: 'https://source.unsplash.com/600x400/?gangster,1930s,fedora',
     pesos: {
@@ -424,6 +442,7 @@ registrarFantasias([
   {
     id: 201, nome: 'Realeza Medieval', emoji: '👑', categoria: 'Clássicas',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [52] },
     descricao: 'Manto de veludo, coroa e um cetro para apontar o que não te agrada. Cortem-lhe a cabeça — ou pelo menos o volume da música.',
     imagem: 'https://source.unsplash.com/600x400/?king,queen,crown,velvet',
     pesos: {
@@ -442,6 +461,126 @@ registrarFantasias([
       'Túnica ou vestido longo com cinto dourado e o manto de veludo por cima.',
       'Coroa bem firme, anéis em vários dedos e postura ereta de quem nunca lavou louça.',
       'Cetro na mão e decretos reais em voz alta: "decreto que o bar fica aberto".',
+    ],
+  },
+  {
+    id: 248, nome: 'Pierrô', emoji: '🤍', categoria: 'Clássicas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [249] },
+    descricao: 'Roupa branca de pompons, rosto pálido e uma lágrima pintada. O apaixonado mais clássico do Carnaval, sempre suspirando pela Colombina.',
+    imagem: 'https://source.unsplash.com/600x400/?pierrot,white,clown,tear',
+    pesos: {
+      genero: { masc: 6, neutro: 4 }, altura: { medio: 4, alto: 3 }, biotipo: { magro: 7 }, cabelo: { curto: 4, careca: 3 }, barba: { sem: 7 },
+      filme: { vitima: 8 }, festa: { bebida: 6, filmes: 3 }, arma: { magia: 4, sarcasmo: 4 },
+      estilo: { comedia: 4, fantasia: 3 }, idade: { adulto: 5, classico: 5 }, vibe: { impressionar: 5, conforto: 5 },
+    },
+    itens: [
+      { nome: 'Macacão ou bata branca larga', emoji: '🤍', busca: 'fantasia pierrot adulto' },
+      { nome: 'Pompons pretos (para colar)', emoji: '⚫', busca: 'pompom preto artesanato' },
+      { nome: 'Gola de babado branca', emoji: '🎀', busca: 'gola rufo branca' },
+      { nome: 'Base branca e lápis preto (a lágrima)', emoji: '🎨', busca: 'tinta facial branca halloween' },
+      { nome: 'Touca preta justa', emoji: '🖤', busca: 'touca preta justa' },
+    ],
+    passos: [
+      'Bata branca larga com três pompons pretos na frente e a gola de babado.',
+      'Rosto branco, sobrancelhas arqueadas e uma lágrima preta descendo de um olho.',
+      'Touca preta justa na cabeça e suspiros pela Colombina mais próxima.',
+    ],
+  },
+  {
+    id: 249, nome: 'Colombina', emoji: '🎭', categoria: 'Clássicas',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'mascara', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [248] },
+    descricao: 'Máscara de olhos, saia rodada e o charme que deixou Pierrô e Arlequim brigando há séculos. A rainha das marchinhas.',
+    imagem: 'https://source.unsplash.com/600x400/?colombina,carnival,mask',
+    pesos: {
+      genero: { fem: 10 }, altura: { medio: 4, baixo: 3 }, biotipo: { magro: 5, atletico: 3 }, cabelo: { longo: 7, curto: 4 }, barba: { sem: 4 },
+      filme: { sobrevive: 6 }, festa: { bebida: 10 }, arma: { sarcasmo: 6, magia: 4 },
+      estilo: { comedia: 7, pop: 3 }, idade: { jovem: 5, adulto: 5 }, vibe: { impressionar: 9, divertir: 5 },
+    },
+    itens: [
+      { nome: 'Vestido de losangos coloridos ou saia rodada', emoji: '🎭', busca: 'fantasia colombina adulto' },
+      { nome: 'Máscara de olhos com plumas', emoji: '🪶', busca: 'máscara veneziana plumas' },
+      { nome: 'Meia-calça branca', emoji: '🧦', busca: 'meia calça branca' },
+      { nome: 'Gola de babado', emoji: '🎀', busca: 'gola rufo branca' },
+      { nome: 'Leque', emoji: '🪭', busca: 'leque renda' },
+    ],
+    passos: [
+      'Vestido de losangos (ou saia rodada com corpete) e meia-calça branca.',
+      'Gola de babado, cabelo preso com laço e máscara de olhos com plumas.',
+      'Leque na mão e marchinhas de Carnaval no repertório — você comanda o cordão.',
+    ],
+  },
+  {
+    id: 250, nome: 'Mímico Francês', emoji: '🥖', categoria: 'Clássicas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
+    descricao: 'Listras, suspensório e uma parede invisível que só você enxerga. Você não diz uma palavra a noite inteira — e mesmo assim é o mais comunicativo.',
+    imagem: 'https://source.unsplash.com/600x400/?mime,stripes,beret',
+    pesos: {
+      genero: { neutro: 8, masc: 3 }, altura: { medio: 4 }, biotipo: { magro: 7 }, cabelo: { curto: 4, careca: 3 }, barba: { sem: 6 },
+      filme: { vitima: 6, sobrevive: 3 }, festa: { filmes: 5 }, arma: { sarcasmo: 6, magia: 4 },
+      estilo: { comedia: 10 }, idade: { jovem: 5, adulto: 4 }, vibe: { divertir: 10, conforto: 6 },
+    },
+    itens: [
+      { nome: 'Camiseta listrada preta e branca', emoji: '🦓', busca: 'camiseta listrada preto branco' },
+      { nome: 'Suspensório preto', emoji: '🎽', busca: 'suspensório preto' },
+      { nome: 'Boina preta', emoji: '🧢', busca: 'boina francesa preta' },
+      { nome: 'Luvas brancas', emoji: '🧤', busca: 'luvas brancas' },
+      { nome: 'Base branca e batom vermelho', emoji: '🎨', busca: 'tinta facial branca halloween' },
+    ],
+    passos: [
+      'Camiseta listrada, calça preta, suspensório e luvas brancas.',
+      'Rosto branco, olhos marcados de preto, boca vermelha pequena e boina inclinada.',
+      'Silêncio total: preso na caixa invisível, puxando a corda invisível, descendo a escada invisível.',
+    ],
+  },
+  {
+    id: 251, nome: 'Palhaço de Circo', emoji: '🎪', categoria: 'Clássicas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'pintura', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [252] },
+    descricao: 'Do bem, colorido e com uma flor que esguicha água. O palhaço que as crianças amam — sem nenhuma intenção sinistra. Prometemos.',
+    imagem: 'https://source.unsplash.com/600x400/?circus,clown,colorful',
+    pesos: {
+      genero: { neutro: 5, masc: 4 }, altura: { medio: 4, baixo: 3 }, biotipo: { forte: 6 }, cabelo: { colorido: 8 }, barba: { sem: 5 },
+      filme: { vitima: 6 }, festa: { bebida: 5, filmes: 4 }, arma: { sarcasmo: 6, magia: 4 },
+      estilo: { comedia: 9 }, idade: { adulto: 4, classico: 4, jovem: 3 }, vibe: { divertir: 10 },
+    },
+    itens: [
+      { nome: 'Peruca colorida de palhaço', emoji: '🌈', busca: 'peruca palhaço colorida' },
+      { nome: 'Nariz vermelho', emoji: '🔴', busca: 'nariz palhaço' },
+      { nome: 'Macacão ou roupa larga colorida', emoji: '🤡', busca: 'fantasia palhaço adulto' },
+      { nome: 'Sapatos grandes de palhaço', emoji: '👞', busca: 'sapato palhaço grande' },
+      { nome: 'Flor que esguicha água', emoji: '🌼', busca: 'flor esguicha água pegadinha' },
+    ],
+    passos: [
+      'Roupa larga colorida, suspensório e sapatões.',
+      'Maquiagem alegre: sorriso grande, bochechas vermelhas e estrelinhas nos olhos. Nada de sangue.',
+      'Nariz vermelho, peruca colorida e a flor que esguicha — avise antes de usar.',
+    ],
+  },
+  {
+    id: 252, nome: 'Mestre de Cerimônias do Circo', emoji: '🎩', categoria: 'Clássicas',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, par: [251] },
+    descricao: 'Fraque vermelho, cartola e um megafone imaginário. Respeitável público: o maior espetáculo da Terra é esta festa, e você o anuncia.',
+    imagem: 'https://source.unsplash.com/600x400/?ringmaster,circus,top,hat',
+    pesos: {
+      genero: { masc: 5, fem: 4 }, altura: { alto: 5, medio: 3 }, biotipo: { atletico: 5, forte: 4 }, cabelo: { curto: 4, longo: 3 }, barba: { bigode: 7, cavanhaque: 3 },
+      filme: { sobrevive: 7 }, festa: { bebida: 7 }, arma: { sarcasmo: 6, magia: 5 },
+      estilo: { comedia: 5, pop: 4, fantasia: 3 }, idade: { adulto: 6, classico: 4 }, vibe: { impressionar: 8, divertir: 6 },
+    },
+    itens: [
+      { nome: 'Fraque vermelho com botões dourados', emoji: '🟥', busca: 'fraque vermelho mestre de cerimônias' },
+      { nome: 'Cartola preta', emoji: '🎩', busca: 'cartola preta' },
+      { nome: 'Calça branca ou preta', emoji: '👖', busca: 'calça branca' },
+      { nome: 'Chicote de domador (brinquedo)', emoji: '〰️', busca: 'chicote fantasia' },
+      { nome: 'Botas pretas de cano alto', emoji: '🥾', busca: 'bota cano alto preta' },
+    ],
+    passos: [
+      'Fraque vermelho, calça branca para dentro das botas e luvas brancas.',
+      'Cartola, bigode torcido nas pontas e voz de anunciante.',
+      'Apresente cada amigo que chegar: "E agora, respeitável público…"',
     ],
   },
 ]);

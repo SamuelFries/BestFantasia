@@ -9,6 +9,7 @@ registrarFantasias([
   {
     id: 5, nome: 'Fantasma de Lençol Chique', emoji: '👻', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'mascara', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [22] },
     descricao: 'Esforço mínimo, impacto máximo. Você assombra com estilo e ainda economiza na fantasia. Gênio.',
     imagem: 'https://source.unsplash.com/600x400/?ghost,sheet',
     pesos: {
@@ -31,6 +32,7 @@ registrarFantasias([
   {
     id: 15, nome: 'Cientista Maluco', emoji: '🧪', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [8] },
     descricao: 'Ética duvidosa, cabelo elétrico e um "confia em mim" que nunca termina bem. A ciência agradece (e se esconde).',
     imagem: 'https://source.unsplash.com/600x400/?laboratory,scientist',
     pesos: {
@@ -54,6 +56,7 @@ registrarFantasias([
   {
     id: 33, nome: 'T-Rex Inflável', emoji: '🦖', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 3,
+    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Braços curtos, fama gigante. Você não dança bem, mas ninguém na história das festas se divertiu mais que um T-Rex inflável.',
     imagem: 'https://source.unsplash.com/600x400/?trex,dinosaur',
     pesos: {
@@ -76,6 +79,7 @@ registrarFantasias([
   {
     id: 34, nome: 'Banana Protagonista', emoji: '🍌', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
     descricao: 'Amarela, confiante e levemente escorregadia. Toda festa tem uma banana — e, sejamos honestos, ela sempre rouba a cena.',
     imagem: 'https://source.unsplash.com/600x400/?banana,yellow',
     pesos: {
@@ -98,6 +102,7 @@ registrarFantasias([
   {
     id: 35, nome: 'Turista Perdido', emoji: '🧳', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2 },
     descricao: 'Camisa havaiana, pochete regulamentar e um mapa aberto do tamanho de um lençol. Você não está perdido: está "explorando".',
     imagem: 'https://source.unsplash.com/600x400/?tourist,hawaiian',
     pesos: {
@@ -122,6 +127,7 @@ registrarFantasias([
   {
     id: 36, nome: 'Unicórnio Aconchegante', emoji: '🦄', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Mítico, raro e extremamente confortável. Enquanto todo mundo sofre no salto, você brilha de pijama. Quem venceu?',
     imagem: 'https://source.unsplash.com/600x400/?unicorn,rainbow',
     pesos: {
@@ -145,6 +151,7 @@ registrarFantasias([
   {
     id: 37, nome: 'Robô de Papelão', emoji: '🤖', categoria: 'Divertidas',
     dificuldade: 'Caprichada', custo: 1,
+    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo'], susto: 0, reconhecimento: 2 },
     descricao: 'Beep boop. Processador movido a refrigerante, coração de LED e dança do robô tecnicamente obrigatória. Erro 404: vergonha não encontrada.',
     imagem: 'https://source.unsplash.com/600x400/?robot,cardboard',
     pesos: {
@@ -169,6 +176,7 @@ registrarFantasias([
   {
     id: 38, nome: 'Alienígena Retrô', emoji: '👽', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [27] },
     descricao: 'Veio estudar os humanos e ficou pela playlist. Seu relatório para a nave-mãe: "civilização estranha, festas excelentes".',
     imagem: 'https://source.unsplash.com/600x400/?alien,ufo',
     pesos: {
@@ -192,6 +200,7 @@ registrarFantasias([
   {
     id: 69, nome: 'Nerd Clássico', emoji: '🤓', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Óculos remendados, calça na altura do peito e um QI que intimida. Você corrige a gramática do convite e ainda assim é convidado.',
     imagem: 'https://source.unsplash.com/600x400/?nerd,glasses',
     pesos: {
@@ -215,6 +224,7 @@ registrarFantasias([
   {
     id: 70, nome: 'Fatia de Pizza Ambulante', emoji: '🍕', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [189, 188] },
     descricao: 'Quente, popular e desejada por todos às 3 da manhã. Você é a única fantasia que faz as pessoas sentirem fome.',
     imagem: 'https://source.unsplash.com/600x400/?pizza,slice',
     pesos: {
@@ -237,6 +247,7 @@ registrarFantasias([
   {
     id: 71, nome: 'Gnomo de Jardim', emoji: '🍄', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Chapéu pontudo, barba até o cinto e a serenidade de quem passa décadas parado no mesmo canteiro. Você protege o jardim e o open bar.',
     imagem: 'https://source.unsplash.com/600x400/?gnome,garden',
     pesos: {
@@ -260,6 +271,7 @@ registrarFantasias([
   {
     id: 72, nome: 'Aeróbica Anos 80', emoji: '🎀', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2 },
     descricao: 'Collant neon, polainas e uma playlist que não sabe o que é silêncio. Você não dança: você faz "step".',
     imagem: 'https://source.unsplash.com/600x400/?aerobics,80s,neon',
     pesos: {
@@ -283,6 +295,7 @@ registrarFantasias([
   {
     id: 73, nome: 'Tripulante do Among Us', emoji: '🚀', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Ninguém sabe se você é inocente. Você também não. Mas a reunião de emergência já foi convocada e o suspeito é… vermelho.',
     imagem: 'https://source.unsplash.com/600x400/?astronaut,colorful,toy',
     pesos: {
@@ -305,6 +318,7 @@ registrarFantasias([
   {
     id: 74, nome: 'Minion', emoji: '💛', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [225] },
     descricao: 'Amarelo, pequeno e movido a banana. Você fala uma língua própria e ainda assim é a pessoa mais compreendida da festa.',
     imagem: 'https://source.unsplash.com/600x400/?minion,yellow',
     pesos: {
@@ -328,6 +342,7 @@ registrarFantasias([
   {
     id: 188, nome: 'Abacate Millennial', emoji: '🥑', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, par: [70, 189] },
     descricao: 'Verde por fora, caroço por dentro e um preço que impede a geração inteira de comprar casa. Você é a torrada da festa.',
     imagem: 'https://source.unsplash.com/600x400/?avocado,green,costume',
     pesos: {
@@ -350,12 +365,13 @@ registrarFantasias([
   {
     id: 189, nome: 'Cachorro-Quente Ambulante', emoji: '🌭', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [70, 188] },
     descricao: 'Pão, salsicha e mostarda em formato humano. Você é o lanche das 3 da manhã que todo mundo quer — e ninguém admite.',
     imagem: 'https://source.unsplash.com/600x400/?hotdog,costume,fun',
     pesos: {
       genero: { neutro: 5, masc: 4 }, altura: { alto: 5, medio: 3 }, biotipo: { magro: 6 },
-      filme: { vitima: 6 }, festa: { bebida: 7 }, arma: { sarcasmo: 8 },
-      estilo: { comedia: 9 }, idade: { jovem: 5, teen: 4, adulto: 4 }, vibe: { divertir: 8, conforto: 4 },
+      filme: { vitima: 8 }, festa: { bebida: 9 }, arma: { sarcasmo: 8 },
+      estilo: { comedia: 9 }, idade: { adulto: 6, jovem: 5, teen: 4 }, vibe: { divertir: 9, conforto: 4 },
     },
     itens: [
       { nome: 'Fantasia de cachorro-quente', emoji: '🌭', busca: 'fantasia cachorro quente adulto' },
@@ -372,6 +388,7 @@ registrarFantasias([
   {
     id: 190, nome: 'Nuvem de Chuva', emoji: '☁️', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 1,
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 1 },
     descricao: 'Fofinha, cinza e sempre em cima de alguém. Você é o dia ruim em pessoa — e, surpreendentemente, a fantasia mais abraçável da festa.',
     imagem: 'https://source.unsplash.com/600x400/?cloud,rain,cotton',
     pesos: {
@@ -395,6 +412,7 @@ registrarFantasias([
   {
     id: 191, nome: 'Balde de Pipoca', emoji: '🍿', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 1,
+    ficha: { rosto: 'livre', calor: 3, volume: 3, formato: ['solo'], susto: 0, reconhecimento: 2 },
     descricao: 'Listras vermelhas, pipocas de isopor e o cheiro de maratona de filmes. Todo mundo quer pegar um punhado de você.',
     imagem: 'https://source.unsplash.com/600x400/?popcorn,bucket,cinema',
     pesos: {
@@ -418,6 +436,7 @@ registrarFantasias([
   {
     id: 192, nome: 'Dançarino Disco Anos 70', emoji: '🪩', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Gola enorme, calça brilhante e o dedo apontado para o céu. A febre de sábado à noite nunca passou — nem o cabelo.',
     imagem: 'https://source.unsplash.com/600x400/?disco,70s,dance',
     pesos: {
@@ -441,12 +460,13 @@ registrarFantasias([
   {
     id: 193, nome: 'Roqueiro Glam', emoji: '🎸', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'pintura', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Rosto pintado de preto e branco, couro com tachas e uma língua que vai mais longe que o solo de guitarra. Você quer rock and roll a noite toda.',
     imagem: 'https://source.unsplash.com/600x400/?rock,glam,makeup,guitar',
     pesos: {
-      genero: { masc: 5, neutro: 5 }, altura: { alto: 4, medio: 4 }, biotipo: { magro: 5, atletico: 3 }, cabelo: { longo: 7, colorido: 4 }, barba: { sem: 4 },
-      filme: { assassino: 4, sobrevive: 4 }, festa: { bebida: 8 }, arma: { sarcasmo: 6, machado: 4 },
-      estilo: { comedia: 5, pop: 6 }, idade: { classico: 6, adulto: 5 }, vibe: { impressionar: 7, divertir: 5 },
+      genero: { masc: 5, neutro: 5 }, altura: { alto: 4, medio: 4 }, biotipo: { magro: 5, atletico: 3 }, cabelo: { longo: 9, colorido: 4 }, barba: { sem: 4 },
+      filme: { assassino: 4, sobrevive: 4 }, festa: { bebida: 10 }, arma: { sarcasmo: 8, machado: 4 },
+      estilo: { pop: 7, comedia: 5 }, idade: { classico: 6, adulto: 5 }, vibe: { impressionar: 9, divertir: 5 },
     },
     itens: [
       { nome: 'Tinta facial preta e branca', emoji: '🎨', busca: 'tinta facial preto branco' },
@@ -464,6 +484,7 @@ registrarFantasias([
   {
     id: 194, nome: 'Sushi Humano', emoji: '🍣', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 1,
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2 },
     descricao: 'Arroz, nori e uma fatia de salmão na cabeça. Você é o rodízio que anda — e pede desculpas por não ter wasabi.',
     imagem: 'https://source.unsplash.com/600x400/?sushi,salmon,rice',
     pesos: {
@@ -487,6 +508,7 @@ registrarFantasias([
   {
     id: 195, nome: 'Influencer em Surto', emoji: '📱', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
     descricao: 'Ring light, copo gigante e uma parceria com qualquer marca que passar. Você não vai à festa: você faz conteúdo na festa. #publi',
     imagem: 'https://source.unsplash.com/600x400/?ring,light,phone,selfie',
     pesos: {
@@ -505,6 +527,123 @@ registrarFantasias([
       'Legging, top, tênis branco e óculos escuros mesmo à noite.',
       'Ring light pendurada no pescoço ou presa ao celular, sempre ligada.',
       'Filme tudo, narre tudo e chame os convidados de "gente". Encerre com "link na bio".',
+    ],
+  },
+  {
+    id: 243, nome: 'Lutador de Sumô Inflável', emoji: '🍙', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 3,
+    ficha: { rosto: 'livre', calor: 3, volume: 3, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
+    descricao: 'Duzentos quilos de ar e zero equilíbrio. Você ocupa a pista inteira sozinho e cada esbarrão vira um combate oficial.',
+    imagem: 'https://source.unsplash.com/600x400/?sumo,inflatable,costume',
+    pesos: {
+      genero: { masc: 5, neutro: 4 }, altura: { baixo: 4, medio: 4 }, biotipo: { magro: 5, forte: 4 },
+      filme: { vitima: 7 }, festa: { bebida: 7 }, arma: { machado: 5, sarcasmo: 5 },
+      estilo: { comedia: 10 }, idade: { jovem: 6, adulto: 4 }, vibe: { divertir: 10 },
+    },
+    itens: [
+      { nome: 'Fantasia inflável de sumô', emoji: '🍙', busca: 'fantasia inflável sumô' },
+      { nome: 'Pilhas para o ventilador', emoji: '🔋', busca: 'pilha AA pacote' },
+      { nome: 'Peruca com coque alto (opcional)', emoji: '💇', busca: 'peruca coque samurai' },
+      { nome: 'Roupa leve por baixo (a sua)', emoji: '🩳', busca: null },
+    ],
+    passos: [
+      'Roupa leve por baixo, fantasia inflada e pilhas novas (teste antes de sair).',
+      'Coque alto e cara de concentração antes de cada "luta".',
+      'Desafie os amigos para um empurra-empurra de barriga. Funciona melhor em dupla.',
+    ],
+  },
+  {
+    id: 244, nome: 'Abelha Rainha', emoji: '🐝', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    descricao: 'Listras amarelas, antenas e o comando da colmeia. Ocupada, organizada e capaz de picar quem falar mal da playlist.',
+    imagem: 'https://source.unsplash.com/600x400/?bee,yellow,black,stripes',
+    pesos: {
+      genero: { fem: 7, neutro: 3 }, altura: { baixo: 5, medio: 3 }, biotipo: { magro: 4, forte: 3 }, cabelo: { curto: 3, longo: 3, colorido: 3 }, barba: { sem: 4 },
+      filme: { sobrevive: 5, vitima: 3 }, festa: { bebida: 6 }, arma: { sarcasmo: 7, magia: 3 },
+      estilo: { comedia: 8 }, idade: { jovem: 6, teen: 4 }, vibe: { divertir: 7, conforto: 7 },
+    },
+    itens: [
+      { nome: 'Blusa ou vestido listrado amarelo e preto', emoji: '🐝', busca: 'vestido listrado amarelo preto' },
+      { nome: 'Tiara de antenas', emoji: '📡', busca: 'tiara antena abelha' },
+      { nome: 'Asas transparentes pequenas', emoji: '🪽', busca: 'asas abelha fantasia' },
+      { nome: 'Coroa pequena dourada', emoji: '👑', busca: 'tiara coroa pequena dourada' },
+      { nome: 'Pote de mel (grátis da cozinha)', emoji: '🍯', busca: null },
+    ],
+    passos: [
+      'Listrado amarelo e preto, meia-calça preta e tênis.',
+      'Antenas, coroa pequena e asas transparentes nas costas.',
+      'Faça "bzzz" ao chegar e comande a colmeia (os amigos de amarelo) pela festa.',
+    ],
+  },
+  {
+    id: 245, nome: 'Pinguim Elegante', emoji: '🐧', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    descricao: 'Já nasceu de smoking e anda como quem está atrasado para um baile. Você é a única fantasia da festa que é chique e engraçada ao mesmo tempo.',
+    imagem: 'https://source.unsplash.com/600x400/?penguin,tuxedo,waddle',
+    pesos: {
+      genero: { neutro: 8, masc: 3 }, altura: { baixo: 9 }, biotipo: { forte: 8 },
+      filme: { vitima: 6 }, festa: { bebida: 6, filmes: 4 }, arma: { sarcasmo: 6 },
+      estilo: { comedia: 10 }, idade: { adulto: 5, jovem: 4 }, vibe: { divertir: 9, conforto: 7 },
+    },
+    itens: [
+      { nome: 'Camiseta branca + blazer ou colete preto (os seus)', emoji: '🐧', busca: null },
+      { nome: 'Gravata-borboleta', emoji: '🎀', busca: 'gravata borboleta preta' },
+      { nome: 'Gorro com bico laranja (ou kigurumi de pinguim)', emoji: '🟠', busca: 'pijama kigurumi pinguim' },
+      { nome: 'Pés de pato laranja (opcional)', emoji: '🦆', busca: 'pé de pato natação laranja' },
+    ],
+    passos: [
+      'Branco na frente, preto atrás: camiseta branca com colete ou blazer preto aberto.',
+      'Gravata-borboleta e gorro com bico laranja (ou o kigurumi completo).',
+      'Ande com passinhos curtos, braços colados ao corpo, e escorregue de barriga no fim da festa (se o chão deixar).',
+    ],
+  },
+  {
+    id: 246, nome: 'Bebezão', emoji: '🍼', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    descricao: 'Fralda gigante, chupeta e uma birra pronta. Quanto maior e mais barbudo você for, mais engraçada a fantasia fica.',
+    imagem: 'https://source.unsplash.com/600x400/?baby,bottle,pacifier',
+    pesos: {
+      genero: { masc: 5, neutro: 4 }, altura: { alto: 7 }, biotipo: { forte: 8 }, cabelo: { careca: 6, curto: 3 }, barba: { cheia: 8, bigode: 4 },
+      filme: { vitima: 8 }, festa: { bebida: 8 }, arma: { sarcasmo: 5 },
+      estilo: { comedia: 10 }, idade: { jovem: 5, adulto: 5 }, vibe: { divertir: 10, conforto: 6 },
+    },
+    itens: [
+      { nome: 'Fralda de pano gigante (lençol branco + alfinete)', emoji: '🧷', busca: 'alfinete fralda grande' },
+      { nome: 'Touca de bebê', emoji: '👶', busca: 'touca bebê adulto' },
+      { nome: 'Chupeta gigante', emoji: '🍼', busca: 'chupeta gigante fantasia' },
+      { nome: 'Mamadeira (para a bebida)', emoji: '🍼', busca: 'mamadeira grande' },
+      { nome: 'Camiseta branca (a sua)', emoji: '👕', busca: null },
+    ],
+    passos: [
+      'Monte a fralda com um lençol branco dobrado em triângulo e preso com alfinetes grandes.',
+      'Touca de bebê, chupeta pendurada no pescoço e bochechas rosadas.',
+      'Beba tudo na mamadeira e faça birra quando a música trocar.',
+    ],
+  },
+  {
+    id: 247, nome: 'Patinho de Borracha', emoji: '🦆', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    descricao: 'Amarelo, sorridente e impossível de afundar. Você é o companheiro de banho de toda uma geração — e o mais fotografado da festa.',
+    imagem: 'https://source.unsplash.com/600x400/?rubber,duck,yellow',
+    pesos: {
+      genero: { neutro: 7 }, altura: { baixo: 5, medio: 3 }, biotipo: { forte: 5, magro: 3 }, cabelo: { colorido: 3 },
+      filme: { sobrevive: 6, vitima: 4 }, festa: { bebida: 5, filmes: 4 }, arma: { magia: 4, sarcasmo: 4 },
+      estilo: { comedia: 9 }, idade: { teen: 5, jovem: 5 }, vibe: { conforto: 9, divertir: 7 },
+    },
+    itens: [
+      { nome: 'Kigurumi ou fantasia de pato amarelo', emoji: '🦆', busca: 'fantasia pato amarelo adulto' },
+      { nome: 'Boia de patinho (acessório)', emoji: '🛟', busca: 'boia patinho' },
+      { nome: 'Pés de pato laranja (opcional)', emoji: '🟠', busca: 'pé de pato natação laranja' },
+      { nome: 'Touca de banho (opcional)', emoji: '🚿', busca: 'touca de banho' },
+    ],
+    passos: [
+      'Kigurumi amarelo com o capuz de bico laranja.',
+      'Boia de patinho na cintura e touca de banho para o efeito "hora do banho".',
+      'Faça "quack" para cumprimentar e flutue pela festa sem nenhuma preocupação.',
     ],
   },
 ]);

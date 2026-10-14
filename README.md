@@ -1,9 +1,9 @@
 # 🎃 BestFantasia
 
-Quiz gamificado de Halloween: o visitante conta como é
-(físico), responde 7 perguntas de personalidade e recebe a
-**fantasia ideal** com **guia completo de montagem** — itens numerados com links
-de compra, passo a passo e alternativas do pódio.
+Quiz gamificado de fantasias: o visitante responde 18 perguntas rápidas em 3
+etapas (físico, personalidade e "na prática") e recebe a **fantasia ideal** com
+**guia completo de montagem**: itens numerados com links de compra, passo a
+passo, fantasias que fazem par com ela e alternativas do pódio.
 
 **Stack:** HTML5 + CSS3 + JavaScript vanilla. Zero dependências, zero build.
 
@@ -18,56 +18,90 @@ python3 -m http.server 8000
 
 ## Arquitetura
 
-| Arquivo               | Responsabilidade                                                        |
-|-----------------------|-------------------------------------------------------------------------|
-| `index.html`          | Estrutura das 5 telas da SPA e slots de anúncio                         |
-| `style.css`           | Tema Halloween (tokens CSS), componentes e animações                    |
-| `data.js`             | Configuração do quiz (etapas, perguntas, rótulos) e registro de fantasias |
-| `data/*.js`           | 206 fantasias, um arquivo por categoria (ver abaixo)                    |
-| `logic.js`            | Algoritmo de recomendação (puro, testável no console)                   |
-| `main.js`             | Estado da UI, navegação com fade, renderização e compartilhamento       |
+| Arquivo                 | Responsabilidade                                                         |
+|-------------------------|--------------------------------------------------------------------------|
+| `index.html`            | Estrutura das telas da SPA e posições de anúncio                         |
+| `style.css`             | Tema (tokens CSS), componentes e animações                               |
+| `data.js`               | Perguntas, regras de pontuação, ficha, rótulos e registro de fantasias   |
+| `data/*.js`             | 252 fantasias, um arquivo por categoria (ver abaixo)                     |
+| `logic.js`              | Motor de recomendação genérico (puro, testável no console)               |
+| `main.js`               | Estado da UI, navegação, renderização, anúncios e compartilhamento       |
+| `ferramentas/validar.js`| Validação do banco e da heurística (rode antes de commitar)              |
 
 ### Banco de fantasias (`data/`)
 
 | Arquivo           | Categoria          | Qtd. |
 |-------------------|--------------------|-----:|
-| `terror.js`       | Terror             |   31 |
-| `classicas.js`    | Clássicas          |   19 |
-| `acao.js`         | Ação & Aventura    |   26 |
-| `magia.js`        | Fantasia & Magia   |   22 |
-| `divertidas.js`   | Divertidas         |   22 |
-| `cultura-pop.js`  | Cultura Pop        |   86 |
-
-Cada fantasia tem `pesos` (por atributo do quiz), `itens` (lista de compras com
-termo de busca para o link de afiliado), `passos` (montagem em 3 passos),
-`dificuldade` e `custo`. Para adicionar uma fantasia, basta incluir um objeto no
-arquivo da categoria — a UI e o algoritmo se adaptam sozinhos.
+| `terror.js`       | Terror             |   37 |
+| `classicas.js`    | Clássicas          |   24 |
+| `acao.js`         | Ação & Aventura    |   31 |
+| `magia.js`        | Fantasia & Magia   |   27 |
+| `divertidas.js`   | Divertidas         |   27 |
+| `cultura-pop.js`  | Cultura Pop        |  106 |
 
 ## O quiz
 
-- **Físico:** gênero, tom de pele, altura, biotipo, cabelo, barba e óculos.
-- **Personalidade:** faixa etária, o que mais assiste, papel no filme de terror,
-  festa ideal, arma, missão no Halloween e esforço na montagem.
+1. **Físico:** gênero, tom de pele, altura, biotipo, cabelo, barba e óculos.
+2. **Personalidade:** faixa etária, o que mais assiste, papel no filme de
+   terror, festa ideal, arma e missão no Halloween.
+3. **Na prática:** com quem vai (sozinho, par ou turma), o que topa no rosto,
+   onde vai usar (festa fechada, balada, bloco de rua, escola/trabalho), quanto
+   quer gastar e quanto esforço topa.
 
 > **Tom de pele nunca entra na pontuação.** Fantasia não tem cor — qualquer pessoa
 > pode ser qualquer personagem, e o app jamais sugere alterar a cor da pele. A
 > escolha serve só para o resumo do perfil e para dicas práticas de
 > contraste de tintas e glitters no guia de montagem (`DICAS_PELE` em `data.js`).
+> O validador falha se alguém tentar usar o tom de pele na pontuação.
 
-## Algoritmo de recomendação
+## Como a recomendação funciona
 
-Três camadas somadas por fantasia (ver `logic.js`):
+Cada resposta soma pontos a cada fantasia por dois caminhos (motor em `logic.js`):
 
-1. **Pesos diretos** — cada escolha do usuário soma os pontos definidos no mapa
-   `pesos` da fantasia (`reduce`).
-2. **Bônus de afinidade** — o que o usuário mais assiste casando com a categoria
-   da fantasia (ex.: séries & cultura pop → Cultura Pop) rende bônus fixo.
-3. **Ajuste de esforço** — cruza o esforço que o usuário topa com a
-   `dificuldade` da fantasia (quem quer mínimo esforço não recebe fantasia
-   "Caprichada").
+1. **Pesos** (`fantasia.pesos`) — gosto e personalidade, escritos à mão em cada
+   fantasia, só nas perguntas em que ela se destaca.
+2. **Regras** (`regras` nas opções das perguntas, em `data.js`) — leem a
+   **ficha** de todas as fantasias de uma vez. Ex.: "Bloco de rua, no calor"
+   dá +6 a fantasias de `calor: 1` e −9 às de `calor: 3`.
 
-O ranking usa `sort` com desempate determinístico; o % de match é normalizado
-pelo máximo teórico de cada fantasia e remapeado para 35–99%.
+A **ficha** guarda fatos objetivos de cada fantasia: `rosto`, `calor`,
+`volume`, `formato` (solo/casal/grupo), `susto`, `reconhecimento` e, quando
+houver, `par` (fantasias que combinam com ela) e `polemica` (figuras políticas,
+evitadas para escola/trabalho).
+
+O ranking compara a pontuação de cada fantasia com o máximo que ela poderia
+fazer (com uma suavização que impede fantasias com poucos pesos de vencer fácil
+demais). Assim toda fantasia tem chance real de sair. O desempate é
+determinístico: mesmas respostas, mesma fantasia.
+
+### Adicionar uma fantasia
+
+1. Inclua o objeto no arquivo da categoria em `data/`, com **ficha completa**
+   (todos os campos de `FICHA_VALORES` em `data.js`), `pesos`, `itens` e 3 `passos`.
+2. Se ela tiver `par`, adicione o id dela no `par` da outra fantasia também.
+3. Rode `node ferramentas/validar.js` e corrija o que ele apontar.
+
+### Adicionar uma pergunta
+
+- **Sobre um fato que já está na ficha** (ex.: "quer ser reconhecido de
+  cara?" usando `reconhecimento`): declare a pergunta em `data.js` com
+  `regras` nas opções. Nenhuma fantasia precisa ser editada.
+- **Sobre gosto ou personalidade:** declare a pergunta e adicione `pesos` nas
+  fantasias que se destacam nela, com rótulos em `ROTULOS_MATCH`.
+
+Depois, rode o validador.
+
+### O validador
+
+`node ferramentas/validar.js` confere, em cerca de 30 segundos:
+
+- estrutura de perguntas e fantasias, ficha e pares recíprocos;
+- **alcance**: toda fantasia precisa conseguir vencer com algum conjunto de respostas;
+- **distribuição** em 20 mil perfis aleatórios (avisa se uma fantasia vence demais);
+- **casos de referência** (ex.: careca + cavanhaque + óculos + cultura pop → Walter White);
+- que o tom de pele não muda nenhum resultado.
+
+Ele termina com código 1 se encontrar erro.
 
 ## Monetização
 

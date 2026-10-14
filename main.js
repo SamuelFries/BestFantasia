@@ -65,20 +65,48 @@ const FRASES_LOADING = [
 // Barra de progresso fixa no topo, por tela.
 const PROGRESSO_POR_TELA = {
   'screen-home': '0%',
-  'screen-fisico': '30%',
-  'screen-personalidade': '60%',
-  'screen-loading': '85%',
+  'screen-fisico': '25%',
+  'screen-personalidade': '50%',
+  'screen-pratica': '75%',
+  'screen-loading': '90%',
   'screen-resultado': '100%',
 };
 
+// Etapas do quiz, na ordem. O botão de cada uma leva à próxima; o da
+// última consulta os espíritos. Pergunta nova numa etapa = só data.js.
+const ETAPAS_QUIZ = [
+  { tela: 'screen-fisico', container: '#grupos-fisico', perguntas: ETAPAS_FISICO,
+    modoLinha: false, botao: '#btn-fisico-continuar', textoPronto: 'Continuar ➡️' },
+  { tela: 'screen-personalidade', container: '#perguntas-personalidade', perguntas: PERGUNTAS_PERSONALIDADE,
+    modoLinha: true, botao: '#btn-personalidade-continuar', textoPronto: 'Continuar ➡️' },
+  { tela: 'screen-pratica', container: '#perguntas-praticas', perguntas: PERGUNTAS_PRATICAS,
+    modoLinha: true, botao: '#btn-pratica-continuar', textoPronto: 'Consultar os Espíritos 🔮' },
+];
+
 // Rótulo amigável do custo (1..3).
 const ROTULO_CUSTO = { 1: '$', 2: '$$', 3: '$$$' };
+
+// Selos da ficha exibidos no resultado (ajudam a decidir antes de comprar).
+const SELO_ROSTO = {
+  livre: '🙂 Nada no rosto',
+  leve: '💄 Maquiagem leve',
+  pintura: '🎨 Pintura no rosto',
+  mascara: '🎭 Usa máscara',
+};
+const SELO_CALOR = { 1: '🧊 Fresquinha', 3: '🔥 Esquenta' };
+const SELO_RECONHECIMENTO = { 1: '🤓 Para quem é fã', 3: '👀 Todo mundo reconhece' };
+
+// Título da seção de pares, conforme com quem a pessoa vai.
+const TITULO_PARES = {
+  casal: 'Para o seu par 💑',
+  grupo: 'Para a sua turma 👯',
+};
 
 /* ---------------- Estado global ---------------- */
 
 const state = {
   escolhas: {},    // { genero:'fem', altura:'alto', ... }
-  ranking: [],     // top 3 devolvido por recomendarFantasia()
+  ranking: [],     // ranking completo devolvido por recomendarFantasia()
   exibida: null,   // fantasia atualmente exibida na Tela 5
   telaAtual: 'screen-home',
   trocandoTela: false,
@@ -93,13 +121,13 @@ const prefereMenosMovimento = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ================================================================
-   RENDERIZAÇÃO DOS FORMULÁRIOS (Telas 2 e 3, a partir de data.js)
+   RENDERIZAÇÃO DOS FORMULÁRIOS (etapas do quiz, a partir de data.js)
    ================================================================ */
 
 /**
  * Gera o HTML de um grupo de opções.
- * @param {object}  grupo     Item de ETAPAS_FISICO ou PERGUNTAS_PERSONALIDADE.
- * @param {boolean} modoLinha true = lista vertical com letras A/B/C (Tela 3).
+ * @param {object}  grupo     Uma pergunta de data.js.
+ * @param {boolean} modoLinha true = lista vertical com letras A/B/C.
  */
 function renderizarGrupo(grupo, modoLinha) {
   const botoes = grupo.opcoes
@@ -132,8 +160,9 @@ function renderizarGrupo(grupo, modoLinha) {
 }
 
 function renderizarFormularios() {
-  $('#grupos-fisico').innerHTML = ETAPAS_FISICO.map((g) => renderizarGrupo(g, false)).join('');
-  $('#perguntas-personalidade').innerHTML = PERGUNTAS_PERSONALIDADE.map((g) => renderizarGrupo(g, true)).join('');
+  for (const etapa of ETAPAS_QUIZ) {
+    $(etapa.container).innerHTML = etapa.perguntas.map((g) => renderizarGrupo(g, etapa.modoLinha)).join('');
+  }
   atualizarAvatarPreview();
 }
 
@@ -193,21 +222,21 @@ function contarEscolhas(grupos) {
   return grupos.filter((g) => state.escolhas[g.categoria]).length;
 }
 
-/** Habilita os botões de avanço apenas com a etapa completa. */
+/** Habilita o botão de avanço de cada etapa apenas com ela completa. */
 function atualizarBotoesDeAvanco() {
-  const feitasFisico = contarEscolhas(ETAPAS_FISICO);
-  const btnFisico = $('#btn-fisico-continuar');
-  btnFisico.disabled = feitasFisico < ETAPAS_FISICO.length;
-  btnFisico.textContent = btnFisico.disabled
-    ? `Continuar (${feitasFisico}/${ETAPAS_FISICO.length}) ➡️`
-    : 'Continuar ➡️';
+  for (const etapa of ETAPAS_QUIZ) {
+    const feitas = contarEscolhas(etapa.perguntas);
+    const total = etapa.perguntas.length;
+    const botao = $(etapa.botao);
+    botao.disabled = feitas < total;
+    botao.textContent = botao.disabled ? `Responda tudo (${feitas}/${total})` : etapa.textoPronto;
+  }
+}
 
-  const feitasPersona = contarEscolhas(PERGUNTAS_PERSONALIDADE);
-  const btnPersona = $('#btn-personalidade-continuar');
-  btnPersona.disabled = feitasPersona < PERGUNTAS_PERSONALIDADE.length;
-  btnPersona.textContent = btnPersona.disabled
-    ? `Responda tudo (${feitasPersona}/${PERGUNTAS_PERSONALIDADE.length}) 🔮`
-    : 'Consultar os Espíritos 🔮';
+function avancarDaEtapa(indice) {
+  const proxima = ETAPAS_QUIZ[indice + 1];
+  if (proxima) mostrarTela(proxima.tela);
+  else iniciarConsulta();
 }
 
 /* ================================================================
@@ -319,11 +348,18 @@ function exibirResultado(fantasia) {
   $('#resultado-match').textContent = `⚡ ${fantasia.compatibilidade}% de match`;
   $('#resultado-descricao').textContent = fantasia.descricao;
 
-  // Selos: categoria, dificuldade de montagem e custo estimado.
+  // Selos: categoria, montagem, custo e os fatos da ficha que ajudam a decidir.
+  const ficha = fantasia.ficha ?? {};
+  const selos = [
+    SELO_ROSTO[ficha.rosto],
+    SELO_CALOR[ficha.calor],
+    SELO_RECONHECIMENTO[ficha.reconhecimento],
+  ].filter(Boolean);
   $('#resultado-meta').innerHTML = `
     <span class="badge-mini badge-mini--cat">${fantasia.categoria}</span>
     <span class="badge-mini">🧵 Montagem: ${fantasia.dificuldade}</span>
-    <span class="badge-mini">💰 Custo: ${ROTULO_CUSTO[fantasia.custo] ?? '$'}</span>`;
+    <span class="badge-mini">💰 Custo: ${ROTULO_CUSTO[fantasia.custo] ?? '$'}</span>
+    ${selos.map((selo) => `<span class="badge-mini">${selo}</span>`).join('')}`;
 
   // Chips com os motivos (fallback místico se nada pontuou).
   const chips = motivos.length ? motivos : ['uma conexão espiritual inexplicável ✨'];
@@ -332,6 +368,7 @@ function exibirResultado(fantasia) {
     .join('');
 
   renderizarGuia(fantasia);
+  renderizarPares(fantasia);
   renderizarAlternativas(fantasia);
 
   // Foto ilustrativa: se o placeholder do Unsplash falhar,
@@ -383,8 +420,9 @@ function renderizarGuia(fantasia) {
 }
 
 /** As outras fantasias do pódio, clicáveis para ver o guia delas. */
+/** O resto do pódio (top 3), clicável para ver o guia de cada uma. */
 function renderizarAlternativas(fantasiaExibida) {
-  const outras = state.ranking.filter((f) => f.id !== fantasiaExibida.id);
+  const outras = state.ranking.slice(0, 3).filter((f) => f.id !== fantasiaExibida.id);
   $('#resultado-alternativas').innerHTML = outras
     .map(
       (alt) => `
@@ -393,6 +431,27 @@ function renderizarAlternativas(fantasiaExibida) {
         <span class="alternativa-acao">
           <span class="alternativa-match">${alt.compatibilidade}%</span> ver guia →
         </span>
+      </button>`
+    )
+    .join('');
+}
+
+/**
+ * Fantasias que fazem par com a exibida (ficha.par), para quem vai em
+ * casal ou em grupo. A seção some quando a fantasia não tem par.
+ */
+function renderizarPares(fantasia) {
+  const pares = (fantasia.ficha?.par ?? [])
+    .map((id) => state.ranking.find((f) => f.id === id))
+    .filter(Boolean);
+  $('#pares-wrap').classList.toggle('hidden', !pares.length);
+  $('#pares-titulo').textContent = TITULO_PARES[state.escolhas.companhia] ?? 'Vai acompanhado? Combina com 👯';
+  $('#resultado-pares').innerHTML = pares
+    .map(
+      (par) => `
+      <button type="button" class="alternativa" data-id="${par.id}">
+        <span>${par.emoji} ${par.nome}</span>
+        <span class="alternativa-acao">ver guia →</span>
       </button>`
     )
     .join('');
@@ -495,9 +554,7 @@ function init() {
   if (total) total.textContent = FANTASIAS.length;
 
   // Navegação principal
-  $('#btn-start').addEventListener('click', () => mostrarTela('screen-fisico'));
-  $('#btn-fisico-continuar').addEventListener('click', () => mostrarTela('screen-personalidade'));
-  $('#btn-personalidade-continuar').addEventListener('click', iniciarConsulta);
+  $('#btn-start').addEventListener('click', () => mostrarTela(ETAPAS_QUIZ[0].tela));
   $('#btn-restart').addEventListener('click', reiniciar);
 
   // Botões "voltar" (atributo data-voltar="id-da-tela")
@@ -505,12 +562,15 @@ function init() {
     botao.addEventListener('click', () => mostrarTela(botao.dataset.voltar));
   });
 
-  // Seleção de opções: delegação, um listener por formulário.
-  $('#grupos-fisico').addEventListener('click', aoSelecionarOpcao);
-  $('#perguntas-personalidade').addEventListener('click', aoSelecionarOpcao);
+  // Etapas do quiz: seleção por delegação (1 listener por etapa) e avanço.
+  ETAPAS_QUIZ.forEach((etapa, indice) => {
+    $(etapa.container).addEventListener('click', aoSelecionarOpcao);
+    $(etapa.botao).addEventListener('click', () => avancarDaEtapa(indice));
+  });
 
-  // Pódio clicável e compartilhamento.
+  // Pódio e pares clicáveis; compartilhamento.
   $('#resultado-alternativas').addEventListener('click', aoClicarAlternativa);
+  $('#resultado-pares').addEventListener('click', aoClicarAlternativa);
   $('#btn-share-copy').addEventListener('click', copiarLink);
 
   // Laterais fixas (só aparecem em telas largas): ativa já na entrada e,

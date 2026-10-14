@@ -2,104 +2,88 @@
 
 /* ============================================================
    BestFantasia — logic.js
-   Algoritmo de recomendação em 3 camadas:
+   Motor de recomendação. Não tem nenhuma tabela própria: tudo o
+   que pontua está declarado em data.js e data/*.js.
 
-   1. PESOS DIRETOS — soma dos pontos de cada escolha do usuário
-      no mapa `pesos` da fantasia (reduce).
-   2. BÔNUS DE AFINIDADE — se o gênero de filme favorito do
-      usuário "casa" com a categoria da fantasia (ex.: comédia →
-      fantasias Divertidas), ela ganha um bônus fixo.
-   3. AJUSTE DE ESFORÇO — cruza o esforço que o usuário topa ter
-      com a `dificuldade` da fantasia: quem quer o mínimo não
-      recebe uma fantasia "Caprichada", e vice-versa.
+   Para cada resposta, uma fantasia ganha:
+   1. PESOS — `fantasia.pesos[categoria][valor]` (gosto/personalidade)
+   2. REGRAS — as `regras` da opção escolhida, que leem a ficha da
+      fantasia (rosto, calor, formato...) ou categoria/dificuldade/custo.
+
+   O ranking compara essa soma com o máximo que cada fantasia poderia
+   fazer (ver rankearFantasias).
 
    100% puro (nenhum acesso ao DOM) — dá para testar no console:
-   recomendarFantasia({ genero:'fem', arma:'magia', esforco:'minimo', ... })
+   recomendarFantasia({ genero:'fem', arma:'magia', rosto:'livre', ... })
 
-   Depende de: data.js (FANTASIAS, ROTULOS_MATCH)
+   Depende de: data.js (TODAS_AS_PERGUNTAS, FANTASIAS, ROTULOS_MATCH)
    ============================================================ */
 
-/* ---------- Constantes da heurística ---------- */
+/* ---------- Índice das opções: categoria → valor → opção ---------- */
 
-// Pontos ganhos quando o filme favorito combina com a categoria.
-const BONUS_AFINIDADE = 7;
+const OPCOES = Object.fromEntries(
+  TODAS_AS_PERGUNTAS.map((pergunta) => [
+    pergunta.categoria,
+    Object.fromEntries(pergunta.opcoes.map((opcao) => [opcao.valor, opcao])),
+  ])
+);
 
-// Gênero de filme favorito → categoria de fantasia beneficiada.
-// ('Clássicas' não entra: elas pontuam direto nos pesos de `estilo`.)
-const MAPA_ESTILO_CATEGORIA = {
-  terror: 'Terror',
-  comedia: 'Divertidas',
-  acao: 'Ação & Aventura',
-  fantasia: 'Fantasia & Magia',
-  pop: 'Cultura Pop',
-};
+/* ---------- Regras ---------- */
 
-// Esforço do usuário × dificuldade da fantasia → ajuste de pontos.
-const AJUSTE_ESFORCO = {
-  capricho: { 'Fácil': -2, 'Média': 3, 'Caprichada': 8 },
-  medio:    { 'Fácil': 3,  'Média': 6, 'Caprichada': 1 },
-  minimo:   { 'Fácil': 8,  'Média': 0, 'Caprichada': -8 },
-};
-
-/* ---------- Camada 1: pesos diretos ---------- */
+/** Valor de um campo da fantasia: primeiro na ficha, depois no topo (custo, categoria...). */
+function valorDoCampo(fantasia, campo) {
+  return fantasia.ficha?.[campo] ?? fantasia[campo];
+}
 
 /**
- * Soma os pontos que uma fantasia ganha com as escolhas feitas.
- * Categorias sem peso na fantasia (ou sem resposta) valem 0.
+ * Pontos de uma regra para uma fantasia. Em campos-lista (formato),
+ * vale o maior ponto entre os itens; sem correspondência, `senao`.
  */
-function pontuarPesos(fantasia, escolhas) {
-  return Object.entries(escolhas).reduce((total, [categoria, valor]) => {
-    const pontos = fantasia.pesos?.[categoria]?.[valor] ?? 0;
-    return total + pontos;
-  }, 0);
+function pontosDaRegra(regra, fantasia) {
+  const valor = valorDoCampo(fantasia, regra.campo);
+  const lista = Array.isArray(valor) ? valor : [valor];
+  const encontrados = lista.map((v) => regra.pontos[v]).filter((p) => p !== undefined);
+  return encontrados.length ? Math.max(...encontrados) : (regra.senao ?? 0);
 }
 
-/* ---------- Camada 2: bônus de afinidade ---------- */
-
-function bonusAfinidade(fantasia, escolhas) {
-  return MAPA_ESTILO_CATEGORIA[escolhas.estilo] === fantasia.categoria
-    ? BONUS_AFINIDADE
-    : 0;
+function pontosDasRegras(opcao, fantasia) {
+  return (opcao?.regras ?? []).reduce((total, regra) => total + pontosDaRegra(regra, fantasia), 0);
 }
 
-/* ---------- Camada 3: ajuste de esforço ---------- */
+/* ---------- Pontuação ---------- */
 
-function ajusteEsforco(fantasia, escolhas) {
-  return AJUSTE_ESFORCO[escolhas.esforco]?.[fantasia.dificuldade] ?? 0;
+/** Pontos de uma fantasia para UMA resposta (pesos + regras da opção). */
+function pontosDaResposta(fantasia, categoria, valor) {
+  const peso = fantasia.pesos?.[categoria]?.[valor] ?? 0;
+  return peso + pontosDasRegras(OPCOES[categoria]?.[valor], fantasia);
 }
-
-/* ---------- Pontuação e normalização ---------- */
 
 /**
  * Pontuação total ("match score") de uma fantasia.
- * O ajuste de esforço pode ser negativo, então o piso é 0.
+ * Regras podem ser negativas, então o piso é 0.
  */
 function pontuarFantasia(fantasia, escolhas) {
-  const total =
-    pontuarPesos(fantasia, escolhas) +
-    bonusAfinidade(fantasia, escolhas) +
-    ajusteEsforco(fantasia, escolhas);
+  let total = 0;
+  for (const categoria in escolhas) total += pontosDaResposta(fantasia, categoria, escolhas[categoria]);
   return Math.max(0, total);
 }
 
 /**
- * Pontuação máxima teórica da fantasia: melhor escolha possível em
- * cada categoria de peso + bônus de afinidade (quando a categoria é
- * elegível) + melhor ajuste de esforço para a dificuldade dela.
- * Serve para normalizar o "% de match".
+ * Pontuação máxima teórica da fantasia: em cada pergunta, a opção que
+ * mais rende para ela (pesos + regras juntos). Os dados são fixos,
+ * então o valor é calculado uma vez por fantasia.
  */
+const cacheMaximos = new Map();
+
 function pontuacaoMaxima(fantasia) {
-  const maxPesos = Object.values(fantasia.pesos).reduce(
-    (total, pesosDaCategoria) => total + Math.max(...Object.values(pesosDaCategoria)),
-    0
-  );
-  const maxBonus = Object.values(MAPA_ESTILO_CATEGORIA).includes(fantasia.categoria)
-    ? BONUS_AFINIDADE
-    : 0;
-  const maxEsforco = Math.max(
-    ...Object.values(AJUSTE_ESFORCO).map((porDificuldade) => porDificuldade[fantasia.dificuldade] ?? 0)
-  );
-  return maxPesos + maxBonus + maxEsforco;
+  if (!cacheMaximos.has(fantasia.id)) {
+    const maximo = TODAS_AS_PERGUNTAS.reduce((total, pergunta) => {
+      const melhor = Math.max(...pergunta.opcoes.map((o) => pontosDaResposta(fantasia, pergunta.categoria, o.valor)));
+      return total + Math.max(0, melhor);
+    }, 0);
+    cacheMaximos.set(fantasia.id, maximo);
+  }
+  return cacheMaximos.get(fantasia.id);
 }
 
 /**
@@ -116,35 +100,53 @@ function calcularCompatibilidade(fantasia, pontuacao) {
 /* ---------- Ranking ---------- */
 
 /**
- * Percorre TODAS as fantasias, calcula o match score de cada uma e
- * devolve o ranking ordenado (maior pontuação primeiro).
- * Desempate por id para o resultado ser estável/determinístico —
- * mesmas respostas, mesma fantasia (bom para comparar com amigos).
+ * Ordenar pela pontuação bruta favorece fantasias com muitos pesos altos
+ * (em teste, 50 de 252 nunca venciam). Por isso o ranking usa a fração do
+ * máximo de cada fantasia. A suavização soma ao denominador para que
+ * fantasias com poucos pesos não cheguem a 100% fácil demais. Ajustada
+ * com `node ferramentas/validar.js` (alcance e concentração dos resultados).
  */
-function rankearFantasias(escolhas, fantasias = FANTASIAS) {
-  return fantasias
-    .map((fantasia) => {
-      const pontuacao = pontuarFantasia(fantasia, escolhas);
-      return {
-        ...fantasia,
-        pontuacao,
-        compatibilidade: calcularCompatibilidade(fantasia, pontuacao),
-      };
-    })
-    .sort((a, b) => b.pontuacao - a.pontuacao || a.id - b.id);
+const SUAVIZACAO_RANKING = 45;
+
+/** Avaliação crua de uma fantasia (usada pelo ranking e pelo validador). */
+function avaliar(fantasia, escolhas) {
+  const pontuacao = pontuarFantasia(fantasia, escolhas);
+  return { fantasia, pontuacao, afinidade: pontuacao / (pontuacaoMaxima(fantasia) + SUAVIZACAO_RANKING) };
 }
 
 /**
- * O ranking ordena pela pontuação BRUTA, mas o % exibido é
- * normalizado pelo máximo de cada fantasia — então uma vice poderia
- * mostrar % maior que a campeã e parecer bug. Este ajuste garante
- * percentuais estritamente decrescentes na exibição.
+ * Melhor primeiro. Desempate pela pontuação bruta e depois por id, para o
+ * resultado ser determinístico — mesmas respostas, mesma fantasia (bom
+ * para comparar com amigos).
+ */
+function compararAvaliacoes(a, b) {
+  return b.afinidade - a.afinidade || b.pontuacao - a.pontuacao || a.fantasia.id - b.fantasia.id;
+}
+
+/** Percorre TODAS as fantasias e devolve o ranking completo, melhor primeiro. */
+function rankearFantasias(escolhas, fantasias = FANTASIAS) {
+  return fantasias
+    .map((fantasia) => avaliar(fantasia, escolhas))
+    .sort(compararAvaliacoes)
+    .map(({ fantasia, pontuacao, afinidade }) => ({
+      ...fantasia,
+      pontuacao,
+      afinidade,
+      compatibilidade: calcularCompatibilidade(fantasia, pontuacao),
+    }));
+}
+
+/**
+ * O % exibido não usa a suavização do ranking, então uma vice poderia
+ * mostrar % maior que a campeã e parecer bug. Garante pódio estritamente
+ * decrescente e o resto do ranking (pares sugeridos) abaixo do pódio.
  */
 function ajustarPercentuaisParaExibicao(ranking) {
+  const TAMANHO_PODIO = 3;
   ranking.forEach((item, i) => {
     if (i === 0) return;
-    const teto = ranking[i - 1].compatibilidade - 2;
-    item.compatibilidade = Math.max(35, Math.min(item.compatibilidade, teto));
+    const referencia = ranking[Math.min(i, TAMANHO_PODIO) - 1].compatibilidade;
+    item.compatibilidade = Math.max(35, Math.min(item.compatibilidade, referencia - 2));
   });
   return ranking;
 }
@@ -152,28 +154,40 @@ function ajustarPercentuaisParaExibicao(ranking) {
 /* ---------- Motivos do match ---------- */
 
 /**
- * As características do usuário que mais pontuaram para a fantasia,
- * já com rótulo amigável para exibir na UI.
+ * Por que a fantasia combinou: até 2 motivos de gosto/personalidade
+ * (pesos, com rótulo de ROTULOS_MATCH) e 1 motivo prático (o `motivo`
+ * da opção cujas regras renderam 3+ pontos). Sem motivo prático, os 3
+ * vêm dos pesos.
  */
 function montarMotivos(fantasia, escolhas, limite = 3) {
-  return Object.entries(escolhas)
-    .map(([categoria, valor]) => ({
+  const ordenar = (lista) => lista.filter((m) => m.pontos > 0).sort((a, b) => b.pontos - a.pontos);
+
+  const deGosto = ordenar(
+    Object.entries(escolhas).map(([categoria, valor]) => ({
       pontos: fantasia.pesos?.[categoria]?.[valor] ?? 0,
-      rotulo: ROTULOS_MATCH?.[categoria]?.[valor] ?? valor,
+      rotulo: ROTULOS_MATCH?.[categoria]?.[valor],
     }))
-    .filter((item) => item.pontos > 0)
-    .sort((a, b) => b.pontos - a.pontos)
-    .slice(0, limite)
-    .map((item) => item.rotulo);
+  ).filter((m) => m.rotulo);
+
+  const praticos = ordenar(
+    Object.entries(escolhas).map(([categoria, valor]) => {
+      const opcao = OPCOES[categoria]?.[valor];
+      const pontos = pontosDasRegras(opcao, fantasia);
+      return { pontos: opcao?.motivo && pontos >= 3 ? pontos : 0, rotulo: opcao?.motivo };
+    })
+  );
+
+  const escolhidos = [...deGosto.slice(0, praticos.length ? limite - 1 : limite), ...praticos.slice(0, 1)];
+  return escolhidos.map((m) => m.rotulo);
 }
 
 /* ---------- API principal ---------- */
 
 /**
- * Consumida pelo main.js: devolve o pódio (top 3) já com
- * compatibilidade ajustada. A posição 0 é a vencedora; as demais
- * alimentam a seção "quase viraram você" (e são clicáveis).
+ * Consumida pelo main.js: o ranking completo, com compatibilidade
+ * ajustada para exibição. Posição 0 é a vencedora; 1 e 2 alimentam
+ * "quase viraram você"; o resto serve para achar os pares sugeridos.
  */
 function recomendarFantasia(escolhas) {
-  return ajustarPercentuaisParaExibicao(rankearFantasias(escolhas)).slice(0, 3);
+  return ajustarPercentuaisParaExibicao(rankearFantasias(escolhas));
 }

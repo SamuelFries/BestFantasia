@@ -9,6 +9,7 @@ registrarFantasias([
   {
     id: 12, nome: 'Pirata dos Sete Mares', emoji: '🏴‍☠️', categoria: 'Ação & Aventura',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [131, 180] },
     descricao: 'Tesouro enterrado, contas em dia (nunca) e um papagaio traumatizado. O mar não está para caveira — você está.',
     imagem: 'https://source.unsplash.com/600x400/?pirate,ship',
     pesos: {
@@ -33,6 +34,7 @@ registrarFantasias([
   {
     id: 21, nome: 'Super-Herói de Plantão', emoji: '🦸', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Identidade secreta, pose de pouso heroico e zero paciência com vilania. A cidade (a festa) precisa de você.',
     imagem: 'https://source.unsplash.com/600x400/?superhero,cape',
     pesos: {
@@ -56,6 +58,7 @@ registrarFantasias([
   {
     id: 22, nome: 'Caçador de Fantasmas', emoji: '🎒', categoria: 'Ação & Aventura',
     dificuldade: 'Caprichada', custo: 2,
+    ficha: { rosto: 'livre', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [5] },
     descricao: 'Quem você vai chamar? Você mesmo, com um macacão cáqui e um aspirador de ectoplasma feito em casa.',
     imagem: 'https://source.unsplash.com/600x400/?ghostbuster,proton',
     pesos: {
@@ -79,6 +82,7 @@ registrarFantasias([
   {
     id: 23, nome: 'Explorador de Ruínas', emoji: '🧭', categoria: 'Ação & Aventura',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, par: [9] },
     descricao: 'Museus te amam, armadilhas te odeiam. Você entra em tumbas milenares com a confiança de quem tem seguro de vida.',
     imagem: 'https://source.unsplash.com/600x400/?adventurer,explorer',
     pesos: {
@@ -103,6 +107,7 @@ registrarFantasias([
   {
     id: 24, nome: 'Agente Secreto', emoji: '🕴️', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2 },
     descricao: 'Nome: sigiloso. Missão: o bar. Você é a única pessoa da festa com um fone na orelha e três planos de fuga.',
     imagem: 'https://source.unsplash.com/600x400/?spy,suit',
     pesos: {
@@ -127,6 +132,7 @@ registrarFantasias([
   {
     id: 25, nome: 'Guerreira Viking', emoji: '🛡️', categoria: 'Ação & Aventura',
     dificuldade: 'Caprichada', custo: 3,
+    ficha: { rosto: 'leve', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Tranças de batalha, machado no ombro e a certeza de que o Valhalla tem open bar. Skol!',
     imagem: 'https://source.unsplash.com/600x400/?viking,warrior',
     pesos: {
@@ -151,6 +157,7 @@ registrarFantasias([
   {
     id: 26, nome: 'Cowboy do Velho Oeste', emoji: '🤠', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Passo lento, olhar de duelo e um chapéu que faz 80% do trabalho. Esta festa não é grande o bastante para nós dois.',
     imagem: 'https://source.unsplash.com/600x400/?cowboy,western',
     pesos: {
@@ -175,6 +182,7 @@ registrarFantasias([
   {
     id: 27, nome: 'Astronauta Perdido', emoji: '👨‍🚀', categoria: 'Ação & Aventura',
     dificuldade: 'Caprichada', custo: 3,
+    ficha: { rosto: 'livre', calor: 3, volume: 3, formato: ['solo'], susto: 0, reconhecimento: 3, par: [38] },
     descricao: 'Houston, temos um problema: a festa é boa demais para voltar à base. Gravidade é só uma sugestão.',
     imagem: 'https://source.unsplash.com/600x400/?astronaut,space',
     pesos: {
@@ -198,6 +206,7 @@ registrarFantasias([
   {
     id: 55, nome: 'Cavaleiro Jedi', emoji: '🗡️', categoria: 'Ação & Aventura',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [124, 125, 219] },
     descricao: 'Túnica, capuz e um sabre que faz barulho de boca. A Força está com você — a paciência com os Sith, nem tanto.',
     imagem: 'https://source.unsplash.com/600x400/?jedi,lightsaber',
     pesos: {
@@ -221,6 +230,7 @@ registrarFantasias([
   {
     id: 56, nome: 'Batman', emoji: '🦇', categoria: 'Ação & Aventura',
     dificuldade: 'Média', custo: 3,
+    ficha: { rosto: 'mascara', calor: 3, volume: 2, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [57, 90, 215, 127] },
     descricao: 'Voz rouca, capa dramática e um trauma convertido em produtividade. A festa é a sua Gotham.',
     imagem: 'https://source.unsplash.com/600x400/?batman,dark',
     pesos: {
@@ -244,6 +254,7 @@ registrarFantasias([
   {
     id: 57, nome: 'Mulher-Gato', emoji: '🐈', categoria: 'Ação & Aventura',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'mascara', calor: 3, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [56] },
     descricao: 'Joias que não são suas, chicote que é, e nove vidas para gastar na pista. Gotham nunca prendeu você — nem vai.',
     imagem: 'https://source.unsplash.com/600x400/?catwoman,black',
     pesos: {
@@ -267,6 +278,7 @@ registrarFantasias([
   {
     id: 58, nome: 'Lara Croft', emoji: '🏹', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
     descricao: 'Trança, regata e duas armas no quadril. Tumbas, templos e a fila do banheiro: nada resiste à sua acrobacia.',
     imagem: 'https://source.unsplash.com/600x400/?adventure,jungle,explorer',
     pesos: {
@@ -290,6 +302,7 @@ registrarFantasias([
   {
     id: 59, nome: 'Rocky Balboa', emoji: '🥊', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
     descricao: 'Moletom cinza, luvas de boxe e uma escadaria qualquer para subir correndo. "Adrian!" é a sua forma de dizer oi.',
     imagem: 'https://source.unsplash.com/600x400/?boxing,gloves',
     pesos: {
@@ -313,6 +326,7 @@ registrarFantasias([
   {
     id: 60, nome: 'Neo (Matrix)', emoji: '💊', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
     descricao: 'Sobretudo preto, óculos minúsculos e a habilidade de desviar de conversas chatas em câmera lenta. Pílula vermelha ou azul?',
     imagem: 'https://source.unsplash.com/600x400/?matrix,code,green',
     pesos: {
@@ -336,6 +350,7 @@ registrarFantasias([
   {
     id: 61, nome: 'John Wick', emoji: '🐶', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
     descricao: 'Terno preto, barba perfeita e um cachorrinho que ninguém deve tocar. Você é educado, até alguém errar.',
     imagem: 'https://source.unsplash.com/600x400/?suit,black,dog',
     pesos: {
@@ -359,6 +374,7 @@ registrarFantasias([
   {
     id: 62, nome: 'Ninja das Sombras', emoji: '🥷', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'mascara', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Todo de preto, silencioso e sempre atrás de alguém que não te viu chegar. Roupa do armário, mistério de outro século.',
     imagem: 'https://source.unsplash.com/600x400/?ninja,black',
     pesos: {
@@ -382,6 +398,7 @@ registrarFantasias([
   {
     id: 168, nome: 'Gladiador', emoji: '🏛️', categoria: 'Ação & Aventura',
     dificuldade: 'Caprichada', custo: 3,
+    ficha: { rosto: 'mascara', calor: 2, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Elmo, espada curta e a aprovação do Coliseu. Não se divertem?! Não é para isso que vocês vieram?!',
     imagem: 'https://source.unsplash.com/600x400/?gladiator,colosseum,helmet',
     pesos: {
@@ -405,6 +422,7 @@ registrarFantasias([
   {
     id: 169, nome: 'Samurai', emoji: '⚔️', categoria: 'Ação & Aventura',
     dificuldade: 'Caprichada', custo: 3,
+    ficha: { rosto: 'livre', calor: 3, volume: 3, formato: ['solo'], susto: 0, reconhecimento: 3 },
     descricao: 'Honra, katana e um coque impecável. Você não precisa de palavras — só de silêncio e uma reverência bem dada.',
     imagem: 'https://source.unsplash.com/600x400/?samurai,armor,katana',
     pesos: {
@@ -428,6 +446,7 @@ registrarFantasias([
   {
     id: 170, nome: 'Exterminador do Futuro', emoji: '🦾', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'pintura', calor: 3, volume: 1, formato: ['solo'], susto: 1, reconhecimento: 3 },
     descricao: 'Jaqueta de couro, óculos escuros e metade do rosto em metal. Você voltará. Provavelmente para o bar.',
     imagem: 'https://source.unsplash.com/600x400/?terminator,leather,sunglasses',
     pesos: {
@@ -451,6 +470,7 @@ registrarFantasias([
   {
     id: 171, nome: 'Jon Snow', emoji: '❄️', categoria: 'Ação & Aventura',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [64] },
     descricao: 'Capa de pele, cachos e um lobo gigante imaginário. Você não sabe de nada — mas o inverno está chegando, e você avisou.',
     imagem: 'https://source.unsplash.com/600x400/?fur,cloak,snow,sword',
     pesos: {
@@ -474,6 +494,7 @@ registrarFantasias([
   {
     id: 172, nome: 'Amazona Guerreira', emoji: '🛡️', categoria: 'Ação & Aventura',
     dificuldade: 'Caprichada', custo: 3,
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2 },
     descricao: 'Armadura, lança e uma ilha inteira que te respeita. Você venceu batalhas antes de a festa começar — e vai vencer a do karaokê.',
     imagem: 'https://source.unsplash.com/600x400/?warrior,woman,armor',
     pesos: {
@@ -497,6 +518,7 @@ registrarFantasias([
   {
     id: 173, nome: 'Soldado Espartano', emoji: '🔱', categoria: 'Ação & Aventura',
     dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'mascara', calor: 1, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Capa vermelha, escudo e trezentos motivos para gritar. Isto é… a festa! (Mas você vai dizer Esparta mesmo.)',
     imagem: 'https://source.unsplash.com/600x400/?spartan,shield,red,cape',
     pesos: {
@@ -520,6 +542,7 @@ registrarFantasias([
   {
     id: 174, nome: 'Robin Hood', emoji: '🏹', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
     descricao: 'Gorro com pena, arco e um código moral muito específico. Você rouba os salgadinhos dos ricos e distribui para os pobres (você).',
     imagem: 'https://source.unsplash.com/600x400/?archer,forest,green',
     pesos: {
@@ -543,6 +566,7 @@ registrarFantasias([
   {
     id: 175, nome: 'Zorro', emoji: '🗡️', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'mascara', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
     descricao: 'Máscara, capa e um Z marcado em qualquer superfície. Você chega pela janela e sai antes do agradecimento.',
     imagem: 'https://source.unsplash.com/600x400/?zorro,mask,black,hat',
     pesos: {
@@ -567,6 +591,7 @@ registrarFantasias([
   {
     id: 176, nome: 'Caçador de Vampiros', emoji: '🧄', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [1, 165] },
     descricao: 'Sobretudo de couro, estacas no cinto e um alho de emergência. Os vampiros da festa já perceberam que você chegou.',
     imagem: 'https://source.unsplash.com/600x400/?hunter,leather,coat,night',
     pesos: {
@@ -591,6 +616,7 @@ registrarFantasias([
   {
     id: 177, nome: 'Piloto de Corrida', emoji: '🏎️', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
     descricao: 'Macacão de patrocínios, capacete e champanhe para borrifar. Você comemora qualquer coisa como se fosse pódio.',
     imagem: 'https://source.unsplash.com/600x400/?racing,driver,helmet',
     pesos: {
@@ -609,6 +635,125 @@ registrarFantasias([
       'Macacão fechado até o peito, luvas e tênis.',
       'Capacete debaixo do braço (ou boné) e bandeira quadriculada na mão.',
       'Suba em qualquer "pódio" (degrau) e finja borrifar champanhe. Finja.',
+    ],
+  },
+  {
+    id: 233, nome: 'Mosqueteiro', emoji: '🤺', categoria: 'Ação & Aventura',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    descricao: 'Chapéu de pena, florete e um lema: um por todos, todos pelo bar. Você duela por honra — e pelo último salgadinho.',
+    imagem: 'https://source.unsplash.com/600x400/?musketeer,feather,hat',
+    pesos: {
+      genero: { masc: 6, neutro: 3 }, altura: { medio: 5, alto: 3 }, biotipo: { atletico: 7, magro: 4 }, cabelo: { longo: 7 }, barba: { cavanhaque: 8, bigode: 5 },
+      filme: { sobrevive: 7 }, festa: { bebida: 8 }, arma: { machado: 7, sarcasmo: 5 },
+      estilo: { acao: 8, fantasia: 3 }, idade: { adulto: 5, jovem: 4 }, vibe: { impressionar: 6, divertir: 5 },
+    },
+    itens: [
+      { nome: 'Tabardo azul com cruz', emoji: '🟦', busca: 'tabardo mosqueteiro' },
+      { nome: 'Chapéu de aba larga com pena', emoji: '🪶', busca: 'chapéu mosqueteiro pena' },
+      { nome: 'Florete de brinquedo', emoji: '🤺', busca: 'espada florete brinquedo' },
+      { nome: 'Camisa branca de punhos largos', emoji: '👕', busca: 'camisa pirata branca' },
+      { nome: 'Botas altas', emoji: '🥾', busca: 'bota cano alto preta' },
+    ],
+    passos: [
+      'Camisa branca, tabardo azul com a cruz, cinto largo e botas altas.',
+      'Chapéu com pena, cabelo nos ombros e cavanhaque bem aparado.',
+      'Florete na cintura e "um por todos!" sempre que alguém levantar o copo.',
+    ],
+  },
+  {
+    id: 234, nome: 'Luchador Mexicano', emoji: '🤼', categoria: 'Ação & Aventura',
+    dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'mascara', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2 },
+    descricao: 'Máscara colorida, capa brilhante e um golpe aéreo guardado para a pista. Sua identidade é secreta; seu estilo, não.',
+    imagem: 'https://source.unsplash.com/600x400/?luchador,mask,wrestling',
+    pesos: {
+      genero: { masc: 6, neutro: 3 }, altura: { medio: 5 }, biotipo: { forte: 7, atletico: 7 }, cabelo: { careca: 3, curto: 3 },
+      filme: { sobrevive: 6 }, festa: { bebida: 8 }, arma: { machado: 7 },
+      estilo: { acao: 7, comedia: 6 }, idade: { jovem: 5, adulto: 5 }, vibe: { divertir: 8, impressionar: 5 },
+    },
+    itens: [
+      { nome: 'Máscara de luchador', emoji: '🎭', busca: 'máscara luchador' },
+      { nome: 'Capa brilhante', emoji: '✨', busca: 'capa cetim brilhante' },
+      { nome: 'Legging ou calça de lycra colorida', emoji: '🩳', busca: 'legging colorida masculina' },
+      { nome: 'Cinturão de campeão de brinquedo', emoji: '🏆', busca: 'cinturão campeão brinquedo' },
+      { nome: 'Botas de cano alto', emoji: '🥾', busca: null },
+    ],
+    passos: [
+      'Calça de lycra colorida, regata ou sem camisa, e a capa brilhante presa no pescoço.',
+      'Máscara bem ajustada e o cinturão de campeão na cintura.',
+      'Entre na festa com apresentação de narrador e faça poses de vitória em todas as fotos.',
+    ],
+  },
+  {
+    id: 235, nome: 'Cangaceiro', emoji: '🌵', categoria: 'Ação & Aventura',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
+    descricao: 'Chapéu de couro em meia-lua, cartucheira cruzada e a coragem do sertão. Lampião aprovaria; Maria Bonita, mais ainda.',
+    imagem: 'https://source.unsplash.com/600x400/?sertao,leather,hat,brazil',
+    pesos: {
+      genero: { masc: 5, fem: 4 }, altura: { medio: 5 }, biotipo: { atletico: 6, magro: 4 }, cabelo: { curto: 4, longo: 4 }, barba: { bigode: 5, cheia: 4 }, oculos: { sim: 3 },
+      filme: { sobrevive: 8 }, festa: { bebida: 7 }, arma: { machado: 8 },
+      estilo: { acao: 8 }, idade: { adulto: 5, classico: 4 }, vibe: { impressionar: 7, divertir: 4 },
+    },
+    itens: [
+      { nome: 'Chapéu de couro de cangaceiro', emoji: '🤠', busca: 'chapéu cangaceiro couro' },
+      { nome: 'Cartucheira de couro', emoji: '🟫', busca: 'cartucheira cangaceiro' },
+      { nome: 'Camisa e calça cáqui', emoji: '👔', busca: 'camisa cáqui' },
+      { nome: 'Lenço vermelho no pescoço', emoji: '🟥', busca: 'lenço vermelho pescoço' },
+      { nome: 'Alpercatas (sandália de couro)', emoji: '👡', busca: 'alpercata couro' },
+    ],
+    passos: [
+      'Camisa e calça cáqui, lenço vermelho no pescoço e alpercatas de couro.',
+      'Chapéu de couro com a aba virada em meia-lua e a cartucheira cruzada no peito.',
+      'Óculos redondos para a versão Lampião; vestido e chapéu para a versão Maria Bonita. Xote na pista.',
+    ],
+  },
+  {
+    id: 236, nome: 'Katniss Everdeen', emoji: '🏹', categoria: 'Ação & Aventura',
+    dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    descricao: 'Trança lateral, arco nas costas e o broche do tordo. Você se voluntaria como tributo — para buscar as bebidas.',
+    imagem: 'https://source.unsplash.com/600x400/?archer,braid,forest',
+    pesos: {
+      genero: { fem: 9 }, altura: { medio: 5 }, biotipo: { atletico: 8, magro: 4 }, cabelo: { longo: 9 }, barba: { sem: 4 },
+      filme: { sobrevive: 10 }, festa: { filmes: 6 }, arma: { machado: 6, magia: 3 },
+      estilo: { acao: 8, pop: 6 }, idade: { teen: 6, jovem: 6 }, vibe: { impressionar: 5, conforto: 5 },
+    },
+    itens: [
+      { nome: 'Jaqueta de couro escura', emoji: '🧥', busca: 'jaqueta couro marrom feminina' },
+      { nome: 'Arco e aljava com flechas', emoji: '🏹', busca: 'arco e flecha brinquedo' },
+      { nome: 'Broche do tordo', emoji: '🐦', busca: 'broche tordo jogos vorazes' },
+      { nome: 'Calça escura e bota (as suas)', emoji: '🥾', busca: null },
+    ],
+    passos: [
+      'Camiseta escura, jaqueta de couro, calça justa e bota de cano médio.',
+      'Trança lateral firme e o broche do tordo na jaqueta.',
+      'Aljava nas costas e os três dedos levantados quando alguém fizer um brinde.',
+    ],
+  },
+  {
+    id: 237, nome: 'Aviadora Retrô', emoji: '🛩️', categoria: 'Ação & Aventura',
+    dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    descricao: 'Jaqueta de couro, óculos de voo e um cachecol branco ao vento. Você cruzou oceanos sozinha — esta festa é só mais uma escala.',
+    imagem: 'https://source.unsplash.com/600x400/?aviator,goggles,vintage,pilot',
+    pesos: {
+      genero: { fem: 7, neutro: 3 }, altura: { medio: 5 }, biotipo: { atletico: 6, magro: 4 }, cabelo: { curto: 7 }, barba: { sem: 4 },
+      filme: { sobrevive: 9 }, festa: { bebida: 4, filmes: 4 }, arma: { sarcasmo: 5, machado: 3 },
+      estilo: { acao: 8 }, idade: { adulto: 5, classico: 4 }, vibe: { impressionar: 6, conforto: 5 },
+    },
+    itens: [
+      { nome: 'Jaqueta de aviador de couro', emoji: '🧥', busca: 'jaqueta aviador couro' },
+      { nome: 'Óculos de aviação vintage', emoji: '🥽', busca: 'óculos aviador vintage steampunk' },
+      { nome: 'Gorro de aviador', emoji: '🧢', busca: 'gorro aviador couro' },
+      { nome: 'Cachecol branco longo', emoji: '🧣', busca: 'cachecol branco' },
+      { nome: 'Calça cáqui e botas (as suas)', emoji: '🥾', busca: null },
+    ],
+    passos: [
+      'Calça cáqui para dentro das botas e a jaqueta de couro fechada.',
+      'Gorro de aviador com os óculos na testa e o cachecol branco longo.',
+      'Conte suas "rotas" pelo mundo e cheque o tempo antes de ir para a pista.',
     ],
   },
 ]);

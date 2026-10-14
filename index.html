@@ -67,13 +67,13 @@
         <em>Se tiver coragem.</em> 👀
       </p>
       <button id="btn-start" class="btn-primary btn-pulse" type="button">👻 Descobrir Minha Fantasia</button>
-      <p class="nota">⏱️ 2 minutinhos &nbsp;•&nbsp; 🧛 <span id="total-fantasias">206</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
+      <p class="nota">⏱️ 2 minutinhos &nbsp;•&nbsp; 🧛 <span id="total-fantasias">252</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
     </section>
 
     <!-- ================== TELA 2 · FÍSICO ================== -->
     <section id="screen-fisico" class="screen" aria-labelledby="titulo-fisico">
       <button class="btn-voltar" type="button" data-voltar="screen-home">← voltar</button>
-      <p class="badge">Etapa 1 de 2 · Físico</p>
+      <p class="badge">Etapa 1 de 3 · Físico</p>
       <h2 id="titulo-fisico" class="titulo-tela font-creepy">Como você é?</h2>
       <p class="subtitulo-tela">Toque nas opções que mais parecem com você. O tom de pele só serve para as dicas de maquiagem — fantasia não tem cor.</p>
 
@@ -89,14 +89,27 @@
     <!-- ==================== TELA 3 · PERSONALIDADE ==================== -->
     <section id="screen-personalidade" class="screen" aria-labelledby="titulo-personalidade">
       <button class="btn-voltar" type="button" data-voltar="screen-fisico">← voltar</button>
-      <p class="badge">Etapa 2 de 2 · Personalidade</p>
+      <p class="badge">Etapa 2 de 3 · Personalidade</p>
       <h2 id="titulo-personalidade" class="titulo-tela font-creepy">Hora da verdade</h2>
-      <p class="subtitulo-tela">7 perguntas rápidas. Os espíritos detectam mentiras (e julgam).</p>
+      <p class="subtitulo-tela">Perguntas rápidas. Os espíritos detectam mentiras (e julgam).</p>
 
       <!-- Perguntas geradas a partir de data.js -->
       <div id="perguntas-personalidade" class="grupos"></div>
 
-      <button id="btn-personalidade-continuar" class="btn-primary" type="button" disabled>Consultar os Espíritos 🔮</button>
+      <button id="btn-personalidade-continuar" class="btn-primary" type="button" disabled>Continuar ➡️</button>
+    </section>
+
+    <!-- ===================== TELA 3B · NA PRÁTICA ===================== -->
+    <section id="screen-pratica" class="screen" aria-labelledby="titulo-pratica">
+      <button class="btn-voltar" type="button" data-voltar="screen-personalidade">← voltar</button>
+      <p class="badge">Etapa 3 de 3 · Na prática</p>
+      <h2 id="titulo-pratica" class="titulo-tela font-creepy">Agora, na prática</h2>
+      <p class="subtitulo-tela">Para a fantasia caber na sua festa, no seu rosto e no seu bolso.</p>
+
+      <!-- Perguntas geradas a partir de data.js (PERGUNTAS_PRATICAS) -->
+      <div id="perguntas-praticas" class="grupos"></div>
+
+      <button id="btn-pratica-continuar" class="btn-primary" type="button" disabled>Consultar os Espíritos 🔮</button>
     </section>
 
     <!-- ===================== TELA 4 · CARREGAMENTO ===================== -->
@@ -155,6 +168,12 @@
       <div class="adsense-slot" data-anuncio="resultadoAposPassos"></div>
 
       <!-- Pódio alternativo: clicável, abre o guia da vice -->
+      <!-- Pares: fantasias que combinam com a exibida (ficha.par) -->
+      <div id="pares-wrap" class="alternativas-wrap hidden">
+        <p id="pares-titulo" class="motivos-titulo">Vai acompanhado? Combina com 👯</p>
+        <div id="resultado-pares" class="alternativas"></div>
+      </div>
+
       <div class="alternativas-wrap">
         <p class="motivos-titulo">Quase viraram você 👀 (toque para ver o guia)</p>
         <div id="resultado-alternativas" class="alternativas"></div>
