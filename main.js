@@ -153,7 +153,7 @@ function renderizarGrupo(grupo, modoLinha) {
   const classeGrid = modoLinha ? 'opcoes-grid opcoes-grid--lista' : `opcoes-grid${variante}`;
 
   return `
-    <div class="grupo">
+    <div class="grupo" data-pergunta="${grupo.categoria}">
       <h3>${grupo.titulo}</h3>
       <div class="${classeGrid}" role="group" aria-label="${grupo.titulo}">${botoes}</div>
     </div>`;
@@ -163,12 +163,50 @@ function renderizarFormularios() {
   for (const etapa of ETAPAS_QUIZ) {
     $(etapa.container).innerHTML = etapa.perguntas.map((g) => renderizarGrupo(g, etapa.modoLinha)).join('');
   }
+  aplicarPerguntasOcultas();
   atualizarAvatarPreview();
+}
+
+/* ---------- Perguntas condicionais (`ocultaSe` em data.js) ---------- */
+
+const estaOculta = (pergunta) =>
+  !!pergunta.ocultaSe &&
+  Object.entries(pergunta.ocultaSe).every(([categoria, valor]) => state.escolhas[categoria] === valor);
+
+const perguntasVisiveis = (perguntas) => perguntas.filter((p) => !estaOculta(p));
+
+/**
+ * Esconde as perguntas cuja condição bate com as escolhas e apaga a
+ * resposta delas: se a pergunta voltar a aparecer, a pessoa responde de novo.
+ */
+function aplicarPerguntasOcultas() {
+  for (const pergunta of TODAS_AS_PERGUNTAS) {
+    if (!pergunta.ocultaSe) continue;
+    const oculta = estaOculta(pergunta);
+    const grupo = document.querySelector(`.grupo[data-pergunta="${pergunta.categoria}"]`);
+    grupo.classList.toggle('hidden', oculta);
+    if (oculta && state.escolhas[pergunta.categoria]) {
+      delete state.escolhas[pergunta.categoria];
+      grupo.querySelectorAll('.opcao-btn').forEach((b) => {
+        b.classList.remove('selecionada');
+        b.setAttribute('aria-pressed', 'false');
+      });
+    }
+  }
+}
+
+/** Escolhas da pessoa + a resposta implícita das perguntas ocultas. */
+function escolhasParaPontuar() {
+  const escolhas = { ...state.escolhas };
+  for (const pergunta of TODAS_AS_PERGUNTAS) {
+    if (estaOculta(pergunta)) escolhas[pergunta.categoria] = pergunta.respostaOculta;
+  }
+  return escolhas;
 }
 
 /** Resumo do perfil: mostra o emoji escolhido em cada categoria física. */
 function atualizarAvatarPreview() {
-  $('#avatar-preview').innerHTML = ETAPAS_FISICO.map((grupo) => {
+  $('#avatar-preview').innerHTML = perguntasVisiveis(ETAPAS_FISICO).map((grupo) => {
     const escolhida = grupo.opcoes.find((o) => o.valor === state.escolhas[grupo.categoria]);
     return `
       <div class="avatar-slot">
@@ -196,6 +234,7 @@ function aoSelecionarOpcao(evento) {
     b.setAttribute('aria-pressed', String(ativa));
   });
 
+  aplicarPerguntasOcultas();
   atualizarAvatarPreview();
   atualizarBotoesDeAvanco();
   rolarParaProximoPasso(botao);
@@ -205,7 +244,7 @@ function aoSelecionarOpcao(evento) {
 function rolarParaProximoPasso(botao) {
   const comportamento = prefereMenosMovimento() ? 'auto' : 'smooth';
   const grupoAtual = botao.closest('.grupo');
-  const proximoVazio = [...grupoAtual.parentElement.querySelectorAll('.grupo')].find(
+  const proximoVazio = [...grupoAtual.parentElement.querySelectorAll('.grupo:not(.hidden)')].find(
     (g) => !g.querySelector('.opcao-btn.selecionada')
   );
 
@@ -225,8 +264,9 @@ function contarEscolhas(grupos) {
 /** Habilita o botão de avanço de cada etapa apenas com ela completa. */
 function atualizarBotoesDeAvanco() {
   for (const etapa of ETAPAS_QUIZ) {
-    const feitas = contarEscolhas(etapa.perguntas);
-    const total = etapa.perguntas.length;
+    const perguntas = perguntasVisiveis(etapa.perguntas);
+    const feitas = contarEscolhas(perguntas);
+    const total = perguntas.length;
     const botao = $(etapa.botao);
     botao.disabled = feitas < total;
     botao.textContent = botao.disabled ? `Responda tudo (${feitas}/${total})` : etapa.textoPronto;
@@ -321,7 +361,7 @@ function iniciarConsulta() {
   // O cálculo é instantâneo; os 4s são encenação.
   // Sem anúncio nesta tela: as políticas do AdSense proíbem anúncios em
   // telas sem conteúdo do site (carregamento, transição, alerta).
-  state.ranking = recomendarFantasia(state.escolhas);
+  state.ranking = recomendarFantasia(escolhasParaPontuar());
 
   state.timers.loading = window.setTimeout(
     () => exibirResultado(state.ranking[0]),

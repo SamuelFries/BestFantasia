@@ -55,6 +55,13 @@ for (const pergunta of api.TODAS_AS_PERGUNTAS) {
       if (pergunta.categoria === 'pele') erro('a pergunta de tom de pele não pode ter regras (decisão ética)');
     }
   }
+  if (pergunta.ocultaSe) {
+    if (!valores.has(pergunta.respostaOculta)) erro(`${pergunta.categoria}: respostaOculta "${pergunta.respostaOculta}" não é uma opção`);
+    for (const [categoria, valor] of Object.entries(pergunta.ocultaSe)) {
+      const alvo = api.TODAS_AS_PERGUNTAS.find((p) => p.categoria === categoria);
+      if (!alvo?.opcoes.some((o) => o.valor === valor)) erro(`${pergunta.categoria}: ocultaSe usa resposta inexistente ${categoria}=${valor}`);
+    }
+  }
 }
 
 /* ---------------- 2. Fantasias ---------------- */

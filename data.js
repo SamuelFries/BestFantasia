@@ -27,7 +27,7 @@
    altura:  baixo | medio | alto
    biotipo: magro | atletico | forte
    cabelo:  curto | longo | colorido | careca
-   barba:   sem | bigode | cavanhaque | cheia
+   barba:   sem | bigode | cavanhaque | cheia  (oculta para genero=fem)
    oculos:  sim | nao
 
    — Etapa 2 · Personalidade (pesos; `estilo` também tem regra) —
@@ -145,6 +145,10 @@ const ETAPAS_FISICO = [
     categoria: 'barba',
     titulo: 'Barba',
     rotuloCurto: 'Barba',
+    // Feminino: a pergunta some e conta como "Sem barba", para a
+    // pontuação ficar igual à de quem respondia "sem".
+    ocultaSe: { genero: 'fem' },
+    respostaOculta: 'sem',
     opcoes: [
       { valor: 'sem',        rotulo: 'Sem barba',   emoji: '🪒' },
       { valor: 'bigode',     rotulo: 'Bigode',      emoji: '🥸' },
