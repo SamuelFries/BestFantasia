@@ -10,7 +10,7 @@ registrarFantasias([
   {
     id: 75, nome: 'Walter White (Heisenberg)', emoji: '🎩', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [210, 209] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [210, 209] },
     descricao: 'Professor de química, pai de família e… ok, você sabe o resto. Chapéu, óculos e a frase: "Say my name."',
     imagem: 'https://source.unsplash.com/600x400/?chemistry,desert',
     pesos: {
@@ -34,7 +34,7 @@ registrarFantasias([
   {
     id: 76, nome: 'Jim Halpert (Three Hole Punch)', emoji: '📎', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 1, par: [77, 211, 78] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 1, ousadia: 0, par: [77, 211, 78] },
     descricao: 'A fantasia mais preguiçosa e mais genial da história dos escritórios: três círculos pretos e um olhar para a câmera. Custo: quase zero. Impacto: lendário.',
     imagem: 'https://source.unsplash.com/600x400/?office,desk,paper',
     pesos: {
@@ -59,7 +59,7 @@ registrarFantasias([
   {
     id: 77, nome: 'Dwight Schrute', emoji: '🥬', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, par: [76, 211, 78] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 0, par: [76, 211, 78] },
     descricao: 'Assistente DO gerente regional, fazendeiro de beterrabas e mestre em artes marciais (segundo ele). Fato: ursos comem beterrabas.',
     imagem: 'https://source.unsplash.com/600x400/?beet,farm',
     pesos: {
@@ -84,7 +84,7 @@ registrarFantasias([
   {
     id: 78, nome: 'Prison Mike', emoji: '🟣', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 1, par: [76, 77] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 1, ousadia: 0, par: [76, 77] },
     descricao: 'Uma bandana roxa e um sotaque inventado: o criminoso mais mal-informado do mundo corporativo. O pior da prisão? Os Dementadores.',
     imagem: 'https://source.unsplash.com/600x400/?bandana,purple',
     pesos: {
@@ -107,7 +107,7 @@ registrarFantasias([
   {
     id: 79, nome: 'Patrick Bateman', emoji: '🪓', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 2, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 2, reconhecimento: 2, ousadia: 0 },
     descricao: 'Skincare impecável, cartão de visita de luxo e uma capa de chuva que nunca é só para a chuva. Você precisa devolver algumas fitas.',
     imagem: 'https://source.unsplash.com/600x400/?suit,raincoat',
     pesos: {
@@ -132,7 +132,7 @@ registrarFantasias([
   {
     id: 80, nome: 'Michael Jackson (Thriller)', emoji: '🕺', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [3] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [3] },
     descricao: 'Jaqueta vermelha, luva brilhante e a coreografia que todo zumbi conhece. A festa vira clipe quando você entra.',
     imagem: 'https://source.unsplash.com/600x400/?dance,red,jacket',
     pesos: {
@@ -157,7 +157,7 @@ registrarFantasias([
   {
     id: 81, nome: 'Lex Luthor', emoji: '🧑‍🦲', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [215] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 0, par: [215] },
     descricao: 'Bilionário, careca e com um rancor muito específico por um alienígena de capa. A kryptonita está no bolso do terno.',
     imagem: 'https://source.unsplash.com/600x400/?businessman,suit,bald',
     pesos: {
@@ -180,7 +180,7 @@ registrarFantasias([
   {
     id: 82, nome: 'A Pimp Named Slickback', emoji: '🎩', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 3,
-    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 1 },
+    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 1, ousadia: 0 },
     descricao: 'Terno roxo, chapéu com pena e a regra: diga o nome completo, sempre. É "A Pimp Named Slickback", como "A Tribe Called Quest".',
     imagem: 'https://source.unsplash.com/600x400/?purple,suit,hat',
     pesos: {
@@ -205,7 +205,7 @@ registrarFantasias([
   {
     id: 83, nome: 'Karl Marx', emoji: '📕', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, polemica: true },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0, polemica: true },
     descricao: 'Barba lendária, livro vermelho debaixo do braço e uma teoria para a fila do bar. Convidados de todas as festas: uni-vos!',
     imagem: 'https://source.unsplash.com/600x400/?beard,vintage,portrait',
     pesos: {
@@ -228,7 +228,7 @@ registrarFantasias([
   {
     id: 84, nome: 'Timmy Turner', emoji: '🧢', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Boné rosa, dentão de castor e dois padrinhos mágicos disfarçados de peixinhos. Seu desejo é uma ordem — até dar errado.',
     imagem: 'https://source.unsplash.com/600x400/?pink,cap,cartoon',
     pesos: {
@@ -253,7 +253,7 @@ registrarFantasias([
   {
     id: 85, nome: 'Jimmy Neutron', emoji: '🧠', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Topete desafiando a gravidade, camiseta com átomo e um cérebro que inventa soluções para problemas que ele mesmo criou. Brain blast!',
     imagem: 'https://source.unsplash.com/600x400/?science,atom,kid',
     pesos: {
@@ -277,7 +277,7 @@ registrarFantasias([
   {
     id: 86, nome: 'Wandinha Addams', emoji: '🖤', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [87, 88] },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [87, 88] },
     descricao: 'Tranças, gola branca e a expressão de quem já planejou o funeral de todo mundo na sala. Você não odeia a festa: só não sorri.',
     imagem: 'https://source.unsplash.com/600x400/?gothic,girl,braids',
     pesos: {
@@ -301,7 +301,7 @@ registrarFantasias([
   {
     id: 87, nome: 'Tio Chico (Fester)', emoji: '💡', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'pintura', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, par: [86, 88] },
+    ficha: { rosto: 'pintura', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 0, par: [86, 88] },
     descricao: 'Careca, pálido e eletricamente carregado. Você acende lâmpadas com a boca e é, de longe, o tio favorito da família.',
     imagem: 'https://source.unsplash.com/600x400/?lightbulb,dark,coat',
     pesos: {
@@ -324,7 +324,7 @@ registrarFantasias([
   {
     id: 88, nome: 'Morticia Addams', emoji: '🕷️', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [86, 87] },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 1, par: [86, 87] },
     descricao: 'Vestido até o chão, cabelo até a cintura e um romance gótico que dura séculos. Você corta as flores e guarda os espinhos.',
     imagem: 'https://source.unsplash.com/600x400/?gothic,woman,black,dress',
     pesos: {
@@ -349,7 +349,7 @@ registrarFantasias([
   {
     id: 89, nome: 'Eleven (Stranger Things)', emoji: '🧇', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Vestido rosa, jaqueta jeans e uma caixa de waffles. Você fecha portas com a mente e sangra pelo nariz de propósito.',
     imagem: 'https://source.unsplash.com/600x400/?waffle,retro,80s',
     pesos: {
@@ -373,7 +373,7 @@ registrarFantasias([
   {
     id: 90, nome: 'Coringa', emoji: '🃏', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 1, reconhecimento: 3, par: [91, 56] },
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 1, reconhecimento: 3, ousadia: 0, par: [91, 56] },
     descricao: 'Terno colorido, sorriso pintado e uma risada que começa triste e termina assustadora. A escadaria da festa é seu palco.',
     imagem: 'https://source.unsplash.com/600x400/?joker,clown,dark',
     pesos: {
@@ -396,7 +396,7 @@ registrarFantasias([
   {
     id: 91, nome: 'Arlequina', emoji: '🔨', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [90] },
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 1, par: [90] },
     descricao: 'Marias-chiquinhas bicolores, marreta no ombro e um namorado péssimo deixado para trás. O caos nunca foi tão fotogênico.',
     imagem: 'https://source.unsplash.com/600x400/?harley,quinn,pink,blue',
     pesos: {
@@ -421,7 +421,7 @@ registrarFantasias([
   {
     id: 92, nome: 'Barbie', emoji: '💖', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [93] },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [93] },
     descricao: 'Rosa dos pés à cabeça, carreira em tudo e uma Dreamhouse esperando. "Oi, Barbie!" é como você cumprimenta todo mundo.',
     imagem: 'https://source.unsplash.com/600x400/?pink,barbie,fashion',
     pesos: {
@@ -445,7 +445,7 @@ registrarFantasias([
   {
     id: 93, nome: 'Ken', emoji: '🏄', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [92] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 1, par: [92] },
     descricao: 'Profissão: praia. Colete jeans sem camisa, bandana e a crise existencial mais engraçada do cinema. Você é Kenough.',
     imagem: 'https://source.unsplash.com/600x400/?beach,blonde,denim',
     pesos: {
@@ -469,7 +469,7 @@ registrarFantasias([
   {
     id: 94, nome: 'Mario Bros', emoji: '🍄', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [149] },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [149] },
     descricao: 'Bigode, boné com M e um pulo que ninguém pediu. Encanador de dia, salvador de princesas na madrugada. It\'s-a me!',
     imagem: 'https://source.unsplash.com/600x400/?mario,mushroom,red',
     pesos: {
@@ -493,7 +493,7 @@ registrarFantasias([
   {
     id: 95, nome: 'Freddie Mercury', emoji: '🎤', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Regata branca, bigode e uma voz que ninguém da festa vai alcançar. Mas você vai tentar. "Ay-oh!"',
     imagem: 'https://source.unsplash.com/600x400/?concert,singer,stage',
     pesos: {
@@ -517,7 +517,7 @@ registrarFantasias([
   {
     id: 96, nome: 'Elvis Presley', emoji: '🕶️', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 1 },
     descricao: 'Topete, macacão de pedrarias e o quadril mais processado da história. O Rei deixou o prédio — e entrou na sua festa.',
     imagem: 'https://source.unsplash.com/600x400/?elvis,vegas,rhinestone',
     pesos: {
@@ -541,7 +541,7 @@ registrarFantasias([
   {
     id: 97, nome: 'Wally (Onde está Wally?)', emoji: '🔴', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Listras vermelhas, gorro com pompom e a missão de ser encontrado. Spoiler: você está sempre perto do bar.',
     imagem: 'https://source.unsplash.com/600x400/?stripes,red,white',
     pesos: {
@@ -565,7 +565,7 @@ registrarFantasias([
   {
     id: 98, nome: 'Forrest Gump', emoji: '🏃', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Camisa xadrez, caixa de bombons e uma história improvável para cada pessoa. A festa é como uma caixa de bombons…',
     imagem: 'https://source.unsplash.com/600x400/?bench,chocolate,box',
     pesos: {
@@ -589,7 +589,7 @@ registrarFantasias([
   {
     id: 99, nome: 'Jules Winnfield (Pulp Fiction)', emoji: '🕴️', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [100] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 0, par: [100] },
     descricao: 'Terno preto, gravata fina e um versículo decorado para momentos de tensão. Diga "what" de novo. Eu desafio.',
     imagem: 'https://source.unsplash.com/600x400/?suit,black,tie,retro',
     pesos: {
@@ -613,7 +613,7 @@ registrarFantasias([
   {
     id: 100, nome: 'Mia Wallace', emoji: '💃', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [99] },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 1, par: [99] },
     descricao: 'Franja reta, camisa branca e a dança de pés descalços mais imitada do cinema. Desenhe o quadrado no ar e vá para a pista.',
     imagem: 'https://source.unsplash.com/600x400/?retro,dance,blackandwhite',
     pesos: {
@@ -637,7 +637,7 @@ registrarFantasias([
   {
     id: 101, nome: 'The Dude (O Grande Lebowski)', emoji: '🥛', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 1 },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 1, ousadia: 0 },
     descricao: 'Roupão, bermuda e um White Russian na mão. Você não vai à festa: a festa acontece ao seu redor enquanto você relaxa.',
     imagem: 'https://source.unsplash.com/600x400/?bathrobe,bowling',
     pesos: {
@@ -662,7 +662,7 @@ registrarFantasias([
   {
     id: 102, nome: 'Austin Powers', emoji: '💜', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'livre', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Terno de veludo, babados e dentes de outra época. Espião internacional e homem de mistério: "Yeah, baby, yeah!"',
     imagem: 'https://source.unsplash.com/600x400/?velvet,60s,retro',
     pesos: {
@@ -686,7 +686,7 @@ registrarFantasias([
   {
     id: 103, nome: 'Ron Swanson', emoji: '🥓', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 1 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 1, ousadia: 0 },
     descricao: 'Bigode, bacon e desprezo por reuniões. Você trabalha no governo e odeia o governo. Mande todo o bacon e os ovos que tiver.',
     imagem: 'https://source.unsplash.com/600x400/?bacon,mustache',
     pesos: {
@@ -709,7 +709,7 @@ registrarFantasias([
   {
     id: 104, nome: 'Steve Jobs', emoji: '🍎', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Gola alta preta, jeans e tênis cinza: o uniforme de quem tem mais o que pensar. "One more thing…"',
     imagem: 'https://source.unsplash.com/600x400/?turtleneck,minimal,black',
     pesos: {
@@ -733,7 +733,7 @@ registrarFantasias([
   {
     id: 105, nome: 'Mr. Bean', emoji: '🧸', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Blazer de tweed, gravata vermelha e um ursinho de confiança. Você não fala muito, mas sua cara diz tudo.',
     imagem: 'https://source.unsplash.com/600x400/?tweed,teddy,bear',
     pesos: {
@@ -757,7 +757,7 @@ registrarFantasias([
   {
     id: 106, nome: 'Chapolin Colorado', emoji: '❤️', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Mais ágil que uma tartaruga, mais forte que um rato. Sua marreta biônica resolve tudo (ou piora com estilo). Não contavam com sua astúcia!',
     imagem: 'https://source.unsplash.com/600x400/?red,hero,heart',
     pesos: {
@@ -780,7 +780,7 @@ registrarFantasias([
   {
     id: 107, nome: 'Chaves', emoji: '🛢️', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [207, 208] },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [207, 208] },
     descricao: 'Boné xadrez, suspensório e um sanduíche de presunto que nunca chega. Foi sem querer querendo — e todo mundo entende.',
     imagem: 'https://source.unsplash.com/600x400/?barrel,courtyard,vintage',
     pesos: {
@@ -805,7 +805,7 @@ registrarFantasias([
   {
     id: 108, nome: 'Bob Esponja', emoji: '🧽', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 1,
-    ficha: { rosto: 'livre', calor: 3, volume: 3, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [221] },
+    ficha: { rosto: 'livre', calor: 3, volume: 3, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [221] },
     descricao: 'Quadrado, amarelo e otimista a ponto de irritar. Você está pronto. Você está pronto. VOCÊ ESTÁ PRONTO.',
     imagem: 'https://source.unsplash.com/600x400/?sponge,yellow,square',
     pesos: {
@@ -829,7 +829,7 @@ registrarFantasias([
   {
     id: 109, nome: 'Velma (Scooby-Doo)', emoji: '🔍', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [110, 141, 220] },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [110, 141, 220] },
     descricao: 'Suéter laranja, óculos grossos e o cérebro da turma. Você resolve o mistério — depois de perder os óculos pelo menos uma vez. Jinkies!',
     imagem: 'https://source.unsplash.com/600x400/?orange,sweater,glasses',
     pesos: {
@@ -853,7 +853,7 @@ registrarFantasias([
   {
     id: 110, nome: 'Salsicha (Shaggy)', emoji: '🥪', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [220, 109, 141] },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [220, 109, 141] },
     descricao: 'Camiseta verde, cavanhaque e fome permanente. Você foge de qualquer monstro — mas volta se tiver sanduíche. Zoinks!',
     imagem: 'https://source.unsplash.com/600x400/?sandwich,green,shirt',
     pesos: {
@@ -877,7 +877,7 @@ registrarFantasias([
   {
     id: 111, nome: 'Rick Sanchez', emoji: '🧪', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Jaleco, cabelo azul e uma pistola de portais para fugir das conversas. O cientista mais inteligente e menos sóbrio do multiverso.',
     imagem: 'https://source.unsplash.com/600x400/?portal,green,science',
     pesos: {
@@ -902,7 +902,7 @@ registrarFantasias([
   {
     id: 112, nome: 'Marty McFly', emoji: '🛹', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [113] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 0, par: [113] },
     descricao: 'Colete vermelho, jaqueta jeans e um skate que já voou. Você veio do futuro — e o futuro é esta festa.',
     imagem: 'https://source.unsplash.com/600x400/?skateboard,80s,retro',
     pesos: {
@@ -927,7 +927,7 @@ registrarFantasias([
   {
     id: 113, nome: 'Doc Brown', emoji: '⚡', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [112] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 0, par: [112] },
     descricao: 'Cabelo branco para todos os lados e 1,21 gigawatts de entusiasmo. Great Scott! A festa precisa de um capacitor de fluxo.',
     imagem: 'https://source.unsplash.com/600x400/?scientist,white,hair',
     pesos: {
@@ -951,7 +951,7 @@ registrarFantasias([
   {
     id: 114, nome: 'Jogador do Round 6', emoji: '🔺', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Agasalho verde, número nas costas e a certeza de que "batatinha frita 1, 2, 3" nunca mais será inocente.',
     imagem: 'https://source.unsplash.com/600x400/?green,tracksuit,number',
     pesos: {
@@ -975,7 +975,7 @@ registrarFantasias([
   {
     id: 115, nome: 'Shrek', emoji: '🟢', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Verde, grandão e dono de um pântano que ninguém respeita. Ogros são como cebolas: têm camadas. E cheiram um pouco.',
     imagem: 'https://source.unsplash.com/600x400/?green,ogre,swamp',
     pesos: {
@@ -999,7 +999,7 @@ registrarFantasias([
   {
     id: 116, nome: 'Frida Kahlo', emoji: '🌺', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Flores na cabeça, sobrancelha icônica e uma autoestima pintada à mão. Você é a obra de arte e a artista.',
     imagem: 'https://source.unsplash.com/600x400/?frida,flowers,mexico',
     pesos: {
@@ -1023,7 +1023,7 @@ registrarFantasias([
   {
     id: 117, nome: 'Bob Ross', emoji: '🎨', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Cabelo permanente, voz calma e arvorezinhas felizes. Não existem erros na sua fantasia: só acidentes felizes.',
     imagem: 'https://source.unsplash.com/600x400/?painter,palette,calm',
     pesos: {
@@ -1047,7 +1047,7 @@ registrarFantasias([
   {
     id: 118, nome: 'Albert Einstein', emoji: '🧠', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Cabelo elétrico, bigode branco e a língua de fora na foto mais famosa da ciência. E = mc² e a festa é relativa.',
     imagem: 'https://source.unsplash.com/600x400/?einstein,chalkboard',
     pesos: {
@@ -1071,7 +1071,7 @@ registrarFantasias([
   {
     id: 119, nome: 'Sherlock Holmes', emoji: '🔍', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'livre', calor: 3, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 3, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Boné de caça, sobretudo e deduções sobre quem comeu o último salgadinho. Elementar, meu caro convidado.',
     imagem: 'https://source.unsplash.com/600x400/?detective,london,fog',
     pesos: {
@@ -1095,7 +1095,7 @@ registrarFantasias([
   {
     id: 120, nome: 'Goku', emoji: '🟠', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Gi laranja, cabelo impossível e a fome de um exército. Você treina na festa, come na festa e salva a festa. Kamehameha!',
     imagem: 'https://source.unsplash.com/600x400/?orange,martial,arts',
     pesos: {
@@ -1118,7 +1118,7 @@ registrarFantasias([
   {
     id: 121, nome: 'Sailor Moon', emoji: '🌙', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Coques, laço vermelho e a justiça em nome da Lua. Você chega atrasada, chora um pouco e salva o planeta mesmo assim.',
     imagem: 'https://source.unsplash.com/600x400/?moon,anime,sailor',
     pesos: {
@@ -1142,7 +1142,7 @@ registrarFantasias([
   {
     id: 122, nome: 'Naruto Uzumaki', emoji: '🍥', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Jaqueta laranja, bandana de Konoha e a corrida com os braços para trás. Você nunca desiste — esse é o seu jeito ninja.',
     imagem: 'https://source.unsplash.com/600x400/?orange,ninja,anime',
     pesos: {
@@ -1166,7 +1166,7 @@ registrarFantasias([
   {
     id: 123, nome: 'Pikachu Aconchegante', emoji: '⚡', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 3, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 3, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Amarelo, elétrico e com bochechas que ninguém resiste. Você só diz uma palavra a noite inteira e todo mundo entende.',
     imagem: 'https://source.unsplash.com/600x400/?yellow,pikachu,plush',
     pesos: {
@@ -1188,7 +1188,7 @@ registrarFantasias([
   {
     id: 124, nome: 'Darth Vader', emoji: '🖤', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 3,
-    ficha: { rosto: 'mascara', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [125, 55, 219] },
+    ficha: { rosto: 'mascara', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [125, 55, 219] },
     descricao: 'Respiração pesada, capa dramática e um lado sombrio com dental. Você acha a falta de fé dos convidados perturbadora.',
     imagem: 'https://source.unsplash.com/600x400/?darth,vader,helmet',
     pesos: {
@@ -1212,7 +1212,7 @@ registrarFantasias([
   {
     id: 125, nome: 'Princesa Leia', emoji: '👩‍🚀', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [124, 55] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [124, 55] },
     descricao: 'Coques de rosquinha, vestido branco e a liderança da Rebelião. Você é a única esperança desta festa — e sabe disso.',
     imagem: 'https://source.unsplash.com/600x400/?white,dress,space',
     pesos: {
@@ -1236,7 +1236,7 @@ registrarFantasias([
   {
     id: 126, nome: 'Homem-Aranha', emoji: '🕷️', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'mascara', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [213] },
+    ficha: { rosto: 'mascara', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [213] },
     descricao: 'Grandes poderes, grandes responsabilidades e uma pose agachada em todas as fotos. O amigão da vizinhança chegou à festa.',
     imagem: 'https://source.unsplash.com/600x400/?spiderman,red,blue',
     pesos: {
@@ -1259,7 +1259,7 @@ registrarFantasias([
   {
     id: 127, nome: 'Mulher-Maravilha', emoji: '⭐', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [215, 56] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 1, par: [215, 56] },
     descricao: 'Tiara, braceletes e um laço que faz todo mundo dizer a verdade — inclusive sobre quem comeu o último brigadeiro.',
     imagem: 'https://source.unsplash.com/600x400/?wonder,woman,gold',
     pesos: {
@@ -1283,7 +1283,7 @@ registrarFantasias([
   {
     id: 128, nome: 'Deadpool', emoji: '🔴', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 3,
-    ficha: { rosto: 'mascara', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [136] },
+    ficha: { rosto: 'mascara', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [136] },
     descricao: 'Duas katanas, zero filtro e uma quebra de quarta parede por minuto. Você sabe que é uma fantasia — e comenta isso.',
     imagem: 'https://source.unsplash.com/600x400/?deadpool,red,mask',
     pesos: {
@@ -1306,7 +1306,7 @@ registrarFantasias([
   {
     id: 129, nome: 'Thor', emoji: '⚡', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 3,
-    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [130, 213, 214] },
+    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [130, 213, 214] },
     descricao: 'Martelo, capa vermelha e uma sede de hidromel digna de Asgard. Só você consegue levantar o Mjolnir — e o último barril.',
     imagem: 'https://source.unsplash.com/600x400/?thor,hammer,thunder',
     pesos: {
@@ -1329,7 +1329,7 @@ registrarFantasias([
   {
     id: 130, nome: 'Hulk', emoji: '💚', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 1,
-    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [129, 213, 214] },
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [129, 213, 214] },
     descricao: 'Verde, enorme e com uma calça roxa que sobreviveu a tudo. Você está sempre com raiva — esse é o segredo.',
     imagem: 'https://source.unsplash.com/600x400/?green,muscle,hulk',
     pesos: {
@@ -1352,7 +1352,7 @@ registrarFantasias([
   {
     id: 131, nome: 'Capitão Jack Sparrow', emoji: '🍾', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [12] },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [12] },
     descricao: 'Dreads com miçangas, delineador borrado e um andar que mistura rum com estratégia. Mas por que o rum acabou?',
     imagem: 'https://source.unsplash.com/600x400/?pirate,captain,rum',
     pesos: {
@@ -1377,7 +1377,7 @@ registrarFantasias([
   {
     id: 132, nome: 'Edward Mãos de Tesoura', emoji: '✂️', categoria: 'Cultura Pop',
     dificuldade: 'Caprichada', custo: 2,
-    ficha: { rosto: 'pintura', calor: 3, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 2 },
+    ficha: { rosto: 'pintura', calor: 3, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 2, ousadia: 0 },
     descricao: 'Cabelo impossível, couro com cintos e mãos que fazem topiaria em qualquer arbusto. Você não é mau — só não foi terminado.',
     imagem: 'https://source.unsplash.com/600x400/?scissors,gothic,hands',
     pesos: {
@@ -1400,7 +1400,7 @@ registrarFantasias([
   {
     id: 133, nome: 'Jack Skellington', emoji: '🎃', categoria: 'Cultura Pop',
     dificuldade: 'Caprichada', custo: 2,
-    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [134] },
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [134] },
     descricao: 'O Rei do Halloween em pessoa (em osso). Terno de listras finas, gravata de morcego e um sorriso costurado de orelha a orelha.',
     imagem: 'https://source.unsplash.com/600x400/?skeleton,suit,halloween',
     pesos: {
@@ -1424,7 +1424,7 @@ registrarFantasias([
   {
     id: 134, nome: 'Sally (Estranho Mundo de Jack)', emoji: '🧵', categoria: 'Cultura Pop',
     dificuldade: 'Caprichada', custo: 2,
-    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [133] },
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 0, par: [133] },
     descricao: 'Costurada à mão, cheia de folhas e com uma premonição a cada cinco minutos. Você se desmonta e se remonta — e ninguém faz melhor.',
     imagem: 'https://source.unsplash.com/600x400/?patchwork,doll,rag',
     pesos: {
@@ -1448,7 +1448,7 @@ registrarFantasias([
   {
     id: 135, nome: 'Willy Wonka', emoji: '🍫', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Cartola, casaco roxo e uma fábrica de segredos. Você distribui chocolate e julgamentos na mesma proporção.',
     imagem: 'https://source.unsplash.com/600x400/?chocolate,purple,hat',
     pesos: {
@@ -1473,7 +1473,7 @@ registrarFantasias([
   {
     id: 136, nome: 'Wolverine', emoji: '🐾', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [128] },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [128] },
     descricao: 'Costeletas, regata e garras que resolvem qualquer discussão. Você é o melhor no que faz — e o que faz não é muito educado.',
     imagem: 'https://source.unsplash.com/600x400/?claws,leather,jacket',
     pesos: {
@@ -1497,7 +1497,7 @@ registrarFantasias([
   {
     id: 137, nome: 'Ace Ventura', emoji: '🦜', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Topete, camisa havaiana e calça listrada: o detetive de animais mais barulhento do mundo. Alrighty then!',
     imagem: 'https://source.unsplash.com/600x400/?hawaiian,shirt,parrot',
     pesos: {
@@ -1521,7 +1521,7 @@ registrarFantasias([
   {
     id: 138, nome: 'O Máskara', emoji: '🟢', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Terno amarelo, rosto verde e energia de desenho animado. Alguém te segure! (Ninguém vai.) Ssssmokin!',
     imagem: 'https://source.unsplash.com/600x400/?yellow,suit,green',
     pesos: {
@@ -1545,7 +1545,7 @@ registrarFantasias([
   {
     id: 139, nome: 'Daft Punk', emoji: '🎧', categoria: 'Cultura Pop',
     dificuldade: 'Caprichada', custo: 3,
-    ficha: { rosto: 'mascara', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'mascara', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Capacete, jaqueta de couro e silêncio absoluto. Você não fala — você toca. One more time.',
     imagem: 'https://source.unsplash.com/600x400/?helmet,robot,dj',
     pesos: {
@@ -1568,7 +1568,7 @@ registrarFantasias([
   {
     id: 140, nome: 'Napoleon Dynamite', emoji: '🦙', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 1 },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 1, ousadia: 0 },
     descricao: 'Camiseta "Vote for Pedro", permanente ruivo e uma dança que ninguém esperava. Gosh! Você tem habilidades.',
     imagem: 'https://source.unsplash.com/600x400/?curly,hair,glasses,retro',
     pesos: {
@@ -1591,7 +1591,7 @@ registrarFantasias([
   {
     id: 141, nome: 'Daphne (Scooby-Doo)', emoji: '💜', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [109, 110, 220] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [109, 110, 220] },
     descricao: 'Roxo da cabeça aos pés, lenço verde e o dom de ser sequestrada em todo episódio. Você é a "perigosa" da turma — e a mais estilosa.',
     imagem: 'https://source.unsplash.com/600x400/?purple,dress,redhead',
     pesos: {
@@ -1615,7 +1615,7 @@ registrarFantasias([
   {
     id: 142, nome: 'Homer Simpson', emoji: '🍩', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [143, 222] },
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [143, 222] },
     descricao: 'Rosquinha, cerveja e a maior preguiça animada do mundo. D\'oh! Você veio à festa só pela comida — e está certo.',
     imagem: 'https://source.unsplash.com/600x400/?donut,beer,yellow',
     pesos: {
@@ -1639,7 +1639,7 @@ registrarFantasias([
   {
     id: 143, nome: 'Marge Simpson', emoji: '💙', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [142, 222] },
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [142, 222] },
     descricao: 'Cabelo azul de um metro, colar de pérolas vermelhas e paciência infinita com um Homer. "Mmm…" é a sua resposta para tudo.',
     imagem: 'https://source.unsplash.com/600x400/?blue,hair,tall',
     pesos: {
@@ -1663,7 +1663,7 @@ registrarFantasias([
   {
     id: 144, nome: 'Hermione Granger', emoji: '📚', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [32, 216] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [32, 216] },
     descricao: 'Cabelo volumoso, varinha firme e a resposta certa antes da pergunta. É levi-Ô-sa, não leviosÁ.',
     imagem: 'https://source.unsplash.com/600x400/?books,wand,library',
     pesos: {
@@ -1687,7 +1687,7 @@ registrarFantasias([
   {
     id: 145, nome: 'Monkey D. Luffy', emoji: '👒', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Chapéu de palha, colete vermelho e fome de carne infinita. Você vai ser o Rei dos Piratas — depois do churrasco.',
     imagem: 'https://source.unsplash.com/600x400/?straw,hat,pirate',
     pesos: {
@@ -1711,7 +1711,7 @@ registrarFantasias([
   {
     id: 146, nome: 'Tanjiro Kamado', emoji: '🌊', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Haori xadrez, cicatriz na testa e um faro que detecta demônios (e churrasco). Respiração da Água, primeira forma!',
     imagem: 'https://source.unsplash.com/600x400/?haori,japan,sword',
     pesos: {
@@ -1735,7 +1735,7 @@ registrarFantasias([
   {
     id: 147, nome: 'Sub-Zero (Mortal Kombat)', emoji: '❄️', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'mascara', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'mascara', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Ninja azul, gelo nas mãos e um fatality guardado para a pista de dança. Troque para amarelo e vire o Scorpion.',
     imagem: 'https://source.unsplash.com/600x400/?ninja,blue,ice',
     pesos: {
@@ -1758,7 +1758,7 @@ registrarFantasias([
   {
     id: 148, nome: 'Link (Zelda)', emoji: '🗡️', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Túnica verde, gorro pontudo e a habilidade de abrir qualquer baú. Você não fala — grita "hyaah!" e quebra vasos.',
     imagem: 'https://source.unsplash.com/600x400/?green,tunic,sword,elf',
     pesos: {
@@ -1782,7 +1782,7 @@ registrarFantasias([
   {
     id: 149, nome: 'Princesa Peach', emoji: '🍑', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [94] },
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [94] },
     descricao: 'Vestido rosa, coroa e um encanador sempre a caminho. Você não precisa ser salva, mas aceita o bolo.',
     imagem: 'https://source.unsplash.com/600x400/?pink,princess,crown',
     pesos: {
@@ -1806,7 +1806,7 @@ registrarFantasias([
   {
     id: 150, nome: 'Sonic', emoji: '💙', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Azul, rápido e colecionador de argolas. Você chega antes de todo mundo e cobra: "você é lento demais!"',
     imagem: 'https://source.unsplash.com/600x400/?blue,hedgehog,fast',
     pesos: {
@@ -1829,7 +1829,7 @@ registrarFantasias([
   {
     id: 151, nome: 'Tyler Durden', emoji: '🧼', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Jaqueta vermelha de couro, óculos vermelhos e um sabonete rosa. A primeira regra desta fantasia é não falar dela.',
     imagem: 'https://source.unsplash.com/600x400/?red,leather,jacket,soap',
     pesos: {
@@ -1853,7 +1853,7 @@ registrarFantasias([
   {
     id: 152, nome: 'Maverick (Top Gun)', emoji: '🛩️', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Bomber com patches, óculos aviador e a necessidade de velocidade. Você vai para a zona de perigo — a pista de dança.',
     imagem: 'https://source.unsplash.com/600x400/?aviator,pilot,jacket',
     pesos: {
@@ -1876,7 +1876,7 @@ registrarFantasias([
   {
     id: 153, nome: 'Silvio Santos', emoji: '💵', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Terno, microfone e aviõezinhos de dinheiro. "Quem quer dinheiro?" é a pergunta mais popular da festa. Ma-vi-lha!',
     imagem: 'https://source.unsplash.com/600x400/?microphone,suit,tv,host',
     pesos: {
@@ -1899,7 +1899,7 @@ registrarFantasias([
   {
     id: 154, nome: 'Cebolinha', emoji: '🟢', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [155] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [155] },
     descricao: 'Cinco fios de cabelo, camiseta verde e um plano infalível para roubar o Sansão. Ou "infalível" com L mesmo.',
     imagem: 'https://source.unsplash.com/600x400/?green,shirt,kid,cartoon',
     pesos: {
@@ -1923,7 +1923,7 @@ registrarFantasias([
   {
     id: 155, nome: 'Mônica', emoji: '🐰', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [154] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [154] },
     descricao: 'Vestido vermelho, coelho azul e uma coelhada para quem te chamar de baixinha. Dona da rua, do bairro e da festa.',
     imagem: 'https://source.unsplash.com/600x400/?red,dress,blue,bunny',
     pesos: {
@@ -1950,7 +1950,7 @@ registrarFantasias([
   {
     id: 202, nome: 'Donald Trump', emoji: '🇺🇸', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, polemica: true },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0, polemica: true },
     descricao: 'Cabelo que desafia o vento, gravata vermelha até o joelho e superlativos para tudo: esta é a melhor festa, tremenda, ninguém nunca viu igual.',
     imagem: 'https://source.unsplash.com/600x400/?suit,red,tie,podium',
     pesos: {
@@ -1974,7 +1974,7 @@ registrarFantasias([
   {
     id: 203, nome: 'Jair Bolsonaro', emoji: '🇧🇷', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, polemica: true },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, polemica: true },
     descricao: 'Camisa da seleção, faixa presidencial e o hábito de fazer live de qualquer lugar — inclusive da fila do banheiro da festa.',
     imagem: 'https://source.unsplash.com/600x400/?brazil,jersey,green,yellow',
     pesos: {
@@ -1998,7 +1998,7 @@ registrarFantasias([
   {
     id: 204, nome: 'Lula', emoji: '🧔🏻‍♂️', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, polemica: true },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, polemica: true },
     descricao: 'Barba grisalha, boné e um discurso de improviso no meio da pista. "Companheiros e companheiras" é como você abre qualquer conversa, inclusive para pedir gelo.',
     imagem: 'https://source.unsplash.com/600x400/?beard,cap,speech',
     pesos: {
@@ -2022,7 +2022,7 @@ registrarFantasias([
   {
     id: 205, nome: 'Dilma', emoji: '🌽', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, polemica: true },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, polemica: true },
     descricao: 'Blazer vermelho, faixa presidencial e uma mandioca nas mãos para saudar. Seu plano para a festa é ambicioso: estocar vento.',
     imagem: 'https://source.unsplash.com/600x400/?red,blazer,cassava',
     pesos: {
@@ -2046,7 +2046,7 @@ registrarFantasias([
   {
     id: 206, nome: 'Temer Vampirão', emoji: '🧛‍♂️', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, polemica: true },
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 0, polemica: true },
     descricao: 'A fantasia que virou lenda no Carnaval de 2018: faixa presidencial, capa de vampiro e mesóclises afiadas. Morder-te-ei? Talvez.',
     imagem: 'https://source.unsplash.com/600x400/?vampire,suit,cape',
     pesos: {
@@ -2071,7 +2071,7 @@ registrarFantasias([
   {
     id: 207, nome: 'Seu Madruga', emoji: '🧢', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [107, 208] },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [107, 208] },
     descricao: 'Chapéu, camiseta surrada e 14 meses de aluguel atrasado. Você não trabalha, mas tem um bordão para cada situação: "a vingança nunca é plena, mata a alma e envenena".',
     imagem: 'https://source.unsplash.com/600x400/?bucket,hat,vintage,mustache',
     pesos: {
@@ -2095,7 +2095,7 @@ registrarFantasias([
   {
     id: 208, nome: 'Kiko', emoji: '🎈', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [107, 207] },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [107, 207] },
     descricao: 'Bochechas infladas, roupa de marinheiro e uma bola quadrada que ninguém mais tem. "Gentalha, gentalha!" é o seu cumprimento oficial.',
     imagem: 'https://source.unsplash.com/600x400/?sailor,boy,costume',
     pesos: {
@@ -2119,7 +2119,7 @@ registrarFantasias([
   {
     id: 209, nome: 'Saul Goodman', emoji: '⚖️', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, par: [75, 210] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 0, par: [75, 210] },
     descricao: 'Terno colorido, gravata chamativa e um cartão de visita para cada problema da festa. Better call Saul — e ele cobra adiantado.',
     imagem: 'https://source.unsplash.com/600x400/?lawyer,colorful,suit',
     pesos: {
@@ -2143,7 +2143,7 @@ registrarFantasias([
   {
     id: 210, nome: 'Jesse Pinkman', emoji: '🧪', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 2, par: [75, 209] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 0, par: [75, 209] },
     descricao: 'Moletom largo, gorro e um "yo" no começo de cada frase. A dupla perfeita para quem vier de Walter White.',
     imagem: 'https://source.unsplash.com/600x400/?beanie,hoodie,street',
     pesos: {
@@ -2167,7 +2167,7 @@ registrarFantasias([
   {
     id: 211, nome: 'Michael Scott', emoji: '☕', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, par: [76, 77] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 0, par: [76, 77] },
     descricao: 'Caneca "World\'s Best Boss", terno apertado e piadas que ninguém pediu. "That\'s what she said" é a sua resposta para tudo.',
     imagem: 'https://source.unsplash.com/600x400/?office,mug,boss',
     pesos: {
@@ -2190,7 +2190,7 @@ registrarFantasias([
   {
     id: 212, nome: 'Joey Tribbiani', emoji: '🍕', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Jaqueta de couro, sorriso de galã e uma regra: Joey não divide comida. "How you doin\'?" abre qualquer conversa.',
     imagem: 'https://source.unsplash.com/600x400/?leather,jacket,pizza',
     pesos: {
@@ -2213,7 +2213,7 @@ registrarFantasias([
   {
     id: 213, nome: 'Homem de Ferro', emoji: '🦾', categoria: 'Cultura Pop',
     dificuldade: 'Caprichada', custo: 3,
-    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [214, 129, 126, 130] },
+    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [214, 129, 126, 130] },
     descricao: 'Gênio, bilionário, playboy, filantropo — e com um reator brilhando no peito. Você chega voando (ou de Uber) e rouba a cena.',
     imagem: 'https://source.unsplash.com/600x400/?ironman,red,gold,armor',
     pesos: {
@@ -2236,7 +2236,7 @@ registrarFantasias([
   {
     id: 214, nome: 'Capitão América', emoji: '🛡️', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'mascara', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [213, 129, 130] },
+    ficha: { rosto: 'mascara', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [213, 129, 130] },
     descricao: 'Escudo redondo, valores antiquados e a capacidade de ficar a noite inteira nisso. "Eu aguento o dia todo."',
     imagem: 'https://source.unsplash.com/600x400/?shield,star,blue,red',
     pesos: {
@@ -2260,7 +2260,7 @@ registrarFantasias([
   {
     id: 215, nome: 'Superman', emoji: '🦸‍♂️', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [56, 127, 81] },
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [56, 127, 81] },
     descricao: 'Capa vermelha, S no peito e um par de óculos que, de algum jeito, engana todo mundo. Você chega, salva o dia e some.',
     imagem: 'https://source.unsplash.com/600x400/?superman,cape,red,blue',
     pesos: {
@@ -2283,7 +2283,7 @@ registrarFantasias([
   {
     id: 216, nome: 'Severo Snape', emoji: '🧪', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [32, 144] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [32, 144] },
     descricao: 'Capa preta, cabelo oleoso e pausas dramáticas entre as palavras. Você desaprova esta festa. Sempre.',
     imagem: 'https://source.unsplash.com/600x400/?black,robe,potion',
     pesos: {
@@ -2306,7 +2306,7 @@ registrarFantasias([
   {
     id: 217, nome: 'Frodo Bolseiro', emoji: '💍', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [28, 31] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [28, 31] },
     descricao: 'Pés descalços, capa élfica e um anel que pesa mais do que deveria. Sua missão: atravessar a festa sem perder o precioso.',
     imagem: 'https://source.unsplash.com/600x400/?hobbit,ring,shire',
     pesos: {
@@ -2330,7 +2330,7 @@ registrarFantasias([
   {
     id: 218, nome: 'Beatrix Kiddo (Kill Bill)', emoji: '⚔️', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 2 },
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 2, ousadia: 0 },
     descricao: 'Macacão amarelo com faixas pretas, katana e uma lista de nomes riscados. Ninguém fura sua fila — nem a da pista.',
     imagem: 'https://source.unsplash.com/600x400/?yellow,jumpsuit,katana',
     pesos: {
@@ -2353,7 +2353,7 @@ registrarFantasias([
   {
     id: 219, nome: 'Mandaloriano', emoji: '🪖', categoria: 'Cultura Pop',
     dificuldade: 'Caprichada', custo: 3,
-    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, par: [55, 124] },
+    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [55, 124] },
     descricao: 'Capacete prateado, armadura e um bebê verde na sacola. Você não tira o capacete. Este é o caminho.',
     imagem: 'https://source.unsplash.com/600x400/?silver,helmet,armor,space',
     pesos: {
@@ -2377,7 +2377,7 @@ registrarFantasias([
   {
     id: 220, nome: 'Scooby-Doo', emoji: '🐕', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [110, 109, 141] },
+    ficha: { rosto: 'leve', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [110, 109, 141] },
     descricao: 'Coleira azul, fome infinita e medo de tudo. Você foge de fantasmas, mas encara qualquer biscoito. Scooby-Dooby-Doo!',
     imagem: 'https://source.unsplash.com/600x400/?great,dane,dog,brown',
     pesos: {
@@ -2400,7 +2400,7 @@ registrarFantasias([
   {
     id: 221, nome: 'Patrick Estrela', emoji: '⭐', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [108] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [108] },
     descricao: 'Rosa, bermuda florida e zero pensamentos na cabeça. O melhor amigo que todo Bob Esponja merece — e que mora debaixo de uma pedra.',
     imagem: 'https://source.unsplash.com/600x400/?pink,starfish,beach',
     pesos: {
@@ -2423,7 +2423,7 @@ registrarFantasias([
   {
     id: 222, nome: 'Bart Simpson', emoji: '🛹', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [142, 143] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [142, 143] },
     descricao: 'Camiseta laranja, bermuda azul, skate e travessura a nível profissional. "Ay, caramba!" Não fui eu.',
     imagem: 'https://source.unsplash.com/600x400/?skateboard,orange,shirt',
     pesos: {
@@ -2447,7 +2447,7 @@ registrarFantasias([
   {
     id: 223, nome: 'Steve (Minecraft)', emoji: '⛏️', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 1,
-    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Cabeça quadrada, camiseta azul-piscina e uma picareta para minerar a mesa de petiscos. Você constrói a festa bloco por bloco.',
     imagem: 'https://source.unsplash.com/600x400/?pixel,blocks,cube',
     pesos: {
@@ -2471,7 +2471,7 @@ registrarFantasias([
   {
     id: 224, nome: 'Kratos (God of War)', emoji: '🪓', categoria: 'Cultura Pop',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'pintura', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'pintura', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Careca, barba cheia, tatuagem vermelha e um machado que volta para a mão. "Garoto!" é tudo que você precisa dizer.',
     imagem: 'https://source.unsplash.com/600x400/?warrior,axe,beard,red',
     pesos: {
@@ -2495,7 +2495,7 @@ registrarFantasias([
   {
     id: 225, nome: 'Gru (Meu Malvado Favorito)', emoji: '🧣', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [74] },
+    ficha: { rosto: 'leve', calor: 3, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [74] },
     descricao: 'Cachecol listrado, nariz pontudo e um plano para roubar a Lua. O vilão mais carinhoso — e o único com exército de Minions.',
     imagem: 'https://source.unsplash.com/600x400/?scarf,striped,black,coat',
     pesos: {
@@ -2519,7 +2519,7 @@ registrarFantasias([
   {
     id: 226, nome: 'Nazaré Tedesco (meme confusa)', emoji: '🧮', categoria: 'Cultura Pop',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 1, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'A vilã da novela que virou o meme mais usado do Brasil. Faça cara de cálculo e deixe as equações flutuarem ao seu redor.',
     imagem: 'https://source.unsplash.com/600x400/?math,equations,confused',
     pesos: {

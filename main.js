@@ -169,11 +169,7 @@ function renderizarFormularios() {
 
 /* ---------- Perguntas condicionais (`ocultaSe` em data.js) ---------- */
 
-const estaOculta = (pergunta) =>
-  !!pergunta.ocultaSe &&
-  Object.entries(pergunta.ocultaSe).every(([categoria, valor]) => state.escolhas[categoria] === valor);
-
-const perguntasVisiveis = (perguntas) => perguntas.filter((p) => !estaOculta(p));
+const perguntasVisiveis = (perguntas) => perguntas.filter((p) => !estaOculta(p, state.escolhas));
 
 /**
  * Esconde as perguntas cuja condição bate com as escolhas e apaga a
@@ -182,7 +178,7 @@ const perguntasVisiveis = (perguntas) => perguntas.filter((p) => !estaOculta(p))
 function aplicarPerguntasOcultas() {
   for (const pergunta of TODAS_AS_PERGUNTAS) {
     if (!pergunta.ocultaSe) continue;
-    const oculta = estaOculta(pergunta);
+    const oculta = estaOculta(pergunta, state.escolhas);
     const grupo = document.querySelector(`.grupo[data-pergunta="${pergunta.categoria}"]`);
     grupo.classList.toggle('hidden', oculta);
     if (oculta && state.escolhas[pergunta.categoria]) {
@@ -193,15 +189,6 @@ function aplicarPerguntasOcultas() {
       });
     }
   }
-}
-
-/** Escolhas da pessoa + a resposta implícita das perguntas ocultas. */
-function escolhasParaPontuar() {
-  const escolhas = { ...state.escolhas };
-  for (const pergunta of TODAS_AS_PERGUNTAS) {
-    if (estaOculta(pergunta)) escolhas[pergunta.categoria] = pergunta.respostaOculta;
-  }
-  return escolhas;
 }
 
 /** Resumo do perfil: mostra o emoji escolhido em cada categoria física. */
@@ -361,7 +348,7 @@ function iniciarConsulta() {
   // O cálculo é instantâneo; os 4s são encenação.
   // Sem anúncio nesta tela: as políticas do AdSense proíbem anúncios em
   // telas sem conteúdo do site (carregamento, transição, alerta).
-  state.ranking = recomendarFantasia(escolhasParaPontuar());
+  state.ranking = recomendarFantasia(state.escolhas);
 
   state.timers.loading = window.setTimeout(
     () => exibirResultado(state.ranking[0]),

@@ -41,6 +41,7 @@
    — Etapa 3 · Na prática (só regras, lendo a ficha) —
    companhia: sozinho | casal | grupo
    rosto:     livre | leve | pintura | mascara
+   provocante: sim | nao  (oculta para idade=teen)
    local:     fechada | balada | rua | trabalho
    orcamento: zero | medio | alto
    esforco:   minimo | medio | capricho
@@ -75,6 +76,9 @@ const CATEGORIAS = ['Terror', 'Clássicas', 'Ação & Aventura', 'Fantasia & Mag
    formato:        em que situações ela rende: solo, casal, grupo
    susto:          0 tranquila · 1 assustadora · 2 com sangue ou pesada
    reconhecimento: 1 só os fãs entendem · 2 a maioria · 3 todo mundo
+   ousadia:        0 discreta · 1 charmosa (sensual, mas não é o foco:
+                   Mulher-Gato, Cleópatra) · 2 provocante (feita para
+                   provocar: Diabinha, Pin-up)
    par:            (opcional) ids das fantasias que combinam com ela;
                    o par deve apontar de volta
    polemica:       (opcional) true para figuras políticas */
@@ -85,6 +89,7 @@ const FICHA_VALORES = {
   formato: ['solo', 'casal', 'grupo'],
   susto: [0, 1, 2],
   reconhecimento: [1, 2, 3],
+  ousadia: [0, 1, 2],
 };
 
 /* ---------- Tela 2 · Físico ---------- */
@@ -277,6 +282,20 @@ const PERGUNTAS_PRATICAS = [
     ],
   },
   {
+    categoria: 'provocante',
+    titulo: 'Quer uma fantasia provocante? 🫦',
+    // Menores de 18: a pergunta some e conta como "Não".
+    ocultaSe: { idade: 'teen' },
+    respostaOculta: 'nao',
+    opcoes: [
+      { valor: 'sim', rotulo: 'Sim, quero provocar', emoji: '🫦',
+        regras: [{ campo: 'ousadia', pontos: { 0: -4, 1: 4, 2: 9 } }],
+        motivo: 'tem a dose de provocação que você pediu' },
+      { valor: 'nao', rotulo: 'Não, prefiro discreta', emoji: '🙈',
+        regras: [{ campo: 'ousadia', pontos: { 0: 2, 1: 0, 2: -10 } }] },
+    ],
+  },
+  {
     categoria: 'local',
     titulo: 'Onde você vai usar?',
     opcoes: [
@@ -297,6 +316,7 @@ const PERGUNTAS_PRATICAS = [
         regras: [
           { campo: 'susto', pontos: { 0: 3, 1: 0, 2: -12 } },
           { campo: 'polemica', pontos: { true: -10 } },
+          { campo: 'ousadia', pontos: { 2: -12 } },
           { campo: 'volume', pontos: { 3: -3 } },
         ],
         motivo: 'é tranquila para escola ou trabalho' },

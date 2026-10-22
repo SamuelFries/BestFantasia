@@ -50,6 +50,23 @@ function pontosDasRegras(opcao, fantasia) {
   return (opcao?.regras ?? []).reduce((total, regra) => total + pontosDaRegra(regra, fantasia), 0);
 }
 
+/* ---------- Perguntas condicionais (`ocultaSe` em data.js) ---------- */
+
+/** A pergunta some quando todas as respostas de `ocultaSe` batem com as escolhas. */
+function estaOculta(pergunta, escolhas) {
+  return !!pergunta.ocultaSe &&
+    Object.entries(pergunta.ocultaSe).every(([categoria, valor]) => escolhas[categoria] === valor);
+}
+
+/** Escolhas + a resposta implícita das perguntas ocultas (ex.: barba "sem" para Feminino). */
+function completarEscolhas(escolhas) {
+  const completas = { ...escolhas };
+  for (const pergunta of TODAS_AS_PERGUNTAS) {
+    if (estaOculta(pergunta, escolhas)) completas[pergunta.categoria] = pergunta.respostaOculta;
+  }
+  return completas;
+}
+
 /* ---------- Pontuação ---------- */
 
 /** Pontos de uma fantasia para UMA resposta (pesos + regras da opção). */
@@ -189,5 +206,5 @@ function montarMotivos(fantasia, escolhas, limite = 3) {
  * "quase viraram você"; o resto serve para achar os pares sugeridos.
  */
 function recomendarFantasia(escolhas) {
-  return ajustarPercentuaisParaExibicao(rankearFantasias(escolhas));
+  return ajustarPercentuaisParaExibicao(rankearFantasias(completarEscolhas(escolhas)));
 }

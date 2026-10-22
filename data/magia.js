@@ -9,7 +9,7 @@ registrarFantasias([
   {
     id: 2, nome: 'Bruxa Moderna', emoji: '🧙‍♀️', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [14, 186] },
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 1, par: [14, 186] },
     descricao: 'Cristais na estante, caldeirão no fogão e um feitiço na ponta da língua. Mexeu com você, mexeu com o coven inteiro.',
     imagem: 'https://source.unsplash.com/600x400/?witch,magic',
     pesos: {
@@ -34,7 +34,7 @@ registrarFantasias([
   {
     id: 28, nome: 'Mago Ancião', emoji: '🧙', categoria: 'Fantasia & Magia',
     dificuldade: 'Caprichada', custo: 2,
-    ficha: { rosto: 'leve', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [217, 31] },
+    ficha: { rosto: 'leve', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [217, 31] },
     descricao: 'Barba lendária, cajado imponente e paciência zero com aventureiros apressados. Você não se atrasa: chega precisamente quando quer.',
     imagem: 'https://source.unsplash.com/600x400/?wizard,magic',
     pesos: {
@@ -58,7 +58,7 @@ registrarFantasias([
   {
     id: 29, nome: 'Fada Sombria', emoji: '🧚', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2, par: [63] },
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0, par: [63] },
     descricao: 'Pó de fada vencido, asas escuras e feitiços com cláusulas de rescisão. Fofura e perigo na mesma dose.',
     imagem: 'https://source.unsplash.com/600x400/?fairy,dark',
     pesos: {
@@ -82,7 +82,7 @@ registrarFantasias([
   {
     id: 30, nome: 'Sereia Encantada', emoji: '🧜‍♀️', categoria: 'Fantasia & Magia',
     dificuldade: 'Caprichada', custo: 3,
-    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 1 },
     descricao: 'Cabelo de comercial, escamas brilhando e um contrato vitalício com o glitter. Terra firme nunca foi sua praia — a praia é.',
     imagem: 'https://source.unsplash.com/600x400/?mermaid,ocean',
     pesos: {
@@ -106,7 +106,7 @@ registrarFantasias([
   {
     id: 31, nome: 'Elfo da Floresta', emoji: '🧝', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, par: [217, 28] },
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 0, par: [217, 28] },
     descricao: 'Pontaria perfeita, cabelo de shampoo élfico e 300 anos de idade aparentando 25. A floresta confia em você.',
     imagem: 'https://source.unsplash.com/600x400/?elf,forest',
     pesos: {
@@ -130,7 +130,7 @@ registrarFantasias([
   {
     id: 32, nome: 'Aprendiz de Escola de Magia', emoji: '🪄', categoria: 'Fantasia & Magia',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [144, 216] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [144, 216] },
     descricao: 'Uniforme impecável, varinha na manga e uma coruja de estimação imaginária. Detenção? Só se o feitiço falhar.',
     imagem: 'https://source.unsplash.com/600x400/?wizard,school',
     pesos: {
@@ -154,7 +154,7 @@ registrarFantasias([
   {
     id: 63, nome: 'Maléfica', emoji: '🖤', categoria: 'Fantasia & Magia',
     dificuldade: 'Caprichada', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3, par: [29] },
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [29] },
     descricao: 'Chifres imponentes, maçãs do rosto afiadas e uma maldição guardada para quem não te convidou. Você É a festa a que não foi chamada.',
     imagem: 'https://source.unsplash.com/600x400/?dark,queen,horns',
     pesos: {
@@ -178,7 +178,7 @@ registrarFantasias([
   {
     id: 64, nome: 'Daenerys, Mãe dos Dragões', emoji: '🐉', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [171, 183] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 1, par: [171, 183] },
     descricao: 'Cabelo platinado, títulos infinitos e um dragão no ombro. Você não pede: você liberta (o bar, no caso).',
     imagem: 'https://source.unsplash.com/600x400/?dragon,queen,blonde',
     pesos: {
@@ -202,7 +202,7 @@ registrarFantasias([
   {
     id: 65, nome: 'Chapeleiro Maluco', emoji: '🎩', categoria: 'Fantasia & Magia',
     dificuldade: 'Caprichada', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [66, 241] },
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [66, 241] },
     descricao: 'Cartola gigante, cabelo laranja e um chá eterno às seis da tarde. Por que um corvo se parece com uma escrivaninha? Você também não sabe.',
     imagem: 'https://source.unsplash.com/600x400/?mad,hatter,tea',
     pesos: {
@@ -226,7 +226,7 @@ registrarFantasias([
   {
     id: 66, nome: 'Alice no País das Maravilhas', emoji: '💙', categoria: 'Fantasia & Magia',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [65, 241] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [65, 241] },
     descricao: 'Vestido azul, laço preto e a curiosidade que mete qualquer um em confusão. Você seguiu o coelho e deu nesta festa.',
     imagem: 'https://source.unsplash.com/600x400/?alice,wonderland',
     pesos: {
@@ -250,7 +250,7 @@ registrarFantasias([
   {
     id: 67, nome: 'Rainha Má', emoji: '🍎', categoria: 'Fantasia & Magia',
     dificuldade: 'Caprichada', custo: 3,
-    ficha: { rosto: 'leve', calor: 3, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 3, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Espelho, espelho meu: existe alguém mais bem vestida que eu nesta festa? Não. E a maçã é só uma cortesia.',
     imagem: 'https://source.unsplash.com/600x400/?evil,queen,crown',
     pesos: {
@@ -274,7 +274,7 @@ registrarFantasias([
   {
     id: 68, nome: 'Cruella de Vil', emoji: '🐾', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 3, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Metade preto, metade branco, cem por cento vilã da moda. Os dálmatas tremem; os estilistas também.',
     imagem: 'https://source.unsplash.com/600x400/?cruella,fur,blackandwhite',
     pesos: {
@@ -298,7 +298,7 @@ registrarFantasias([
   {
     id: 178, nome: 'Medusa', emoji: '🐍', categoria: 'Fantasia & Magia',
     dificuldade: 'Caprichada', custo: 2,
-    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 3, ousadia: 0 },
     descricao: 'Cobras no cabelo e um olhar que transforma qualquer um em estátua. Quem te encarou na festa está parado até agora.',
     imagem: 'https://source.unsplash.com/600x400/?medusa,snake,statue',
     pesos: {
@@ -322,7 +322,7 @@ registrarFantasias([
   {
     id: 179, nome: 'Princesa de Conto de Fadas', emoji: '👑', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Vestido rodado, tiara e um sapatinho que pode ou não ficar para trás. Você chega à meia-noite e sai antes da carruagem virar abóbora.',
     imagem: 'https://source.unsplash.com/600x400/?princess,gown,tiara',
     pesos: {
@@ -346,7 +346,7 @@ registrarFantasias([
   {
     id: 180, nome: 'Capitão Gancho', emoji: '🪝', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [242, 12] },
+    ficha: { rosto: 'leve', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [242, 12] },
     descricao: 'Casaco vermelho, bigode fino e pavor de relógios. Um menino voador arruinou sua vida — e você vai contar essa história a todos.',
     imagem: 'https://source.unsplash.com/600x400/?pirate,red,coat,hook',
     pesos: {
@@ -370,7 +370,7 @@ registrarFantasias([
   {
     id: 181, nome: 'Chapeuzinho Vermelho', emoji: '🧺', categoria: 'Fantasia & Magia',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [4] },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 1, par: [4, 262] },
     descricao: 'Capa vermelha, cesta de doces e desconfiança profissional de lobos. "Que olhos grandes você tem" é como você começa qualquer flerte.',
     imagem: 'https://source.unsplash.com/600x400/?red,riding,hood,basket',
     pesos: {
@@ -394,7 +394,7 @@ registrarFantasias([
   {
     id: 182, nome: 'Gênio da Lâmpada', emoji: '🧞', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Azul, carismático e preso a uma lâmpada com cláusulas. Três desejos por pessoa — e você sempre acha um jeito de dar errado.',
     imagem: 'https://source.unsplash.com/600x400/?genie,lamp,blue',
     pesos: {
@@ -419,7 +419,7 @@ registrarFantasias([
   {
     id: 183, nome: 'Dragão Aconchegante', emoji: '🐲', categoria: 'Fantasia & Magia',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [64, 52] },
+    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 0, par: [64, 52] },
     descricao: 'Escamas de pelúcia, asas pequenas e um tesouro de salgadinhos guardado na caverna (o sofá). Você cospe fogo só de brincadeira.',
     imagem: 'https://source.unsplash.com/600x400/?dragon,plush,costume',
     pesos: {
@@ -441,7 +441,7 @@ registrarFantasias([
   {
     id: 184, nome: 'Druida da Floresta', emoji: '🌿', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 1 },
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 1, ousadia: 0 },
     descricao: 'Túnica, galhos no cabelo e ervas misteriosas no bolso. Você fala com as plantas da festa — e elas respondem (segundo você).',
     imagem: 'https://source.unsplash.com/600x400/?druid,forest,staff',
     pesos: {
@@ -465,7 +465,7 @@ registrarFantasias([
   {
     id: 185, nome: 'Rainha do Gelo', emoji: '❄️', categoria: 'Fantasia & Magia',
     dificuldade: 'Caprichada', custo: 3,
-    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Vestido azul-gelo, trança platinada e um reino congelado ao seu dispor. Você solta tudo — menos o controle da playlist.',
     imagem: 'https://source.unsplash.com/600x400/?ice,queen,blue,dress',
     pesos: {
@@ -489,7 +489,7 @@ registrarFantasias([
   {
     id: 186, nome: 'Bruxa Clássica de Verruga', emoji: '🧹', categoria: 'Fantasia & Magia',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'pintura', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 1, reconhecimento: 3, par: [2, 14] },
+    ficha: { rosto: 'pintura', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 1, reconhecimento: 3, ousadia: 0, par: [2, 14] },
     descricao: 'Nariz comprido, verruga e a risada que ecoa pelo quarteirão. Você tem um caldeirão, uma vassoura e opiniões sobre crianças.',
     imagem: 'https://source.unsplash.com/600x400/?witch,hat,broom,green',
     pesos: {
@@ -514,7 +514,7 @@ registrarFantasias([
   {
     id: 187, nome: 'Cupido', emoji: '💘', categoria: 'Fantasia & Magia',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Asas, arco e pontaria duvidosa. Você flecha casais na festa e assume zero responsabilidade pelo resultado.',
     imagem: 'https://source.unsplash.com/600x400/?cupid,arrow,heart',
     pesos: {
@@ -538,7 +538,7 @@ registrarFantasias([
   {
     id: 238, nome: 'Saci-Pererê', emoji: '🌪️', categoria: 'Fantasia & Magia',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [239] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [239] },
     descricao: 'Gorro vermelho, cachimbo e um redemoinho de travessuras. Você esconde chaves, dá nó em cadarço e some antes de alguém perceber.',
     imagem: 'https://source.unsplash.com/600x400/?red,cap,whirlwind,forest',
     pesos: {
@@ -561,7 +561,7 @@ registrarFantasias([
   {
     id: 239, nome: 'Curupira', emoji: '🔥', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 1,
-    ficha: { rosto: 'pintura', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [238] },
+    ficha: { rosto: 'pintura', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [238] },
     descricao: 'Cabelo de fogo, pés virados para trás e a proteção das matas. Quem tentar te seguir pela festa vai acabar no lugar errado.',
     imagem: 'https://source.unsplash.com/600x400/?forest,fire,hair,guardian',
     pesos: {
@@ -585,7 +585,7 @@ registrarFantasias([
   {
     id: 240, nome: 'Fada do Dente', emoji: '🦷', categoria: 'Fantasia & Magia',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Asas cintilantes, varinha e um saquinho de moedas. Você troca dentes por dinheiro — e ninguém nunca perguntou o que faz com eles.',
     imagem: 'https://source.unsplash.com/600x400/?fairy,sparkle,coins',
     pesos: {
@@ -609,7 +609,7 @@ registrarFantasias([
   {
     id: 241, nome: 'Rainha de Copas', emoji: '♥️', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [66, 65] },
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [66, 65] },
     descricao: 'Coroa, cetro de coração e um único decreto para tudo: "Cortem-lhe a cabeça!" O jogo de croquet é seu, e as regras também.',
     imagem: 'https://source.unsplash.com/600x400/?queen,hearts,red,crown',
     pesos: {
@@ -633,7 +633,7 @@ registrarFantasias([
   {
     id: 242, nome: 'Peter Pan', emoji: '🧚‍♂️', categoria: 'Fantasia & Magia',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, par: [180] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [180] },
     descricao: 'Chapéu com pena, túnica verde e a recusa absoluta de crescer. Você voa para a festa e só vai embora quando o Gancho aparecer.',
     imagem: 'https://source.unsplash.com/600x400/?green,tunic,feather,hat',
     pesos: {
@@ -652,6 +652,54 @@ registrarFantasias([
       'Túnica verde com barra em pontas, legging e sapatilha marrom.',
       'Chapéu com a pena vermelha e a adaga presa no cinto.',
       'Faça pose de voo nas fotos e ofereça uma "passagem para a Terra do Nunca" para quem estiver entediado.',
+    ],
+  },
+  {
+    id: 261, nome: 'Bruxa Fatal', emoji: '🧙‍♀️', categoria: 'Fantasia & Magia',
+    dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    descricao: 'Chapéu pontudo, corset preto e um feitiço de atração que nunca falha. Você nem precisa de vassoura: todo mundo vem até você.',
+    imagem: 'https://source.unsplash.com/600x400/?witch,halloween',
+    pesos: {
+      genero: { fem: 9 }, altura: { medio: 4, alto: 4 }, biotipo: { magro: 4, forte: 5 }, cabelo: { longo: 6, colorido: 5 }, barba: { sem: 4 },
+      filme: { assassino: 5, sobrevive: 3 }, festa: { rituais: 8, bebida: 5 }, arma: { magia: 10 },
+      estilo: { fantasia: 6, terror: 4 }, idade: { jovem: 6, adulto: 6 }, vibe: { impressionar: 6, assustar: 3 },
+    },
+    itens: [
+      { nome: 'Chapéu de bruxa', emoji: '🎩', busca: 'chapéu bruxa' },
+      { nome: 'Corset preto', emoji: '🖤', busca: 'corset preto' },
+      { nome: 'Saia de tule preta curta', emoji: '🕸️', busca: 'saia tule preta curta' },
+      { nome: 'Meia arrastão', emoji: '🦵', busca: 'meia arrastão' },
+      { nome: 'Batom vinho', emoji: '💄', busca: 'batom vinho' },
+    ],
+    passos: [
+      'Corset preto com saia de tule curta e meia arrastão.',
+      'Olho esfumado preto, batom vinho e o chapéu pontudo levemente inclinado.',
+      'Lance "feitiços" com um estalar de dedos e jure que a pessoa vai sonhar com você.',
+    ],
+  },
+  {
+    id: 262, nome: 'Loba Má', emoji: '🐺', categoria: 'Fantasia & Magia',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 2, par: [181] },
+    descricao: 'Orelhas peludas, garras feitas e um faro apurado para Chapeuzinhos distraídas. Que olhos grandes você tem? São para te ver melhor na pista.',
+    imagem: 'https://source.unsplash.com/600x400/?wolf,costume',
+    pesos: {
+      genero: { fem: 9 }, altura: { medio: 4, alto: 4 }, biotipo: { atletico: 6, forte: 4 }, cabelo: { longo: 6, colorido: 3 }, barba: { sem: 4 },
+      filme: { assassino: 8 }, festa: { bebida: 7 }, arma: { sarcasmo: 5 },
+      estilo: { fantasia: 6, terror: 3 }, idade: { jovem: 7, adulto: 5 }, vibe: { assustar: 4, impressionar: 5 },
+    },
+    itens: [
+      { nome: 'Tiara de orelhas de lobo', emoji: '🐺', busca: 'tiara orelha lobo' },
+      { nome: 'Vestido preto curto', emoji: '🖤', busca: 'vestido preto curto' },
+      { nome: 'Colete de pelo sintético', emoji: '🧥', busca: 'colete pelo sintético cinza' },
+      { nome: 'Rabo de lobo', emoji: '🐾', busca: 'rabo lobo fantasia' },
+      { nome: 'Unhas postiças pontudas', emoji: '💅', busca: 'unhas postiças stiletto preta' },
+    ],
+    passos: [
+      'Vestido preto curto com o colete de pelo e o rabo preso no cinto.',
+      'Olho esfumado cinza, delineado puxado e as orelhas escondidas no cabelo volumoso.',
+      'Garras à mostra e um uivo curto toda vez que tocar a sua música.',
     ],
   },
 ]);

@@ -27,7 +27,7 @@ const codigo =
   scripts.map((src) => fs.readFileSync(path.join(RAIZ, src), 'utf8')).join('\n;\n') +
   '\n;globalThis.__api = { FANTASIAS, TODAS_AS_PERGUNTAS, PERGUNTAS_PRATICAS, CATEGORIAS, FICHA_VALORES,' +
   ' ROTULOS_MATCH, OPCOES, avaliar, compararAvaliacoes, recomendarFantasia, montarMotivos,' +
-  ' pontosDaResposta, SUAVIZACAO_RANKING };';
+  ' pontosDaResposta, completarEscolhas, SUAVIZACAO_RANKING };';
 const contexto = vm.createContext({ console });
 vm.runInContext(codigo, contexto, { filename: 'bestfantasia (data + logic)' });
 const api = contexto.__api;
@@ -131,7 +131,8 @@ for (const f of api.FANTASIAS) {
 
 /* ---------------- 3. Alcance: toda fantasia precisa poder vencer ---------------- */
 
-function vencedora(escolhas) {
+function vencedora(respostas) {
+  const escolhas = api.completarEscolhas(respostas);
   let melhor = null;
   for (const f of api.FANTASIAS) {
     const a = api.avaliar(f, escolhas);
@@ -161,7 +162,7 @@ function testarAlcance(f, limite = 3000) {
     });
     const venc = vencedora(escolhas);
     if (venc.fantasia.id === f.id) return null;
-    const minha = api.avaliar(f, escolhas);
+    const minha = api.avaliar(f, api.completarEscolhas(escolhas));
     const distancia = venc.afinidade - minha.afinidade;
     if (!maisPerto || distancia < maisPerto.distancia) maisPerto = { distancia, rival: venc.fantasia };
   }
@@ -202,19 +203,22 @@ if (frequentes[0][1] / SIMULACOES > 0.04) {
 const CASOS = [
   ['Walter White (Heisenberg)', { genero: 'masc', pele: 'media', altura: 'medio', biotipo: 'magro', cabelo: 'careca', barba: 'cavanhaque', oculos: 'sim',
     idade: 'classico', estilo: 'pop', filme: 'assassino', festa: 'rituais', arma: 'magia', vibe: 'impressionar',
-    companhia: 'casal', rosto: 'livre', local: 'fechada', orcamento: 'medio', esforco: 'minimo' }],
+    companhia: 'casal', rosto: 'livre', provocante: 'nao', local: 'fechada', orcamento: 'medio', esforco: 'minimo' }],
   ['Jim Halpert (Three Hole Punch)', { genero: 'masc', pele: 'clara', altura: 'alto', biotipo: 'magro', cabelo: 'curto', barba: 'sem', oculos: 'nao',
     idade: 'adulto', estilo: 'pop', filme: 'sobrevive', festa: 'filmes', arma: 'sarcasmo', vibe: 'conforto',
-    companhia: 'grupo', rosto: 'livre', local: 'trabalho', orcamento: 'zero', esforco: 'minimo' }],
+    companhia: 'grupo', rosto: 'livre', provocante: 'nao', local: 'trabalho', orcamento: 'zero', esforco: 'minimo' }],
   ['Karl Marx', { genero: 'masc', pele: 'clara', altura: 'medio', biotipo: 'forte', cabelo: 'longo', barba: 'cheia', oculos: 'nao',
     idade: 'classico', estilo: 'pop', filme: 'sobrevive', festa: 'bebida', arma: 'sarcasmo', vibe: 'divertir',
-    companhia: 'sozinho', rosto: 'leve', local: 'fechada', orcamento: 'zero', esforco: 'minimo' }],
+    companhia: 'sozinho', rosto: 'leve', provocante: 'nao', local: 'fechada', orcamento: 'zero', esforco: 'minimo' }],
   ['Sailor Moon', { genero: 'fem', pele: 'media', altura: 'baixo', biotipo: 'magro', cabelo: 'longo', barba: 'sem', oculos: 'nao',
     idade: 'teen', estilo: 'pop', filme: 'sobrevive', festa: 'filmes', arma: 'magia', vibe: 'impressionar',
     companhia: 'grupo', rosto: 'livre', local: 'rua', orcamento: 'medio', esforco: 'minimo' }],
   ['Pennywise', { genero: 'neutro', pele: 'negra', altura: 'alto', biotipo: 'magro', cabelo: 'colorido', barba: 'sem', oculos: 'nao',
     idade: 'jovem', estilo: 'terror', filme: 'assassino', festa: 'rituais', arma: 'magia', vibe: 'assustar',
-    companhia: 'sozinho', rosto: 'pintura', local: 'fechada', orcamento: 'alto', esforco: 'capricho' }],
+    companhia: 'sozinho', rosto: 'pintura', provocante: 'nao', local: 'fechada', orcamento: 'alto', esforco: 'capricho' }],
+  ['Diabinha Provocante', { genero: 'fem', pele: 'media', altura: 'medio', biotipo: 'magro', cabelo: 'longo', oculos: 'nao',
+    idade: 'jovem', estilo: 'comedia', filme: 'assassino', festa: 'bebida', arma: 'sarcasmo', vibe: 'divertir',
+    companhia: 'grupo', rosto: 'leve', provocante: 'sim', local: 'fechada', orcamento: 'zero', esforco: 'minimo' }],
 ];
 for (const [esperado, escolhas] of CASOS) {
   const obtido = vencedora(escolhas).fantasia.nome;

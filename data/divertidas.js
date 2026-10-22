@@ -9,7 +9,7 @@ registrarFantasias([
   {
     id: 5, nome: 'Fantasma de Lençol Chique', emoji: '👻', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'mascara', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [22] },
+    ficha: { rosto: 'mascara', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [22] },
     descricao: 'Esforço mínimo, impacto máximo. Você assombra com estilo e ainda economiza na fantasia. Gênio.',
     imagem: 'https://source.unsplash.com/600x400/?ghost,sheet',
     pesos: {
@@ -32,7 +32,7 @@ registrarFantasias([
   {
     id: 15, nome: 'Cientista Maluco', emoji: '🧪', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [8] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 0, par: [8] },
     descricao: 'Ética duvidosa, cabelo elétrico e um "confia em mim" que nunca termina bem. A ciência agradece (e se esconde).',
     imagem: 'https://source.unsplash.com/600x400/?laboratory,scientist',
     pesos: {
@@ -56,7 +56,7 @@ registrarFantasias([
   {
     id: 33, nome: 'T-Rex Inflável', emoji: '🦖', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 3,
-    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Braços curtos, fama gigante. Você não dança bem, mas ninguém na história das festas se divertiu mais que um T-Rex inflável.',
     imagem: 'https://source.unsplash.com/600x400/?trex,dinosaur',
     pesos: {
@@ -79,7 +79,7 @@ registrarFantasias([
   {
     id: 34, nome: 'Banana Protagonista', emoji: '🍌', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Amarela, confiante e levemente escorregadia. Toda festa tem uma banana — e, sejamos honestos, ela sempre rouba a cena.',
     imagem: 'https://source.unsplash.com/600x400/?banana,yellow',
     pesos: {
@@ -102,7 +102,7 @@ registrarFantasias([
   {
     id: 35, nome: 'Turista Perdido', emoji: '🧳', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Camisa havaiana, pochete regulamentar e um mapa aberto do tamanho de um lençol. Você não está perdido: está "explorando".',
     imagem: 'https://source.unsplash.com/600x400/?tourist,hawaiian',
     pesos: {
@@ -127,7 +127,7 @@ registrarFantasias([
   {
     id: 36, nome: 'Unicórnio Aconchegante', emoji: '🦄', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Mítico, raro e extremamente confortável. Enquanto todo mundo sofre no salto, você brilha de pijama. Quem venceu?',
     imagem: 'https://source.unsplash.com/600x400/?unicorn,rainbow',
     pesos: {
@@ -151,7 +151,7 @@ registrarFantasias([
   {
     id: 37, nome: 'Robô de Papelão', emoji: '🤖', categoria: 'Divertidas',
     dificuldade: 'Caprichada', custo: 1,
-    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Beep boop. Processador movido a refrigerante, coração de LED e dança do robô tecnicamente obrigatória. Erro 404: vergonha não encontrada.',
     imagem: 'https://source.unsplash.com/600x400/?robot,cardboard',
     pesos: {
@@ -176,7 +176,7 @@ registrarFantasias([
   {
     id: 38, nome: 'Alienígena Retrô', emoji: '👽', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, par: [27] },
+    ficha: { rosto: 'pintura', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 0, par: [27] },
     descricao: 'Veio estudar os humanos e ficou pela playlist. Seu relatório para a nave-mãe: "civilização estranha, festas excelentes".',
     imagem: 'https://source.unsplash.com/600x400/?alien,ufo',
     pesos: {
@@ -200,7 +200,7 @@ registrarFantasias([
   {
     id: 69, nome: 'Nerd Clássico', emoji: '🤓', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Óculos remendados, calça na altura do peito e um QI que intimida. Você corrige a gramática do convite e ainda assim é convidado.',
     imagem: 'https://source.unsplash.com/600x400/?nerd,glasses',
     pesos: {
@@ -224,7 +224,7 @@ registrarFantasias([
   {
     id: 70, nome: 'Fatia de Pizza Ambulante', emoji: '🍕', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [189, 188] },
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [189, 188] },
     descricao: 'Quente, popular e desejada por todos às 3 da manhã. Você é a única fantasia que faz as pessoas sentirem fome.',
     imagem: 'https://source.unsplash.com/600x400/?pizza,slice',
     pesos: {
@@ -247,7 +247,7 @@ registrarFantasias([
   {
     id: 71, nome: 'Gnomo de Jardim', emoji: '🍄', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Chapéu pontudo, barba até o cinto e a serenidade de quem passa décadas parado no mesmo canteiro. Você protege o jardim e o open bar.',
     imagem: 'https://source.unsplash.com/600x400/?gnome,garden',
     pesos: {
@@ -271,7 +271,7 @@ registrarFantasias([
   {
     id: 72, nome: 'Aeróbica Anos 80', emoji: '🎀', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 1 },
     descricao: 'Collant neon, polainas e uma playlist que não sabe o que é silêncio. Você não dança: você faz "step".',
     imagem: 'https://source.unsplash.com/600x400/?aerobics,80s,neon',
     pesos: {
@@ -295,7 +295,7 @@ registrarFantasias([
   {
     id: 73, nome: 'Tripulante do Among Us', emoji: '🚀', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'mascara', calor: 3, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Ninguém sabe se você é inocente. Você também não. Mas a reunião de emergência já foi convocada e o suspeito é… vermelho.',
     imagem: 'https://source.unsplash.com/600x400/?astronaut,colorful,toy',
     pesos: {
@@ -318,7 +318,7 @@ registrarFantasias([
   {
     id: 74, nome: 'Minion', emoji: '💛', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [225] },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [225] },
     descricao: 'Amarelo, pequeno e movido a banana. Você fala uma língua própria e ainda assim é a pessoa mais compreendida da festa.',
     imagem: 'https://source.unsplash.com/600x400/?minion,yellow',
     pesos: {
@@ -342,7 +342,7 @@ registrarFantasias([
   {
     id: 188, nome: 'Abacate Millennial', emoji: '🥑', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, par: [70, 189] },
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 0, par: [70, 189] },
     descricao: 'Verde por fora, caroço por dentro e um preço que impede a geração inteira de comprar casa. Você é a torrada da festa.',
     imagem: 'https://source.unsplash.com/600x400/?avocado,green,costume',
     pesos: {
@@ -365,7 +365,7 @@ registrarFantasias([
   {
     id: 189, nome: 'Cachorro-Quente Ambulante', emoji: '🌭', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, par: [70, 188] },
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [70, 188] },
     descricao: 'Pão, salsicha e mostarda em formato humano. Você é o lanche das 3 da manhã que todo mundo quer — e ninguém admite.',
     imagem: 'https://source.unsplash.com/600x400/?hotdog,costume,fun',
     pesos: {
@@ -388,7 +388,7 @@ registrarFantasias([
   {
     id: 190, nome: 'Nuvem de Chuva', emoji: '☁️', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 1 },
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 1, ousadia: 0 },
     descricao: 'Fofinha, cinza e sempre em cima de alguém. Você é o dia ruim em pessoa — e, surpreendentemente, a fantasia mais abraçável da festa.',
     imagem: 'https://source.unsplash.com/600x400/?cloud,rain,cotton',
     pesos: {
@@ -412,7 +412,7 @@ registrarFantasias([
   {
     id: 191, nome: 'Balde de Pipoca', emoji: '🍿', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 1,
-    ficha: { rosto: 'livre', calor: 3, volume: 3, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 3, volume: 3, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Listras vermelhas, pipocas de isopor e o cheiro de maratona de filmes. Todo mundo quer pegar um punhado de você.',
     imagem: 'https://source.unsplash.com/600x400/?popcorn,bucket,cinema',
     pesos: {
@@ -436,7 +436,7 @@ registrarFantasias([
   {
     id: 192, nome: 'Dançarino Disco Anos 70', emoji: '🪩', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Gola enorme, calça brilhante e o dedo apontado para o céu. A febre de sábado à noite nunca passou — nem o cabelo.',
     imagem: 'https://source.unsplash.com/600x400/?disco,70s,dance',
     pesos: {
@@ -460,7 +460,7 @@ registrarFantasias([
   {
     id: 193, nome: 'Roqueiro Glam', emoji: '🎸', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'pintura', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'pintura', calor: 3, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 1 },
     descricao: 'Rosto pintado de preto e branco, couro com tachas e uma língua que vai mais longe que o solo de guitarra. Você quer rock and roll a noite toda.',
     imagem: 'https://source.unsplash.com/600x400/?rock,glam,makeup,guitar',
     pesos: {
@@ -484,7 +484,7 @@ registrarFantasias([
   {
     id: 194, nome: 'Sushi Humano', emoji: '🍣', categoria: 'Divertidas',
     dificuldade: 'Média', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 2, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Arroz, nori e uma fatia de salmão na cabeça. Você é o rodízio que anda — e pede desculpas por não ter wasabi.',
     imagem: 'https://source.unsplash.com/600x400/?sushi,salmon,rice',
     pesos: {
@@ -508,7 +508,7 @@ registrarFantasias([
   {
     id: 195, nome: 'Influencer em Surto', emoji: '📱', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2 },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 0 },
     descricao: 'Ring light, copo gigante e uma parceria com qualquer marca que passar. Você não vai à festa: você faz conteúdo na festa. #publi',
     imagem: 'https://source.unsplash.com/600x400/?ring,light,phone,selfie',
     pesos: {
@@ -532,7 +532,7 @@ registrarFantasias([
   {
     id: 243, nome: 'Lutador de Sumô Inflável', emoji: '🍙', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 3,
-    ficha: { rosto: 'livre', calor: 3, volume: 3, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 3, volume: 3, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Duzentos quilos de ar e zero equilíbrio. Você ocupa a pista inteira sozinho e cada esbarrão vira um combate oficial.',
     imagem: 'https://source.unsplash.com/600x400/?sumo,inflatable,costume',
     pesos: {
@@ -555,7 +555,7 @@ registrarFantasias([
   {
     id: 244, nome: 'Abelha Rainha', emoji: '🐝', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 1, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Listras amarelas, antenas e o comando da colmeia. Ocupada, organizada e capaz de picar quem falar mal da playlist.',
     imagem: 'https://source.unsplash.com/600x400/?bee,yellow,black,stripes',
     pesos: {
@@ -579,7 +579,7 @@ registrarFantasias([
   {
     id: 245, nome: 'Pinguim Elegante', emoji: '🐧', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Já nasceu de smoking e anda como quem está atrasado para um baile. Você é a única fantasia da festa que é chique e engraçada ao mesmo tempo.',
     imagem: 'https://source.unsplash.com/600x400/?penguin,tuxedo,waddle',
     pesos: {
@@ -602,7 +602,7 @@ registrarFantasias([
   {
     id: 246, nome: 'Bebezão', emoji: '🍼', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Fralda gigante, chupeta e uma birra pronta. Quanto maior e mais barbudo você for, mais engraçada a fantasia fica.',
     imagem: 'https://source.unsplash.com/600x400/?baby,bottle,pacifier',
     pesos: {
@@ -626,7 +626,7 @@ registrarFantasias([
   {
     id: 247, nome: 'Patinho de Borracha', emoji: '🦆', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3 },
+    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 0 },
     descricao: 'Amarelo, sorridente e impossível de afundar. Você é o companheiro de banho de toda uma geração — e o mais fotografado da festa.',
     imagem: 'https://source.unsplash.com/600x400/?rubber,duck,yellow',
     pesos: {
@@ -644,6 +644,102 @@ registrarFantasias([
       'Kigurumi amarelo com o capuz de bico laranja.',
       'Boia de patinho na cintura e touca de banho para o efeito "hora do banho".',
       'Faça "quack" para cumprimentar e flutue pela festa sem nenhuma preocupação.',
+    ],
+  },
+  {
+    id: 266, nome: 'Coelhinha Malvada', emoji: '🐰', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    descricao: 'Orelhas de coelho, body preto e zero inocência. Como ensinou Meninas Malvadas: no Halloween, isso é uma fantasia completa.',
+    imagem: 'https://source.unsplash.com/600x400/?bunny,costume',
+    pesos: {
+      genero: { fem: 9 }, altura: { baixo: 5, medio: 4 }, biotipo: { magro: 6, atletico: 4 }, cabelo: { longo: 5, curto: 3, colorido: 4 }, barba: { sem: 4 },
+      filme: { vitima: 6 }, festa: { bebida: 8 }, arma: { sarcasmo: 8 },
+      estilo: { comedia: 6, pop: 4 }, idade: { jovem: 8 }, vibe: { divertir: 6, conforto: 6 },
+    },
+    itens: [
+      { nome: 'Tiara de orelhas de coelho', emoji: '🐰', busca: 'tiara orelha coelho' },
+      { nome: 'Body preto', emoji: '🖤', busca: 'body preto manga longa' },
+      { nome: 'Meia arrastão', emoji: '🕸️', busca: 'meia arrastão' },
+      { nome: 'Pompom para o rabinho', emoji: '⚪', busca: 'pompom branco grande' },
+      { nome: 'Gravata borboleta', emoji: '🎀', busca: 'gravata borboleta preta' },
+    ],
+    passos: [
+      'Body preto com meia arrastão e o pompom preso como rabinho.',
+      'Tiara de orelhas, gravata borboleta no pescoço e bigodinhos desenhados com delineador.',
+      'Se alguém perguntar do que você está: "sou um coelho, dã."',
+    ],
+  },
+  {
+    id: 267, nome: 'Oncinha de Bloco', emoji: '🐆', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    descricao: 'Estampa de onça, orelhinhas e glitter até a alma. Você é a rainha da selva — e do bloco — e não deixa ninguém esquecer.',
+    imagem: 'https://source.unsplash.com/600x400/?leopard,carnival',
+    pesos: {
+      genero: { fem: 9 }, altura: { baixo: 4, medio: 4 }, biotipo: { magro: 4, atletico: 4, forte: 4 }, cabelo: { longo: 5, colorido: 5 }, barba: { sem: 4 },
+      filme: { sobrevive: 5 }, festa: { bebida: 10 }, arma: { sarcasmo: 5 },
+      estilo: { comedia: 5, pop: 4 }, idade: { jovem: 8, adulto: 4 }, vibe: { divertir: 7, conforto: 5 },
+    },
+    itens: [
+      { nome: 'Body de oncinha', emoji: '🐆', busca: 'body oncinha' },
+      { nome: 'Tiara de orelhas de onça', emoji: '🐾', busca: 'tiara orelha onça' },
+      { nome: 'Short preto de cintura alta', emoji: '🖤', busca: 'short preto cintura alta' },
+      { nome: 'Glitter dourado', emoji: '✨', busca: 'glitter dourado carnaval' },
+      { nome: 'Pochete', emoji: '👝', busca: 'pochete carnaval' },
+    ],
+    passos: [
+      'Body de oncinha com short preto e a pochete para o essencial do bloco.',
+      'Orelhinhas na cabeça, focinho e pintinhas com delineador, glitter dourado por cima.',
+      'Rugido a cada marchinha e água a cada dois copos: rainha da selva também se hidrata.',
+    ],
+  },
+  {
+    id: 268, nome: 'Salva-Vidas de Praia', emoji: '🛟', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    descricao: 'Maiô ou sunga vermelha, boia debaixo do braço e corrida em câmera lenta. Você não salva ninguém, mas todo mundo finge se afogar.',
+    imagem: 'https://source.unsplash.com/600x400/?lifeguard,beach',
+    pesos: {
+      genero: { masc: 6, fem: 6, neutro: 5 }, altura: { alto: 5, medio: 4 }, biotipo: { atletico: 10 }, cabelo: { longo: 4, curto: 4 }, barba: { sem: 4 },
+      filme: { sobrevive: 9 }, festa: { bebida: 7 }, arma: { sarcasmo: 4 },
+      estilo: { pop: 5, acao: 3 }, idade: { jovem: 6, adulto: 6 }, vibe: { divertir: 6, conforto: 6 },
+    },
+    itens: [
+      { nome: 'Maiô ou sunga vermelha', emoji: '🩱', busca: 'maiô vermelho' },
+      { nome: 'Short vermelho', emoji: '🩳', busca: 'short vermelho praia' },
+      { nome: 'Boia salva-vidas', emoji: '🛟', busca: 'boia salva vidas decorativa' },
+      { nome: 'Apito com cordão', emoji: '📣', busca: 'apito com cordão' },
+      { nome: 'Óculos de sol', emoji: '🕶️', busca: 'óculos de sol esportivo' },
+    ],
+    passos: [
+      'Maiô ou sunga vermelha (com short por cima, se preferir) e o apito no pescoço.',
+      'Óculos de sol, protetor no nariz e a boia debaixo do braço.',
+      'Corra em câmera lenta sempre que tocar música lenta — e apite para quem furar a fila.',
+    ],
+  },
+  {
+    id: 269, nome: 'Gatinha Manhosa', emoji: '🐱', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    descricao: 'Orelhinhas, bigodinhos de delineador e um rabo que balança no ritmo. Sete vidas, todas gastas na pista — e nenhuma arrependida.',
+    imagem: 'https://source.unsplash.com/600x400/?cat,costume',
+    pesos: {
+      genero: { fem: 9 }, altura: { baixo: 5, medio: 4 }, biotipo: { magro: 6, atletico: 4 }, cabelo: { longo: 5, curto: 4 }, barba: { sem: 4 },
+      filme: { vitima: 4, sobrevive: 4 }, festa: { bebida: 7, filmes: 4 }, arma: { sarcasmo: 7 },
+      estilo: { comedia: 4, pop: 4 }, idade: { jovem: 8, adulto: 4 }, vibe: { conforto: 7, divertir: 4 },
+    },
+    itens: [
+      { nome: 'Tiara de orelhas de gato', emoji: '🐱', busca: 'tiara orelha gato' },
+      { nome: 'Vestido preto justo', emoji: '🖤', busca: 'vestido preto justo' },
+      { nome: 'Rabo de gato', emoji: '🐈‍⬛', busca: 'rabo gato fantasia' },
+      { nome: 'Gargantilha com sininho', emoji: '🔔', busca: 'gargantilha sininho' },
+      { nome: 'Delineador líquido', emoji: '✒️', busca: 'delineador líquido preto' },
+    ],
+    passos: [
+      'Vestido ou body preto, rabo preso na cintura e a gargantilha com sininho.',
+      'Delineado gatinho bem puxado, ponta do nariz preta e três bigodinhos de cada lado.',
+      'Ronrone para quem merecer, ignore quem não merecer e se espreguice no sofá entre uma música e outra.',
     ],
   },
 ]);
