@@ -649,7 +649,7 @@ registrarFantasias([
   {
     id: 266, nome: 'Coelhinha Malvada', emoji: '🐰', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem' },
     descricao: 'Orelhas de coelho, body preto e zero inocência. Como ensinou Meninas Malvadas: no Halloween, isso é uma fantasia completa.',
     imagem: 'https://source.unsplash.com/600x400/?bunny,costume',
     pesos: {
@@ -673,7 +673,7 @@ registrarFantasias([
   {
     id: 267, nome: 'Oncinha de Bloco', emoji: '🐆', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem' },
     descricao: 'Estampa de onça, orelhinhas e glitter até a alma. Você é a rainha da selva — e do bloco — e não deixa ninguém esquecer.',
     imagem: 'https://source.unsplash.com/600x400/?leopard,carnival',
     pesos: {
@@ -721,7 +721,7 @@ registrarFantasias([
   {
     id: 269, nome: 'Gatinha Manhosa', emoji: '🐱', categoria: 'Divertidas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem' },
     descricao: 'Orelhinhas, bigodinhos de delineador e um rabo que balança no ritmo. Sete vidas, todas gastas na pista — e nenhuma arrependida.',
     imagem: 'https://source.unsplash.com/600x400/?cat,costume',
     pesos: {
@@ -740,6 +740,78 @@ registrarFantasias([
       'Vestido ou body preto, rabo preso na cintura e a gargantilha com sininho.',
       'Delineado gatinho bem puxado, ponta do nariz preta e três bigodinhos de cada lado.',
       'Ronrone para quem merecer, ignore quem não merecer e se espreguice no sofá entre uma música e outra.',
+    ],
+  },
+  {
+    id: 277, nome: 'Árbitra de Futebol', emoji: '🟨', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem' },
+    descricao: 'Camisa listrada, apito no pescoço e cartão vermelho para quem dançar mal. Aqui não tem VAR: sua decisão é final.',
+    imagem: 'https://source.unsplash.com/600x400/?referee,whistle',
+    pesos: {
+      genero: { fem: 9 }, altura: { medio: 4, alto: 4 }, biotipo: { atletico: 7, magro: 4 }, cabelo: { longo: 5, curto: 4 }, barba: { sem: 4 },
+      filme: { sobrevive: 6 }, festa: { bebida: 9 }, arma: { sarcasmo: 8 },
+      estilo: { comedia: 6 }, idade: { jovem: 7, adulto: 5 }, vibe: { divertir: 8 },
+    },
+    itens: [
+      { nome: 'Camisa listrada preta e branca', emoji: '🦓', busca: 'camisa listrada preta branca feminina' },
+      { nome: 'Saia ou short preto', emoji: '🖤', busca: 'saia preta curta' },
+      { nome: 'Apito com cordão', emoji: '📣', busca: 'apito com cordão' },
+      { nome: 'Cartões amarelo e vermelho', emoji: '🟥', busca: 'cartão árbitro amarelo vermelho' },
+      { nome: 'Meião preto', emoji: '🧦', busca: 'meião futebol preto' },
+    ],
+    passos: [
+      'Camisa listrada amarrada na cintura, saia ou short preto e o meião.',
+      'Rabo de cavalo alto, apito no pescoço e os cartões no bolso.',
+      'Cartão amarelo para quem pisar no seu pé, vermelho para quem furar a fila do bar.',
+    ],
+  },
+  {
+    id: 279, nome: 'Garçom de Gravatinha', emoji: '🎀', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'masc' },
+    descricao: 'Gravata borboleta, punhos brancos e nada de camisa. O serviço de bandeja mais disputado da festa — e a gorjeta é só um sorriso.',
+    imagem: 'https://source.unsplash.com/600x400/?bowtie,waiter',
+    pesos: {
+      genero: { masc: 9 }, altura: { alto: 5, medio: 4 }, biotipo: { atletico: 9, forte: 5 }, cabelo: { curto: 6, careca: 4 }, barba: { sem: 5, cavanhaque: 3 },
+      filme: { vitima: 5 }, festa: { bebida: 10 }, arma: { sarcasmo: 6 },
+      estilo: { comedia: 6 }, idade: { jovem: 7, adulto: 6 }, vibe: { divertir: 8 },
+    },
+    itens: [
+      { nome: 'Gravata borboleta preta', emoji: '🎀', busca: 'gravata borboleta preta' },
+      { nome: 'Punhos de camisa avulsos', emoji: '🤍', busca: 'punho camisa fantasia' },
+      { nome: 'Calça social preta', emoji: '👖', busca: 'calça social preta' },
+      { nome: 'Bandeja', emoji: '🍽️', busca: 'bandeja inox redonda' },
+      { nome: 'Óleo corporal', emoji: '💧', busca: 'óleo corporal brilho' },
+    ],
+    passos: [
+      'Calça social preta, gravata borboleta no pescoço e os punhos brancos nos pulsos — sem camisa.',
+      'Um pouco de óleo corporal e cabelo penteado para trás.',
+      'Circule com a bandeja oferecendo drinks e aceite gorjeta só em forma de risada.',
+    ],
+  },
+  {
+    id: 289, nome: 'Cupido Sarado', emoji: '💘', categoria: 'Divertidas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'masc' },
+    descricao: 'Asinhas, arco de brinquedo e só uma bermuda branca entre você e o ridículo. Suas flechas sempre erram — e ninguém reclama.',
+    imagem: 'https://source.unsplash.com/600x400/?cupid,arrow',
+    pesos: {
+      genero: { masc: 9 }, altura: { medio: 4, alto: 4 }, biotipo: { atletico: 8, forte: 5 }, cabelo: { curto: 5, longo: 4 }, barba: { sem: 5, cheia: 3 },
+      filme: { vitima: 6 }, festa: { bebida: 8 }, arma: { magia: 7, sarcasmo: 6 },
+      estilo: { comedia: 8, fantasia: 4 }, idade: { jovem: 7, adulto: 6 }, vibe: { divertir: 9 },
+    },
+    itens: [
+      { nome: 'Asas de anjo pequenas', emoji: '🪽', busca: 'asas anjo pequena' },
+      { nome: 'Bermuda branca', emoji: '🤍', busca: 'bermuda branca masculina' },
+      { nome: 'Arco e flecha de brinquedo', emoji: '🏹', busca: 'arco flecha brinquedo cupido' },
+      { nome: 'Coroa de folhas dourada', emoji: '🌿', busca: 'coroa louros dourada' },
+      { nome: 'Glitter dourado', emoji: '✨', busca: 'glitter dourado' },
+    ],
+    passos: [
+      'Bermuda branca, asas nas costas e nada mais na parte de cima.',
+      'Coroa de folhas dourada e glitter no peito e nas bochechas.',
+      'Mire o arco em casais improváveis e não assuma responsabilidade nenhuma.',
     ],
   },
 ]);

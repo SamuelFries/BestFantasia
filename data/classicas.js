@@ -224,7 +224,7 @@ registrarFantasias([
   {
     id: 51, nome: 'Deusa Grega', emoji: '🏛️', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 1 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 1, par: [284] },
     descricao: 'Um lençol, uma coroa de louros e pronto: o Olimpo inteiro te deve favores. Elegância divina com orçamento mortal.',
     imagem: 'https://source.unsplash.com/600x400/?greek,goddess,statue',
     pesos: {
@@ -586,7 +586,7 @@ registrarFantasias([
   {
     id: 253, nome: 'Diabinha Provocante', emoji: '😈', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, par: [11, 270] },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem', par: [11, 270, 278] },
     descricao: 'Chifrinhos vermelhos, rabo pontudo e um sorriso que já chega devendo explicação. Você não tenta ninguém: só facilita.',
     imagem: 'https://source.unsplash.com/600x400/?devil,red',
     pesos: {
@@ -611,7 +611,7 @@ registrarFantasias([
   {
     id: 254, nome: 'Policial Sedutora', emoji: '👮‍♀️', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 2, par: [196] },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem', par: [196, 281] },
     descricao: 'Quepe inclinado, óculos espelhado e algemas felpudas. Você não dá multa: dá voz de prisão para quem não dançar.',
     imagem: 'https://source.unsplash.com/600x400/?police,costume',
     pesos: {
@@ -635,7 +635,7 @@ registrarFantasias([
   {
     id: 255, nome: 'Marinheira de Carnaval', emoji: '⚓', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, par: [198] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem', par: [198] },
     descricao: 'Quepe branco, listras e o sorriso de quem atracou no bloco e não pretende zarpar tão cedo. Cada porto, um amor; cada esquina, uma marchinha.',
     imagem: 'https://source.unsplash.com/600x400/?sailor,carnival',
     pesos: {
@@ -659,7 +659,7 @@ registrarFantasias([
   {
     id: 256, nome: 'Passista de Samba', emoji: '💃', categoria: 'Clássicas',
     dificuldade: 'Caprichada', custo: 3,
-    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem' },
     descricao: 'Plumas, pedraria e um samba no pé que faz a avenida parar. Você não desfila: você encerra o desfile.',
     imagem: 'https://source.unsplash.com/600x400/?samba,carnival',
     pesos: {
@@ -683,7 +683,7 @@ registrarFantasias([
   {
     id: 257, nome: 'Pin-up Anos 50', emoji: '💋', categoria: 'Clássicas',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem' },
     descricao: 'Lenço de bolinhas, delineado gatinho e batom vermelho à prova de beijo. Você saiu de um cartaz antigo direto para o centro das atenções.',
     imagem: 'https://source.unsplash.com/600x400/?pinup,retro',
     pesos: {
@@ -707,7 +707,7 @@ registrarFantasias([
   {
     id: 258, nome: 'Bombeira Incendiária', emoji: '🔥', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 2, par: [259] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem', par: [259] },
     descricao: 'Capacete vermelho, suspensório e um aviso: em vez de apagar o fogo, é você quem começa. A brigada inteira está de prontidão.',
     imagem: 'https://source.unsplash.com/600x400/?firefighter,red',
     pesos: {
@@ -731,7 +731,7 @@ registrarFantasias([
   {
     id: 259, nome: 'Bombeiro de Calendário', emoji: '🧑‍🚒', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, par: [258] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'masc', par: [258] },
     descricao: 'Sem camisa, de suspensório e com a pose de quem estampou o mês de julho do calendário beneficente. O alarme toca toda vez que você entra.',
     imagem: 'https://source.unsplash.com/600x400/?firefighter,calendar',
     pesos: {
@@ -755,7 +755,7 @@ registrarFantasias([
   {
     id: 270, nome: 'Anjinha de Carnaval', emoji: '😇', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, par: [253] },
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem', par: [253] },
     descricao: 'Asinhas, auréola de purpurina e uma cara de santa que não engana ninguém depois do terceiro bloco. Do céu você caiu; do bloco, ninguém te tira.',
     imagem: 'https://source.unsplash.com/600x400/?angel,carnival',
     pesos: {
@@ -779,7 +779,7 @@ registrarFantasias([
   {
     id: 272, nome: 'Aeromoça Retrô', emoji: '✈️', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem' },
     descricao: 'Chapéu de lado, lenço no pescoço e o melhor sorriso de bordo. Apertem os cintos: a festa vai decolar e você comanda a turbulência.',
     imagem: 'https://source.unsplash.com/600x400/?stewardess,retro',
     pesos: {
@@ -798,6 +798,102 @@ registrarFantasias([
       'Vestido azul justo, lenço amarrado de lado e o broche de asinhas no peito.',
       'Coque alto, batom vermelho e o chapéu inclinado.',
       'Faça as instruções de segurança na pista: "saídas de emergência à esquerda, open bar à direita".',
+    ],
+  },
+  {
+    id: 276, nome: 'Domadora de Circo', emoji: '🎪', categoria: 'Clássicas',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem' },
+    descricao: 'Cartola, corset vermelho e um chicote que só estala no ar. Leões, tigres e convidados: todos obedecem ao seu comando.',
+    imagem: 'https://source.unsplash.com/600x400/?circus,ringmaster',
+    pesos: {
+      genero: { fem: 9 }, altura: { medio: 4, alto: 5 }, biotipo: { atletico: 6, forte: 4 }, cabelo: { longo: 5, curto: 4 }, barba: { sem: 4 },
+      filme: { sobrevive: 6 }, festa: { bebida: 6, rituais: 4 }, arma: { sarcasmo: 7 },
+      estilo: { pop: 4, acao: 4 }, idade: { jovem: 5, adulto: 7 }, vibe: { impressionar: 8 },
+    },
+    itens: [
+      { nome: 'Cartola', emoji: '🎩', busca: 'cartola preta' },
+      { nome: 'Corset vermelho', emoji: '❤️', busca: 'corset vermelho' },
+      { nome: 'Short preto de cintura alta', emoji: '🖤', busca: 'short preto cintura alta' },
+      { nome: 'Bota de cano alto', emoji: '👢', busca: 'bota cano alto preta' },
+      { nome: 'Chicote de fantasia', emoji: '🪢', busca: 'chicote fantasia' },
+    ],
+    passos: [
+      'Corset vermelho com short preto e bota de cano alto.',
+      'Cartola inclinada, delineado marcado e batom vermelho.',
+      'Estale o chicote no ar e anuncie cada amigo como "a fera mais perigosa do picadeiro".',
+    ],
+  },
+  {
+    id: 278, nome: 'Diabo Galã', emoji: '😈', categoria: 'Clássicas',
+    dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'masc', par: [253] },
+    descricao: 'Camisa vermelha aberta no peito, chifres discretos e o sorriso de quem oferece um acordo irrecusável. Vender a alma nunca pareceu tão tentador.',
+    imagem: 'https://source.unsplash.com/600x400/?devil,man',
+    pesos: {
+      genero: { masc: 9 }, altura: { alto: 5, medio: 4 }, biotipo: { atletico: 7, forte: 4 }, cabelo: { curto: 5, longo: 3 }, barba: { cavanhaque: 8, cheia: 4, sem: 3 },
+      filme: { assassino: 7 }, festa: { bebida: 8, rituais: 4 }, arma: { sarcasmo: 7 },
+      estilo: { terror: 6, comedia: 3 }, idade: { jovem: 6, adulto: 7 }, vibe: { impressionar: 6, divertir: 4 },
+    },
+    itens: [
+      { nome: 'Camisa vermelha de cetim', emoji: '👔', busca: 'camisa social vermelha cetim' },
+      { nome: 'Calça social preta', emoji: '👖', busca: 'calça social preta' },
+      { nome: 'Tiara de chifres', emoji: '😈', busca: 'tiara chifre diabo' },
+      { nome: 'Tridente', emoji: '🔱', busca: 'tridente diabo fantasia' },
+      { nome: 'Óleo corporal', emoji: '💧', busca: 'óleo corporal brilho' },
+    ],
+    passos: [
+      'Camisa vermelha de cetim aberta até o meio do peito, com calça social preta.',
+      'Chifres discretos no cabelo e o cavanhaque bem desenhado (ou feito com lápis).',
+      'Tridente na mão e acordos irrecusáveis no bar: "um drink pela sua alma, que tal?"',
+    ],
+  },
+  {
+    id: 281, nome: 'Policial Galã', emoji: '👮‍♂️', categoria: 'Clássicas',
+    dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'masc', par: [254] },
+    descricao: 'Camisa justa, óculos espelhado e algemas no cinto. Você não veio multar ninguém: veio fiscalizar a pista de dança de perto.',
+    imagem: 'https://source.unsplash.com/600x400/?police,man',
+    pesos: {
+      genero: { masc: 9 }, altura: { alto: 6, medio: 3 }, biotipo: { atletico: 9, forte: 5 }, cabelo: { curto: 6, careca: 5 }, barba: { sem: 4, cavanhaque: 4 },
+      filme: { sobrevive: 7 }, festa: { bebida: 8 }, arma: { sarcasmo: 6 },
+      estilo: { acao: 6 }, idade: { jovem: 6, adulto: 7 }, vibe: { impressionar: 6, divertir: 4 },
+    },
+    itens: [
+      { nome: 'Camisa azul justa', emoji: '👕', busca: 'camisa azul marinho slim' },
+      { nome: 'Quepe de policial', emoji: '🧢', busca: 'quepe policial fantasia' },
+      { nome: 'Óculos aviador espelhado', emoji: '🕶️', busca: 'óculos aviador espelhado' },
+      { nome: 'Algemas de brinquedo', emoji: '⛓️', busca: 'algema brinquedo fantasia' },
+      { nome: 'Calça preta justa', emoji: '👖', busca: 'calça preta justa' },
+    ],
+    passos: [
+      'Camisa azul justa com as mangas dobradas e calça preta.',
+      'Quepe, óculos espelhado e as algemas penduradas no cinto.',
+      'Peça "documento" a quem chegar perto do bar e libere com uma dancinha.',
+    ],
+  },
+  {
+    id: 284, nome: 'Deus Grego Sarado', emoji: '🏛️', categoria: 'Clássicas',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'masc', par: [51] },
+    descricao: 'Toga de um ombro só, coroa de louros e o abdômen que o Olimpo inteiro comenta. Você não desceu do monte: foi expulso por excesso de beleza.',
+    imagem: 'https://source.unsplash.com/600x400/?greek,statue',
+    pesos: {
+      genero: { masc: 9 }, altura: { alto: 6, medio: 4 }, biotipo: { atletico: 10, forte: 5 }, cabelo: { curto: 5, longo: 5 }, barba: { cheia: 5, sem: 4 },
+      filme: { sobrevive: 6 }, festa: { bebida: 8, rituais: 5 }, arma: { magia: 8 },
+      estilo: { fantasia: 7 }, idade: { jovem: 6, adulto: 6 }, vibe: { impressionar: 7 },
+    },
+    itens: [
+      { nome: 'Lençol branco (vira a toga)', emoji: '🤍', busca: null },
+      { nome: 'Coroa de louros dourada', emoji: '🌿', busca: 'coroa louros dourada' },
+      { nome: 'Cordão dourado para a cintura', emoji: '🟡', busca: 'cordão dourado' },
+      { nome: 'Sandália de tiras', emoji: '🩴', busca: 'sandália gladiador masculina' },
+      { nome: 'Óleo corporal', emoji: '💧', busca: 'óleo corporal brilho' },
+    ],
+    passos: [
+      'Prenda o lençol num ombro só com um broche e amarre o cordão dourado na cintura.',
+      'Coroa de louros na cabeça, sandália de tiras e óleo corporal para o brilho divino.',
+      'Distribua bênçãos aleatórias e trate todo pedido como uma oferenda.',
     ],
   },
 ]);

@@ -893,7 +893,7 @@ registrarFantasias([
   {
     id: 260, nome: 'Enfermeira Fatal', emoji: '💉', categoria: 'Terror',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 1, reconhecimento: 3, ousadia: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 1, reconhecimento: 3, ousadia: 2, publico: 'fem' },
     descricao: 'Touca com cruz vermelha, seringa gigante e respingos de sangue no uniforme. Seus pacientes saem do plantão apaixonados — os que saem.',
     imagem: 'https://source.unsplash.com/600x400/?nurse,halloween',
     pesos: {
@@ -917,7 +917,7 @@ registrarFantasias([
   {
     id: 271, nome: 'Vampira Sedutora', emoji: '🧛‍♀️', categoria: 'Terror',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 1, reconhecimento: 3, ousadia: 2, par: [1] },
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 1, reconhecimento: 3, ousadia: 2, publico: 'fem', par: [1, 283] },
     descricao: 'Vestido vermelho-sangue, presas afiadas e um olhar que hipnotiza antes da mordida. Ninguém resiste — e ninguém quer resistir.',
     imagem: 'https://source.unsplash.com/600x400/?vampire,woman',
     pesos: {
@@ -936,6 +936,78 @@ registrarFantasias([
       'Vestido vermelho com fenda e a gargantilha de veludo no pescoço.',
       'Pele bem clara, olho esfumado vinho, presas no lugar e um fio de sangue no canto da boca.',
       'Olhe nos olhos, sorria devagar e diga: "eu não bebo… vinho."',
+    ],
+  },
+  {
+    id: 275, nome: 'Elvira, a Rainha das Trevas', emoji: '🦇', categoria: 'Terror',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 2, ousadia: 2, publico: 'fem' },
+    descricao: 'Vestido preto com decote de respeito, topete gigante e piadas mais afiadas que uma estaca. A apresentadora oficial do terror chegou.',
+    imagem: 'https://source.unsplash.com/600x400/?gothic,woman',
+    pesos: {
+      genero: { fem: 10 }, altura: { alto: 5, medio: 4 }, biotipo: { forte: 6, magro: 4 }, cabelo: { longo: 6, colorido: 2 }, barba: { sem: 4 },
+      filme: { sobrevive: 4, assassino: 5 }, festa: { filmes: 9 }, arma: { sarcasmo: 10 },
+      estilo: { terror: 7, comedia: 5 }, idade: { adulto: 7, classico: 6 }, vibe: { divertir: 7, impressionar: 5 },
+    },
+    itens: [
+      { nome: 'Vestido preto longo com fenda', emoji: '🖤', busca: 'vestido preto longo fenda decote' },
+      { nome: 'Peruca preta volumosa', emoji: '💇‍♀️', busca: 'peruca preta longa volumosa' },
+      { nome: 'Cinto preto largo', emoji: '⚫', busca: 'cinto preto largo' },
+      { nome: 'Delineador líquido', emoji: '✒️', busca: 'delineador líquido preto' },
+      { nome: 'Unhas vermelhas longas', emoji: '💅', busca: 'unhas postiças vermelhas' },
+    ],
+    passos: [
+      'Vestido preto longo com fenda, bem marcado com o cinto largo.',
+      'Peruca preta com topete altíssimo, delineado gatinho exagerado e batom vermelho.',
+      'Apresente a festa como se fosse um filme B: "boa noite, criaturas…"',
+    ],
+  },
+  {
+    id: 283, nome: 'Vampiro Sedutor', emoji: '🧛‍♂️', categoria: 'Terror',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 1, reconhecimento: 3, ousadia: 2, publico: 'masc', par: [271] },
+    descricao: 'Camisa preta aberta no peito, presas à mostra e o olhar de quem está sem jantar há séculos. Ninguém lembra de fechar a janela.',
+    imagem: 'https://source.unsplash.com/600x400/?vampire,man',
+    pesos: {
+      genero: { masc: 9 }, altura: { alto: 6, medio: 4 }, biotipo: { magro: 6, atletico: 6 }, cabelo: { longo: 6, curto: 4 }, barba: { sem: 5, cavanhaque: 4 },
+      filme: { assassino: 9 }, festa: { rituais: 8, bebida: 6 }, arma: { magia: 8 },
+      estilo: { terror: 8 }, idade: { jovem: 6, adulto: 7 }, vibe: { impressionar: 6, assustar: 5 },
+    },
+    itens: [
+      { nome: 'Camisa preta de cetim', emoji: '🖤', busca: 'camisa social preta cetim' },
+      { nome: 'Presas de vampiro', emoji: '🦷', busca: 'dente vampiro fantasia' },
+      { nome: 'Capa preta forrada de vermelho', emoji: '🦇', busca: 'capa vampiro preta vermelha' },
+      { nome: 'Sangue falso', emoji: '🩸', busca: 'sangue falso maquiagem' },
+      { nome: 'Calça preta justa', emoji: '👖', busca: 'calça preta justa' },
+    ],
+    passos: [
+      'Camisa preta de cetim aberta até o meio do peito, calça preta e a capa jogada sobre os ombros.',
+      'Pele clara com pó, olheiras leves, presas no lugar e um fio de sangue no canto da boca.',
+      'Convide as pessoas para "um drink lá fora, longe do alho" e fuja de toda foto com flash.',
+    ],
+  },
+  {
+    id: 286, nome: 'Lobisomem Sarado', emoji: '🐺', categoria: 'Terror',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 1, reconhecimento: 2, ousadia: 2, publico: 'masc', par: [262] },
+    descricao: 'Camisa rasgada pela transformação, pelos estratégicos e garras à mostra. A lua cheia fez o trabalho pesado; você só precisou aparecer.',
+    imagem: 'https://source.unsplash.com/600x400/?werewolf,moon',
+    pesos: {
+      genero: { masc: 9 }, altura: { alto: 6, medio: 4 }, biotipo: { atletico: 9, forte: 6 }, cabelo: { longo: 6, curto: 3 }, barba: { cheia: 8, cavanhaque: 4 },
+      filme: { assassino: 8 }, festa: { bebida: 7, rituais: 5 }, arma: { machado: 8 },
+      estilo: { terror: 8 }, idade: { jovem: 7, adulto: 6 }, vibe: { assustar: 6, impressionar: 5 },
+    },
+    itens: [
+      { nome: 'Camisa xadrez para rasgar', emoji: '👕', busca: 'camisa xadrez masculina' },
+      { nome: 'Orelhas de lobo', emoji: '🐺', busca: 'tiara orelha lobo' },
+      { nome: 'Garras de lobisomem', emoji: '🐾', busca: 'luva garra lobisomem' },
+      { nome: 'Calça jeans rasgada', emoji: '👖', busca: 'calça jeans destroyed masculina' },
+      { nome: 'Sombra marrom e preta', emoji: '🎨', busca: 'paleta sombra marrom' },
+    ],
+    passos: [
+      'Rasgue a camisa xadrez nas mangas e no peito — a transformação não perdoa.',
+      'Sombra marrom esfumada no rosto e no peito, orelhas no cabelo bagunçado e garras nas mãos.',
+      'Uive para a lua (ou para a luz da pista) sempre que tocar o refrão.',
     ],
   },
 ]);

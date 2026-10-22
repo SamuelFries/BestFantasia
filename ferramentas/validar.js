@@ -39,7 +39,7 @@ const aviso = (msg) => avisos.push(msg);
 
 /* ---------------- 1. Perguntas ---------------- */
 
-const CAMPOS_DE_REGRA = new Set([...Object.keys(api.FICHA_VALORES), 'par', 'polemica', 'categoria', 'dificuldade', 'custo']);
+const CAMPOS_DE_REGRA = new Set([...Object.keys(api.FICHA_VALORES), 'par', 'polemica', 'publico', 'categoria', 'dificuldade', 'custo']);
 const CATEGORIAS_PRATICAS = new Set(api.PERGUNTAS_PRATICAS.map((p) => p.categoria));
 const perguntasVistas = new Set();
 
@@ -96,9 +96,10 @@ for (const f of api.FANTASIAS) {
       }
     }
     for (const campo of Object.keys(ficha)) {
-      if (!(campo in api.FICHA_VALORES) && campo !== 'par' && campo !== 'polemica') erro(`${quem}: campo desconhecido na ficha: ${campo}`);
+      if (!(campo in api.FICHA_VALORES) && !['par', 'polemica', 'publico'].includes(campo)) erro(`${quem}: campo desconhecido na ficha: ${campo}`);
     }
     if ('polemica' in ficha && ficha.polemica !== true) erro(`${quem}: ficha.polemica só aceita true (omita quando não for)`);
+    if ('publico' in ficha && (!['fem', 'masc'].includes(ficha.publico) || ficha.ousadia !== 2)) erro(`${quem}: ficha.publico é 'fem' ou 'masc', só em fantasias com ousadia 2`);
     for (const idPar of ficha.par ?? []) {
       const par = porId.get(idPar);
       if (!par) erro(`${quem}: par ${idPar} não existe`);
@@ -183,17 +184,30 @@ for (const { f, rival, distancia } of inalcancaveis) {
 let semente = 20261014;
 const aleatorio = () => (semente = (semente * 1103515245 + 12345) % 2147483648) / 2147483648;
 const SIMULACOES = 20000;
+const pct = (n) => ((100 * n) / SIMULACOES).toFixed(1) + '%';
 const contagem = new Map();
+const provocacao = { perfis: 0, provocantes: 0, outroGenero: 0 };
 for (let i = 0; i < SIMULACOES; i++) {
   const escolhas = {};
   for (const pergunta of api.TODAS_AS_PERGUNTAS) {
     escolhas[pergunta.categoria] = pergunta.opcoes[Math.floor(aleatorio() * pergunta.opcoes.length)].valor;
   }
-  const nome = vencedora(escolhas).fantasia.nome;
-  contagem.set(nome, (contagem.get(nome) ?? 0) + 1);
+  const { fantasia } = vencedora(escolhas);
+  contagem.set(fantasia.nome, (contagem.get(fantasia.nome) ?? 0) + 1);
+  // Quem pede fantasia provocante (e é maior de idade) tem que receber uma.
+  if (escolhas.provocante === 'sim' && escolhas.idade !== 'teen') {
+    provocacao.perfis++;
+    if (fantasia.ficha.ousadia === 2) provocacao.provocantes++;
+    if (fantasia.ficha.publico && escolhas.genero !== 'neutro' && fantasia.ficha.publico !== escolhas.genero) provocacao.outroGenero++;
+  }
+}
+if (provocacao.provocantes / provocacao.perfis < 0.95) {
+  erro(`"provocante = sim" deu fantasia provocante em só ${pct(provocacao.provocantes * SIMULACOES / provocacao.perfis)} dos perfis (mínimo 95%)`);
+}
+if (provocacao.outroGenero / provocacao.perfis > 0.02) {
+  erro(`"provocante = sim" deu provocante do outro gênero em ${pct(provocacao.outroGenero * SIMULACOES / provocacao.perfis)} dos perfis (máximo 2%)`);
 }
 const frequentes = [...contagem.entries()].sort((a, b) => b[1] - a[1]);
-const pct = (n) => ((100 * n) / SIMULACOES).toFixed(1) + '%';
 if (frequentes[0][1] / SIMULACOES > 0.04) {
   aviso(`${frequentes[0][0]} vence para ${pct(frequentes[0][1])} dos perfis aleatórios (acima de 4%)`);
 }
@@ -236,6 +250,7 @@ console.log(`Perguntas: ${api.TODAS_AS_PERGUNTAS.length} · suavização do rank
 console.log(`Alcance: ${api.FANTASIAS.length - inalcancaveis.length}/${api.FANTASIAS.length} fantasias conseguem vencer`);
 console.log(`Distribuição (${SIMULACOES} perfis aleatórios): ${contagem.size} fantasias diferentes venceram`);
 console.log(`  mais frequentes: ${frequentes.slice(0, 5).map(([n, c]) => `${n} ${pct(c)}`).join(' | ')}`);
+console.log(`Provocante = sim: ${pct(provocacao.provocantes * SIMULACOES / provocacao.perfis)} recebem fantasia provocante, ${pct(provocacao.outroGenero * SIMULACOES / provocacao.perfis)} do outro gênero`);
 console.log(`Casos de referência: ${CASOS.length}`);
 if (avisos.length) console.log(`\nAVISOS (${avisos.length}):\n  - ${avisos.join('\n  - ')}`);
 if (erros.length) {

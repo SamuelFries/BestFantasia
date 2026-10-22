@@ -254,7 +254,7 @@ registrarFantasias([
   {
     id: 57, nome: 'Mulher-Gato', emoji: '🐈', categoria: 'Ação & Aventura',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'mascara', calor: 3, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 1, par: [56] },
+    ficha: { rosto: 'mascara', calor: 3, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem', par: [56] },
     descricao: 'Joias que não são suas, chicote que é, e nove vidas para gastar na pista. Gotham nunca prendeu você — nem vai.',
     imagem: 'https://source.unsplash.com/600x400/?catwoman,black',
     pesos: {
@@ -518,7 +518,7 @@ registrarFantasias([
   {
     id: 173, nome: 'Soldado Espartano', emoji: '🔱', categoria: 'Ação & Aventura',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'mascara', calor: 1, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 1 },
+    ficha: { rosto: 'mascara', calor: 1, volume: 3, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'masc' },
     descricao: 'Capa vermelha, escudo e trezentos motivos para gritar. Isto é… a festa! (Mas você vai dizer Esparta mesmo.)',
     imagem: 'https://source.unsplash.com/600x400/?spartan,shield,red,cape',
     pesos: {
@@ -759,7 +759,7 @@ registrarFantasias([
   {
     id: 263, nome: 'Pirata Atrevida', emoji: '🏴‍☠️', categoria: 'Ação & Aventura',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem', par: [280] },
     descricao: 'Corset, bota de cano alto e um mapa do tesouro que só você sabe ler. Saqueia o open bar primeiro e pergunta depois.',
     imagem: 'https://source.unsplash.com/600x400/?pirate,woman',
     pesos: {
@@ -783,7 +783,7 @@ registrarFantasias([
   {
     id: 264, nome: 'Cowgirl Atrevida', emoji: '🤠', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, par: [26] },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem', par: [26] },
     descricao: 'Chapéu, bota e short jeans: o rodeio pode ser em qualquer lugar. Você laça quem quiser — e só solta se pedirem com jeitinho.',
     imagem: 'https://source.unsplash.com/600x400/?cowgirl',
     pesos: {
@@ -807,7 +807,7 @@ registrarFantasias([
   {
     id: 265, nome: 'Tarzan', emoji: '🌴', categoria: 'Ação & Aventura',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'masc' },
     descricao: 'Bermuda de oncinha, cabelo selvagem e um grito que atravessa a selva — e o bloco inteiro. Criado por gorilas, adotado pela festa.',
     imagem: 'https://source.unsplash.com/600x400/?jungle,tarzan',
     pesos: {
@@ -825,6 +825,54 @@ registrarFantasias([
       'Bermuda de oncinha, peito de fora e a corda pendurada no ombro como cipó.',
       'Cabelo bagunçado, um pouco de "terra" (sombra marrom) nos braços e protetor solar se for de dia.',
       'Solte o grito do Tarzan ao chegar e toda vez que alguém subir no palco.',
+    ],
+  },
+  {
+    id: 280, nome: 'Pirata Galã', emoji: '🏴‍☠️', categoria: 'Ação & Aventura',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 1, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'masc', par: [263] },
+    descricao: 'Camisa branca aberta, faixa na cintura e um olhar que já afundou mais corações que navios. O tesouro da festa é você.',
+    imagem: 'https://source.unsplash.com/600x400/?pirate,man',
+    pesos: {
+      genero: { masc: 9 }, altura: { alto: 5, medio: 4 }, biotipo: { atletico: 7, forte: 5 }, cabelo: { longo: 8, curto: 3 }, barba: { cheia: 6, cavanhaque: 5 },
+      filme: { sobrevive: 7 }, festa: { bebida: 10 }, arma: { machado: 5, sarcasmo: 5 },
+      estilo: { acao: 7 }, idade: { jovem: 6, adulto: 6 }, vibe: { impressionar: 5, divertir: 5 },
+    },
+    itens: [
+      { nome: 'Camisa branca de manga bufante', emoji: '👕', busca: 'camisa pirata branca' },
+      { nome: 'Faixa vermelha para a cintura', emoji: '🟥', busca: 'faixa cetim vermelha' },
+      { nome: 'Calça preta justa', emoji: '👖', busca: 'calça preta justa' },
+      { nome: 'Bota de cano alto', emoji: '👢', busca: 'bota cano alto masculina' },
+      { nome: 'Espada de brinquedo', emoji: '⚔️', busca: 'espada pirata brinquedo' },
+    ],
+    passos: [
+      'Camisa branca aberta até o peito, faixa vermelha na cintura e calça preta.',
+      'Bota de cano alto, lenço na cabeça e um delineado esfumado de quem passou meses no mar.',
+      'Espada no cinto e um "Arrr!" a cada brinde.',
+    ],
+  },
+  {
+    id: 282, nome: 'Boxeador Sarado', emoji: '🥊', categoria: 'Ação & Aventura',
+    dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'masc' },
+    descricao: 'Roupão de cetim, calção brilhante e luvas no ombro. Você entra na festa como quem entra no ringue — com música de abertura e tudo.',
+    imagem: 'https://source.unsplash.com/600x400/?boxer,boxing',
+    pesos: {
+      genero: { masc: 9 }, altura: { alto: 5, medio: 5 }, biotipo: { atletico: 10, forte: 6 }, cabelo: { curto: 6, careca: 5 }, barba: { sem: 4, cavanhaque: 3 },
+      filme: { sobrevive: 9 }, festa: { bebida: 7 }, arma: { machado: 6 },
+      estilo: { acao: 7 }, idade: { jovem: 7, adulto: 6 }, vibe: { impressionar: 7 },
+    },
+    itens: [
+      { nome: 'Roupão de cetim', emoji: '🥋', busca: 'roupão cetim boxe' },
+      { nome: 'Calção de boxe', emoji: '🩳', busca: 'calção boxe cetim' },
+      { nome: 'Luvas de boxe', emoji: '🥊', busca: 'luva boxe' },
+      { nome: 'Cinturão de campeão', emoji: '🏆', busca: 'cinturão campeão fantasia' },
+      { nome: 'Óleo corporal', emoji: '💧', busca: 'óleo corporal brilho' },
+    ],
+    passos: [
+      'Calção brilhante, roupão de cetim aberto e as luvas penduradas no ombro.',
+      'Um pouco de óleo corporal e uma "marca de luta" com sombra roxa na bochecha.',
+      'Entre saltitando, levante o cinturão e peça para tocarem a sua música de entrada.',
     ],
   },
 ]);

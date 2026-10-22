@@ -657,7 +657,7 @@ registrarFantasias([
   {
     id: 261, nome: 'Bruxa Fatal', emoji: '🧙‍♀️', categoria: 'Fantasia & Magia',
     dificuldade: 'Fácil', custo: 2,
-    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2 },
+    ficha: { rosto: 'leve', calor: 1, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 2, publico: 'fem' },
     descricao: 'Chapéu pontudo, corset preto e um feitiço de atração que nunca falha. Você nem precisa de vassoura: todo mundo vem até você.',
     imagem: 'https://source.unsplash.com/600x400/?witch,halloween',
     pesos: {
@@ -681,7 +681,7 @@ registrarFantasias([
   {
     id: 262, nome: 'Loba Má', emoji: '🐺', categoria: 'Fantasia & Magia',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 2, par: [181] },
+    ficha: { rosto: 'leve', calor: 2, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 2, ousadia: 2, publico: 'fem', par: [181, 286] },
     descricao: 'Orelhas peludas, garras feitas e um faro apurado para Chapeuzinhos distraídas. Que olhos grandes você tem? São para te ver melhor na pista.',
     imagem: 'https://source.unsplash.com/600x400/?wolf,costume',
     pesos: {

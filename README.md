@@ -23,7 +23,7 @@ python3 -m http.server 8000
 | `index.html`            | Estrutura das telas da SPA e posições de anúncio                         |
 | `style.css`             | Tema (tokens CSS), componentes e animações                               |
 | `data.js`               | Perguntas, regras de pontuação, ficha, rótulos e registro de fantasias   |
-| `data/*.js`             | 272 fantasias, um arquivo por categoria (ver abaixo)                     |
+| `data/*.js`             | 289 fantasias, um arquivo por categoria (ver abaixo)                     |
 | `logic.js`              | Motor de recomendação genérico (puro, testável no console)               |
 | `main.js`               | Estado da UI, navegação, renderização, anúncios e compartilhamento       |
 | `ferramentas/validar.js`| Validação do banco e da heurística (rode antes de commitar)              |
@@ -32,12 +32,12 @@ python3 -m http.server 8000
 
 | Arquivo           | Categoria          | Qtd. |
 |-------------------|--------------------|-----:|
-| `terror.js`       | Terror             |   39 |
-| `classicas.js`    | Clássicas          |   33 |
-| `acao.js`         | Ação & Aventura    |   34 |
+| `terror.js`       | Terror             |   42 |
+| `classicas.js`    | Clássicas          |   37 |
+| `acao.js`         | Ação & Aventura    |   36 |
 | `magia.js`        | Fantasia & Magia   |   29 |
-| `divertidas.js`   | Divertidas         |   31 |
-| `cultura-pop.js`  | Cultura Pop        |  106 |
+| `divertidas.js`   | Divertidas         |   34 |
+| `cultura-pop.js`  | Cultura Pop        |  111 |
 
 ## O quiz
 
@@ -69,8 +69,11 @@ Cada resposta soma pontos a cada fantasia por dois caminhos (motor em `logic.js`
 A **ficha** guarda fatos objetivos de cada fantasia: `rosto`, `calor`,
 `volume`, `formato` (solo/casal/grupo), `susto`, `reconhecimento`, `ousadia`
 (0 discreta, 1 charmosa, 2 provocante) e, quando
-houver, `par` (fantasias que combinam com ela) e `polemica` (figuras políticas,
-evitadas para escola/trabalho).
+houver, `par` (fantasias que combinam com ela), `polemica` (figuras políticas,
+evitadas para escola/trabalho) e `publico` (gênero de uma fantasia provocante).
+
+Quem responde **"provocante: sim"** recebe fantasia provocante (ousadia 2) do
+próprio gênero; o validador falha se isso cair abaixo de 95%.
 
 O ranking compara a pontuação de cada fantasia com o máximo que ela poderia
 fazer (com uma suavização que impede fantasias com poucos pesos de vencer fácil

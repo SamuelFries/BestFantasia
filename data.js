@@ -81,7 +81,10 @@ const CATEGORIAS = ['Terror', 'Clássicas', 'Ação & Aventura', 'Fantasia & Mag
                    provocar: Diabinha, Pin-up)
    par:            (opcional) ids das fantasias que combinam com ela;
                    o par deve apontar de volta
-   polemica:       (opcional) true para figuras políticas */
+   polemica:       (opcional) true para figuras políticas
+   publico:        (opcional, só em ousadia 2) 'fem' ou 'masc' quando a
+                   versão provocante é de um gênero; quem escolhe o
+                   outro gênero perde pontos nela */
 const FICHA_VALORES = {
   rosto: ['livre', 'leve', 'pintura', 'mascara'],
   calor: [1, 2, 3],
@@ -99,8 +102,10 @@ const ETAPAS_FISICO = [
     titulo: 'Gênero',
     rotuloCurto: 'Gênero',
     opcoes: [
-      { valor: 'masc',   rotulo: 'Masculino', emoji: '🧔' },
-      { valor: 'fem',    rotulo: 'Feminino',  emoji: '👩' },
+      { valor: 'masc',   rotulo: 'Masculino', emoji: '🧔',
+        regras: [{ campo: 'publico', pontos: { fem: -15 } }] },
+      { valor: 'fem',    rotulo: 'Feminino',  emoji: '👩',
+        regras: [{ campo: 'publico', pontos: { masc: -15 } }] },
       { valor: 'neutro', rotulo: 'Neutro',    emoji: '🧑‍🎤' },
     ],
   },
@@ -289,10 +294,10 @@ const PERGUNTAS_PRATICAS = [
     respostaOculta: 'nao',
     opcoes: [
       { valor: 'sim', rotulo: 'Sim, quero provocar', emoji: '🫦',
-        regras: [{ campo: 'ousadia', pontos: { 0: -4, 1: 4, 2: 9 } }],
+        regras: [{ campo: 'ousadia', pontos: { 0: -40, 1: -8, 2: 30 } }],
         motivo: 'tem a dose de provocação que você pediu' },
       { valor: 'nao', rotulo: 'Não, prefiro discreta', emoji: '🙈',
-        regras: [{ campo: 'ousadia', pontos: { 0: 2, 1: 0, 2: -10 } }] },
+        regras: [{ campo: 'ousadia', pontos: { 0: 2, 1: 0, 2: -20 } }] },
     ],
   },
   {
