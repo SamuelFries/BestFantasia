@@ -38,12 +38,12 @@ const ADSENSE_CLIENT = 'ca-pub-2662281603112502';
 
 const BLOCOS_ADSENSE = {
   // Tela de resultado (celular e PC)
-  resultadoAposCartao: { slot: '', formato: 'responsivo' },
-  resultadoAposPassos: { slot: '', formato: 'responsivo' },
-  resultadoBase:       { slot: '', formato: 'banner' },
+  resultadoAposCartao: { slot: '6190961603', formato: 'responsivo' },
+  resultadoAposPassos: { slot: '4877879934', formato: 'responsivo' },
+  resultadoBase:       { slot: '6626697998', formato: 'banner' },
   // Laterais fixas, só em telas a partir de 1280×720 (ver style.css)
-  lateralEsquerda:     { slot: '', formato: 'vertical' },
-  lateralDireita:      { slot: '', formato: 'vertical' },
+  lateralEsquerda:     { slot: '3895050882', formato: 'vertical' },
+  lateralDireita:      { slot: '5863658543', formato: 'vertical' },
 };
 
 // O banner da base é fixo e pequeno para a página de resultado não
