@@ -32,7 +32,23 @@ python3 -m http.server 8000
 | `data/*.js`             | 289 fantasias, um arquivo por categoria (ver abaixo)                     |
 | `logic.js`              | Motor de recomendação genérico (puro, testável no console)               |
 | `main.js`               | Estado da UI, navegação, renderização, anúncios e compartilhamento       |
+| `fantasias/`            | **Gerado.** Uma página estática por fantasia + catálogo (`index.html`)  |
+| `sitemap.xml`           | **Gerado** junto com `fantasias/`                                       |
+| `ferramentas/gerar-paginas.js` | Gera `fantasias/` e `sitemap.xml` a partir de `data/*.js`         |
 | `ferramentas/validar.js`| Validação do banco e da heurística (rode antes de commitar)              |
+
+### Páginas estáticas dos guias
+
+O quiz é uma SPA: sem JavaScript, o Google vê só a home. Por isso cada fantasia
+também tem uma página estática em `fantasias/<slug>.html`, com ficha, itens,
+passo a passo, dicas práticas tiradas da ficha e links para pares e fantasias
+da mesma categoria. O catálogo fica em `fantasias/` e o resultado do quiz linka
+para a página do guia.
+
+Depois de mudar qualquer fantasia, rode `node ferramentas/gerar-paginas.js` e
+faça commit do que mudar. O validador falha se as páginas estiverem
+desatualizadas. O slug vem do nome (`slugFantasia` em `data.js`), então
+renomear uma fantasia muda o endereço dela.
 
 ### Banco de fantasias (`data/`)
 
@@ -171,11 +187,20 @@ os outros, `TEMA=halloween node ferramentas/validar.js`.
   | `resultadoAposCartao` | logo depois do cartão do resultado | responsivo |
   | `resultadoAposPassos` | depois de "Como montar" | responsivo |
   | `resultadoBase` | base do resultado | 320×100 fixo |
-  | `lateralEsquerda` / `lateralDireita` | laterais fixas, só em telas ≥1280×720 | 160×600 |
+  | `lateralEsquerda` / `lateralDireita` | laterais fixas, só na tela de resultado e em telas ≥1280×720 | 160×600 |
 
-  No painel, em Anúncios automáticos: ligue a **âncora**, deixe **anúncios na
-  página** desligado. Sem anúncios na home, nas perguntas (cliques acidentais)
-  e na tela de carregamento (política do AdSense).
+  As páginas de guia (`fantasias/*.html`) usam os blocos `resultadoAposCartao`
+  (depois dos itens) e `resultadoAposPassos` (depois das dicas).
+
+  **Sem anúncios na home, nas perguntas e na tela de carregamento.** São telas
+  de navegação, sem conteúdo do site, e o AdSense já reprovou o site por isso
+  ("anúncios em telas sem conteúdo do editor"). Os laterais só aparecem no
+  resultado (`body[data-tela]` no CSS). Pelo mesmo motivo, deixe os **anúncios
+  automáticos desligados** (âncora e vinheta inclusive): numa SPA eles
+  continuam na tela durante o quiz e o carregamento.
+
+  Bloco sem anúncio (`data-ad-status="unfilled"`) some da página com o rótulo,
+  em vez de virar um retângulo branco.
 - **Afiliados Amazon:** configure `AMAZON_AFFILIATE_TAG` no `main.js`. Cada item
   do guia vira link de busca com `rel="sponsored"`.
 - **Imagens:** os placeholders do Unsplash em `data/*.js` devem ser trocados por

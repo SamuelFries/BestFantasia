@@ -251,6 +251,15 @@ for (const [esperado, escolhas] of CASOS) {
   }
 }
 
+/* ---------------- 6. Páginas estáticas em dia ---------------- */
+
+const { gerar } = require('./gerar-paginas.js');
+const desatualizadas = [...gerar()].filter(([arquivo, conteudo]) =>
+  !fs.existsSync(arquivo) || fs.readFileSync(arquivo, 'utf8') !== conteudo);
+if (desatualizadas.length) {
+  erro(`${desatualizadas.length} página(s) estática(s) desatualizada(s) (ex.: ${path.relative(RAIZ, desatualizadas[0][0])}). Rode: node ferramentas/gerar-paginas.js`);
+}
+
 /* ---------------- Relatório ---------------- */
 
 const porCategoria = api.CATEGORIAS.map((c) => `${c}: ${api.FANTASIAS.filter((f) => f.categoria === c).length}`).join(' · ');

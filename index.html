@@ -83,6 +83,30 @@
       </p>
       <button id="btn-start" class="btn-primary btn-pulse" type="button" data-texto="botaoComecar">Descobrir Minha Fantasia</button>
       <p class="nota" data-html="notaHome">⏱️ 2 minutinhos &nbsp;•&nbsp; <span id="total-fantasias">289</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
+
+      <!-- Conteúdo estático: explica o site para quem chega (e para o
+           Google, que não responde o quiz). Sem anúncio nesta tela. -->
+      <div class="home-conteudo">
+        <h2>Como funciona</h2>
+        <ol>
+          <li><strong>Conte como você é.</strong> Altura, cabelo, barba e óculos ajudam a achar personagens que já combinam com você.</li>
+          <li><strong>Responda sobre sua personalidade.</strong> O que você assiste, como se comporta na festa e o que quer causar.</li>
+          <li><strong>Diga como vai ser a festa.</strong> Com quem você vai, onde, quanto quer gastar e o que topa no rosto.</li>
+        </ol>
+        <p>O resultado vem com o guia de montagem completo: a lista de itens, o que você provavelmente já tem em casa, o passo a passo, o custo e a dificuldade. O tom de pele nunca muda a fantasia recomendada: qualquer pessoa pode ser qualquer personagem.</p>
+
+        <h2>Prefere escolher sozinho?</h2>
+        <p>Todos os guias estão abertos, separados por categoria:</p>
+        <nav class="chips-links" aria-label="Categorias de fantasias">
+          <a href="fantasias/#terror">Terror</a>
+          <a href="fantasias/#classicas">Clássicas</a>
+          <a href="fantasias/#acao-aventura">Ação &amp; Aventura</a>
+          <a href="fantasias/#fantasia-magia">Fantasia &amp; Magia</a>
+          <a href="fantasias/#divertidas">Divertidas</a>
+          <a href="fantasias/#cultura-pop">Cultura Pop</a>
+        </nav>
+        <p><a href="fantasias/">Ver todas as fantasias →</a></p>
+      </div>
     </section>
 
     <!-- ================== TELA 2 · FÍSICO ================== -->
@@ -179,6 +203,9 @@
         <p id="resultado-dica-pele" class="dica-pele hidden"></p>
       </article>
 
+      <!-- Página estática do guia (fantasias/<slug>.html), href no main.js -->
+      <a id="link-guia-completo" class="link-guia-completo" href="fantasias/">Abrir a página completa deste guia, com dicas práticas →</a>
+
       <!-- Anúncio 2: depois do passo a passo. Longe dos botões "Ver na Amazon"
            de propósito, para não ser confundido com eles. -->
       <div class="adsense-slot" data-anuncio="resultadoAposPassos"></div>
@@ -211,6 +238,7 @@
 
   <footer class="rodape">
     <nav class="rodape-links" aria-label="Institucional">
+      <a href="fantasias/">Todas as fantasias</a>
       <a href="sobre.html">Sobre</a>
       <a href="privacidade.html">Política de Privacidade</a>
       <a href="contato.html">Contato</a>

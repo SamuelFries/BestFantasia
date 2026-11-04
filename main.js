@@ -281,9 +281,11 @@ function mostrarTela(idNova) {
     telaNova.classList.add('active');
     state.telaAtual = idNova;
     state.trocandoTela = false;
+    document.body.dataset.tela = idNova; // o CSS só mostra os laterais no resultado
     window.scrollTo(0, 0);
     $('#progress-bar').style.width = PROGRESSO_POR_TELA[idNova] ?? '0%';
     ativarAnuncios(telaNova);
+    ativarAnuncios($('#anuncios-laterais'));
   }, DURACAO_FADE_MS);
 }
 
@@ -394,6 +396,7 @@ function exibirResultado(fantasia) {
     .join('');
 
   renderizarGuia(fantasia);
+  $('#link-guia-completo').href = `fantasias/${slugFantasia(fantasia)}.html`;
   renderizarPares(fantasia);
   renderizarAlternativas(fantasia);
 
@@ -618,10 +621,11 @@ function init() {
   $('#resultado-pares').addEventListener('click', aoClicarAlternativa);
   $('#btn-share-copy').addEventListener('click', copiarLink);
 
-  // Laterais fixas (só aparecem em telas largas): ativa já na entrada e,
-  // se a janela começar estreita, quando ela for alargada.
+  // Laterais fixas: só em telas largas e só na tela de resultado (CSS via
+  // body[data-tela]). Ativam ao chegar no resultado (mostrarTela) ou, se a
+  // janela estava estreita, quando ela for alargada.
+  document.body.dataset.tela = state.telaAtual;
   const laterais = $('#anuncios-laterais');
-  ativarAnuncios(laterais);
   window.addEventListener('resize', () => ativarAnuncios(laterais), { passive: true });
 
   console.log(`%c${TEMA.emoji} BestFantasia · tema ${TEMA.nome}`, 'font-size:16px;font-weight:bold');

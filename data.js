@@ -494,6 +494,17 @@ aplicarTema(TEMA);
    adicionar sua categoria. logic.js e main.js só enxergam FANTASIAS. */
 const FANTASIAS = [];
 
+/* Endereço da página estática do guia: fantasias/<slug>.html.
+   Usado pelo main.js (link no resultado) e por
+   ferramentas/gerar-paginas.js. Mudar o slug quebra links já indexados. */
+function slugFantasia(fantasia) {
+  return fantasia.nome
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 function registrarFantasias(lista) {
   lista.forEach((fantasia) => {
     if (FANTASIAS.some((f) => f.id === fantasia.id)) {
