@@ -54,13 +54,11 @@ const ESTILO_POR_FORMATO = {
   banner: 'display:inline-block;width:320px;height:100px',
 };
 
+// Textos que mudam com a época (Halloween, Carnaval…): ver temas/*.js.
+const TEXTOS = TEMA.textos;
+
 // Frases que giram abaixo do título durante o loading.
-const FRASES_LOADING = [
-  'Mexendo o caldeirão… 🫕',
-  'Acordando os mortos… ⚰️',
-  'Medindo seu guarda-roupa astral… 👗',
-  'Negociando com os corvos… 🐦‍⬛',
-];
+const FRASES_LOADING = TEXTOS.frasesLoading;
 
 // Barra de progresso fixa no topo, por tela.
 const PROGRESSO_POR_TELA = {
@@ -73,14 +71,14 @@ const PROGRESSO_POR_TELA = {
 };
 
 // Etapas do quiz, na ordem. O botão de cada uma leva à próxima; o da
-// última consulta os espíritos. Pergunta nova numa etapa = só data.js.
+// última dispara o resultado. Pergunta nova numa etapa = só data.js.
 const ETAPAS_QUIZ = [
   { tela: 'screen-fisico', container: '#grupos-fisico', perguntas: ETAPAS_FISICO,
     modoLinha: false, botao: '#btn-fisico-continuar', textoPronto: 'Continuar ➡️' },
   { tela: 'screen-personalidade', container: '#perguntas-personalidade', perguntas: PERGUNTAS_PERSONALIDADE,
     modoLinha: true, botao: '#btn-personalidade-continuar', textoPronto: 'Continuar ➡️' },
   { tela: 'screen-pratica', container: '#perguntas-praticas', perguntas: PERGUNTAS_PRATICAS,
-    modoLinha: true, botao: '#btn-pratica-continuar', textoPronto: 'Consultar os Espíritos 🔮' },
+    modoLinha: true, botao: '#btn-pratica-continuar', textoPronto: TEXTOS.botaoConsultar },
 ];
 
 // Rótulo amigável do custo (1..3).
@@ -338,8 +336,9 @@ function ativarAnuncios(container) {
 function iniciarConsulta() {
   mostrarTela('screen-loading');
 
-  // Gira as frases místicas enquanto os espíritos "trabalham".
+  // Gira as frases da época enquanto o resultado "é calculado".
   let indiceFrase = 0;
+  $('#frase-loading').textContent = FRASES_LOADING[0];
   state.timers.frases = window.setInterval(() => {
     indiceFrase = (indiceFrase + 1) % FRASES_LOADING.length;
     $('#frase-loading').textContent = FRASES_LOADING[indiceFrase];
@@ -388,8 +387,8 @@ function exibirResultado(fantasia) {
     <span class="badge-mini">💰 Custo: ${ROTULO_CUSTO[fantasia.custo] ?? '$'}</span>
     ${selos.map((selo) => `<span class="badge-mini">${selo}</span>`).join('')}`;
 
-  // Chips com os motivos (fallback místico se nada pontuou).
-  const chips = motivos.length ? motivos : ['uma conexão espiritual inexplicável ✨'];
+  // Chips com os motivos (fallback do tema se nada pontuou).
+  const chips = motivos.length ? motivos : [TEXTOS.motivoFallback];
   $('#resultado-motivos').innerHTML = chips
     .map((motivo) => `<span class="chip">✔ ${motivo}</span>`)
     .join('');
@@ -496,8 +495,7 @@ function aoClicarAlternativa(evento) {
    ================================================================ */
 
 function textoDeCompartilhamento() {
-  const f = state.exibida;
-  return `🎃 O BestFantasia revelou: minha fantasia ideal de Halloween é ${f.emoji} ${f.nome} (${f.compatibilidade}% de match)! Descubra a sua + o guia de montagem:`;
+  return TEXTOS.compartilhar(state.exibida);
 }
 
 function atualizarLinksDeCompartilhamento() {
@@ -535,11 +533,11 @@ async function copiarLink() {
   const texto = `${textoDeCompartilhamento()} ${window.location.href}`;
   try {
     await navigator.clipboard.writeText(texto);
-    mostrarToast('🔗 Copiado! Vá assombrar o grupo da família.');
+    mostrarToast(TEXTOS.toastCopiado);
   } catch {
     mostrarToast(
       copiarTextoLegado(texto)
-        ? '🔗 Copiado! Vá assombrar o grupo da família.'
+        ? TEXTOS.toastCopiado
         : '😿 Não consegui copiar — segure e copie o link da barra.'
     );
   }
@@ -572,7 +570,27 @@ function reiniciar() {
    BOOTSTRAP
    ================================================================ */
 
+/**
+ * Preenche os textos da época: `data-texto="chave"` recebe texto puro e
+ * `data-html="chave"` recebe HTML de TEMA.textos; os emojis flutuantes
+ * do fundo vêm de TEMA.floaters.
+ */
+function aplicarTextosDoTema() {
+  document.querySelectorAll('[data-texto]').forEach((el) => {
+    const texto = TEXTOS[el.dataset.texto];
+    if (texto != null) el.textContent = texto;
+  });
+  document.querySelectorAll('[data-html]').forEach((el) => {
+    const html = TEXTOS[el.dataset.html];
+    if (html != null) el.innerHTML = html;
+  });
+  document.querySelectorAll('.floaters span').forEach((el, i) => {
+    el.textContent = TEMA.floaters[i % TEMA.floaters.length];
+  });
+}
+
 function init() {
+  aplicarTextosDoTema(); // antes do contador: a nota da home vem do tema
   renderizarFormularios();
   atualizarBotoesDeAvanco();
 
@@ -606,7 +624,7 @@ function init() {
   ativarAnuncios(laterais);
   window.addEventListener('resize', () => ativarAnuncios(laterais), { passive: true });
 
-  console.log('%c🎃 BestFantasia', 'color:#ff7a18;font-size:16px;font-weight:bold');
+  console.log(`%c${TEMA.emoji} BestFantasia · tema ${TEMA.nome}`, 'font-size:16px;font-weight:bold');
 }
 
 document.addEventListener('DOMContentLoaded', init);

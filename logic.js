@@ -9,6 +9,9 @@
    1. PESOS — `fantasia.pesos[categoria][valor]` (gosto/personalidade)
    2. REGRAS — as `regras` da opção escolhida, que leem a ficha da
       fantasia (rosto, calor, formato...) ou categoria/dificuldade/custo.
+   Além disso, o tema da época (TEMA.regras, em temas/*.js) pode dar
+   um bônus ou uma penalidade fixa pela ficha — ex.: no Carnaval,
+   fantasia fresca ganha e fantasia com sangue perde um pouco.
 
    O ranking compara essa soma com o máximo que cada fantasia poderia
    fazer (ver rankearFantasias).
@@ -16,7 +19,8 @@
    100% puro (nenhum acesso ao DOM) — dá para testar no console:
    recomendarFantasia({ genero:'fem', arma:'magia', rosto:'livre', ... })
 
-   Depende de: data.js (TODAS_AS_PERGUNTAS, FANTASIAS, ROTULOS_MATCH)
+   Depende de: tema.js (TEMA) e data.js (TODAS_AS_PERGUNTAS,
+   FANTASIAS, ROTULOS_MATCH)
    ============================================================ */
 
 /* ---------- Índice das opções: categoria → valor → opção ---------- */
@@ -50,6 +54,15 @@ function pontosDasRegras(opcao, fantasia) {
   return (opcao?.regras ?? []).reduce((total, regra) => total + pontosDaRegra(regra, fantasia), 0);
 }
 
+/* ---------- Ajuste da época (TEMA.regras) ----------
+   Entra na pontuação, mas NÃO no máximo teórico: é um empurrão (ou
+   freio) fixo de cada fantasia naquela temporada, não uma pergunta. */
+const REGRAS_DO_TEMA = (typeof TEMA !== 'undefined' && TEMA.regras) || [];
+
+function pontosDoTema(fantasia) {
+  return REGRAS_DO_TEMA.reduce((total, regra) => total + pontosDaRegra(regra, fantasia), 0);
+}
+
 /* ---------- Perguntas condicionais (`ocultaSe` em data.js) ---------- */
 
 /** A pergunta some quando todas as respostas de `ocultaSe` batem com as escolhas. */
@@ -76,11 +89,11 @@ function pontosDaResposta(fantasia, categoria, valor) {
 }
 
 /**
- * Pontuação total ("match score") de uma fantasia.
- * Regras podem ser negativas, então o piso é 0.
+ * Pontuação total ("match score") de uma fantasia: respostas + ajuste
+ * da época. Regras podem ser negativas, então o piso é 0.
  */
 function pontuarFantasia(fantasia, escolhas) {
-  let total = 0;
+  let total = pontosDoTema(fantasia);
   for (const categoria in escolhas) total += pontosDaResposta(fantasia, categoria, escolhas[categoria]);
   return Math.max(0, total);
 }
@@ -110,7 +123,8 @@ function pontuacaoMaxima(fantasia) {
  */
 function calcularCompatibilidade(fantasia, pontuacao) {
   const maximo = pontuacaoMaxima(fantasia);
-  const bruto = maximo > 0 ? (pontuacao / maximo) * 100 : 0;
+  // O bônus do tema pode passar do máximo teórico: teto em 100.
+  const bruto = maximo > 0 ? Math.min(100, (pontuacao / maximo) * 100) : 0;
   return Math.round(35 + bruto * 0.64);
 }
 

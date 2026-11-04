@@ -1,38 +1,90 @@
 /* ============================================================
    BestFantasia — style.css
-   Tema Halloween: fundo escuro, roxo, laranja neon e verde slime.
+   Fundo escuro com cores neon; a paleta e a fonte de título mudam
+   com a época (tema.js põe data-tema="<id>" no <html>).
    Mobile-first; flexbox + grid; animações com fallback de
    movimento reduzido. Sem frameworks — CSS puro para carregar
    rápido (Core Web Vitals ajudam na receita do AdSense).
    ============================================================ */
 
 /* ---------- 1 · Tokens do tema ----------
-   O site é escuro por natureza (noite de Halloween): tema único,
+   O site é escuro por natureza (noite de festa): tema único,
    deliberado, com todas as cores explícitas — fica idêntico em
-   qualquer sistema, claro ou escuro. */
+   qualquer sistema, claro ou escuro.
+
+   Os nomes são semânticos para valerem em qualquer época:
+   --acento       cor principal (botões, títulos de seção)
+   --brilho       cor de confirmação (opção selecionada, % de match)
+   --secundaria   bordas, chips e fundos sutis
+   Os *-rgb repetem a cor em "r, g, b" para as transparências.
+   Tema novo = um bloco :root[data-tema="<id>"] como o do Carnaval
+   abaixo, mais um arquivo em temas/. */
 :root {
   color-scheme: dark;
 
+  /* Halloween (padrão): roxo-noite, laranja neon e verde slime */
   --bg: #0b0614;
   --bg-elevado: #160d26;
   --card: #1b1130;
   --borda: #332052;
 
-  --roxo: #8b5cf6;
-  --roxo-profundo: #4c1d95;
-  --laranja: #ff7a18;
-  --laranja-claro: #ffb020;
-  --slime: #9dff3b;
-  --slime-escuro: #16340a;
+  --secundaria: #8b5cf6;
+  --secundaria-rgb: 139, 92, 246;
+  --secundaria-profunda: #4c1d95;
+  --secundaria-clara: #dcccff;
+
+  --acento: #ff7a18;
+  --acento-rgb: 255, 122, 24;
+  --acento-2: #ff9b3d; /* fim do degradê dos botões */
+  --acento-claro: #ffb020;
+  --acento-texto: #1d0a00; /* texto sobre o acento */
+
+  --brilho: #9dff3b;
+  --brilho-rgb: 157, 255, 59;
+  --brilho-2: #c6ff7a;
+  --brilho-escuro: #16340a;
 
   --texto: #f5edff;
   --texto-suave: #b9a6dd;
 
-  --glow-laranja: 0 0 18px rgba(255, 122, 24, 0.45);
-  --glow-slime: 0 0 16px rgba(157, 255, 59, 0.4);
+  --glow-acento: 0 0 18px rgba(var(--acento-rgb), 0.45);
+  --glow-brilho: 0 0 16px rgba(var(--brilho-rgb), 0.4);
+
+  --fonte-display: 'Creepster', 'Nunito', system-ui, cursive;
+  --fonte-display-espaco: 0.05em;
 
   --raio-card: 1.25rem;
   --fade-ms: 300ms; /* manter em sincronia com DURACAO_FADE_MS no main.js */
+}
+
+/* Carnaval: noite de bloco — azul-meia-noite, rosa-choque, amarelo e verde neon */
+:root[data-tema='carnaval'] {
+  --bg: #0b0a1f;
+  --bg-elevado: #15123a;
+  --card: #1a1747;
+  --borda: #352f7a;
+
+  --secundaria: #7c6cff;
+  --secundaria-rgb: 124, 108, 255;
+  --secundaria-profunda: #3b2fa8;
+  --secundaria-clara: #e2dcff;
+
+  --acento: #ff2d95;
+  --acento-rgb: 255, 45, 149;
+  --acento-2: #ff7a3d;
+  --acento-claro: #ffd23f;
+  --acento-texto: #2a0014;
+
+  --brilho: #2cf0a0;
+  --brilho-rgb: 44, 240, 160;
+  --brilho-2: #8dffc9;
+  --brilho-escuro: #06402a;
+
+  --texto: #fff4fb;
+  --texto-suave: #c9bfe8;
+
+  --fonte-display: 'Lilita One', 'Nunito', system-ui, sans-serif;
+  --fonte-display-espaco: 0.02em;
 }
 
 /* ---------- 2 · Base ---------- */
@@ -48,10 +100,10 @@ body {
   margin: 0;
   min-height: 100dvh;
   background: var(--bg);
-  /* névoa roxa no alto + brasa laranja no rodapé: clima de noite assombrada */
+  /* névoa da cor secundária no alto + brasa do acento no rodapé: clima de noite de festa */
   background-image:
-    radial-gradient(60rem 30rem at 50% -10%, rgba(139, 92, 246, 0.18), transparent 60%),
-    radial-gradient(40rem 22rem at 90% 110%, rgba(255, 122, 24, 0.08), transparent 60%);
+    radial-gradient(60rem 30rem at 50% -10%, rgba(var(--secundaria-rgb), 0.18), transparent 60%),
+    radial-gradient(40rem 22rem at 90% 110%, rgba(var(--acento-rgb), 0.08), transparent 60%);
   background-attachment: fixed;
   color: var(--texto);
   font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -59,10 +111,10 @@ body {
   overflow-x: hidden;
 }
 
-.font-creepy {
-  font-family: 'Creepster', 'Nunito', system-ui, cursive;
+.font-display {
+  font-family: var(--fonte-display);
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: var(--fonte-display-espaco);
 }
 
 .hidden {
@@ -74,7 +126,7 @@ button {
 }
 
 :is(button, a):focus-visible {
-  outline: 2px solid var(--slime);
+  outline: 2px solid var(--brilho);
   outline-offset: 2px;
   border-radius: 0.5rem;
 }
@@ -113,7 +165,7 @@ button {
 }
 
 .rodape a:hover {
-  color: var(--laranja-claro);
+  color: var(--acento-claro);
 }
 
 /* Páginas institucionais (sobre, privacidade, contato) */
@@ -134,7 +186,7 @@ button {
 .pagina-texto h2 {
   margin: 0.6rem 0 0;
   font-size: 1.05rem;
-  color: var(--laranja-claro);
+  color: var(--acento-claro);
 }
 
 .pagina-texto p,
@@ -148,7 +200,7 @@ button {
 }
 
 .pagina-texto a {
-  color: var(--slime);
+  color: var(--brilho);
 }
 
 .pagina-texto strong {
@@ -162,15 +214,15 @@ button {
   left: 0;
   right: 0;
   height: 4px;
-  background: rgba(139, 92, 246, 0.15);
+  background: rgba(var(--secundaria-rgb), 0.15);
   z-index: 50;
 }
 
 #progress-bar {
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg, var(--roxo), var(--laranja), var(--slime));
-  box-shadow: var(--glow-laranja);
+  background: linear-gradient(90deg, var(--secundaria), var(--acento), var(--brilho));
+  box-shadow: var(--glow-acento);
   transition: width 0.6s ease;
 }
 
@@ -209,13 +261,22 @@ button {
   margin: 0;
   font-size: clamp(3.2rem, 17vw, 4.6rem);
   line-height: 0.95;
-  text-shadow: 0 0 24px rgba(139, 92, 246, 0.55);
+  text-shadow: 0 0 24px rgba(var(--secundaria-rgb), 0.55);
 }
 
-.brilho-laranja {
-  color: var(--laranja);
-  text-shadow: 0 0 20px rgba(255, 122, 24, 0.75);
-  animation: flicker 3.4s infinite;
+/* Lilita One é mais larga que a Creepster: título menor para caber no celular */
+:root[data-tema='carnaval'] .titulo-hero {
+  font-size: clamp(2.6rem, 13vw, 3.8rem);
+}
+
+.brilho-acento {
+  color: var(--acento);
+  text-shadow: 0 0 20px rgba(var(--acento-rgb), 0.75);
+  animation: flicker 3.4s infinite; /* letreiro de neon falhando */
+}
+
+:root[data-tema='carnaval'] .brilho-acento {
+  animation: festejar 3.2s ease-in-out infinite; /* rosa → laranja → rosa */
 }
 
 .titulo-tela {
@@ -232,20 +293,20 @@ button {
 }
 
 .subtitulo-tela em {
-  color: var(--slime);
+  color: var(--brilho);
   font-style: italic;
 }
 
 .subtitulo-tela strong {
-  color: var(--laranja-claro);
+  color: var(--acento-claro);
 }
 
 .badge {
   margin: 0;
   display: inline-block;
-  background: rgba(255, 122, 24, 0.12);
-  border: 1px solid rgba(255, 122, 24, 0.4);
-  color: var(--laranja-claro);
+  background: rgba(var(--acento-rgb), 0.12);
+  border: 1px solid rgba(var(--acento-rgb), 0.4);
+  color: var(--acento-claro);
   border-radius: 999px;
   padding: 0.3rem 0.85rem;
   font-size: 0.72rem;
@@ -267,12 +328,12 @@ button {
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--laranja), #ff9b3d);
-  color: #1d0a00;
+  background: linear-gradient(135deg, var(--acento), var(--acento-2));
+  color: var(--acento-texto);
   font-size: 1.05rem;
   font-weight: 900;
   cursor: pointer;
-  box-shadow: var(--glow-laranja);
+  box-shadow: var(--glow-acento);
   transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
 }
 
@@ -331,7 +392,7 @@ button {
 .grupo h3 {
   margin: 0;
   font-size: 1rem;
-  color: var(--laranja-claro);
+  color: var(--acento-claro);
   text-align: left;
 }
 
@@ -377,13 +438,13 @@ button {
 }
 
 .opcao-btn:hover {
-  border-color: var(--roxo);
+  border-color: var(--secundaria);
 }
 
 .opcao-btn.selecionada {
-  border-color: var(--slime);
-  background: linear-gradient(180deg, rgba(157, 255, 59, 0.12), var(--card));
-  box-shadow: var(--glow-slime);
+  border-color: var(--brilho);
+  background: linear-gradient(180deg, rgba(var(--brilho-rgb), 0.12), var(--card));
+  box-shadow: var(--glow-brilho);
   animation: pop 0.25s ease;
 }
 
@@ -410,8 +471,8 @@ button {
   height: 1.7rem;
   flex-shrink: 0;
   border-radius: 0.5rem;
-  background: rgba(139, 92, 246, 0.25);
-  border: 1px solid var(--roxo);
+  background: rgba(var(--secundaria-rgb), 0.25);
+  border: 1px solid var(--secundaria);
   font-size: 0.8rem;
   font-weight: 900;
 }
@@ -423,7 +484,7 @@ button {
   gap: 0.5rem;
   width: 100%;
   background: var(--card);
-  border: 1px dashed var(--roxo);
+  border: 1px dashed var(--secundaria);
   border-radius: var(--raio-card);
   padding: 0.75rem;
 }
@@ -525,8 +586,8 @@ button {
   inset: -8px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: var(--laranja);
-  border-right-color: var(--slime);
+  border-top-color: var(--acento);
+  border-right-color: var(--brilho);
   animation: girar 1s linear infinite;
 }
 
@@ -541,13 +602,13 @@ button {
   border: 1px solid var(--borda);
   border-radius: 1.5rem;
   padding: 1.5rem 1.25rem;
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.16);
+  box-shadow: 0 0 40px rgba(var(--secundaria-rgb), 0.16);
 }
 
 .resultado-emoji {
   font-size: 4.5rem;
   line-height: 1;
-  filter: drop-shadow(0 0 18px rgba(255, 122, 24, 0.5));
+  filter: drop-shadow(0 0 18px rgba(var(--acento-rgb), 0.5));
   animation: floaty 3s ease-in-out infinite;
 }
 
@@ -559,7 +620,7 @@ button {
 }
 
 .badge-mini {
-  background: rgba(139, 92, 246, 0.14);
+  background: rgba(var(--secundaria-rgb), 0.14);
   border: 1px solid var(--borda);
   color: var(--texto-suave);
   border-radius: 999px;
@@ -569,22 +630,22 @@ button {
 }
 
 .badge-mini--cat {
-  border-color: rgba(255, 122, 24, 0.5);
-  color: var(--laranja-claro);
-  background: rgba(255, 122, 24, 0.1);
+  border-color: rgba(var(--acento-rgb), 0.5);
+  color: var(--acento-claro);
+  background: rgba(var(--acento-rgb), 0.1);
 }
 
 .match-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: linear-gradient(90deg, var(--slime), #c6ff7a);
-  color: var(--slime-escuro);
+  background: linear-gradient(90deg, var(--brilho), var(--brilho-2));
+  color: var(--brilho-escuro);
   font-weight: 900;
   font-size: 0.9rem;
   border-radius: 999px;
   padding: 0.35rem 0.9rem;
-  box-shadow: var(--glow-slime);
+  box-shadow: var(--glow-brilho);
 }
 
 .resultado-imagem {
@@ -614,7 +675,7 @@ button {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--laranja-claro);
+  color: var(--acento-claro);
 }
 
 .chips {
@@ -625,9 +686,9 @@ button {
 }
 
 .chip {
-  background: rgba(139, 92, 246, 0.16);
-  border: 1px solid var(--roxo);
-  color: #dcccff;
+  background: rgba(var(--secundaria-rgb), 0.16);
+  border: 1px solid var(--secundaria);
+  color: var(--secundaria-clara);
   border-radius: 999px;
   padding: 0.3rem 0.75rem;
   font-size: 0.78rem;
@@ -667,7 +728,7 @@ button {
 }
 
 .alternativa:hover {
-  border-color: var(--roxo);
+  border-color: var(--secundaria);
   transform: translateY(-1px);
 }
 
@@ -681,7 +742,7 @@ button {
 }
 
 .alternativa-match {
-  color: var(--slime);
+  color: var(--brilho);
   font-variant-numeric: tabular-nums;
   font-size: 0.9rem;
 }
@@ -702,7 +763,7 @@ button {
 .guia-titulo {
   margin: 0;
   font-size: 0.95rem;
-  color: var(--laranja-claro);
+  color: var(--acento-claro);
   letter-spacing: 0.02em;
 }
 
@@ -733,8 +794,8 @@ button {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(139, 92, 246, 0.25);
-  border: 1px solid var(--roxo);
+  background: rgba(var(--secundaria-rgb), 0.25);
+  border: 1px solid var(--secundaria);
   font-size: 0.72rem;
   font-weight: 900;
 }
@@ -749,8 +810,8 @@ button {
 /* Botão de afiliado (rel="sponsored" no main.js) */
 .btn-amazon {
   flex-shrink: 0;
-  background: linear-gradient(135deg, var(--laranja), #ff9b3d);
-  color: #1d0a00;
+  background: linear-gradient(135deg, var(--acento), var(--acento-2));
+  color: var(--acento-texto);
   font-size: 0.7rem;
   font-weight: 900;
   text-decoration: none;
@@ -767,8 +828,8 @@ button {
 
 .tag-gratis {
   flex-shrink: 0;
-  color: var(--slime);
-  border: 1px solid rgba(157, 255, 59, 0.5);
+  color: var(--brilho);
+  border: 1px solid rgba(var(--brilho-rgb), 0.5);
   border-radius: 0.6rem;
   padding: 0.4rem 0.55rem;
   font-size: 0.68rem;
@@ -789,8 +850,8 @@ button {
   font-size: 0.8rem;
   line-height: 1.5;
   color: var(--texto-suave);
-  background: rgba(157, 255, 59, 0.07);
-  border: 1px dashed rgba(157, 255, 59, 0.35);
+  background: rgba(var(--brilho-rgb), 0.07);
+  border: 1px dashed rgba(var(--brilho-rgb), 0.35);
   border-radius: 0.8rem;
   padding: 0.6rem 0.75rem;
 }
@@ -823,9 +884,9 @@ button {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(255, 122, 24, 0.16);
-  border: 1px solid var(--laranja);
-  color: var(--laranja-claro);
+  background: rgba(var(--acento-rgb), 0.16);
+  border: 1px solid var(--acento);
+  color: var(--acento-claro);
   font-size: 0.72rem;
   font-weight: 900;
 }
@@ -871,8 +932,8 @@ button {
 .btn-share--copy {
   width: 100%;
   flex: none;
-  background: var(--roxo-profundo);
-  border: 1px solid var(--roxo);
+  background: var(--secundaria-profunda);
+  border: 1px solid var(--secundaria);
 }
 
 /* ---------- 13 · Toast (substitui alert()) ---------- */
@@ -884,13 +945,13 @@ button {
   z-index: 100;
   max-width: calc(100vw - 2rem);
   background: var(--card);
-  border: 1px solid var(--slime);
+  border: 1px solid var(--brilho);
   color: var(--texto);
   font-size: 0.85rem;
   font-weight: 700;
   padding: 0.7rem 1.1rem;
   border-radius: 999px;
-  box-shadow: var(--glow-slime);
+  box-shadow: var(--glow-brilho);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -954,10 +1015,20 @@ button {
 @keyframes pulseGlow {
   0%,
   100% {
-    box-shadow: 0 0 14px rgba(255, 122, 24, 0.45);
+    box-shadow: 0 0 14px rgba(var(--acento-rgb), 0.45);
   }
   50% {
-    box-shadow: 0 0 30px rgba(255, 122, 24, 0.8), 0 0 52px rgba(157, 255, 59, 0.25);
+    box-shadow: 0 0 30px rgba(var(--acento-rgb), 0.8), 0 0 52px rgba(var(--brilho-rgb), 0.25);
+  }
+}
+
+@keyframes festejar {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(50deg);
   }
 }
 

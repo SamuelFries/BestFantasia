@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#0b0614">
+  <meta name="theme-color" content="#0b0a1f">
   <title>BestFantasia</title>
-  <meta name="description" content="Conte como você é, responda o teste e receba o guia completo da sua fantasia ideal: itens, passo a passo e onde comprar.">
+  <meta name="description" content="Conte como você é, responda o teste e receba o guia completo da sua fantasia ideal de Carnaval: itens, passo a passo e onde comprar.">
 
-  <!-- Open Graph: melhora o preview ao compartilhar (viralização) -->
-  <meta property="og:title" content="BestFantasia 🎃 Qual é a sua fantasia ideal?">
-  <meta property="og:description" content="Os espíritos analisam seu estilo e sua personalidade, revelam a fantasia perfeita e entregam o guia de montagem. Duvida?">
+  <!-- Open Graph: melhora o preview ao compartilhar (viralização).
+       TEMA: os crawlers (WhatsApp, Twitter) não rodam JavaScript, então
+       estas linhas são editadas à mão ao trocar TEMA_PADRAO em tema.js.
+       Halloween: "BestFantasia 🎃 Qual é a sua fantasia ideal?" /
+       "Os espíritos analisam seu estilo e sua personalidade, revelam a
+       fantasia perfeita e entregam o guia de montagem. Duvida?" -->
+  <meta property="og:title" content="BestFantasia 🎭 Qual é a sua fantasia de Carnaval?">
+  <meta property="og:description" content="A bateria analisa seu estilo e sua personalidade, revela a fantasia perfeita para o bloco e entrega o guia de montagem. Duvida?">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bestfantasia.com.br/">
   <link rel="canonical" href="https://bestfantasia.com.br/">
@@ -25,27 +30,36 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2662281603112502"
      crossorigin="anonymous"></script>
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>">
+  <!-- Favicon: tema.js troca pelo emoji do tema ativo -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
 
-  <!-- Fontes: Creepster (display) + Nunito (leitura) -->
+  <!-- Fontes: Creepster (Halloween) e Lilita One (Carnaval) para títulos,
+       Nunito para leitura. Só a fonte do tema ativo é baixada. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Lilita+One&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Tema, componentes e animações -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Tema da época (Halloween, Carnaval…): os arquivos em temas/ trazem
+       textos, perguntas e cores; tema.js escolhe o ativo e marca o
+       <html> com data-tema antes do primeiro desenho da tela. -->
+  <script src="temas/halloween.js"></script>
+  <script src="temas/carnaval.js"></script>
+  <script src="tema.js"></script>
 </head>
 <body>
   <!-- Barra de progresso do quiz (largura controlada pelo main.js) -->
   <div id="progress-track" aria-hidden="true"><div id="progress-bar"></div></div>
 
-  <!-- Decoração flutuante de fundo -->
+  <!-- Decoração flutuante de fundo: os emojis vêm de TEMA.floaters (main.js) -->
   <div class="floaters" aria-hidden="true">
-    <span style="top:8%;left:6%">🦇</span>
-    <span style="top:15%;right:8%;animation-delay:1.2s">🎃</span>
-    <span style="top:55%;left:4%;animation-delay:2s">👻</span>
-    <span style="bottom:18%;right:6%;animation-delay:.6s">🕷️</span>
-    <span style="bottom:6%;left:12%;animation-delay:1.8s">🕸️</span>
+    <span style="top:8%;left:6%"></span>
+    <span style="top:15%;right:8%;animation-delay:1.2s"></span>
+    <span style="top:55%;left:4%;animation-delay:2s"></span>
+    <span style="bottom:18%;right:6%;animation-delay:.6s"></span>
+    <span style="bottom:6%;left:12%;animation-delay:1.8s"></span>
   </div>
 
   <!-- Anúncios laterais fixos: só aparecem no PC (≥1280×720), fora da
@@ -58,23 +72,24 @@
   <main id="app">
 
     <!-- ========================= TELA 1 · HOME ========================= -->
+    <!-- Textos da época: data-texto / data-html são preenchidos pelo
+         main.js a partir de TEMA.textos (temas/*.js). -->
     <section id="screen-home" class="screen active">
-      <p class="badge">🎃 Especial de Halloween</p>
-      <h1 class="font-creepy titulo-hero">Best<span class="brilho-laranja">Fantasia</span></h1>
-      <p class="subtitulo-tela">
-        Os espíritos descobrem a fantasia perfeita para você e entregam o
+      <p class="badge" data-texto="badgeHome">🎭 Especial de Carnaval</p>
+      <h1 class="font-display titulo-hero">Best<span class="brilho-acento">Fantasia</span></h1>
+      <p class="subtitulo-tela" data-html="subtituloHome">
+        Descubra a fantasia perfeita para você e receba o
         <strong>guia completo de montagem</strong>: itens, passo a passo e onde comprar.
-        <em>Se tiver coragem.</em> 👀
       </p>
-      <button id="btn-start" class="btn-primary btn-pulse" type="button">👻 Descobrir Minha Fantasia</button>
-      <p class="nota">⏱️ 2 minutinhos &nbsp;•&nbsp; 🧛 <span id="total-fantasias">289</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
+      <button id="btn-start" class="btn-primary btn-pulse" type="button" data-texto="botaoComecar">Descobrir Minha Fantasia</button>
+      <p class="nota" data-html="notaHome">⏱️ 2 minutinhos &nbsp;•&nbsp; <span id="total-fantasias">289</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
     </section>
 
     <!-- ================== TELA 2 · FÍSICO ================== -->
     <section id="screen-fisico" class="screen" aria-labelledby="titulo-fisico">
       <button class="btn-voltar" type="button" data-voltar="screen-home">← voltar</button>
       <p class="badge">Etapa 1 de 3 · Físico</p>
-      <h2 id="titulo-fisico" class="titulo-tela font-creepy">Como você é?</h2>
+      <h2 id="titulo-fisico" class="titulo-tela font-display">Como você é?</h2>
       <p class="subtitulo-tela">Toque nas opções que mais parecem com você. O tom de pele só serve para as dicas de maquiagem — fantasia não tem cor.</p>
 
       <!-- Resumo do perfil: preenchido pelo main.js conforme as escolhas -->
@@ -90,8 +105,8 @@
     <section id="screen-personalidade" class="screen" aria-labelledby="titulo-personalidade">
       <button class="btn-voltar" type="button" data-voltar="screen-fisico">← voltar</button>
       <p class="badge">Etapa 2 de 3 · Personalidade</p>
-      <h2 id="titulo-personalidade" class="titulo-tela font-creepy">Hora da verdade</h2>
-      <p class="subtitulo-tela">Perguntas rápidas. Os espíritos detectam mentiras (e julgam).</p>
+      <h2 id="titulo-personalidade" class="titulo-tela font-display">Hora da verdade</h2>
+      <p class="subtitulo-tela" data-texto="subtituloPersonalidade">Perguntas rápidas. Mentiras são detectadas (e julgadas).</p>
 
       <!-- Perguntas geradas a partir de data.js -->
       <div id="perguntas-personalidade" class="grupos"></div>
@@ -103,32 +118,33 @@
     <section id="screen-pratica" class="screen" aria-labelledby="titulo-pratica">
       <button class="btn-voltar" type="button" data-voltar="screen-personalidade">← voltar</button>
       <p class="badge">Etapa 3 de 3 · Na prática</p>
-      <h2 id="titulo-pratica" class="titulo-tela font-creepy">Agora, na prática</h2>
-      <p class="subtitulo-tela">Para a fantasia caber na sua festa, no seu rosto e no seu bolso.</p>
+      <h2 id="titulo-pratica" class="titulo-tela font-display">Agora, na prática</h2>
+      <p class="subtitulo-tela" data-texto="subtituloPratica">Para a fantasia caber na sua festa, no seu rosto e no seu bolso.</p>
 
       <!-- Perguntas geradas a partir de data.js (PERGUNTAS_PRATICAS) -->
       <div id="perguntas-praticas" class="grupos"></div>
 
-      <button id="btn-pratica-continuar" class="btn-primary" type="button" disabled>Consultar os Espíritos 🔮</button>
+      <!-- Texto final do botão: TEMA.textos.botaoConsultar (main.js) -->
+      <button id="btn-pratica-continuar" class="btn-primary" type="button" disabled>Ver meu resultado</button>
     </section>
 
     <!-- ===================== TELA 4 · CARREGAMENTO ===================== -->
     <!-- Sem anúncio: o AdSense proíbe anúncios em telas sem conteúdo. -->
     <section id="screen-loading" class="screen">
-      <div class="loading-orb" role="status" aria-label="Carregando">🔮</div>
-      <h2 class="titulo-tela font-creepy">Consultando os espíritos…</h2>
-      <p id="frase-loading" class="subtitulo-tela" aria-live="polite">Mexendo o caldeirão… 🫕</p>
+      <div class="loading-orb" role="status" aria-label="Carregando" data-texto="orbLoading">🎲</div>
+      <h2 class="titulo-tela font-display" data-texto="tituloLoading">Calculando…</h2>
+      <p id="frase-loading" class="subtitulo-tela" aria-live="polite"></p>
     </section>
 
     <!-- ============ TELA 5 · RESULTADO + GUIA DE MONTAGEM ============ -->
     <section id="screen-resultado" class="screen" aria-labelledby="resultado-nome">
-      <p class="badge">🔮 Guia da sua fantasia</p>
+      <p class="badge" data-texto="badgeResultado">Guia da sua fantasia</p>
 
       <!-- Cartão da vencedora -->
       <article class="card-resultado">
         <div id="resultado-emoji" class="resultado-emoji" aria-hidden="true">🧛</div>
         <span id="resultado-match" class="match-badge">⚡ …% de match</span>
-        <h2 id="resultado-nome" class="titulo-tela font-creepy">…</h2>
+        <h2 id="resultado-nome" class="titulo-tela font-display">…</h2>
         <div id="resultado-meta" class="badges-row"></div>
 
         <!-- Foto ilustrativa (placeholder Unsplash definido em data.js).
@@ -199,17 +215,17 @@
       <a href="privacidade.html">Política de Privacidade</a>
       <a href="contato.html">Contato</a>
     </nav>
-    Feito com 🧡 e magia negra · Nenhum espírito foi incomodado de verdade.
+    <span data-html="rodape">Feito com 🧡 · Nenhuma fantasia foi maltratada de verdade.</span>
   </footer>
 
   <!-- Toast de feedback (substitui alert()) -->
   <div id="toast" role="status" aria-live="polite"></div>
 
   <noscript>
-    <p style="text-align:center;color:#f5edff;padding:1rem">Este feitiço precisa de JavaScript ativado. 🔮</p>
+    <p style="text-align:center;color:#f5edff;padding:1rem">Este teste precisa de JavaScript ativado. 🎭</p>
   </noscript>
 
-  <!-- A ordem importa: config → fantasias por categoria → algoritmo → UI -->
+  <!-- A ordem importa: tema (no <head>) → config → fantasias por categoria → algoritmo → UI -->
   <script src="data.js"></script>
   <script src="data/terror.js"></script>
   <script src="data/classicas.js"></script>

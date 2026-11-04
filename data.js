@@ -6,7 +6,14 @@
    registro central de fantasias. As fantasias em si ficam em
    data/*.js (uma categoria por arquivo) e se registram aqui via
    registrarFantasias(). Ordem de carga no index.html:
-   data.js → data/*.js → logic.js → main.js
+   temas/*.js → tema.js → data.js → data/*.js → logic.js → main.js
+
+   TEMAS (Halloween, Carnaval…): as chaves das perguntas e dos
+   pesos são fixas; o que muda com a época é o enunciado, os
+   rótulos/emojis das opções, os rótulos dos motivos e as dicas de
+   maquiagem. Tudo isso vem de TEMA (tema.js) e é aplicado no fim
+   deste arquivo por aplicarTema(). Os textos aqui são a versão
+   neutra, usada quando o tema não sobrescreve.
    ============================================================
 
    COMO A PONTUAÇÃO FUNCIONA (motor em logic.js)
@@ -181,7 +188,7 @@ const ETAPAS_FISICO = [
 const PERGUNTAS_PERSONALIDADE = [
   {
     categoria: 'idade',
-    titulo: 'Para calibrar o feitiço: sua faixa etária?',
+    titulo: 'Para calibrar o resultado: sua faixa etária?',
     opcoes: [
       { valor: 'teen',     rotulo: 'Menos de 18', emoji: '🐣' },
       { valor: 'jovem',    rotulo: '18 a 25',     emoji: '🎉' },
@@ -208,16 +215,18 @@ const PERGUNTAS_PERSONALIDADE = [
   },
   {
     categoria: 'filme',
-    titulo: 'No filme de terror, você…',
+    // Traços: resistente (sobrevive), azarado (vitima), dominante (assassino).
+    titulo: 'Num filme de suspense, você…',
     opcoes: [
       { valor: 'sobrevive', rotulo: 'Sobrevive até o fim',   emoji: '🏃‍♀️' },
-      { valor: 'vitima',    rotulo: 'É o primeiro a morrer', emoji: '🪦' },
-      { valor: 'assassino', rotulo: 'É o assassino',         emoji: '🔪' },
+      { valor: 'vitima',    rotulo: 'É o primeiro a cair',   emoji: '🫠' },
+      { valor: 'assassino', rotulo: 'É o vilão',             emoji: '😈' },
     ],
   },
   {
     categoria: 'festa',
-    titulo: 'Sua festa ideal de Halloween tem…',
+    // Traços: festeiro (bebida), caseiro (filmes), místico (rituais).
+    titulo: 'Sua festa ideal tem…',
     opcoes: [
       { valor: 'bebida',  rotulo: 'Muita bebida',       emoji: '🍹' },
       { valor: 'filmes',  rotulo: 'Maratona de filmes', emoji: '📽️' },
@@ -226,18 +235,19 @@ const PERGUNTAS_PERSONALIDADE = [
   },
   {
     categoria: 'arma',
+    // Traços: força bruta (machado), místico (magia), humor ácido (sarcasmo).
     titulo: 'Escolha uma arma…',
     opcoes: [
-      { valor: 'machado',  rotulo: 'Machado',  emoji: '🪓' },
-      { valor: 'magia',    rotulo: 'Magia',    emoji: '✨' },
-      { valor: 'sarcasmo', rotulo: 'Sarcasmo', emoji: '🗿' },
+      { valor: 'machado',  rotulo: 'Força bruta', emoji: '💪' },
+      { valor: 'magia',    rotulo: 'Magia',       emoji: '✨' },
+      { valor: 'sarcasmo', rotulo: 'Sarcasmo',    emoji: '🗿' },
     ],
   },
   {
     categoria: 'vibe',
-    titulo: 'No Halloween, sua missão é…',
+    titulo: 'Na festa, sua missão é…',
     opcoes: [
-      { valor: 'assustar',     rotulo: 'Aterrorizar geral',             emoji: '👹' },
+      { valor: 'assustar',     rotulo: 'Chocar geral',                  emoji: '😈' },
       { valor: 'divertir',     rotulo: 'Fazer todo mundo rir',          emoji: '🤣' },
       { valor: 'impressionar', rotulo: 'Vencer o concurso de fantasia', emoji: '🏆' },
       { valor: 'conforto',     rotulo: 'Ficar no estilo sem sofrer',    emoji: '🛋️' },
@@ -362,25 +372,26 @@ const PERGUNTAS_PRATICAS = [
 /* Todas as perguntas, na ordem do quiz (usado por logic.js e pelo validador). */
 const TODAS_AS_PERGUNTAS = [...ETAPAS_FISICO, ...PERGUNTAS_PERSONALIDADE, ...PERGUNTAS_PRATICAS];
 
-/* ---------- Rótulos amigáveis dos "motivos do match" ---------- */
+/* ---------- Rótulos amigáveis dos "motivos do match" ----------
+   Versão neutra; cada tema sobrescreve os seus em `rotulosMatch`. */
 const ROTULOS_MATCH = {
   genero: {
-    masc:   'sua energia clássica de monstro',
-    fem:    'sua presença enfeitiçante',
-    neutro: 'sua vibe de outro plano',
+    masc:   'sua energia de protagonista',
+    fem:    'sua presença marcante',
+    neutro: 'sua vibe de outro planeta',
   },
   altura: {
-    baixo: 'seu tamanho compacto (ideal para emboscadas)',
+    baixo: 'seu tamanho compacto',
     medio: 'sua altura estrategicamente mediana',
     alto:  'sua presença imponente',
   },
   biotipo: {
     magro:    'sua silhueta esguia',
-    atletico: 'seu cardio de sobrevivente',
+    atletico: 'seu cardio de atleta',
     forte:    'sua força de arrancar portas',
   },
   cabelo: {
-    curto:    'seu cabelo prático de fuga rápida',
+    curto:    'seu cabelo prático',
     longo:    'seus cabelos dramáticos ao vento',
     colorido: 'seu cabelo em pleno surto criativo',
     careca:   'sua cabeça aerodinâmica',
@@ -393,7 +404,7 @@ const ROTULOS_MATCH = {
   },
   oculos: {
     sim: 'seus óculos de intelectual perigoso',
-    nao: 'sua visão 20/20 de predador',
+    nao: 'sua visão 20/20',
   },
   idade: {
     teen:     'sua energia jovem e caótica',
@@ -411,20 +422,20 @@ const ROTULOS_MATCH = {
   filme: {
     sobrevive: 'seu instinto de sobrevivente',
     vitima:    'seu talento nato para o azar',
-    assassino: 'sua energia de vilão de franquia',
+    assassino: 'sua energia de vilão',
   },
   festa: {
     bebida:  'seu espírito 100% festeiro',
-    filmes:  'sua alma cinéfila',
-    rituais: 'seu gosto refinado pelo oculto',
+    filmes:  'sua alma de maratonista de sofá',
+    rituais: 'seu gosto refinado pelo mistério',
   },
   arma: {
-    machado:  'sua diplomacia à base de machado',
+    machado:  'sua diplomacia à base de músculo',
     magia:    'sua afinidade mística',
-    sarcasmo: 'sua língua mais afiada que foice',
+    sarcasmo: 'sua língua afiada',
   },
   vibe: {
-    assustar:     'sua missão sagrada de aterrorizar',
+    assustar:     'sua missão sagrada de chocar',
     divertir:     'sua missão sagrada de fazer rir',
     impressionar: 'sua fome de troféu',
     conforto:     'sua sabedoria suprema do conforto',
@@ -436,17 +447,47 @@ const ROTULOS_MATCH = {
    não tem cor — qualquer pessoa pode ser qualquer personagem, e
    jamais sugerimos alterar a cor da pele. A escolha serve só para
    o resumo do perfil e para estas dicas práticas de
-   contraste de tintas, glitters e efeitos no guia de montagem. */
+   contraste de tintas, glitters e efeitos no guia de montagem.
+   Cada tema traz as suas em `dicasPele`; estas são o padrão. */
 const DICAS_PELE = {
   clara:
-    'Tons neon, roxo e preto contrastam forte em você. Para efeito "pálido" (vampiro, fantasma) use base marfim: branco puro fica chapado e artificial.',
+    'Tons neon, roxo e preto contrastam forte em você. Para pintura clara, use base marfim: branco puro fica chapado e artificial.',
   media:
-    'Dourado, cobre e glitter holográfico ficam incríveis. Para efeitos pálidos, misture a tinta branca com um pouco da sua base para não "acinzentar".',
+    'Dourado, cobre e glitter holográfico ficam incríveis. Para tintas claras, misture com um pouco da sua base para não "acinzentar".',
   morena:
-    'Tinta branca e cores neon dão contraste máximo: caveira, esqueleto e Catrina ficam espetaculares. Glitter dourado e bronze realçam ainda mais.',
+    'Tinta branca e cores neon dão contraste máximo. Glitter dourado e bronze realçam ainda mais.',
   negra:
-    'Branco, prata e neon têm contraste altíssimo em você: maquiagens de caveira, esqueleto e Catrina ficam cinematográficas. Glitter dourado e cobre brilham demais.',
+    'Branco, prata e neon têm contraste altíssimo em você. Glitter dourado e cobre brilham demais.',
 };
+
+/* ---------- Aplicação do tema ----------
+   Sobrescreve, no lugar, os textos que mudam com a época. As chaves
+   (categoria/valor) nunca mudam, então os pesos das fantasias e as
+   regras das opções continuam valendo em qualquer tema. */
+function aplicarTema(tema) {
+  for (const [categoria, ajuste] of Object.entries(tema.perguntas ?? {})) {
+    const pergunta = TODAS_AS_PERGUNTAS.find((p) => p.categoria === categoria);
+    if (!pergunta) {
+      console.warn(`[BestFantasia] tema ${tema.id}: pergunta desconhecida "${categoria}"`);
+      continue;
+    }
+    if (ajuste.titulo) pergunta.titulo = ajuste.titulo;
+    for (const [valor, textos] of Object.entries(ajuste.opcoes ?? {})) {
+      const opcao = pergunta.opcoes.find((o) => o.valor === valor);
+      if (!opcao) {
+        console.warn(`[BestFantasia] tema ${tema.id}: ${categoria}="${valor}" não é opção do quiz`);
+        continue;
+      }
+      Object.assign(opcao, textos);
+    }
+  }
+  for (const [categoria, rotulos] of Object.entries(tema.rotulosMatch ?? {})) {
+    ROTULOS_MATCH[categoria] = { ...ROTULOS_MATCH[categoria], ...rotulos };
+  }
+  Object.assign(DICAS_PELE, tema.dicasPele ?? {});
+}
+
+aplicarTema(TEMA);
 
 /* ---------- Registro central de fantasias ----------
    Cada arquivo em data/ chama registrarFantasias([...]) para

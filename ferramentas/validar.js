@@ -11,6 +11,10 @@
    Sai com código 1 se houver ERRO. AVISO não bloqueia.
    Carrega os mesmos scripts do index.html, na mesma ordem
    (menos o main.js, que depende do navegador).
+
+   Roda com o tema padrão (TEMA_PADRAO em tema.js). Como cada tema
+   pode ajustar a pontuação (TEMA.regras), valide também os outros:
+     TEMA=halloween node ferramentas/validar.js
    ============================================================ */
 
 const fs = require('fs');
@@ -25,12 +29,17 @@ const scripts = [...html.matchAll(/<script src="([^"]+)"><\/script>/g)]
 
 const codigo =
   scripts.map((src) => fs.readFileSync(path.join(RAIZ, src), 'utf8')).join('\n;\n') +
-  '\n;globalThis.__api = { FANTASIAS, TODAS_AS_PERGUNTAS, PERGUNTAS_PRATICAS, CATEGORIAS, FICHA_VALORES,' +
+  '\n;globalThis.__api = { TEMA, TEMAS, FANTASIAS, TODAS_AS_PERGUNTAS, PERGUNTAS_PRATICAS, CATEGORIAS, FICHA_VALORES,' +
   ' ROTULOS_MATCH, OPCOES, avaliar, compararAvaliacoes, recomendarFantasia, montarMotivos,' +
   ' pontosDaResposta, completarEscolhas, SUAVIZACAO_RANKING };';
-const contexto = vm.createContext({ console });
-vm.runInContext(codigo, contexto, { filename: 'bestfantasia (data + logic)' });
+// TEMA=<id> força o tema (ver tema.js); sem a variável, vale o padrão do site.
+const contexto = vm.createContext({ console, TEMA_FORCADO: process.env.TEMA });
+vm.runInContext(codigo, contexto, { filename: 'bestfantasia (temas + data + logic)' });
 const api = contexto.__api;
+if (process.env.TEMA && !api.TEMAS[process.env.TEMA]) {
+  console.error(`tema desconhecido: ${process.env.TEMA} (existem: ${Object.keys(api.TEMAS).join(', ')})`);
+  process.exit(1);
+}
 
 const erros = [];
 const avisos = [];
@@ -245,6 +254,7 @@ for (const [esperado, escolhas] of CASOS) {
 /* ---------------- Relatório ---------------- */
 
 const porCategoria = api.CATEGORIAS.map((c) => `${c}: ${api.FANTASIAS.filter((f) => f.categoria === c).length}`).join(' · ');
+console.log(`Tema: ${api.TEMA.nome} (${api.TEMA.regras.length} ajuste(s) de pontuação da época)`);
 console.log(`Fantasias: ${api.FANTASIAS.length} (${porCategoria})`);
 console.log(`Perguntas: ${api.TODAS_AS_PERGUNTAS.length} · suavização do ranking: ${api.SUAVIZACAO_RANKING}`);
 console.log(`Alcance: ${api.FANTASIAS.length - inalcancaveis.length}/${api.FANTASIAS.length} fantasias conseguem vencer`);

@@ -1,9 +1,13 @@
-# 🎃 BestFantasia
+# 🎭 BestFantasia
 
 Quiz gamificado de fantasias: o visitante responde até 19 perguntas rápidas em 3
 etapas (físico, personalidade e "na prática") e recebe a **fantasia ideal** com
 **guia completo de montagem**: itens numerados com links de compra, passo a
 passo, fantasias que fazem par com ela e alternativas do pódio.
+
+O site muda de roupa conforme a época: hoje está no tema **Carnaval**; o tema
+**Halloween** fica guardado em `temas/halloween.js` e volta com a troca de uma
+constante (ver [Temas](#temas)).
 
 **Stack:** HTML5 + CSS3 + JavaScript vanilla. Zero dependências, zero build.
 
@@ -21,7 +25,9 @@ python3 -m http.server 8000
 | Arquivo                 | Responsabilidade                                                         |
 |-------------------------|--------------------------------------------------------------------------|
 | `index.html`            | Estrutura das telas da SPA e posições de anúncio                         |
-| `style.css`             | Tema (tokens CSS), componentes e animações                               |
+| `style.css`             | Tokens CSS (com um bloco de cores por tema), componentes e animações     |
+| `tema.js`               | Escolhe o tema da época (`TEMA_PADRAO`) e marca o `<html>`               |
+| `temas/*.js`            | Um arquivo por tema: textos, perguntas, rótulos, dicas e ajustes         |
 | `data.js`               | Perguntas, regras de pontuação, ficha, rótulos e registro de fantasias   |
 | `data/*.js`             | 289 fantasias, um arquivo por categoria (ver abaixo)                     |
 | `logic.js`              | Motor de recomendação genérico (puro, testável no console)               |
@@ -43,8 +49,10 @@ python3 -m http.server 8000
 
 1. **Físico:** gênero, tom de pele, altura, biotipo, cabelo, barba e óculos.
    A barba some para quem escolhe Feminino e conta como "sem barba".
-2. **Personalidade:** faixa etária, o que mais assiste, papel no filme de
-   terror, festa ideal, arma e missão no Halloween.
+2. **Personalidade:** faixa etária, o que mais assiste, e quatro perguntas de
+   traço de personalidade cujo enunciado muda com o tema (no Halloween: papel
+   no filme de terror, festa ideal, arma e missão; no Carnaval: papel no bloco,
+   Carnaval ideal, arma no bloco e missão na folia).
 3. **Na prática:** com quem vai (sozinho, par ou turma), o que topa no rosto,
    se quer uma fantasia provocante (some para menores de 18 e conta como
    "não"), onde vai usar (festa fechada, balada, bloco de rua, escola/trabalho), quanto
@@ -56,6 +64,40 @@ python3 -m http.server 8000
 > contraste de tintas e glitters no guia de montagem (`DICAS_PELE` em `data.js`).
 > O validador falha se alguém tentar usar o tom de pele na pontuação.
 
+## Temas
+
+Tudo o que é "de época" vive num único objeto por tema, em `temas/<id>.js`
+(`temas/halloween.js` e `temas/carnaval.js`): textos das telas, emojis
+flutuantes, enunciado e opções das perguntas de personalidade, rótulos dos
+motivos do match, dicas de maquiagem e ajustes de pontuação. As cores e a fonte
+de título de cada tema ficam em `style.css`, no bloco `:root[data-tema="<id>"]`.
+
+As **chaves** das perguntas e dos pesos nunca mudam (`filme: sobrevive`,
+`arma: magia`…): cada tema só reescreve o enunciado. Assim as 289 fantasias e
+seus pesos valem para qualquer época sem edição.
+
+### Trocar a temporada (Halloween ⇄ Carnaval)
+
+1. Em `tema.js`, mude `TEMA_PADRAO` (`'carnaval'` ou `'halloween'`).
+2. Em `index.html`, atualize as duas linhas de Open Graph (`og:title` e
+   `og:description`): os previews de WhatsApp e Twitter leem o HTML e não rodam
+   JavaScript. O comentário ao lado guarda o texto de cada tema.
+3. Rode `node ferramentas/validar.js` (ele usa o tema padrão) e abra o site.
+
+Para espiar outro tema sem publicar, abra o site com `?tema=halloween` na URL.
+O validador aceita o mesmo por variável de ambiente:
+`TEMA=halloween node ferramentas/validar.js`.
+
+### Criar um tema novo
+
+1. Copie `temas/carnaval.js` para `temas/<id>.js` e preencha o objeto (o
+   formato está comentado no topo do arquivo).
+2. Em `style.css`, crie o bloco `:root[data-tema="<id>"]` com as cores e a
+   fonte de título; se a fonte for nova, inclua-a no link do Google Fonts das 4
+   páginas HTML.
+3. Inclua o `<script src="temas/<id>.js">` no `<head>` das 4 páginas, antes de
+   `tema.js`.
+
 ## Como a recomendação funciona
 
 Cada resposta soma pontos a cada fantasia por dois caminhos (motor em `logic.js`):
@@ -65,6 +107,11 @@ Cada resposta soma pontos a cada fantasia por dois caminhos (motor em `logic.js`
 2. **Regras** (`regras` nas opções das perguntas, em `data.js`) — leem a
    **ficha** de todas as fantasias de uma vez. Ex.: "Bloco de rua, no calor"
    dá +6 a fantasias de `calor: 1` e −9 às de `calor: 3`.
+
+O tema da época pode ainda dar um empurrão fixo pela ficha (`regras` em
+`temas/<id>.js`): no Carnaval, fantasia fresca (`calor: 1`) ganha +2 e fantasia
+pesada (`susto: 2`) perde 3. Esse ajuste entra na pontuação, mas não no máximo
+teórico, e é pequeno de propósito para toda fantasia continuar alcançável.
 
 A **ficha** guarda fatos objetivos de cada fantasia: `rosto`, `calor`,
 `volume`, `formato` (solo/casal/grupo), `susto`, `reconhecimento`, `ousadia`
@@ -94,6 +141,8 @@ determinístico: mesmas respostas, mesma fantasia.
   `regras` nas opções. Nenhuma fantasia precisa ser editada.
 - **Sobre gosto ou personalidade:** declare a pergunta e adicione `pesos` nas
   fantasias que se destacam nela, com rótulos em `ROTULOS_MATCH`.
+- Se o enunciado depender da época, deixe a versão neutra em `data.js` e
+  sobrescreva em `perguntas` de cada tema (`temas/*.js`).
 
 Depois, rode o validador.
 
@@ -107,7 +156,8 @@ Depois, rode o validador.
 - **casos de referência** (ex.: careca + cavanhaque + óculos + cultura pop → Walter White);
 - que o tom de pele não muda nenhum resultado.
 
-Ele termina com código 1 se encontrar erro.
+Ele termina com código 1 se encontrar erro. Roda no tema padrão; para conferir
+os outros, `TEMA=halloween node ferramentas/validar.js`.
 
 ## Monetização
 
