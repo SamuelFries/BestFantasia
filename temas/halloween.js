@@ -24,7 +24,7 @@ TEMAS.halloween = {
       '<strong>guia completo de montagem</strong>: itens, passo a passo e onde comprar. ' +
       '<em>Se tiver coragem.</em> 👀',
     botaoComecar: '👻 Descobrir Minha Fantasia',
-    notaHome: '⏱️ 2 minutinhos &nbsp;•&nbsp; 🧛 <span id="total-fantasias">289</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso',
+    notaHome: '⏱️ 2 minutinhos &nbsp;•&nbsp; 🧛 <span id="total-fantasias">300</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso',
     subtituloPersonalidade: 'Perguntas rápidas. Os espíritos detectam mentiras (e julgam).',
     subtituloPratica: 'Para a fantasia caber na sua festa, no seu rosto e no seu bolso.',
     botaoConsultar: 'Consultar os Espíritos 🔮',

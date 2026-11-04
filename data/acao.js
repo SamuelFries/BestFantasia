@@ -875,4 +875,27 @@ registrarFantasias([
       'Entre saltitando, levante o cinturão e peça para tocarem a sua música de entrada.',
     ],
   },
+  {
+    id: 299, nome: 'Capoeirista', emoji: '🤸', categoria: 'Ação & Aventura',
+    dificuldade: 'Fácil', custo: 1,
+    ficha: { rosto: 'livre', calor: 1, volume: 1, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 0 },
+    descricao: 'Calça branca, corda na cintura e um berimbau que só você sabe tocar. Ginga, esquiva e, quando a roda abre, você já está no meio.',
+    imagem: 'https://source.unsplash.com/600x400/?capoeira,brazil',
+    pesos: {
+      genero: { masc: 5, neutro: 4 }, altura: { baixo: 4, medio: 4 }, biotipo: { atletico: 10 }, cabelo: { curto: 4, careca: 4 }, barba: { sem: 3 },
+      filme: { sobrevive: 9 }, festa: { bebida: 4, rituais: 4 }, arma: { machado: 6, magia: 3 },
+      estilo: { acao: 8 }, idade: { jovem: 6, adulto: 4 }, vibe: { conforto: 5, impressionar: 4 },
+    },
+    itens: [
+      { nome: 'Calça branca de capoeira', emoji: '👖', busca: 'calça capoeira branca' },
+      { nome: 'Corda colorida de graduação', emoji: '🪢', busca: 'corda capoeira' },
+      { nome: 'Berimbau', emoji: '🪕', busca: 'berimbau' },
+      { nome: 'Camiseta branca (a sua)', emoji: '👕', busca: null },
+    ],
+    passos: [
+      'Calça branca, camiseta branca e a corda amarrada na cintura com o nó para o lado.',
+      'Descalço ou de tênis branco; o berimbau vai nas costas até alguém pedir uma roda.',
+      'Treine a ginga e uma esquiva na frente do espelho: duas movimentações já garantem a fantasia.',
+    ],
+  },
 ]);

@@ -2660,4 +2660,29 @@ registrarFantasias([
       'Esfregue a lâmpada sempre que o copo esvaziar e faça seus três desejos ao barman.',
     ],
   },
+  {
+    id: 300, nome: 'Carmen Miranda', emoji: '🍌', categoria: 'Cultura Pop',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 2, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 1 },
+    descricao: 'Turbante de frutas, colares até o umbigo e o sorriso que levou o Brasil para Hollywood. Tutti-frutti, mas com muito glamour.',
+    imagem: 'https://source.unsplash.com/600x400/?fruit,hat,carnival',
+    pesos: {
+      genero: { fem: 7, neutro: 4 }, altura: { baixo: 5, medio: 4 }, biotipo: { magro: 4, atletico: 3 }, cabelo: { longo: 3, curto: 3 },
+      filme: { sobrevive: 5 }, festa: { bebida: 7 }, arma: { sarcasmo: 6, magia: 3 },
+      estilo: { pop: 6, comedia: 5 }, idade: { classico: 6, adulto: 4 }, vibe: { divertir: 6, impressionar: 6 },
+    },
+    itens: [
+      { nome: 'Turbante de frutas', emoji: '🍌', busca: 'turbante frutas carmen miranda' },
+      { nome: 'Colares coloridos (vários)', emoji: '📿', busca: 'colares coloridos carnaval' },
+      { nome: 'Saia longa estampada', emoji: '👗', busca: 'saia longa estampada' },
+      { nome: 'Blusa com babados', emoji: '👚', busca: 'blusa babados' },
+      { nome: 'Pulseiras coloridas', emoji: '💍', busca: 'pulseiras coloridas' },
+      { nome: 'Batom vermelho', emoji: '💄', busca: 'batom vermelho' },
+    ],
+    passos: [
+      'Saia longa, blusa de babados e todos os colares e pulseiras que você tiver, ao mesmo tempo.',
+      'Monte o turbante colando frutas de plástico num lenço enrolado; bananas na frente, sempre.',
+      'Batom vermelho, sobrancelha marcada e as mãos no alto: "chica chica boom chic" é a senha.',
+    ],
+  },
 ]);

@@ -41,3 +41,38 @@ if (typeof document !== 'undefined') {
   const corTema = document.querySelector('meta[name="theme-color"]');
   if (corTema) corTema.content = TEMA.corTema;
 }
+
+/* ---------- Efeito de fundo do tema (ex.: confete no Carnaval) ----------
+   Roda em todas as páginas (tema.js está no <head> de todas). Cada
+   pedaço é um <i> com posição, tamanho, cor e ritmo próprios; a queda
+   é animação CSS (.confete em style.css). Delay negativo faz a chuva
+   já começar espalhada pela tela. Quem desativa animações no sistema
+   não recebe confete. */
+function soltarConfete() {
+  const confete = TEMA.confete;
+  if (!confete || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const camada = document.createElement('div');
+  camada.className = 'confete';
+  camada.setAttribute('aria-hidden', 'true');
+
+  const pedacos = [];
+  for (let i = 0; i < (confete.quantidade ?? 60); i++) {
+    const cor = confete.cores[i % confete.cores.length];
+    const largura = 6 + Math.random() * 6;
+    const altura = largura * (0.6 + Math.random() * 1.2);
+    const duracao = 7 + Math.random() * 7;
+    const atraso = -Math.random() * duracao;
+    const redondo = i % 3 === 0 ? 'border-radius:50%;' : '';
+    pedacos.push(
+      `<i style="left:${(Math.random() * 100).toFixed(1)}%;width:${largura.toFixed(1)}px;height:${altura.toFixed(1)}px;` +
+        `background:${cor};animation-duration:${duracao.toFixed(1)}s;animation-delay:${atraso.toFixed(1)}s;${redondo}"></i>`
+    );
+  }
+  camada.innerHTML = pedacos.join('');
+  document.body.prepend(camada);
+}
+
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', soltarConfete);
+}

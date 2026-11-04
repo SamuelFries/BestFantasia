@@ -9,6 +9,8 @@
                      as demais cores ficam em style.css, no bloco
                      :root[data-tema="<id>"]
    floaters          5 emojis decorativos do fundo (index.html)
+   confete           (opcional) chuva de confete no fundo de todas as
+                     páginas: { cores: [...], quantidade } (tema.js)
    textos            textos das telas; `data-texto="chave"` recebe
                      texto puro e `data-html="chave"` recebe HTML
    perguntas         enunciado e opções das perguntas que mudam com
@@ -30,6 +32,10 @@ TEMAS.carnaval = {
   emoji: '🎭',
   corTema: '#0b0a1f',
   floaters: ['🎭', '🎉', '🥁', '🎊', '🪇'],
+  confete: {
+    cores: ['#ff2d95', '#ffd23f', '#2cf0a0', '#3fd3ff', '#ff7a3d', '#b983ff'],
+    quantidade: 80,
+  },
 
   textos: {
     badgeHome: '🎭 Especial de Carnaval',
@@ -38,7 +44,7 @@ TEMAS.carnaval = {
       '<strong>guia completo de montagem</strong>: itens, passo a passo e onde comprar. ' +
       '<em>Se tiver samba no pé.</em> 💃',
     botaoComecar: '🎉 Descobrir Minha Fantasia',
-    notaHome: '⏱️ 2 minutinhos &nbsp;•&nbsp; 🎭 <span id="total-fantasias">289</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso',
+    notaHome: '⏱️ 2 minutinhos &nbsp;•&nbsp; 🎭 <span id="total-fantasias">300</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso',
     subtituloPersonalidade: 'Perguntas rápidas. A bateria detecta mentiras (e julga).',
     subtituloPratica: 'Para a fantasia caber no seu bloco, no seu rosto e no seu bolso.',
     botaoConsultar: 'Chamar a Bateria 🥁',

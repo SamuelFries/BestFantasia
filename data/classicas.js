@@ -466,7 +466,7 @@ registrarFantasias([
   {
     id: 248, nome: 'Pierrô', emoji: '🤍', categoria: 'Clássicas',
     dificuldade: 'Fácil', custo: 1,
-    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [249] },
+    ficha: { rosto: 'pintura', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 0, par: [249, 290] },
     descricao: 'Roupa branca de pompons, rosto pálido e uma lágrima pintada. O apaixonado mais clássico do Carnaval, sempre suspirando pela Colombina.',
     imagem: 'https://source.unsplash.com/600x400/?pierrot,white,clown,tear',
     pesos: {
@@ -490,7 +490,7 @@ registrarFantasias([
   {
     id: 249, nome: 'Colombina', emoji: '🎭', categoria: 'Clássicas',
     dificuldade: 'Média', custo: 2,
-    ficha: { rosto: 'mascara', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 1, par: [248] },
+    ficha: { rosto: 'mascara', calor: 1, volume: 1, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 1, par: [248, 290] },
     descricao: 'Máscara de olhos, saia rodada e o charme que deixou Pierrô e Arlequim brigando há séculos. A rainha das marchinhas.',
     imagem: 'https://source.unsplash.com/600x400/?colombina,carnival,mask',
     pesos: {
@@ -894,6 +894,102 @@ registrarFantasias([
       'Prenda o lençol num ombro só com um broche e amarre o cordão dourado na cintura.',
       'Coroa de louros na cabeça, sandália de tiras e óleo corporal para o brilho divino.',
       'Distribua bênçãos aleatórias e trate todo pedido como uma oferenda.',
+    ],
+  },
+  {
+    id: 290, nome: 'Arlequim', emoji: '🃏', categoria: 'Clássicas',
+    dificuldade: 'Fácil', custo: 2,
+    ficha: { rosto: 'mascara', calor: 2, volume: 1, formato: ['solo', 'casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [249, 248] },
+    descricao: 'Losangos coloridos, meia-máscara e a língua mais rápida do baile. Você engana todo mundo rindo e ainda sai como o mais fotografado.',
+    imagem: 'https://source.unsplash.com/600x400/?harlequin,carnival',
+    pesos: {
+      genero: { masc: 6, neutro: 4 }, altura: { baixo: 4, medio: 4 }, biotipo: { magro: 6, atletico: 4 }, cabelo: { curto: 4, colorido: 5 }, barba: { sem: 5 },
+      filme: { sobrevive: 6 }, festa: { bebida: 6 }, arma: { sarcasmo: 8 },
+      estilo: { comedia: 6, fantasia: 3 }, idade: { jovem: 5, adulto: 4 }, vibe: { divertir: 8 },
+    },
+    itens: [
+      { nome: 'Roupa de losangos coloridos', emoji: '🃏', busca: 'fantasia arlequim losangos' },
+      { nome: 'Meia-máscara preta', emoji: '🎭', busca: 'meia máscara preta carnaval' },
+      { nome: 'Chapéu de duas pontas com guizos', emoji: '🔔', busca: 'chapéu arlequim guizos' },
+      { nome: 'Gola rufo branca', emoji: '⚪', busca: 'gola rufo fantasia' },
+      { nome: 'Sapatilha ou tênis preto', emoji: '👟', busca: null },
+    ],
+    passos: [
+      'Vista a roupa de losangos com a gola rufo por cima; se não achar o macacão, pinte losangos numa camiseta e numa calça brancas com tinta de tecido.',
+      'Prenda o chapéu de guizos e ajuste a meia-máscara deixando a boca livre: o sorriso é parte da fantasia.',
+      'Chame Pierrô e Colombina e reviva o triângulo mais antigo do Carnaval, com direito a cambalhota de entrada.',
+    ],
+  },
+  {
+    id: 291, nome: 'Mestre-Sala', emoji: '🎩', categoria: 'Clássicas',
+    dificuldade: 'Caprichada', custo: 3,
+    ficha: { rosto: 'livre', calor: 3, volume: 2, formato: ['casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [292] },
+    descricao: 'Casaca bordada, tricórnio de plumas e o passo mais elegante da avenida. Você não dança: você conduz, e a bandeira só balança quando você deixa.',
+    imagem: 'https://source.unsplash.com/600x400/?samba,parade,costume',
+    pesos: {
+      genero: { masc: 8 }, altura: { alto: 5, medio: 4 }, biotipo: { atletico: 7 }, cabelo: { curto: 5 }, barba: { sem: 4, bigode: 4 },
+      filme: { sobrevive: 7 }, festa: { rituais: 5, bebida: 3 }, arma: { magia: 6 },
+      estilo: { fantasia: 4, acao: 3 }, idade: { adulto: 6, classico: 5 }, vibe: { impressionar: 9 },
+    },
+    itens: [
+      { nome: 'Casaca bordada com brilho', emoji: '🧥', busca: 'casaca fantasia mestre sala' },
+      { nome: 'Calça branca justa', emoji: '👖', busca: null },
+      { nome: 'Chapéu tricórnio com plumas', emoji: '🎩', busca: 'chapéu tricórnio plumas' },
+      { nome: 'Luvas brancas', emoji: '🧤', busca: 'luvas brancas fantasia' },
+      { nome: 'Sapato branco ou de verniz', emoji: '👞', busca: 'sapato verniz branco' },
+    ],
+    passos: [
+      'Casaca por cima de camisa branca, calça justa e sapato impecável: tudo alinhado, nada de dobra à mostra.',
+      'Cole pedrarias e lantejoulas na casaca e nas abas do tricórnio; quanto mais brilho, mais avenida.',
+      'Ensaie o passo em meia-ponta com a porta-bandeira e nunca, jamais, dê as costas para ela.',
+    ],
+  },
+  {
+    id: 292, nome: 'Porta-Bandeira', emoji: '🚩', categoria: 'Clássicas',
+    dificuldade: 'Caprichada', custo: 3,
+    ficha: { rosto: 'leve', calor: 3, volume: 3, formato: ['casal', 'grupo'], susto: 0, reconhecimento: 3, ousadia: 0, par: [291] },
+    descricao: 'Saia armada que ocupa meia avenida, coroa cravejada e um giro que para a bateria. A bandeira é da escola, mas a noite é sua.',
+    imagem: 'https://source.unsplash.com/600x400/?samba,queen,costume',
+    pesos: {
+      genero: { fem: 9 }, altura: { medio: 4, alto: 4 }, biotipo: { atletico: 5, forte: 3 }, cabelo: { longo: 6 },
+      filme: { sobrevive: 7 }, festa: { rituais: 5, bebida: 3 }, arma: { magia: 7 },
+      estilo: { fantasia: 5 }, idade: { adulto: 6, classico: 5 }, vibe: { impressionar: 10 },
+    },
+    itens: [
+      { nome: 'Vestido de saia armada', emoji: '👗', busca: 'vestido saia armada fantasia' },
+      { nome: 'Coroa de strass', emoji: '👑', busca: 'coroa fantasia strass' },
+      { nome: 'Luvas longas de cetim', emoji: '🧤', busca: 'luvas longas cetim' },
+      { nome: 'Bandeira pequena com bastão', emoji: '🚩', busca: 'bandeira bastão fantasia' },
+      { nome: 'Glitter para o rosto e o colo', emoji: '✨', busca: 'glitter rosto maquiagem' },
+    ],
+    passos: [
+      'Monte a saia com anágua ou arame para ficar armada; a silhueta é o que faz a fantasia.',
+      'Coroa bem presa, luvas longas e glitter no colo e nas têmporas; maquiagem forte para ser vista de longe.',
+      'Segure a bandeira pelo bastão, gire devagar e deixe o mestre-sala fazer a corte: o par é obrigatório.',
+    ],
+  },
+  {
+    id: 293, nome: 'Passista de Frevo', emoji: '☂️', categoria: 'Clássicas',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'livre', calor: 1, volume: 2, formato: ['solo', 'grupo'], susto: 0, reconhecimento: 2, ousadia: 0 },
+    descricao: 'Sombrinha colorida, calça de cetim e joelho de aço. Você sobe, desce, gira e ainda sorri, enquanto o resto do bloco pede água.',
+    imagem: 'https://source.unsplash.com/600x400/?frevo,umbrella,carnival',
+    pesos: {
+      genero: { neutro: 5, masc: 4 }, altura: { baixo: 6 }, biotipo: { atletico: 8, magro: 4 }, cabelo: { curto: 4, colorido: 4 },
+      filme: { sobrevive: 8 }, festa: { bebida: 5 }, arma: { machado: 4, sarcasmo: 4 },
+      estilo: { acao: 5, comedia: 4 }, idade: { jovem: 6, teen: 5 }, vibe: { divertir: 6, impressionar: 4 },
+    },
+    itens: [
+      { nome: 'Sombrinha de frevo', emoji: '☂️', busca: 'sombrinha frevo' },
+      { nome: 'Calça de cetim colorida', emoji: '👖', busca: 'calça cetim colorida' },
+      { nome: 'Camisa colorida ou listrada', emoji: '👕', busca: 'camisa cetim colorida' },
+      { nome: 'Lenço para a cabeça', emoji: '🧣', busca: 'bandana colorida' },
+      { nome: 'Tênis branco (o seu)', emoji: '👟', busca: null },
+    ],
+    passos: [
+      'Calça de cetim, camisa colorida e lenço na cabeça; cores diferentes em cada peça, quanto mais contraste melhor.',
+      'Abra a sombrinha só na hora de dançar: fechada ela é bastão, aberta é a fantasia inteira.',
+      'Aprenda dois passos (tesoura e saci bastam) e repita até o bloco abrir roda em volta de você.',
     ],
   },
 ]);

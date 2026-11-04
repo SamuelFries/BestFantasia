@@ -29,7 +29,7 @@ python3 -m http.server 8000
 | `tema.js`               | Escolhe o tema da época (`TEMA_PADRAO`) e marca o `<html>`               |
 | `temas/*.js`            | Um arquivo por tema: textos, perguntas, rótulos, dicas e ajustes         |
 | `data.js`               | Perguntas, regras de pontuação, ficha, rótulos e registro de fantasias   |
-| `data/*.js`             | 289 fantasias, um arquivo por categoria (ver abaixo)                     |
+| `data/*.js`             | 300 fantasias, um arquivo por categoria (ver abaixo)                     |
 | `logic.js`              | Motor de recomendação genérico (puro, testável no console)               |
 | `main.js`               | Estado da UI, navegação, renderização, anúncios e compartilhamento       |
 | `fantasias/`            | **Gerado.** Uma página estática por fantasia + catálogo (`index.html`)  |
@@ -54,12 +54,12 @@ renomear uma fantasia muda o endereço dela.
 
 | Arquivo           | Categoria          | Qtd. |
 |-------------------|--------------------|-----:|
-| `terror.js`       | Terror             |   42 |
-| `classicas.js`    | Clássicas          |   37 |
-| `acao.js`         | Ação & Aventura    |   36 |
-| `magia.js`        | Fantasia & Magia   |   29 |
-| `divertidas.js`   | Divertidas         |   34 |
-| `cultura-pop.js`  | Cultura Pop        |  111 |
+| `terror.js`       | Terror             |   43 |
+| `classicas.js`    | Clássicas          |   41 |
+| `acao.js`         | Ação & Aventura    |   37 |
+| `magia.js`        | Fantasia & Magia   |   30 |
+| `divertidas.js`   | Divertidas         |   37 |
+| `cultura-pop.js`  | Cultura Pop        |  112 |
 
 ## O quiz
 
@@ -89,7 +89,7 @@ motivos do match, dicas de maquiagem e ajustes de pontuação. As cores e a font
 de título de cada tema ficam em `style.css`, no bloco `:root[data-tema="<id>"]`.
 
 As **chaves** das perguntas e dos pesos nunca mudam (`filme: sobrevive`,
-`arma: magia`…): cada tema só reescreve o enunciado. Assim as 289 fantasias e
+`arma: magia`…): cada tema só reescreve o enunciado. Assim as 300 fantasias e
 seus pesos valem para qualquer época sem edição.
 
 ### Trocar a temporada (Halloween ⇄ Carnaval)

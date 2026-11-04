@@ -82,7 +82,7 @@
         <strong>guia completo de montagem</strong>: itens, passo a passo e onde comprar.
       </p>
       <button id="btn-start" class="btn-primary btn-pulse" type="button" data-texto="botaoComecar">Descobrir Minha Fantasia</button>
-      <p class="nota" data-html="notaHome">⏱️ 2 minutinhos &nbsp;•&nbsp; <span id="total-fantasias">289</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
+      <p class="nota" data-html="notaHome">⏱️ 2 minutinhos &nbsp;•&nbsp; <span id="total-fantasias">300</span> fantasias, de clássicos a cultura pop &nbsp;•&nbsp; 🧵 guia de montagem incluso</p>
 
       <!-- Conteúdo estático: explica o site para quem chega (e para o
            Google, que não responde o quiz). Sem anúncio nesta tela. -->
@@ -164,6 +164,11 @@
     <section id="screen-resultado" class="screen" aria-labelledby="resultado-nome">
       <p class="badge" data-texto="badgeResultado">Guia da sua fantasia</p>
 
+      <!-- Duas colunas no PC (cartão fixo + guia); no celular os
+           agrupadores somem (display: contents) e o CSS reordena. -->
+      <div class="resultado-layout">
+      <div class="resultado-coluna resultado-coluna--fixa">
+
       <!-- Cartão da vencedora -->
       <article class="card-resultado">
         <div id="resultado-emoji" class="resultado-emoji" aria-hidden="true">🧛</div>
@@ -184,6 +189,20 @@
         </div>
       </article>
 
+      <!-- Página estática do guia (fantasias/<slug>.html), href no main.js -->
+      <a id="link-guia-completo" class="link-guia-completo" href="fantasias/">Abrir a página completa deste guia, com dicas práticas →</a>
+
+      <!-- Compartilhamento: links reais, preenchidos pelo main.js -->
+      <div class="share-row">
+        <a id="btn-share-wa" class="btn-share btn-share--wa" href="#" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+        <a id="btn-share-tw" class="btn-share btn-share--tw" href="#" target="_blank" rel="noopener noreferrer">🐦 Twitter</a>
+      </div>
+      <button id="btn-share-copy" class="btn-share btn-share--copy" type="button">🔗 Copiar link do teste</button>
+      <button id="btn-restart" class="btn-voltar" type="button" style="align-self:center">🔁 Fazer o teste de novo</button>
+
+      </div>
+      <div class="resultado-coluna resultado-coluna--guia">
+
       <!-- Anúncio 1: depois da revelação, antes do guia. Mantenha as divs de
            anúncio sem espaços internos: o CSS as esconde enquanto :empty. -->
       <div class="adsense-slot" data-anuncio="resultadoAposCartao"></div>
@@ -203,9 +222,6 @@
         <p id="resultado-dica-pele" class="dica-pele hidden"></p>
       </article>
 
-      <!-- Página estática do guia (fantasias/<slug>.html), href no main.js -->
-      <a id="link-guia-completo" class="link-guia-completo" href="fantasias/">Abrir a página completa deste guia, com dicas práticas →</a>
-
       <!-- Anúncio 2: depois do passo a passo. Longe dos botões "Ver na Amazon"
            de propósito, para não ser confundido com eles. -->
       <div class="adsense-slot" data-anuncio="resultadoAposPassos"></div>
@@ -222,16 +238,11 @@
         <div id="resultado-alternativas" class="alternativas"></div>
       </div>
 
-      <!-- Compartilhamento: links reais, preenchidos pelo main.js -->
-      <div class="share-row">
-        <a id="btn-share-wa" class="btn-share btn-share--wa" href="#" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
-        <a id="btn-share-tw" class="btn-share btn-share--tw" href="#" target="_blank" rel="noopener noreferrer">🐦 Twitter</a>
-      </div>
-      <button id="btn-share-copy" class="btn-share btn-share--copy" type="button">🔗 Copiar link do teste</button>
-      <button id="btn-restart" class="btn-voltar" type="button" style="align-self:center">🔁 Fazer o teste de novo</button>
-
       <!-- Anúncio 3: base do resultado (320×100 fixo no celular) -->
       <div class="adsense-slot" data-anuncio="resultadoBase"></div>
+
+      </div><!-- /resultado-coluna--guia -->
+      </div><!-- /resultado-layout -->
     </section>
 
   </main>

@@ -1010,4 +1010,28 @@ registrarFantasias([
       'Uive para a lua (ou para a luz da pista) sempre que tocar o refrão.',
     ],
   },
+  {
+    id: 297, nome: 'Zé do Caixão', emoji: '⚰️', categoria: 'Terror',
+    dificuldade: 'Média', custo: 2,
+    ficha: { rosto: 'leve', calor: 3, volume: 2, formato: ['solo'], susto: 1, reconhecimento: 2, ousadia: 0 },
+    descricao: 'Cartola, capa, unhas de dez centímetros e um discurso sobre a continuidade do sangue. O terror brasileiro em pessoa, com direito a risada em eco.',
+    imagem: 'https://source.unsplash.com/600x400/?top,hat,cape,dark',
+    pesos: {
+      genero: { masc: 8 }, altura: { alto: 7 }, biotipo: { magro: 7 }, cabelo: { curto: 4 }, barba: { cheia: 9 }, oculos: { nao: 3 },
+      filme: { assassino: 8 }, festa: { rituais: 8, filmes: 5 }, arma: { magia: 5, sarcasmo: 5 },
+      estilo: { terror: 8 }, idade: { classico: 7, adulto: 4 }, vibe: { assustar: 8 },
+    },
+    itens: [
+      { nome: 'Cartola preta', emoji: '🎩', busca: 'cartola preta' },
+      { nome: 'Capa preta longa', emoji: '🦇', busca: 'capa preta longa' },
+      { nome: 'Terno ou roupa toda preta', emoji: '🕴️', busca: null },
+      { nome: 'Unhas postiças longas pretas', emoji: '💅', busca: 'unhas postiças longas pretas' },
+      { nome: 'Lápis preto para olheiras', emoji: '✏️', busca: 'lápis olho preto' },
+    ],
+    passos: [
+      'Roupa toda preta, capa até o chão e cartola; se a barba for sua, melhor: escureça com rímel.',
+      'Cole as unhas longas e curve os dedos ao falar; olheiras fundas com lápis preto esfumado.',
+      'Fale devagar, em tom de profecia, e solte uma risada grave antes de sair de qualquer conversa.',
+    ],
+  },
 ]);

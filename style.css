@@ -57,17 +57,17 @@
   --fade-ms: 300ms; /* manter em sincronia com DURACAO_FADE_MS no main.js */
 }
 
-/* Carnaval: noite de bloco — azul-meia-noite, rosa-choque, amarelo e verde neon */
+/* Carnaval: noite de bloco — roxo profundo, rosa-choque, amarelo, verde e azul neon */
 :root[data-tema='carnaval'] {
-  --bg: #0b0a1f;
-  --bg-elevado: #15123a;
-  --card: #1a1747;
-  --borda: #352f7a;
+  --bg: #150a36;
+  --bg-elevado: #1f1150;
+  --card: #26175f;
+  --borda: #4b2f9a;
 
-  --secundaria: #7c6cff;
-  --secundaria-rgb: 124, 108, 255;
-  --secundaria-profunda: #3b2fa8;
-  --secundaria-clara: #e2dcff;
+  --secundaria: #9a7bff;
+  --secundaria-rgb: 154, 123, 255;
+  --secundaria-profunda: #4a2fb0;
+  --secundaria-clara: #eae2ff;
 
   --acento: #ff2d95;
   --acento-rgb: 255, 45, 149;
@@ -85,6 +85,25 @@
 
   --fonte-display: 'Lilita One', 'Nunito', system-ui, sans-serif;
   --fonte-display-espaco: 0.02em;
+}
+
+/* Carnaval: luzes coloridas de bloco no fundo (rosa, azul, amarelo, verde) */
+:root[data-tema='carnaval'] body {
+  background-image:
+    radial-gradient(50rem 28rem at 12% -6%, rgba(255, 45, 149, 0.3), transparent 60%),
+    radial-gradient(44rem 26rem at 96% 8%, rgba(63, 211, 255, 0.2), transparent 60%),
+    radial-gradient(40rem 24rem at 50% 108%, rgba(255, 210, 63, 0.18), transparent 60%),
+    radial-gradient(36rem 22rem at 0% 96%, rgba(44, 240, 160, 0.16), transparent 60%);
+}
+
+:root[data-tema='carnaval'] .btn-primary,
+:root[data-tema='carnaval'] .btn-amazon {
+  background: linear-gradient(135deg, #ff2d95, #ff7a3d 55%, #ffd23f);
+}
+
+:root[data-tema='carnaval'] .floaters span {
+  opacity: 0.35;
+  font-size: 2rem;
 }
 
 /* ---------- 2 · Base ---------- */
@@ -236,6 +255,22 @@ button {
   animation: floaty 6s ease-in-out infinite;
 }
 
+/* Chuva de confete (tema.js cria os <i> quando o tema tem `confete`) */
+.confete {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confete i {
+  position: absolute;
+  top: -4vh;
+  opacity: 0.7;
+  animation: confeteCair linear infinite;
+}
+
 /* ---------- 4 · Telas (SPA: esconde/mostra com fade) ---------- */
 .screen {
   display: none;
@@ -264,9 +299,27 @@ button {
   text-shadow: 0 0 24px rgba(var(--secundaria-rgb), 0.55);
 }
 
-/* Lilita One é mais larga que a Creepster: título menor para caber no celular */
+/* Carnaval: título inteiro em degradê (amarelo, rosa, azul, verde) que
+   desfila da esquerda para a direita. Lilita One é mais larga que a
+   Creepster, por isso o tamanho menor para caber no celular. */
 :root[data-tema='carnaval'] .titulo-hero {
   font-size: clamp(2.6rem, 13vw, 3.8rem);
+  background: linear-gradient(90deg, #ffd23f, #ff2d95, #3fd3ff, #2cf0a0, #ffd23f);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 0 14px rgba(255, 45, 149, 0.5)) drop-shadow(0 4px 0 rgba(0, 0, 0, 0.35));
+  animation: desfilar 6s linear infinite;
+}
+
+:root[data-tema='carnaval'] .titulo-hero .brilho-acento {
+  color: inherit;
+  -webkit-text-fill-color: inherit;
+  text-shadow: none;
+  animation: none;
 }
 
 .brilho-acento {
@@ -276,7 +329,7 @@ button {
 }
 
 :root[data-tema='carnaval'] .brilho-acento {
-  animation: festejar 3.2s ease-in-out infinite; /* rosa → laranja → rosa */
+  animation: festejar 3.2s ease-in-out infinite; /* rosa → laranja → rosa (títulos sem degradê) */
 }
 
 .titulo-tela {
@@ -571,11 +624,11 @@ button {
   }
 
   .ad-lateral--esquerda {
-    left: calc(50% - 14rem - 3rem - 160px);
+    left: calc(50% - 27rem - 1.5rem - 160px);
   }
 
   .ad-lateral--direita {
-    right: calc(50% - 14rem - 3rem - 160px);
+    right: calc(50% - 27rem - 1.5rem - 160px);
   }
 }
 
@@ -755,6 +808,29 @@ button {
   color: var(--brilho);
   font-variant-numeric: tabular-nums;
   font-size: 0.9rem;
+}
+
+/* Agrupadores das duas colunas do resultado. No celular são
+   transparentes (display: contents) e `order` mantém a sequência:
+   cartão → guia → compartilhar → anúncio da base. No PC (seção 16)
+   viram colunas de verdade. */
+.resultado-layout,
+.resultado-coluna {
+  display: contents;
+}
+
+.resultado-coluna--guia > * {
+  order: 1;
+}
+
+.share-row,
+#btn-share-copy,
+#btn-restart {
+  order: 2;
+}
+
+.adsense-slot[data-anuncio='resultadoBase'] {
+  order: 3;
 }
 
 /* ---------- 11.5 · Guia de montagem (itens + passos) ---------- */
@@ -1244,6 +1320,18 @@ a.btn-primary {
   }
 }
 
+@keyframes confeteCair {
+  to {
+    transform: translateY(110vh) rotate3d(1, 1, 0, 900deg);
+  }
+}
+
+@keyframes desfilar {
+  to {
+    background-position: 300% 0;
+  }
+}
+
 @keyframes festejar {
   0%,
   100% {
@@ -1271,6 +1359,169 @@ a.btn-primary {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- 16 · PC (a partir de 1024px) ----------
+   No celular o site é uma coluna só. No PC a coluna alarga, a home
+   mostra os passos lado a lado, as perguntas ficam em duas colunas e
+   o resultado vira duas colunas: cartão fixo à esquerda, guia à
+   direita. A largura da coluna (54rem) é a referência dos anúncios
+   laterais (seção 9). */
+@media (min-width: 1024px) {
+  html {
+    font-size: 17px;
+  }
+
+  #app {
+    max-width: 54rem;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  #app.app-largo {
+    max-width: 54rem;
+  }
+
+  .screen {
+    gap: 1.4rem;
+  }
+
+  .floaters span {
+    font-size: 2.6rem;
+  }
+
+  /* Home */
+  #screen-home {
+    min-height: 60dvh;
+  }
+
+  .titulo-hero {
+    font-size: clamp(4.6rem, 8vw, 6.4rem);
+  }
+
+  :root[data-tema='carnaval'] .titulo-hero {
+    font-size: clamp(4rem, 7vw, 5.6rem);
+  }
+
+  #screen-home .subtitulo-tela {
+    max-width: 52ch;
+    font-size: 1.15rem;
+  }
+
+  .btn-primary {
+    max-width: 26rem;
+    font-size: 1.15rem;
+  }
+
+  .home-conteudo {
+    margin-top: 3rem;
+    gap: 1.25rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .home-conteudo h2 {
+    font-size: 1.3rem;
+  }
+
+  .home-conteudo p {
+    max-width: 60ch;
+    font-size: 1rem;
+  }
+
+  .home-conteudo ol {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    counter-reset: passo-home;
+    text-align: left;
+  }
+
+  .home-conteudo ol li {
+    counter-increment: passo-home;
+    background: var(--bg-elevado);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio-card);
+    padding: 1.1rem 1.1rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .home-conteudo ol li::before {
+    content: counter(passo-home);
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.7rem;
+    border-radius: 50%;
+    background: rgba(var(--acento-rgb), 0.16);
+    border: 1px solid var(--acento);
+    color: var(--acento-claro);
+    font-weight: 900;
+  }
+
+  .home-conteudo ol li strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--texto);
+  }
+
+  .chips-links {
+    justify-content: center;
+  }
+
+  /* Quiz: perguntas em duas colunas */
+  .grupos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+
+  .avatar-preview {
+    grid-template-columns: repeat(7, 1fr);
+    max-width: 40rem;
+  }
+
+  .subtitulo-tela {
+    max-width: 48ch;
+  }
+
+  /* Resultado: cartão fixo à esquerda, guia à direita */
+  .resultado-layout {
+    display: grid;
+    grid-template-columns: 22rem minmax(0, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    align-items: start;
+  }
+
+  .resultado-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    min-width: 0;
+  }
+
+  .resultado-coluna--fixa {
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  .link-guia-completo,
+  #btn-restart {
+    align-self: center;
+  }
+
+  /* Páginas estáticas: catálogo em três colunas */
+  .pagina-texto .catalogo-lista {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pagina-texto h1 {
+    font-size: 3rem;
   }
 }
 

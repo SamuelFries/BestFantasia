@@ -702,4 +702,28 @@ registrarFantasias([
       'Garras à mostra e um uivo curto toda vez que tocar a sua música.',
     ],
   },
+  {
+    id: 298, nome: 'Nobre do Baile Veneziano', emoji: '🎭', categoria: 'Fantasia & Magia',
+    dificuldade: 'Média', custo: 3,
+    ficha: { rosto: 'mascara', calor: 2, volume: 2, formato: ['solo', 'casal'], susto: 0, reconhecimento: 3, ousadia: 1 },
+    descricao: 'Máscara dourada, capa de veludo e nenhuma intenção de revelar quem você é. Em Veneza ou no bloco, o mistério é a fantasia.',
+    imagem: 'https://source.unsplash.com/600x400/?venetian,mask,masquerade',
+    pesos: {
+      genero: { neutro: 6, fem: 4, masc: 3 }, altura: { alto: 5, medio: 3 }, biotipo: { magro: 5 }, cabelo: { longo: 5 }, oculos: { nao: 3 },
+      filme: { assassino: 5, sobrevive: 4 }, festa: { rituais: 9 }, arma: { magia: 7, sarcasmo: 3 },
+      estilo: { fantasia: 6 }, idade: { classico: 6, adulto: 5 }, vibe: { impressionar: 8 },
+    },
+    itens: [
+      { nome: 'Máscara veneziana', emoji: '🎭', busca: 'máscara veneziana' },
+      { nome: 'Capa de veludo', emoji: '🧥', busca: 'capa veludo fantasia' },
+      { nome: 'Roupa escura elegante (a sua)', emoji: '🕴️', busca: null },
+      { nome: 'Luvas de cetim', emoji: '🧤', busca: 'luvas cetim' },
+      { nome: 'Leque', emoji: '🪭', busca: 'leque fantasia' },
+    ],
+    passos: [
+      'Roupa escura e elegante por baixo, capa de veludo por cima presa num ombro só.',
+      'Prenda a máscara com fita por trás do cabelo, não com o elástico à mostra; luvas até o fim.',
+      'Nunca confirme nem negue quem você é. Responda tudo com o leque e um aceno de cabeça.',
+    ],
+  },
 ]);
